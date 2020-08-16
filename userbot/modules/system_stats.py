@@ -194,16 +194,16 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     logo = ALIVE_LOGO
-    output = (f"۝XBOT-REMIX۝\n is running on `{UPSTREAM_REPO_BRANCH}`\n"
+    output = (f"۝⩵꙰ཱི►XBOT-REMIX◄⩵꙰ཱི۝\n is running on [ `{UPSTREAM_REPO_BRANCH}` ]\n"
              f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-             f"┣[•👤 `USER :` {DEFAULTUSER} \n"
-             "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-             f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
-             f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
-             f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
-             f"┣[•🛠 `XBOT-R   :`v Beta {BOT_VER} 🔥\n"
+             f"┣[•👤 `USER :` {DEFAULTUSER} ┃\n"
+             "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`┃\n"
+             f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥┃\n"
+             f"┣[•🐍 `Python   :`v {python_version()} 🔥┃\n"
+             f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥┃\n"
+             f"┣[•🛠 `XBOT-R   :`v Beta {BOT_VER} 🔥┃\n"
              f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
-             f"•Mod By: ➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐")
+             f"•Mod By: `{UPSTREAM_REPO_BRANCH}`")
     await bot.send_file(alive.chat_id, logo, caption=output)
     await alive.delete()
                          
