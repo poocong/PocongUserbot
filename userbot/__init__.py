@@ -309,7 +309,7 @@ with bot:
         quit(1)
         
         async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, f"`THANKS FOR USE, XBOT-REMIX TELAH DIAKTIFKAN...`")
+    await bot.send_message(BOTLOG_CHATID, f"`OK, XBOT REMIX BERHASIL DIAKTIFKAN...`")
     return
 
 with bot:
