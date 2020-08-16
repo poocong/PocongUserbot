@@ -10,6 +10,7 @@ from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
+from telethon import version
 from telethon import __version__, version
 import platform
 import sys
@@ -21,6 +22,8 @@ from userbot.events import register
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+repo = Repo()
+modules = CMD_HELP
 # ============================================
 
 
@@ -198,7 +201,7 @@ async def amireallyalive(alive):
              "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
              f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
              f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
-             f"┣[•💻 `Base on  : {repo.active_branch.name}`🔥\n"
+             f"┣[•💻 `Base on  :`{repo.active_branch.name}🔥\n"
              f"┣[•🛠 `XBOT-R   :`v Beta {BOT_VER} 🔥\n"
              f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
              f"•Mod By: ➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐")
