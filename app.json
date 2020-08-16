@@ -33,7 +33,6 @@
     "HEROKU_API_KEY": {
       "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
       "value": ""
-      "required": true
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
