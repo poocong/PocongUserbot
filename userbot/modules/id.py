@@ -16,7 +16,7 @@ async def image_maker(event):
     id_template.paste(user_photo, (1229, 573))
     position = (2473, 481)
     draw = ImageDraw.Draw(id_template)
-    color = "rgb(23, 43, 226)"  # blue color
+    color = "rgb(23, 43, 226)"  # red color
     font = ImageFont.truetype("userbot/utils/fontx.ttf", size=200)
     draw.text(
         position,
