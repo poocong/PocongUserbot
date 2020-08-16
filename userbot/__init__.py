@@ -6,6 +6,7 @@
 """ Userbot initialization. """
 
 import os
+import time
 import re
 
 from sys import version_info
@@ -23,6 +24,9 @@ from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 
 load_dotenv("config.env")
+
+
+StartTime = time.time()
 
 CMD_LIST = {}
 # for later purposes
@@ -299,17 +303,18 @@ async def check_botlog_chatid():
             "group. Check if you typed the Chat ID correctly.")
         quit(1)
 
+
 with bot:
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't valid"
-            "Please generate proper group id and set.You can ask in @PPE_Support if you need help")
+            "BOTLOG_CHATID environment variable isn't a "
+            "valid entity. Check your environment variables/config.env file.")
         quit(1)
-        
-        async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, f"`OK, XBOT REMIX BERHASIL DIAKTIFKAN...`")
+
+async def check_alive():
+    await bot.send_message(BOTLOG_CHATID, f"`OK, XBOT BERHASIL DIAKTIFKAN...`")
     return
 
 with bot:
