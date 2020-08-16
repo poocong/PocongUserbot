@@ -200,7 +200,7 @@ async def amireallyalive(alive):
              "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
              f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
              f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
-             f"┣[•💻 `Base on  :`{repo.active_branch.name}🔥\n"
+             f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
              f"┣[•🛠 `XBOT-R   :`v Beta {BOT_VER} 🔥\n"
              f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
              f"•Mod By: ➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐")
