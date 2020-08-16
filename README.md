@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/X-Newbie/XBot-Remix.svg?branch=sql-extended)](https://travis-ci.com/X-Newbie/XBot-Remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/X-Newbie/XBot-Remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=X-Newbie/XBot-Remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/X-Newbie/XBot-Remix) ![Forks](https://img.shields.io/github/forks/X-Newbie/XBot-Remix)     
+[![Build Status](https://travis-ci.com/X-Newbie/XBot-Remix.svg?branch=x-sql-extended)](https://travis-ci.com/X-Newbie/XBot-Remix) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/38fee611df7c4312be63a15cad64a50a)](https://www.codacy.com/manual/X-Newbie/XBot-Remix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=X-Newbie/XBot-Remix&amp;utm_campaign=Badge_Grade) ![Last Commit](https://img.shields.io/github/last-commit/X-Newbie/XBot-Remix) ![Forks](https://img.shields.io/github/forks/X-Newbie/XBot-Remix)     
 # XBot-Remix
 
 
