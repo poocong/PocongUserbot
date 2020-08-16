@@ -203,7 +203,7 @@ async def amireallyalive(alive):
              f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥┃\n"
              f"┣[•🛠 `XBOT-R   :`v Beta {BOT_VER} 🔥┃\n"
              f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
-             f"•Mod By: `{UPSTREAM_REPO_BRANCH}`")
+             f"•Mod By: `{DEFAULTUSER}`")
     await bot.send_file(alive.chat_id, logo, caption=output)
     await alive.delete()
                          
