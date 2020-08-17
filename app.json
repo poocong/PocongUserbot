@@ -235,7 +235,7 @@
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
-      "value": "@"
+      "value": "@",
       "required": true
     }
   },
