@@ -1,10 +1,3 @@
-# Copyright (C) 2020 Adek Maulana.
-# All rights reserved.
-#
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-#
-
 """
    Heroku manager for your userbot
 """
@@ -180,14 +173,15 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                 "**Dyno Usage**:\n\n"
-                 f" -> `Dyno usage for`  **{app.name}**:\n"
-                 f"     •  **{AppHours} hour(s), "
-                 f"{AppMinutes} minute(s)  -  {AppPercentage}%**"
-                 "\n-------------------------------------------------------------\n"
-                 " -> `Dyno hours quota remaining this month`:\n"
-                 f"     •  **{hours} hour(s), {minutes} minute(s)  "
-                 f"-  {percentage}%**"
+                 "**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n"
+                 f"-> `Penggunaan Dyno Untuk`  **{app.name}**:\n"
+                 f"     •  **{AppHours} jam(s), "
+                 f"{AppMinutes} menit(s)  -  {AppPercentage}%**"
+                 "\n◐━─━─━─━─━──━─━─━─━─━◐\n"
+                 "-> `Sisa Waktu Dyno Bulan Ini`:\n"
+                 f"     •  **{hours} jam(s), {minutes} menit(s)  "
+                 f"-  {percentage}%**\n"
+                 "\n╰━━━━━━━━━━━━━━━━━━━━╯"
             )
             return True
 
