@@ -5,8 +5,9 @@
     <a href="https://github.com/X-Newbie/XBot-Remix"> <img src="https://img.shields.io/github/repo-size/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
-</p>
 <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge">
+</p>
+
 # XBot-Remix
 
 
