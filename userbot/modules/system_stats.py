@@ -196,8 +196,8 @@ async def amireallyalive(alive):
     logo = ALIVE_LOGO
     output = (f"۝⩵꙰ཱི►XBOT-REMIX◄⩵꙰ཱི۝\n is running on [ `{UPSTREAM_REPO_BRANCH}` ]\n"
              f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-             f"┣[•👤 `USER :` {DEFAULTUSER} ┃\n"
-             "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`┃\n"
+             f"┣[•👤 `USER :` {DEFAULTUSER}\n"
+             "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
              f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
              f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
              f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
