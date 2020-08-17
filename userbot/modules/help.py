@@ -21,11 +21,11 @@ async def help(event):
             await event.edit("**Module Salah Goblokkkk!!**")
     else:
         await event.edit(f"**╭━━━━━━━━━━━━━━━━━━━━━╮**\
-            \n│       Help for [🔥XBOT-REMIX🔥]      │\
-            \n│      ╾────────────────╼           │\
-            \n│   Untuk melihat lengkap Command  │\
-            \n│   Contoh: .help <nama module>    │\
-            \n│   Modules Aktif: {len(modules)}  │\
+            \n│       Help for [🔥XBOT-REMIX🔥]     │\
+            \n│      ╾────────────────╼       │\
+            \n│   Untuk melihat lengkap Command │\
+            \n│   Contoh: .help <nama module>     │\
+            \n│   Modules Aktif: {len(modules)}           │\
            \n╰━━━━━━━━━━━━━━━━━━━━━╯")
         string = ""
         for i in CMD_HELP:
