@@ -1,16 +1,13 @@
 <p align="center">
-    <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-green"/>
+    <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-brightgreen"/>
+    <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20IN-Agustus-brightgreen"/>
     <a href="https://travis-ci.com/X-Newbie/XBot-Remix.svg?branch=x-sql-extended" /></a>
     <a href="https://app.codacy.com/gh/X-Newbie/XBot-Remix/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
     <a href="https://github.com/X-Newbie/XBot-Remix"> <img src="https://img.shields.io/github/repo-size/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
-<img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>
+    <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>
 </p>
-
-
-# XBot-Remix
-
 
 ## How To Host?
 
