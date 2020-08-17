@@ -21,16 +21,16 @@ async def help(event):
             await event.edit("**Module Salah Goblokkkk!!**")
     else:
         await event.edit(f"**╭━━━━━━━━━━━━━━━━━━━━━╮**\
-            \n│       Help for [🔥XBOT-REMIX🔥]     │\
-            \n│      ╾────────────────╼       │\
-            \n│   Untuk melihat lengkap Command │\
-            \n│   Contoh: .help <nama module>     │\
-            \n│   Modules Aktif: {len(modules)}           │\
+            \n│       Help for [🔥XBOT-REMIX🔥]\
+            \n│      ╾────────────────╼ \
+            \n│   Untuk melihat lengkap Command\
+            \n│   Contoh: .help <nama module>\
+            \n│   Modules Aktif: {len(modules)}\
            \n╰━━━━━━━━━━━━━━━━━━━━━╯")
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t☠️\t "
+            string += "`\t𖠄\t "
         await event.reply(f"{string}"
                          "\n\n╚═════❖क⊹⊱✫⊰⊹क❖═════╝\
                           \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐'")
