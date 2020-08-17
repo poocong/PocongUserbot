@@ -201,7 +201,7 @@
     "BITLY_TOKEN": {
       "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
       "value": "YOUR TOKEN",
-      "required": false
+      "required": true
     },
     "UB_BLACK_LIST_CHAT": {
       "description": "haha",
@@ -214,7 +214,7 @@
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
-      "required": false
+      "required": true
     },
     "LOGSPAMMER": {
       "description": "Set this to True in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
@@ -230,11 +230,13 @@
     },
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": false
+      "value": "salah auto hangus 🤣",
+      "required": true
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
-      "required": false
+      "value": "@"
+      "required": true
     }
   },
   "addons": [
