@@ -230,8 +230,8 @@ async def amireallyalive(alive):
              f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
              f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
              f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
-             f"┣[•🛠 `XBOT-R   :`Beta {BOT_VER} 🔥\n"
-             f"┣[•🕒 `Bot Uptime :` {uptime} 🔥\n"
+             f"┣[•🛠 `XBOT Ver :`Prem {BOT_VER} 🔥\n"
+             f"┣[•🕒 `Uptime   :` {uptime} 🔥\n"
              f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
              f"•Mod By: `{DEFAULTUSER}`")
     await bot.send_file(alive.chat_id, logo, caption=output)
