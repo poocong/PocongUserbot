@@ -15,7 +15,7 @@ modules = CMD_HELP
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
 	sleep(1)
-	await typew.edit("'Hallo Semua Saya` {DEFAULTUSER}")
+	await typew.edit("'Hallo Semua Saya` **{DEFAULTUSER}**")
 	sleep(2)
 	await typew.edit("`Assalamualaikum.....😚`")
 # Owner @Si_Dian
@@ -24,7 +24,7 @@ async def typewriter(typew):
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
 	sleep(1)
-	await typew.edit("'Hallo Semua Saya` {DEFAULTUSER}")
+	await typew.edit("'Hallo Semua Saya` **{DEFAULTUSER}**")
 	sleep(2)
 	await typew.edit("`Assalamualaikum.....😚`")
 # Owner @Si_Dian
