@@ -3,18 +3,19 @@ import re
 import time
 from time import sleep
 from platform import python_version, uname
-from userbot import CMD_HELP, ZALG_LIST, ALIVE_NAME
+from userbot import CMD_HELP, ZALG_LIST, ALIVE_NAME, bot
 from userbot.events import register
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+modules = CMD_HELP
 # ============================================
 
 @register(outgoing=True, pattern='^P(?: |$)(.*)')
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
 	sleep(1)
-	await typew.edit("Hallo Semua Saya `{DEFAULTUSER}`")
+	await typew.edit("'Hallo Semua Saya` {DEFAULTUSER}")
 	sleep(2)
 	await typew.edit("`Assalamualaikum.....😚`")
 # Owner @Si_Dian
@@ -23,7 +24,7 @@ async def typewriter(typew):
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
 	sleep(1)
-	await typew.edit("Hallo Semua Saya `{DEFAULTUSER}`")
+	await typew.edit("'Hallo Semua Saya` {DEFAULTUSER}")
 	sleep(2)
 	await typew.edit("`Assalamualaikum.....😚`")
 # Owner @Si_Dian
