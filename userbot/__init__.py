@@ -69,24 +69,24 @@ STRING_SESSION = os.environ.get("STRING_SESSION", "")
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 
 # Userbot logging feature switch.
-BOTLOG = sb(os.environ.get("BOTLOG", "False"))
+BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
 # Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
+G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "isi id group lu")
 if G_BAN_LOGGER_GROUP:
         G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
 # Heroku Credentials for updater.
-HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
+HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "True"))
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", "")
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", "")
 
 # JustWatch Country
-WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY","IN")
+WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY","ID")
 
 # Github Credentials for updater and Gitupload.
 GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", "")
@@ -122,7 +122,7 @@ PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
 
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", "")
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "")
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "nama kota lu")
 
 # Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", "")
@@ -154,7 +154,7 @@ CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 
 # bit.ly module
-BITLY_TOKEN = os.environ.get("BITLY_TOKEN", "")
+BITLY_TOKEN = os.environ.get("BITLY_TOKEN", "YOUR TOKEN")
 
 # Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "XBOT-REMIX")
@@ -168,7 +168,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", "")
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "")
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "[PM = BLOCK + REPORT SPAM]")
 
 LASTFM_API = os.environ.get("LASTFM_API", "")
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", "")
@@ -212,8 +212,8 @@ API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "salah auto hangus akun lo ?")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "@")
 
 
 
