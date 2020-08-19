@@ -26,11 +26,9 @@ from userbot.events import register
 
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = ("`╭━━━━━━━━━━━━━━━━━━━━╮.`\n"
- f"**• Nama : {first_name}**\n"
+UNAPPROVED_MSG = (f"**• Nama : {first_name}**\n"
  f"**• Id Anda : <code>{user_id}</code>**\n"
  f"**• Username : @{username}**\n"
-"`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
     "`Mohon maaf, Saya Sedang Offline.\n`"
     "`Silahkan menunggu sampai saya menerima chat anda.\n`"
     "`Sementara itu, jangan spam chat.. jika spam, anda akan di blokir otomatis oleh xbot.\n`"
