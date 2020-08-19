@@ -16,22 +16,18 @@
   "env": {
     "API_KEY": {
       "description": "Get this value from my.telegram.org.",
-      "value": "",
       "required": true
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org.",
-      "value": "",
       "required": true
     },
      "STRING_SESSION": {
       "description": "Get this value by running [python3 string_session.py] in Termux or local system.",
-      "value": "",
       "required": true
     },
     "HEROKU_APP_NAME": {
       "description": "Add the Heroku app name here. It helps with userbot updates.",
-      "value": "",
       "required": true
     },
     "HEROKU_API_KEY": {
@@ -46,12 +42,10 @@
     },
     "BOTLOG_CHATID": {
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
-      "value": "-",
       "required": true
     },
     "QUOTES_API_TOKEN": {
       "description": "Get this value from http://antiddos.systems! Please do not steal",
-      "value": "",
       "required": true
     },
     "API_URL": {
@@ -61,12 +55,10 @@
     },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
-      "value": "",
       "required": true
     },
     "MONGO_URI": {
       "description": "Your MongoDB Atlas URL, Get your guide from https://telegra.ph/Mongo-DB-12-24.",
-      "value": "",
       "required": true 
     },
     "NC_LOG_P_M_S": {
@@ -80,7 +72,6 @@
     },
     "GENIUS": {
       "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
-      "value": "0",
       "required": true
     },
     "HEROKU_MEMEZ": {
@@ -90,12 +81,10 @@
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
-      "value": "",
       "required": true
     },
     "GIT_REPO_NAME": {
       "description": "Add the GIT_REPO_NAME here. It helps with commit on GitHub.",
-      "value": "",
       "required": true
     },
     "UPSTREAM_REPO_URL": {
@@ -124,7 +113,6 @@
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
-      "value": "",
       "required": true
     },
       "CONSOLE_LOGGER_VERBOSE": {
@@ -139,17 +127,14 @@
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
-      "value": "",
       "required": true
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
-      "value": "",
       "required": true
     },
     "REM_BG_API_KEY": {
       "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
-      "value": "",
       "required": true
     },
     "ANTI_SPAMBOT": {
@@ -174,42 +159,35 @@
     },
     "G_DRIVE_FOLDER_ID": {
       "description": "Create a folder and put that folder's id here.check folder link for id.",
-      "value": "",
       "required": true
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "value": "",
       "required": true
     },
     "LASTFM_SECRET": {
       "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "value": "",
       "required": true
     },
     "LASTFM_USERNAME": {
       "description": "Last.FM Username",
-      "value": "",
       "required": true
     },
     "LASTFM_PASSWORD": {
       "description": "Last.FM Password",
-      "value": "",
       "required": true
     },
     "BIO_PREFIX": {
       "description": "Prefix for Last.FM Module Bio.",
-      "value": "",
       "required": true
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = BLOCK + REPORT SPAM?]",
+      "value": "[PM = BLOCK + REPORT SPAM]",
       "required": true
     },
     "ALIVE_NAME": {
       "description": "Name to show in .alive message",
-      "value": "",
       "required": true
     },
     "G_BAN_LOGGER_GROUP": {
@@ -219,17 +197,14 @@
     },
     "G_DRIVE_DATA": {
       "description": "Enter the Google Drive authentication data, as a JSON structure.",
-      "value": "",
       "required": true
     },
     "G_PHOTOS_CLIENT_ID": {
       "description": "get the client id from https://j.mp/39lWQQm",
-      "value": "",
       "required": true
     },
     "G_PHOTOS_CLIENT_SECRET": {
       "description": "get the client secret from https://j.mp/39lWQQm",
-      "value": "",
       "required": true
     },
     "BITLY_TOKEN": {
@@ -239,12 +214,10 @@
     },
     "UB_BLACK_LIST_CHAT": {
       "description": "haha",
-      "value": "-",
       "required": true
     },
     "LYDIA_API_KEY": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
-      "value": "",
       "required": true
     },
     "WEATHER_DEFCITY": {
@@ -259,12 +232,10 @@
     },
     "ALIVE_LOGO": {
       "description": "Show Image/Logo in .alive message. Fill value of image your link image, use telegra.ph / i.ibb.co to get your own image",
-      "value": "",
       "required": true
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
-      "value": "",
       "required": true
     },
     "BOT_TOKEN": {
