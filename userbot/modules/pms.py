@@ -24,8 +24,13 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
 
 from userbot.events import register
 
+
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = (
+UNAPPROVED_MSG = ("`╭━━━━━━━━━━━━━━━━━━━━╮.`\n"
+ f"**• Nama : {first_name}**\n"
+ f"**• Id Anda : <code>{user_id}</code>**\n"
+ f"**• Username : @{username}**\n"
+"`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
     "`Mohon maaf, Saya Sedang Offline.\n`"
     "`Silahkan menunggu sampai saya menerima chat anda.\n`"
     "`Sementara itu, jangan spam chat.. jika spam, anda akan di blokir otomatis oleh xbot.\n`"
@@ -35,6 +40,43 @@ UNAPPROVED_MSG = (
 
 NO_PM_LOG_USERS = []
 
+async def fetch_info(replied_user, event):
+    """ Get details from the User object. """
+    replied_user_profile_photos = await event.client(
+        GetUserPhotosRequest(user_id=replied_user.user.id,
+                             offset=42,
+                             max_id=0,
+                             limit=80))
+    replied_user_profile_photos_count = "Person needs help with uploading profile picture."
+    try:
+        replied_user_profile_photos_count = replied_user_profile_photos.count
+    except AttributeError:
+        pass
+    user_id = replied_user.user.id
+    first_name = replied_user.user.first_name
+    last_name = replied_user.user.last_name
+    try:
+        dc_id, location = get_input_location(replied_user.profile_photo)
+    except Exception as e:
+        dc_id = "Couldn't fetch DC ID!"
+        location = str(e)
+    common_chat = replied_user.common_chats_count
+    username = replied_user.user.username
+    user_bio = replied_user.about
+    is_bot = replied_user.user.bot
+    restricted = replied_user.user.restricted
+    verified = replied_user.user.verified
+    photo = await event.client.download_profile_photo(user_id,
+                                                      TEMP_DOWNLOAD_DIRECTORY +
+                                                      str(user_id) + ".jpg",
+                                                      download_big=True)
+    first_name = first_name.replace(
+        "\u2060", "") if first_name else ("This User has no First Name")
+    last_name = last_name.replace(
+        "\u2060", "") if last_name else ("This User has no Last Name")
+    username = "@{}".format(username) if username else (
+        "This User has no Username")
+    user_bio = "This User has no About" if not user_bio else user_bio
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def permitpm(event):
