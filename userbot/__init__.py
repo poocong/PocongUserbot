@@ -122,7 +122,7 @@ PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
 
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", "")
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "nama kota lu")
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY")
 
 # Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", "")
