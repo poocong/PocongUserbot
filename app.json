@@ -163,23 +163,23 @@
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "required": true
+      "required": False
     },
     "LASTFM_SECRET": {
       "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "required": true
+      "required": false
     },
     "LASTFM_USERNAME": {
       "description": "Last.FM Username",
-      "required": true
+      "required": false
     },
     "LASTFM_PASSWORD": {
       "description": "Last.FM Password",
-      "required": true
+      "required": false
     },
     "BIO_PREFIX": {
       "description": "Prefix for Last.FM Module Bio.",
-      "required": true
+      "required": false
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
@@ -201,11 +201,11 @@
     },
     "G_PHOTOS_CLIENT_ID": {
       "description": "get the client id from https://j.mp/39lWQQm",
-      "required": true
+      "required": false
     },
     "G_PHOTOS_CLIENT_SECRET": {
       "description": "get the client secret from https://j.mp/39lWQQm",
-      "required": true
+      "required": false
     },
     "BITLY_TOKEN": {
       "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
@@ -218,7 +218,7 @@
     },
     "LYDIA_API_KEY": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
-      "required": true
+      "required": false
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
@@ -236,7 +236,7 @@
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
-      "required": true
+      "required": false
     },
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
