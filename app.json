@@ -163,7 +163,7 @@
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "required": False
+      "required": false
     },
     "LASTFM_SECRET": {
       "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
