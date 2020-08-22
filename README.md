@@ -21,7 +21,7 @@ Make sure you have an account of heroku and follow all the steps required.
 Deploy to Heroku:
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
-<p align="center">GENERATE STRING SESSION</p>
+<p align="center"><b>GENERATE STRING SESSION<\b></p>
 
 ## Run on your terminal
 ```
