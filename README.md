@@ -1,4 +1,4 @@
-<font color='blue'>&ensp;<u><b>XBOT REMIX MODULES&ensp;:</b></u></font>
+<p align="center"><u><b> XBOT REMIX MODULES </b></u></p>
 
 <p align="center">
     <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-brightgreen"/>
