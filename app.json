@@ -87,10 +87,6 @@
       "description": "Add the GIT_REPO_NAME here. It helps with commit on GitHub.",
       "required": true
     },
-    "UPSTREAM_REPO_URL": {
-      "description": "In case you maintain a fork, add your repo URL here.",
-      "required": true
-    },
     "COUNTRY": {
       "description": "Set your Country to be used in the .time and .date commands.",
       "value": "ID",
