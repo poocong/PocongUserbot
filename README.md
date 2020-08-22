@@ -21,6 +21,11 @@ Make sure you have an account of heroku and follow all the steps required.
 Deploy to Heroku:
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
+## Run on your terminal
+```
+wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
+```
+
 ## How to setup Google Drive
 <p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png" alt="Google Drive Setup" width="200" height="33.33"/></a></p>
 
