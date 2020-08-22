@@ -22,5 +22,4 @@ Deploy to Heroku:
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ## How to setup Google Drive
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f379c329c1d14aba90a0c96ade2d97f2)](https://app.codacy.com/manual/X-Newbie/XBot-Remix?utm_source=github.com&utm_medium=referral&utm_content=X-Newbie/XBot-Remix&utm_campaign=Badge_Grade_Settings)
-[![setGDRIVE](https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png)](https://telegra.ph/How-To-Setup-Google-Drive-04-03)</p>
+     [![setGDRIVE](https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png)](https://telegra.ph/How-To-Setup-Google-Drive-04-03)</p>
