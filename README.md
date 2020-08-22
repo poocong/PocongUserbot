@@ -1,3 +1,5 @@
+<font color='blue'>&ensp;<u><b>XBOT REMIX MODULES&ensp;:</b></u></font>
+
 <p align="center">
     <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-17.08.2020-brightgreen"/>
