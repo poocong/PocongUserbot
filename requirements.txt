@@ -18,7 +18,7 @@ asyncurban
 google-api-python-client
 google-auth-oauthlib
 googletrans>=2.4.0
-google_images_download>=3.0
+google_images_download>=2.7.0
 googletrans>=2.4.0
 gsearch
 gTTS
