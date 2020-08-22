@@ -21,8 +21,6 @@
 
 <p align="center"><b>GENERATE STRING SESSION</p>
 
-<p align="center"><a href="http://string.X-Newbie.repl.run"> <img src="https://telegra.ph/file/3ef54caa322b1c5feadb9.png" alt="Generate String Session" width="200" height="33.33"/></a></p>
-
 ## Run on your terminal
 ```
 wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
