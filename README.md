@@ -25,4 +25,4 @@ Deploy to Heroku:
 <p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png" alt="Google Drive Setup" width="200" height="33.33"/></a></p>
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/master/LICENSE) - Version 1.d, February 2020
+Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
