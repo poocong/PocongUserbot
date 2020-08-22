@@ -15,10 +15,9 @@ cryptg
 patool
 gitpython
 asyncurban
-google-api-python-client
+google-api-python-client==1.8.0
 google-auth-oauthlib
-googletrans>=2.4.0
-google_images_download>=2.7.0
+google_images_download>=2.7.1
 googletrans>=2.4.0
 gsearch
 gTTS
@@ -54,8 +53,8 @@ urbandict>=0.5
 wikipedia>=1.4.0
 coffeehouse>=2.1.0
 git+https://github.com/johnwmillr/LyricsGenius.git
-git+https://github.com/voins/google-images-download.git
- git+https://github.com/LonamiWebs/Telethon
+git+https://github.com/voins/google-images-download/blob/master/google_images_download/google_images_download.py
+git+https://github.com/LonamiWebs/Telethon
 lyricsgenius
 redis>=3.3.10
 PyDrive2
@@ -68,7 +67,7 @@ covid>=2.3.0
 base
 pip>=19.2.3
 setuptools>=28.8.0
-selenium
+selenium>=3.141.0
 # SpeechRecognition>=3.4.6
 # wheel>=0.30.0a0
 telegraph
