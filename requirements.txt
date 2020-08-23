@@ -53,7 +53,6 @@ urbandict>=0.5
 wikipedia>=1.4.0
 coffeehouse>=2.1.0
 git+https://github.com/johnwmillr/LyricsGenius.git
-git+https://github.com/voins/google-images-download/blob/master/google_images_download/google_images_download.py
 git+https://github.com/LonamiWebs/Telethon
 lyricsgenius
 redis>=3.3.10
