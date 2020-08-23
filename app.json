@@ -50,8 +50,7 @@
     },
     "API_URL": {
       "description": "The value is http://antiddos.systems!",
-      "value": "http://antiddos.systems",
-      "required": true
+      "value": "http://antiddos.systems"
     },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
@@ -205,12 +204,12 @@
     },
     "BITLY_TOKEN": {
       "description": "Your Bit.ly API key, get it from 'https://bitly.com/a/sign_up'",
-      "value": "YOUR TOKEN",
-      "required": true
+      "value": "",
+      "required": false
     },
     "UB_BLACK_LIST_CHAT": {
-      "description": "haha",
-      "required": true
+      "description": "Ga usah di isi",
+      "required": false
     },
     "LYDIA_API_KEY": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
@@ -228,7 +227,7 @@
     },
     "ALIVE_LOGO": {
       "description": "Show Image/Logo in .alive message. Fill value of image your link image, use telegra.ph / i.ibb.co to get your own image",
-      "required": true
+      "required": false
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
