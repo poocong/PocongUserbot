@@ -154,7 +154,7 @@ CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 
 # bit.ly module
-BITLY_TOKEN = os.environ.get("BITLY_TOKEN", "YOUR TOKEN")
+BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "XBOT-REMIX")
