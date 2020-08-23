@@ -76,7 +76,7 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
 # Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "isi id group lu")
+G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
 if G_BAN_LOGGER_GROUP:
         G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
@@ -125,13 +125,13 @@ OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", "")
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY")
 
 # Lydia API
-LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", "")
+LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
 # For MONGO based DataBase
 MONGO_URI = os.environ.get("MONGO_URI", None)
 
 # set blacklist_chats where you do not want userbot's features
-UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", "")
+UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", None)
     
 # Anti Spambot Config
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
@@ -170,10 +170,10 @@ ALIVE_LOGO = os.environ.get(
 BIO_PREFIX = os.environ.get("BIO_PREFIX", "")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "[PM = BLOCK + REPORT SPAM]")
 
-LASTFM_API = os.environ.get("LASTFM_API", "")
-LASTFM_SECRET = os.environ.get("LASTFM_SECRET", "")
-LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", "")
-LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", "")
+LASTFM_API = os.environ.get("LASTFM_API", None)
+LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
+LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
+LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
 LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
 if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
     lastfm = LastFMNetwork(api_key=LASTFM_API,
@@ -193,22 +193,22 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 # Google Photos
 G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
-G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", "")
-G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", "")
+G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
+G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
 if G_PHOTOS_AUTH_TOKEN_ID:
     G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
 # Genius lyrics  API
-GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", "")
+GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN", None)
 
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", "")
 
 # Deezloader
-DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", "")
+DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
 # Photo Chat - Get this value from http://antiddos.systems
-API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
+API_TOKEN = os.environ.get("API_TOKEN", "")
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
