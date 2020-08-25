@@ -25,7 +25,7 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = (f"Hallo [{name0}](tg://user?id={uid})\n`"
+UNAPPROVED_MSG = (f"Hallo `{fullname}`\n`"
 "`╭━━━━━━━━━━━━━━━━━━━━╮\n`  "
 "`   WELLCOME TO MY CHAT\n`"
 "`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
