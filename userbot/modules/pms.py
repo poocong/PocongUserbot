@@ -26,11 +26,25 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`Mohon maaf, Saya Sedang Offline.\n`"
-    "`Silahkan menunggu sampai saya menerima chat anda.\n`"
-    "`Sementara itu, jangan spam chat.. jika spam, anda akan di blokir otomatis oleh xbot.\n`"
-    "`Mengerti?\n\n`"
-    "`庐 Assisten XBot`")
+"`╭━━━━━━━━━━━━━━━━━━━━╮\n`  "
+"` WELLCOME TO MY CHAT\n`"
+"`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
+ "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n`"
+ "`Silahkan menunggu sampai saya menerima chat anda.\n`"
+ "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n\n`"
+"`🔐 PERATURAN :\n`"
+"`╾─────────────────╼`"
+"`🔥 Mohon tunggu sampai saya Menyetujui!!!\n`"
+"`╾─────────────────╼\n`"
+"`🔥 Jika belum di setujui, Mohon jangan SPAM !!!!\n`"
+"`╾─────────────────╼\n`"
+"`🔥 Ketika anda melakukan spam, maka XBOT akan membkokir anda dan melaporkan anda !!!\n`"
+"`╾─────────────────╼\n`"
+"`🔥 Harap bersabar !!!\n`"
+"`╾─────────────────╼\n`"
+"`Saya pikir hanya itu yang ingin saya katakan, terima kasih.\n`"
+"`─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n`"
+"`⩵꙰ཱི PROTECTED BY XBOT-REMIX ⩵꙰ཱི`")
 # =================================================================
 
 NO_PM_LOG_USERS = []
