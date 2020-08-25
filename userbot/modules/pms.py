@@ -25,22 +25,22 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = (f"Hallo `{fullname}`\n`"
+UNAPPROVED_MSG = (
 "`╭━━━━━━━━━━━━━━━━━━━━╮\n`  "
 "`   WELLCOME TO MY CHAT\n`"
 "`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
  "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n`"
  "`Silahkan menunggu sampai saya menerima chat anda.\n`"
- "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n\n`"
+ "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n  \n`"
 "`🔐 PERATURAN :\n`"
 "`╾─────────────────╼\n`"
-"`🔥 Mohon tunggu sampai saya Menyetujui!!!\n`"
+"`🔥Mohon tunggu sampai saya Menyetujui!!!\n`"
 "`╾─────────────────╼\n`"
-"`🔥 Jika belum di setujui, Mohon jangan SPAM !!!!\n`"
+"`🔥Jika belum di setujui, Mohon jangan SPAM !!!!\n`"
 "`╾─────────────────╼\n`"
-"`🔥 Ketika anda melakukan spam, maka XBOT akan membkokir anda dan melaporkan anda !!!\n`"
+"`🔥Ketika anda melakukan spam, maka XBOT akan membkokir anda dan melaporkan anda !!!\n`"
 "`╾─────────────────╼\n`"
-"`🔥 Harap bersabar !!!\n`"
+"`🔥Harap bersabar !!!\n`"
 "`╾─────────────────╼\n`"
 "`Saya pikir hanya itu yang ingin saya katakan, terima kasih.\n`"
 "`─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n`"
