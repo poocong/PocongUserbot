@@ -25,15 +25,15 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = (
+UNAPPROVED_MSG = (f"Hallo [{name0}](tg://user?id={uid})\n`"
 "`╭━━━━━━━━━━━━━━━━━━━━╮\n`  "
-"` WELLCOME TO MY CHAT\n`"
+"`   WELLCOME TO MY CHAT\n`"
 "`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
  "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n`"
  "`Silahkan menunggu sampai saya menerima chat anda.\n`"
  "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n\n`"
 "`🔐 PERATURAN :\n`"
-"`╾─────────────────╼`"
+"`╾─────────────────╼\n`"
 "`🔥 Mohon tunggu sampai saya Menyetujui!!!\n`"
 "`╾─────────────────╼\n`"
 "`🔥 Jika belum di setujui, Mohon jangan SPAM !!!!\n`"
