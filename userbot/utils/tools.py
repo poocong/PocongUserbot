@@ -10,8 +10,7 @@ import os.path
 import sys
 import time
 from typing import Tuple, Union
-from userbot import bot
-
+from userbot import bot, TEMP_DOWNLOAD_DIRECTORY
 from telethon import errors
 from telethon.tl import types
 from telethon.utils import get_display_name
@@ -77,3 +76,14 @@ async def is_admin(chat_id, user_id):
     if isinstance(chat_participant, ChannelParticipantCreator) or isinstance(chat_participant, ChannelParticipantAdmin):
         return True
     return False
+
+async def take_screen_shot(video_file: str, duration: int, path: str) -> str:
+    _LOG.info('[[[Extracting a frame from %s ||| Video duration => %s]]]', video_file, duration)
+    ttl = duration // 2
+    thumb_image_path = path or os.path.join(TEMP_DOWNLOAD_DIRECTORY, f"{basename(video_file)}.jpg")
+    command = f"ffmpeg -ss {ttl} -i '{video_file}' -vframes 1 '{thumb_image_path}'"
+    err = (await runcmd(command))[1]
+    if err:
+        _LOG.error(err)
+    return thumb_image_path if os.path.exists(thumb_image_path) else None
+
