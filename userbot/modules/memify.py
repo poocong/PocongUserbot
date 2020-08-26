@@ -32,6 +32,8 @@ from telethon.tl.types import (DocumentAttributeFilename, DocumentAttributeStick
                                InputStickerSetID, InputStickerSetShortName,
                                MessageMediaPhoto)
 
+THUMB_IMAGE_PATH = "./thumb_image.jpg"
+
 
 @register(outgoing=True, pattern="^.mmf(?: |$)(.*)")
 async def memify(message):
@@ -44,19 +46,19 @@ async def memify(message):
     if not (replied.photo or replied.sticker or replied.animation):
         await message.err("Bruh, U Comedy me? Read help or gtfo (¬_¬)")
         return
-    if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
-        os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
+    if not os.path.isdir(THUMB_IMAGE_PATH):
+        os.makedirs(THUMB_IMAGE_PATH)
     await message.edit("He he, let me use my skills")
     dls = await message.client.download_media(
         message=message.reply_to_message,
-        file_name=TEMP_DOWNLOAD_DIRECTORY,
+        file_name=THUMB_IMAGE_PATH,
         progress=progress,
         progress_args=(message, "Trying to Posses given content")
     )
-    dls_loc = os.path.join(TEMP_DOWNLOAD_DIRECTORY, os.path.basename(dls))
+    dls_loc = os.path.join(THUMB_IMAGE_PATH, os.path.basename(dls))
     if replied.sticker and replied.sticker.file_name.endswith(".tgs"):
         await message.edit("OMG, an Animated sticker ⊙_⊙, lemme do my bleck megik...")
-        png_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.png")
+        png_file = os.path.join(THUMB_IMAGE_PATH, "meme.png")
         cmd = f"lottie_convert.py --frame 0 -if lottie -of png {dls_loc} {png_file}"
         stdout, stderr = (await runcmd(cmd))[:2]
         os.remove(dls_loc)
@@ -66,7 +68,7 @@ async def memify(message):
         dls_loc = png_file
     elif replied.animation:
         await message.edit("Look it's GF. Oh, no it's just a Gif ")
-        jpg_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.jpg")
+        jpg_file = os.path.join(THUMB_IMAGE_PATH, "meme.jpg")
         await take_screen_shot(dls_loc, 0, jpg_file)
         os.remove(dls_loc)
         if not os.path.lexists(jpg_file):
