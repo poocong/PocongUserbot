@@ -23,7 +23,7 @@ async def _(event):
     await event.edit("`Proses Melacak Pikiran Tersangka.......`")
     async with bot.conversation(chat) as conv:
           try:     
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=186675376))
               await bot.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
@@ -32,7 +32,7 @@ async def _(event):
           if response.text.startswith("Forward"):
              await event.edit("`Njerrr Profile Tidak Diketahui/Buriq..`")
           else: 
-             await event.reply(f"{response.message.message}")
+             await event.edit(f"{response.message.message}")
 
 
 CMD_HELP.update({
