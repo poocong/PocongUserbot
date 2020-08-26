@@ -34,7 +34,7 @@ from telethon.tl.types import (DocumentAttributeFilename, DocumentAttributeStick
 
 
 @register(outgoing=True, pattern="^.mmf(?: |$)(.*)")
-async def memify(message: Message):
+async def memify(message):
     replied = message.reply_to_message
     if not replied:
         await message.err("LMAO no one's gonna help you, if u use .help now then u **Gey**")
