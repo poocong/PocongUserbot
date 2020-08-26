@@ -32,7 +32,7 @@ async def _(event):
           if response.text.startswith("Forward"):
              await event.edit("`Njerrr Profile Tidak Diketahui/Buriq..`")
           else: 
-             await event.edit(f"{response.message.message}")
+             await event.reply(f"{response.message.message}")
 
 
 CMD_HELP.update({
