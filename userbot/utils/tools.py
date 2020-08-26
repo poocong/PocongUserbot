@@ -79,7 +79,7 @@ async def is_admin(chat_id, user_id):
     return False
 
 
-async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Optional[str]:
+async def take_screen_shot(video_file: str, duration: int, path: str):
     """ take a screenshot """
     _LOG.info('[[[Extracting a frame from %s ||| Video duration => %s]]]', video_file, duration)
     ttl = duration // 2
