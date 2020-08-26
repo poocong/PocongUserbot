@@ -135,7 +135,7 @@ async def draw_meme_text(image_path, text):
             current_h += u_height + pad
 
     image_name = "memify.webp"
-    webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
+    webp_file = os.path.join(THUMB_IMAGE_PATH, image_name)
     img.save(webp_file, "WebP")
     return webp_file
 
