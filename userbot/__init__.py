@@ -215,7 +215,7 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "salah auto hangus akun lo ?")
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "@")
 
-
+MAX_MESSAGE_LENGTH = 4096
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
