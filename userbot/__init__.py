@@ -334,7 +334,7 @@ ZALG_LIST = {}
 
 
 def paginate_help(page_number, loaded_modules, prefix):
-    number_of_rows = 5
+    number_of_rows = 4
     number_of_cols = 4
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
@@ -343,7 +343,7 @@ def paginate_help(page_number, loaded_modules, prefix):
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
-    if len(modules) % number_of_cols == 1:
+    if len(modules) % number_of_cols == 2:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
@@ -391,7 +391,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Please Use Only With .help Command",
-                    text="{}\n⬇️Total loaded Modules: {}⬇️\n     🖥 **Main Menu** 🖥\n".format(
+                    text="{}\n⬇️Total loaded Modules: {}⬇️\n             🖥 **Main Menu** 🖥\n".format(
                         "🔥XBOT-REMIX🔥 modules helper\n",
                         len(dugmeler),
                     ),
