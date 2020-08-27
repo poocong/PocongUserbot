@@ -1,4 +1,4 @@
-<p align="center"><u><b> XBOT REMIX MODULES </b></u></p>
+<p align="center"><img src="https://telegra.ph/file/0705b18189a4163a94a4a.png"/></p>
 
 <p align="center">
     <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-brightgreen"/>
@@ -9,8 +9,7 @@
     <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.8.2-red?style=for-the-badge&logo=appveyor"/>
-    <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>
-    <img src="https://telegra.ph/file/747485adac1db5120e24d.jpg"/>
+    <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>    
 </p>
 
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
