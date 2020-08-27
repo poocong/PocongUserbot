@@ -335,7 +335,7 @@ ZALG_LIST = {}
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 4
-    number_of_cols = 3
+    number_of_cols = 4
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
@@ -392,7 +392,7 @@ with bot:
                 result = builder.article(
                     "Please Use Only With .help Command",
                     text="{}\n⬇️Total loaded Modules: {}⬇️".format(
-                        "🔥XBOT-REMIX🔥 modules helper.\n",
+                        "🔥XBOT-REMIX🔥 modules helper\n🖥 **Main Menu** 🖥\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -406,7 +406,7 @@ with bot:
                     link_preview=True)
             else:
                 result = builder.article(
-                    "xbotremix",
+                    "XBOT-REMIX",
                     text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
