@@ -391,8 +391,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Please Use Only With .help Command",
-                    text="\n             🖥 **Main Menu** 🖥\n".format(
-                        "🔥XBOT-REMIX🔥 modules helper\n",{}\n⬇️Total loaded Modules: {}⬇️",
+                    text="{}\n⬇️Total loaded Modules: {}⬇️\n             🖥 **Main Menu** 🖥\n".format(
+                        "🔥XBOT-REMIX🔥 modules helper",
                         len(dugmeler),
                     ),
                     buttons=buttons,
