@@ -29,7 +29,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 UNAPPROVED_MSG = (
 "╭━━━━━━━━━━━━━━━━━━━━╮\n"
-f"Hai...`[{name0}](tg://user?id={uid})`\n"
+f"Hai...\n"
 "Senang Kita Bertemu !!!\n"
 "╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
  f"࿇Saya Adalah Bot Assisten `{DEFAULTUSER}`\n"
