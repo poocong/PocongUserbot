@@ -20,31 +20,39 @@ from telethon import events
 from telethon.tl import functions, types
 
 from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS, NC_LOG_P_M_S, PM_LOGGR_BOT_API_ID, CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY)
+                     LASTMSG, LOGS, NC_LOG_P_M_S, PM_LOGGR_BOT_API_ID, CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, ALIVE_NAME)
 
 from userbot.events import register
 
-# ========================= CONSTANTS ============================
+# ================= CONSTANT =================
+name0 = str(first_name)
+uid = str(user.id)
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+
 UNAPPROVED_MSG = (
-"`╭━━━━━━━━━━━━━━━━━━━━╮\n`  "
-"`   WELLCOME TO MY CHAT\n`"
-"`╰━━━━━━━━━━━━━━━━━━━━╯\n`"
- "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n`"
- "`Silahkan menunggu sampai saya menerima chat anda.\n`"
- "`▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n  \n`"
-"`🔐 PERATURAN :\n`"
-"`╾─────────────────╼\n`"
-"`🔥Mohon tunggu sampai saya Menyetujui!!!\n`"
-"`╾─────────────────╼\n`"
-"`🔥Jika belum di setujui, Mohon jangan SPAM !!!!\n`"
-"`╾─────────────────╼\n`"
-"`🔥Ketika anda melakukan spam, maka XBOT akan membkokir anda dan melaporkan anda !!!\n`"
-"`╾─────────────────╼\n`"
-"`🔥Harap bersabar !!!\n`"
-"`╾─────────────────╼\n`"
-"`Saya pikir hanya itu yang ingin saya katakan, terima kasih.\n`"
-"`─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n`"
-"`⩵꙰ཱི PROTECTED BY XBOT-REMIX ⩵꙰ཱི`")
+"╭━━━━━━━━━━━━━━━━━━━━╮\n"
+f"Hai...`[{name0}](tg://user?id={uid})`\n"
+"Senang Kita Bertemu !!!\n"
+"╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
+ f"࿇Saya Adalah Bot Assisten `{DEFAULTUSER}`\n"
+ "╾─────────────────╼\n"
+ "࿇Saya Membalas Pesan ini dikarenakan\n"
+ f"`{DEFAULTUSER}`, Belum Menerima Pesanmu\n"
+ "Atau Sedang Offline\n"
+ "╾─────────────────╼\n"
+ "࿇Mohon untuk tidak melakukan spam chat\n"
+ "Atau Saya Akan Otomatis Mereport & Block Kamu\n"
+ "╾─────────────────╼\n"
+ "࿇Mohon Untuk Menunggu Sampai\n"
+ f"`{DEFAULTUSER}`, Menerima Pesanmu\n"
+"▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n\n"
+"╾─────────────────╼\n"
+"   ♥️♥️TERIMAKASIH ❤️♥️\n"
+"─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
+"- ©Bot Assisten, `{DEFAULTUSER}`\n"
+"- Protected By XBOT-REMIX\n"
+)
 # =================================================================
 
 NO_PM_LOG_USERS = []
@@ -204,7 +212,7 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        return await apprvpm.edit("`OK, Pesan Telah Diterima..`")
+        return await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `OK, Pesan Telah Diterima..`")
 
     await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `Chat sudah disetujui!`")
 
