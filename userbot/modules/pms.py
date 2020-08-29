@@ -25,9 +25,6 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
 from userbot.events import register
 
 # ================= CONSTANT =================
-name0 = str(first_name)
-uid = str(user.id)
-
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 UNAPPROVED_MSG = (
