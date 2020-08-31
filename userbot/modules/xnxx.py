@@ -34,7 +34,5 @@ async def _(event):
             response = await response
         except YouBlockedUserError:
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
-            return
         else:
-            await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await event.edit(f"{response.message.message}")
