@@ -36,4 +36,4 @@ async def _(event):
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
             return
         else:
-            await event.edit(bot.forward_messages, event.chat_id, response.message)
+            await event.edit(f"{bot.forward_messages}")
