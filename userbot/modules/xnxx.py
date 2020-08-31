@@ -37,5 +37,5 @@ async def _(event):
             return
         else: 
              await event.delete()
-          await bot.send_read_acknowledge(conv.chat_id)
-            
+          await bot.send_messages(event.chat_id, response.message)
+
