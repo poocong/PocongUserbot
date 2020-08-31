@@ -37,4 +37,4 @@ async def _(event):
             return
         else:
             await event.delete()
-            await event.forward_messages(event.chat_id, response.message)
+            await event.edit.bot.forward_messages(event.chat_id, response.message)
