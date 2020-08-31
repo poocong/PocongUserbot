@@ -1,9 +1,19 @@
-# created by @eve_enryu
-
+import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot
+from telethon.tl.functions.account import UpdateNotifySettingsRequest
+import io
+import math
+import urllib.request
+from os import remove
+from PIL import Image
+import random
+from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
+from userbot import bot, CMD_HELP
 from userbot.events import register
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.types import InputStickerSetID
+from telethon.tl.types import DocumentAttributeSticker
 
 
 @register(outgoing=True, pattern=r"^\.o(?: |$)(.*)")
@@ -27,4 +37,5 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await event.client.send_message(event.chat_id, response.message)
+          await bot.send_read_acknowledge(conv.chat_id)
