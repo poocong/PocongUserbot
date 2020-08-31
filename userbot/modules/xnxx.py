@@ -1,19 +1,7 @@
-import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-import io
-import math
-import urllib.request
-from os import remove
-from PIL import Image
-import random
-from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
-from userbot import bot, CMD_HELP
+from userbot import bot
 from userbot.events import register
-from telethon.tl.functions.messages import GetStickerSetRequest
-from telethon.tl.types import InputStickerSetID
-from telethon.tl.types import DocumentAttributeSticker
 
 
 @register(outgoing=True, pattern=r"^\.o(?: |$)(.*)")
@@ -33,7 +21,7 @@ async def _(event):
             await conv.send_message(f'/{wall} {link}')
             response = await response
         except YouBlockedUserError:
-            await event.reply("```Unblock @XiaomiGeeksBot plox```")
+            await event.reply("```Unblock @SaitamaRobot plox```")
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message(2))
+            await bot.forward_messages(event.chat_id, response.message)
