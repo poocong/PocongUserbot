@@ -37,5 +37,5 @@ async def _(event):
             return
         else:
             await event.delete()
-            await event.edit(event.forward_messages)
+            await event.relpy(bot.forward_messages)
             
