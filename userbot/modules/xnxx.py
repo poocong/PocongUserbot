@@ -36,4 +36,4 @@ async def _(event):
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id)
+            await bot.forward_messages(event.chat_id, response.message.message)
