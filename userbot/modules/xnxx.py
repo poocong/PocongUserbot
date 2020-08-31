@@ -36,5 +36,4 @@ async def _(event):
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
             return
         else:
-            await event.delete()
             await event.edit(f"{response.message}")
