@@ -35,4 +35,4 @@ async def _(event):
         except YouBlockedUserError:
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
         else:
-            await event.edit(f"{response.message.message}")
+            await event.edit(response.message.message)
