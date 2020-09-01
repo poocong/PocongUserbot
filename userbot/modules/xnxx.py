@@ -23,7 +23,7 @@ async def _(event):
             response = await response
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await event.reply("`Please unblock` @SpotifyNowBot`...`")
+            await event.reply("`Unblock` @xbotgroup_xbot dulu Goblok!!`...`")
             return
         if response.text.startswith("You're"):
             await event.edit("`You're not listening to anything on Spotify at the moment`")
@@ -45,7 +45,6 @@ async def _(event):
                 downloaded_file_name,
                 force_document=False,
             )
-            """ - cleanup chat after completed - """
             await event.client.delete_messages(conv.chat_id,
                                                [msg.id, response.id])
     await event.delete()
