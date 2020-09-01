@@ -30,5 +30,6 @@ async def _(event):
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
             await bot.send_read_acknowledge(event.chat_id)
+        else:
             await event.client.delete_messages(event.chat_id, response.message)
             await event.edit()
