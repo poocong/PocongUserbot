@@ -21,7 +21,7 @@ async def _(event):
                     from_users=1281618755))
             await conv.send_message(f'/{wall} {link}')
             response = await response
-            except YouBlockedUserError:
+        except YouBlockedUserError:
             await event.edit("```Unblock @xbotgroup_xbot dulu Goblok!!```")
             return
         else:
