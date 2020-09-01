@@ -8,7 +8,7 @@ from userbot.events import register
 async def _(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(2)
+    link = event.pattern_match.group(1)
     chat = "@xbotgroup_xbot"
     wall = f"wall"
     await event.edit("```Processing```")
@@ -22,6 +22,6 @@ async def _(event):
             response = await response
         except YouBlockedUserError:
             await event.reply("```Unblock @xbotgroup_xbot plox```")
-        else:
+        return
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
