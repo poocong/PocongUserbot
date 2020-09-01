@@ -65,7 +65,7 @@ async def dlimg(link):
 async def walld(strin: str):
     if len(strin.split()) > 1:
         strin = "+".join(strin.split())
-    url = "https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search=https://wall.alphacoders.com/search.php?search="
+    url = "https://wall.alphacoders.com/api2.0/get.php?auth={WALL_API}&method=search&term={term}"
     none_got = [
         "https://wall.alphacoders.com/finding_wallpapers.php",
         "https://wall.alphacoders.com/search-no-results.php",
