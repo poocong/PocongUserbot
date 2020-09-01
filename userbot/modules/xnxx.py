@@ -26,12 +26,13 @@ async def _(event):
             return
         else:
             downloaded_file_name = await event.client.download_media(
-                response.media=2,
+                response.media, 
+                response.media,
                 TEMP_DOWNLOAD_DIRECTORY
             )
             await event.client.send_file(
                 event.chat_id,
-                downloaded_file_name=2,
+                downloaded_file_name,
                 force_document=False,
             )
             await event.delete()
