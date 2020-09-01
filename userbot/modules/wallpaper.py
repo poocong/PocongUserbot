@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup as soup
 from PIL import Image
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, WALL_API
 from userbot.events import register
 
 down_p = str(TEMP_DOWNLOAD_DIRECTORY.rstrip("/"))
@@ -72,7 +72,7 @@ async def walld(strin: str):
     ]
 
     page_link = "https://wall.alphacoders.com/search.php?search={}&page={}"
-    resp = requests.get(f"{url}{string}")
+    resp = requests.get(f"{url}{strin}")
     if resp.url in none_got:
         return False
     if "by_category.php" in resp.url:
