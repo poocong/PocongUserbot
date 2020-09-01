@@ -31,7 +31,7 @@ async def _(event):
             )
             await event.client.send_file(
                 event.chat_id,
-                downloaded_file_name,
+                downloaded_file_name(2),
                 force_document=False,
             )
             await event.delete()
