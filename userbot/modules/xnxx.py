@@ -20,6 +20,7 @@ async def _(event):
                     incoming=True,
                     from_users=701937965))
             await conv.send_message(f'/{wall} {link}')
+            response = await response
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
