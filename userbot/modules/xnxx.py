@@ -21,6 +21,7 @@ async def _(event):
                     from_users=1281618755))
             await conv.send_message(f'/{wall} {link}')
             response = await response
+            await event.delete()
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.reply("`Unblock` @xbotgroup_xbot dulu Goblok!!`...`")
