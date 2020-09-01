@@ -32,7 +32,7 @@ async def _(event):
             await event.client.send_file(
                 event.chat_id,
                 downloaded_file_name,
-                force_document=False,
+                force_document=True,
             )
             await event.delete()
             await event.client.delete_messages(conv.chat_id,
