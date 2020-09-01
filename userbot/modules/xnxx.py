@@ -20,7 +20,7 @@ async def _(event):
                 events.NewMessage(
                     incoming=True,
                     from_users=701937965))
-            await conv.send_message(f'/{wall} ')
+            await conv.send_message(f'/{wall} {link}')
             response = await response
         except YouBlockedUserError:
             await event.reply("```Unblock @XiaomiGeeksBot plox```")
