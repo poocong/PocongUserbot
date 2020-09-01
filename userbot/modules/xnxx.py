@@ -27,6 +27,5 @@ async def _(event):
         except YouBlockedUserError:
             await event.reply("```Unblock @xbotgroup_xbot plox```")
         else:
-            await bot.send_read_acknowledge(event.chat_id, respone.message)
-            await event.client.delete_messages(event.chat_id, response.message)
-            await event.edit()
+            await event.send_file(event.chat_id, respone.message)
+            
