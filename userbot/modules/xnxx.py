@@ -22,5 +22,6 @@ async def _(event):
             response = await response
         except YouBlockedUserError:
             await event.reply("```Unblock @xbotgroup_xbot plox```")
-        return
+        else:
+            await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
