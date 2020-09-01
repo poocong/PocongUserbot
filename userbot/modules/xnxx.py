@@ -21,11 +21,10 @@ async def _(event):
                     from_users=1281618755))
             await conv.send_message(f'/{wall} {link}')
             response = await response
-            await event.sleep(3)
-            await event.delete()
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.reply("`Unblock` @xbotgroup_xbot dulu Goblok!!`...`")
+            await event.delete()
             return
         if response.text.startswith("You're"):
             await event.edit("`You're not listening to anything on Spotify at the moment`")
