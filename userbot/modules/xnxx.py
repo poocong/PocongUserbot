@@ -1,27 +1,26 @@
 import os
+from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.events import register
 from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
-
 
 @register(outgoing=True, pattern=r"^\.o(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@SaitamaRobot"
+    chat = "@xbotgroup_xbot"
     wall = f"wall"
     await event.edit("```Processing```")
-    async with bot.conversation("@SaitamaRobot") as conv:
+    async with bot.conversation("@xbotgroup_xbot") as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(
                     incoming=True,
-                    from_users=701937965))
+                    from_users=1281618755))
             await conv.send_message(f'/{wall} {link}')
             response = await response
-            """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.reply("`Please unblock` @SpotifyNowBot`...`")
