@@ -127,6 +127,9 @@ WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY")
 # Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
+# Wallpaper API
+WALL_API = os.environ.get("WALL_API", None)
+
 # For MONGO based DataBase
 MONGO_URI = os.environ.get("MONGO_URI", None)
 
