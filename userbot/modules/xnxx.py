@@ -15,7 +15,6 @@ async def _(event):
     await event.edit("```Processing```")
     async with bot.conversation("@SaitamaRobot") as conv:
         try:
-            msg = await conv.send_message(now)
             response = conv.wait_event(
                 events.NewMessage(
                     incoming=True,
