@@ -1,5 +1,5 @@
 wheel
-aiohttp
+aiohttp == 3.6.2
 aiofiles
 aria2p
 async_generator
@@ -43,7 +43,7 @@ python-barcode
 python-dotenv
 pytz
 qrcode
-requests>=2.18.4
+requests>=2.23.0
 search-engine-parser>=0.6.1
 speedtest-cli>=2.0.2
 sqlalchemy>=1.2
@@ -65,7 +65,7 @@ bs4
 covid>=2.3.0
 base
 pip>=19.2.3
-setuptools>=28.8.0
+setuptools>=46.4.0
 selenium>=3.141.0
 # SpeechRecognition>=3.4.6
 # wheel>=0.30.0a0
@@ -86,3 +86,4 @@ geopy
 validators
 twitter_scraper
 pyaztro
+simplejson == 3.17.0
