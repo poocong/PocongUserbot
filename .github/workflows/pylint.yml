@@ -1,6 +1,7 @@
-name: pylint
-
-on: push
+name: PEP8
+on:
+  push:
+    branches: [ '*' ]
 
 jobs:
   PEP8:
@@ -15,17 +16,16 @@ jobs:
 
       - name: Install Python lint libraries
         run: |
-          pip install autopep8 autoflake isort black
+          pip install autopep8 autoflake
+
       - name: Check for showstoppers
         run: |
           autopep8 --verbose --in-place --recursive --aggressive --aggressive . *.py
+
       - name: Remove unused imports and variables
         run: |
           autoflake --in-place --recursive --remove-all-unused-imports --remove-unused-variables --ignore-init-module-imports .
-      - name: lint with isort and black
-        run: |
-          isort userbot/modules/*.py
-          black userbot/modules/*.py
+
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v2
@@ -39,9 +39,9 @@ jobs:
       # commit changes
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'pylint: auto fixes'
+          commit_message: Automatic lint
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: X-Newbie
+          commit_user_name: xnewbie
           commit_user_email: sxnewbie@gmail.com
-          commit_author: X-Newbie <sxnewbie@gmail.com>
+          commit_author: xnewbie <sxnewbie@gmail.com>
