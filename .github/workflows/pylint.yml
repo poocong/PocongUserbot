@@ -44,4 +44,4 @@ jobs:
           repository: .
           commit_user_name: X-Newbie
           commit_user_email: sxnewbie@gmail.com
-          commit_author: aidilaryanto <sxnewbie@gmail.com>
+          commit_author: X-Newbie <sxnewbie@gmail.com>
