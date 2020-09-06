@@ -7,7 +7,6 @@ import textwrap
 from asyncio.exceptions import TimeoutError
 from random import randint, uniform
 
-from glitch_this import ImageGlitcher
 from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
 from telethon import events, functions, types
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -56,7 +55,8 @@ async def glitch(event):
     mirror_flip_file = downloaded_file_name
     mirror = ImageOps()
     im = Image.open(mirror_flip_file).convert('RGB')
-    im.save(Converted, quality=95)
+    mirror_img = mirror(im, value)
+    mirror_img.save(Converted, quality=95)
     await event.edit("`Uploading Mirror Media...`")
     await event.client.send_file(
         event.chat_id, Converted, force_document=False, reply_to=event.reply_to_msg_id
