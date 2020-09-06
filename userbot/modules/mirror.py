@@ -15,7 +15,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 
-Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
+Converted = TEMP_DOWNLOAD_DIRECTORY
 
 @register(outgoing=True, pattern=r"^\.mirror(?: |$)(.*)")
 async def glitch(event):
