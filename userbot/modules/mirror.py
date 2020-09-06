@@ -59,10 +59,10 @@ async def glitch(event):
     im.save(Converted, quality=95)
     await event.edit("`Uploading Mirror Media...`")
     await event.client.send_file(
-        event.chat_id, sticker=Converted, force_document=False, reply_to=event.reply_to_msg_id
+        event.chat_id, Converted, force_document=False, reply_to=event.reply_to_msg_id
     )
     await event.delete()
-    os.remove(sticker=Converted)
+    os.remove(Converted)
     
     
     
