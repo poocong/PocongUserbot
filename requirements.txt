@@ -84,7 +84,6 @@ deezloader
 zipfile38
 bitlyshortener
 geopy
-validators
 twitter_scraper
 pyaztro
 simplejson == 3.17.0
