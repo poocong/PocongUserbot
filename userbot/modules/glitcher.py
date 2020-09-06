@@ -55,7 +55,6 @@ async def glitch(event):
     else:
         await event.edit("`Reply to Any Media Sur`")
         return
-
     try:
         value = int(event.pattern_match.group(1))
         if value > 8:
