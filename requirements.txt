@@ -1,4 +1,3 @@
-wheel
 aiohttp
 aiofiles
 aria2p
@@ -56,7 +55,6 @@ git+https://github.com/johnwmillr/LyricsGenius.git
 git+https://github.com/LonamiWebs/Telethon
 lyricsgenius
 redis
-glitch_this
 PyDrive2
 pyDownload
 beautifulsoup4
@@ -88,3 +86,4 @@ twitter_scraper
 pyaztro
 simplejson
 validators
+glitch_this
