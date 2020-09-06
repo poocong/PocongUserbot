@@ -104,7 +104,7 @@ async def glitch(event):
     os.remove(glitch_file)
 
 
-@register(outgoing=True, pattern=r"^\.mmf(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.mf(?: |$)(.*)")
 async def mim(event):
     if event.fwd_from:
         return
