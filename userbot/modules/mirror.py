@@ -54,11 +54,9 @@ async def glitch(event):
         downloaded_file_name,
     )
     mirror_flip_file = downloaded_file_name
-    mirror = ImageMirror()
-    mirror_img = mirror.open(mirror_flip_file).convert('RGB')
-        IMG = ImageOps.mirror(mirror_img)
-    else:
-    IMG.save(Converted, quality=95)
+    mirror = ImageOps()
+    im = Image.open(mirror_flip_file).convert('RGB')
+    im.save(Converted, quality=95)
     await event.edit("`Uploading Mirror Media...`")
     await event.client.send_file(
         event.chat_id, sticker=Converted, force_document=False, reply_to=event.reply_to_msg_id
