@@ -108,8 +108,7 @@ async def incom_note(getnt):
                     )
     except AttributeError:
         pass
-   await sleep(3)
-   await getnt.delete()
+   
 
 @register(outgoing=True, pattern=r"^\.rmbotnotes (.*)")
 async def kick_marie_notes(kick):
