@@ -399,7 +399,7 @@ async def add_pmsg(cust_msg):
 
 CMD_HELP.update(
     {
-        "pmpermit": ">`.approve | .ok`"
+        "pm": ">`.approve | .ok`"
         "\nUsage: Approves the mentioned/replied person to PM."
         "\n\n>`.disapprove`"
         "\nUsage: Disapproves the mentioned/replied person to PM."
