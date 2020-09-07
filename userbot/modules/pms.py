@@ -249,9 +249,8 @@ async def approvepm(apprvpm):
         return await apprvpm.edit("`OK, Pesan Telah Diterima..`")
 
     await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `OK, Pesan Telah Diterima..`")
-    await message.delete(DEF_UNAPPROVED_MSG, getmsg)
+    await apprpvm.delete(getmsg)
     await message.delete()
-    await apprvpm.delete()
 
     if BOTLOG:
         await apprvpm.client.send_message(
@@ -260,7 +259,7 @@ async def approvepm(apprvpm):
         )
 
 
-@register(outgoing=True, pattern=r"^\.disapprove$")
+@register(outgoing=True, pattern=r"^\.(?:disapprove|nopm)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -403,7 +402,7 @@ CMD_HELP.update(
     {
         "pm": ">`.approve | .ok`"
         "\nUsage: Approves the mentioned/replied person to PM."
-        "\n\n>`.disapprove`"
+        "\n\n>`.disapprove | .nopm`"
         "\nUsage: Disapproves the mentioned/replied person to PM."
         "\n\n>`.block`"
         "\nUsage: Blocks the person."
