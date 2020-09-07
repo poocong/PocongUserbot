@@ -27,8 +27,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
 "╭━━━━━━━━━━━━━━━━━━━━╮\n"
-"        SELAMAT DATANG DI\n"
-f"      {DEFAULTUSER} CHAT\n"
+"    SELAMAT DATANG DI\n"
+f"  {DEFAULTUSER} CHAT\n"
 "╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
 "   Senang Kita Bertemu !!!\n\n"
  f"⚙️Saya Bot Assisten `{DEFAULTUSER}`\n"
@@ -255,6 +255,7 @@ async def approvepm(apprvpm):
         await apprvpm.client.send_message(
             BOTLOG_CHATID,
             "#APPROVED\n" + "User: " + f"[{name0}](tg://user?id={uid})",
+        await apprvm.delete(DEF_UNAPPROVED_MSG)
         )
 
 
