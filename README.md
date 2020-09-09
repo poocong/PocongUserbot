@@ -17,7 +17,7 @@
 
 <p align="center"><b>How To Host:</p>
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://semawur.com/2DEK"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 <p align="center"><b>GENERATE STRING SESSION</p>
 
@@ -27,7 +27,7 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 ```
 
 ## How to setup Google Drive
-<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png"/></a></p>
+<p align="center"><a href="https://semawur.com/gGEs1KN"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png"/></a></p>
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
