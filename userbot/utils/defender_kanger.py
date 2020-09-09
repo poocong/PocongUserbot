@@ -1,0 +1,1 @@
+NGAPAIN KONTOL!!!!!!!
