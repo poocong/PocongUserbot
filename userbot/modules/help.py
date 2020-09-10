@@ -30,6 +30,7 @@ async def hep(event):
             \n│   Contoh: .help <nama module>\
             \n│   Modules Aktif: {len(modules)}\
            \n╰━━━━━━━━━━━━━━━━━━━━━╯"
+        string = "• "
         string2 = "╭━━━━━━━━━━━━━━━━━━━━━╮"
         string3 = "╰━━━━━━━━━━━━━━━━━━━━━╯"
         for i in CMD_HELP:
