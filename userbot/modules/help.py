@@ -36,7 +36,7 @@ async def hep(event):
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "`  •  "
-        await event.replace(
+        await event.reply(
             f"{string2}\n" f"{string}\n" f"{string3}"
         )
         await asyncio.sleep(30)
