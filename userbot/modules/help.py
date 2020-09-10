@@ -5,10 +5,10 @@
 #
 
 import asyncio
-
 from userbot import CMD_HELP
 from userbot.events import register
 
+modules = CMD_HELP
 
 @register(outgoing=True, pattern=r"^\.help(?: |$)(.*)")
 async def hep(event):
@@ -19,19 +19,24 @@ async def hep(event):
             await asyncio.sleep(15)
             await event.delete()
         else:
-            await event.edit("Please specify a valid module name.")
-            await asyncio.sleep(5)
+            await event.edit("**Module Salah Goblokkkk!!**")
+            await asyncio.sleep(10)
             await event.delete()
     else:
-        string1 = "Please specify which module do you want help for !!\nUsage: .help <module name>\n\n"
-        string = "] "
-        string3 = "List for all available commands below: "
-        string2 = "-------------------------------------------------------------"
+        string1 = f"**╭━━━━━━━━━━━━━━━━━━━━━╮**\
+            \n│   Help for [🔥XBOT-REMIX🔥]\
+            \n│   ╾────────────────╼ \
+            \n│   Untuk melihat lengkap Command\
+            \n│   Contoh: .help <nama module>\
+            \n│   Modules Aktif: {len(modules)}\
+           \n╰━━━━━━━━━━━━━━━━━━━━━╯"
+        string2 = "╭━━━━━━━━━━━━━━━━━━━━━╮"
+        string3 = "╰━━━━━━━━━━━━━━━━━━━━━╯"
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`  [  "
+            string += "`  •  "
         await event.edit(
-            f"{string1}" f"{string3}" f"{string2}\n" f"{string}" f"{string2}"
+            f"{string1}" f"{string2}\n" f"{string}" f"{string3}"
         )
         await asyncio.sleep(20)
         await event.delete()
