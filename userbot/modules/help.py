@@ -20,6 +20,8 @@ async def hep(event):
             await event.delete()
         else:
             await event.edit("**Module Salah Goblokkkk!!**")
+            await asyncio.sleep(20)
+            await event.delete()
     else:
         await event.edit(f"**╭━━━━━━━━━━━━━━━━━━━━━╮**\
             \n│   Help for [🔥XBOT-REMIX🔥]\
@@ -28,8 +30,6 @@ async def hep(event):
             \n│   Contoh: .help <nama module>\
             \n│   Modules Aktif: {len(modules)}\
            \n╰━━━━━━━━━━━━━━━━━━━━━╯")
-        await asyncio.sleep(15)
-            await event.delete()
         string = "• "
         string2 = "╭━━━━━━━━━━━━━━━━━━━━╮"
         string3 = "╰━━━━━━━━━━━━━━━━━━━━╯"
