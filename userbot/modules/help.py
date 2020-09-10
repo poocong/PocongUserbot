@@ -32,12 +32,12 @@ async def hep(event):
            \n╰━━━━━━━━━━━━━━━━━━━━━╯")
         string = "• "
         string2 = "╭━━━━━━━━━━━━━━━━━━━━╮"
-        string3 = "╰━━━━━━━━━━━━━━━━━━━━╯"
+        string3 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯"
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`  •  "
+            string += "` • "
         await event.reply(
-            f"{string2}\n" f"{string}\n" f"{string3}"
+            f"{string2}\n" f"{string}\n" f"{string3}" \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐'"
         )
         await asyncio.sleep(30)
         await event.delete()
