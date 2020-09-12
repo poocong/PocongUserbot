@@ -1,7 +1,6 @@
 <p align="center"><img src="https://telegra.ph/file/0705b18189a4163a94a4a.png"/></p>
 
 <p align="center">
-    <a href="https://t.me/XBOT_SUPPORT"> <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
     <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-2.1-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-17.08.2020-brightgreen"/>
     <a href="https://travis-ci.com/X-Newbie/XBot-Remix.svg?branch=x-sql-extended" /></a>
@@ -11,9 +10,9 @@
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.8.2-red?style=for-the-badge&logo=appveyor"/>
     <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>    
+    <a href="https://t.me/XBOT_SUPPORT"> <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
 </p>
 
-[![Join Channel!]()](https://t.me/theUserge)
 
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
 <p align="center">&nbsp;</p>
