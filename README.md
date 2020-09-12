@@ -10,8 +10,7 @@
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.8.2-red?style=for-the-badge&logo=appveyor"/>
     <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot-remix?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>    
-    
-<a href="https://t.me/XBOT_SUPPORT"> <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
+     <a href="https://t.me/XBOT_SUPPORT"> <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
 </p>
 
 
