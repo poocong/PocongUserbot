@@ -1,4 +1,5 @@
 import asyncio
+import io
 import glob
 import os
 import shutil
@@ -195,7 +196,7 @@ async def _(event):
         "name": "DeezLoad",
         "arl_token_cfg_doc": "ARL Token for Deezer",
         "invalid_arl_token": "please set the required variables for this module",
-        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session �朮",
+        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session 🥺",
         "server_error": "We're experiencing technical difficulties.",
         "processing": "`Downloading..`",
         "uploading": "`Uploading...`",
@@ -311,6 +312,7 @@ async def upload_track(track_location, message):
     supports_streaming = True
     force_document = False
     caption_rts = os.path.basename(track_location)
+    c_time = time.time()
     await message.client.send_file(
         message.chat_id,
         track_location,
@@ -319,13 +321,16 @@ async def upload_track(track_location, message):
         supports_streaming=supports_streaming,
         allow_cache=False,
         attributes=document_attributes,
+        progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
+            progress(d, t, message, c_time, "[UPLOAD]")
+        ),
     )
     os.remove(track_location)
 
 
 CMD_HELP.update(
     {
-        "music": ">`.netease <Artist - Song Title>`"
+        "getmusic": ">`.netease <Artist - Song Title>`"
         "\nUsage: Download music with @WooMaiBot"
         "\n\n>`.netease now`"
         "\nUsage: Download current LastFM scrobble use `@WooMaiBot`."
