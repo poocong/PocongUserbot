@@ -217,7 +217,7 @@ CMD_HELP.update({
             \nUsage:For searching songs from Spotify.\
             \n\n`.netease` <Artist - Song Title>\
             \nUsage:Download music with @WooMaiBot\
-            \n\n>`.vsong` **Artist - Song Title**"
+            \n\n`.vsong` **Artist - Song Title**\
             \nUsage: Finding and uploading videoclip.\
             \n\n`.dzd` <Spotify/Deezer Link>\
             \nUsage:Download music from Spotify or Deezer.\
