@@ -31,7 +31,7 @@ DEF_UNAPPROVED_MSG = (
     f" `{DEFAULTUSER}` CHAT\n"
     "╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
 
-"Saya Bot Assisten °IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ\n"
+f"Saya Bot Assisten `{DEFAULTUSER}`\n"
 "╾─────────────────────╼\n\n"
 
 "╭━━━━━━━━━━━━━━━━━━━━━╮\n"
