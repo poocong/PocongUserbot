@@ -58,7 +58,7 @@
     },
     "MONGO_URI": {
       "description": "Your MongoDB Atlas URL, Get your guide from https://telegra.ph/Mongo-DB-12-24.",
-      "required": true 
+      "required": false
     },
     "NC_LOG_P_M_S": {
       "description": "set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID",
@@ -71,7 +71,7 @@
     },
     "GENIUS": {
       "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
-      "required": true
+      "required": false
     },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbot is running on a Heroku Dyno.",
@@ -80,11 +80,11 @@
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
-      "required": true
+      "required": false
     },
     "GIT_REPO_NAME": {
       "description": "Add the GIT_REPO_NAME here. It helps with commit on GitHub.",
-      "required": true
+      "required": false
     },
     "COUNTRY": {
       "description": "Set your Country to be used in the .time and .date commands.",
@@ -179,7 +179,7 @@
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
       "value": "[PM = BLOCK + REPORT SPAM]",
-      "required": true
+      "required": false
     },
     "ALIVE_NAME": {
       "description": "Name to show in .alive message",
@@ -192,7 +192,7 @@
     },
     "G_DRIVE_DATA": {
       "description": "Enter the Google Drive authentication data, as a JSON structure.",
-      "required": true
+      "required": false
     },
     "G_PHOTOS_CLIENT_ID": {
       "description": "get the client id from https://j.mp/39lWQQm",
@@ -236,12 +236,12 @@
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
       "value": "salah auto hangus akun lo ?",
-      "required": true
+      "required": false
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
       "value": "@",
-      "required": true
+      "required": false
     }
   },
   "addons": [
