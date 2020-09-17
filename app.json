@@ -154,7 +154,7 @@
     },
     "G_DRIVE_FOLDER_ID": {
       "description": "Create a folder and put that folder's id here.check folder link for id.",
-      "required": true
+      "required": false
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
