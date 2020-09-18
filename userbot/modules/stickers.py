@@ -91,7 +91,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "鉁筹笍"
+            emoji = "✳️"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
@@ -255,7 +255,7 @@ async def kang(args):
 
         await args.edit(
             "`Sticker Sukses Dibuat!`"
-            f"\n? [Klik Disini](t.me/addstickers/{packname}) ?\nUntuk Menggunakan Sticker",
+            f"   \n🔥 **[KLIK DISINI](t.me/addstickers/{packname})** 🔥\nUntuk Menggunakan Sticker",
             parse_mode="md",
         )
 
