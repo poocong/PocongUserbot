@@ -1,2 +1,375 @@
-import marshal
-exec(marshal.loads(b'\xe3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x10\x00\x00\x00@\x00\x00\x00s\n\x01\x00\x00d\x00Z\x00d\x01d\x02l\x01Z\x01d\x01d\x02l\x02Z\x02d\x01d\x02l\x03Z\x04d\x01d\x03l\x05m\x06Z\x06\x01\x00d\x01d\x04l\x07m\x08Z\x08\x01\x00d\x01d\x02l\tZ\td\x01d\x05l\nm\x0bZ\x0bm\x0cZ\x0c\x01\x00d\x01d\x06l\rm\x0eZ\x0em\x0fZ\x0fm\x10Z\x10\x01\x00d\x01d\x07l\x11m\x12Z\x12\x01\x00d\x01d\x08l\x13m\x14Z\x14\x01\x00d\x01d\tl\nm\x15Z\x15\x01\x00d\x01d\nl\nm\x16Z\x16\x01\x00e\x10r\x9ce\x17e\x10\x83\x01n\x06e\x18\x83\x00j\x19Z\x1ad\x0bd\x0cd\rd\x0ed\x0fd\x10d\x11d\x12d\x13d\x14d\x15d\x16d\x17d\x18d\x19d\x1ag\x10Z\x1be\x12d\x1bd\x1cd\x1d\x8d\x02d\x1ed\x1f\x84\x00\x83\x01Z\x1cd d!\x84\x00Z\x1de\x12d\x1bd"d\x1d\x8d\x02d#d$\x84\x00\x83\x01Z\x1ee\x0f\xa0\x1fd%d&i\x01\xa1\x01\x01\x00d\x02S\x00)\'zH Userbot module for kanging stickers or making new ones. Thanks @rupansh\xe9\x00\x00\x00\x00N)\x01\xda\x06remove)\x01\xda\x05Image)\x02\xda\x19DocumentAttributeFilename\xda\x11MessageMediaPhoto)\x03\xda\x03bot\xda\x08CMD_HELP\xda\nALIVE_NAME)\x01\xda\x08register)\x01\xda\x14GetStickerSetRequest)\x01\xda\x11InputStickerSetID)\x01\xda\x18DocumentAttributeStickerz$Wao.,Bagus Nih...Colong Dulu Yekan..z\x16Aku colong ya kakak :)z\x1bColong Sticker dulu yee kanz&ehh, mantep nih.....aku colong ya kakaz\x1eBagus eaaaa....\nColong ahh....z!Ini Sticker aku colong yaa\nDUARR!z\x1eleh ugha ni Sticker\nCurry ahh~z2Pim Pim Pom!!!\nni Sticker punya aing sekarang hehez\x1cBentar boss, ane colong duluz\x1aWao, bagus nih\nColong ahh~z\x18Colong lagi yee kan.....z\x0fCOLONG TROSS!!!z5Bolehkah saya colong ni sticker\nau ah colong aja hehez\x17Colong Sticker ahh.....z\x10Colong dolo bossz\x17Swiper jangan nyolong..Tz\x19^\\.(?:colong|kang)\\s?(.)?)\x02Z\x08outgoingZ\x07patternc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x15\x00\x00\x00\n\x00\x00\x00\xc3\x00\x00\x00s\x98\x08\x00\x00t\x00\xa0\x01\xa1\x00I\x00d\x01H\x00}\x01|\x01j\x02s\x1c|\x01j\x03|\x01_\x02|\x00\xa0\x04\xa1\x00I\x00d\x01H\x00}\x02d\x01}\x03d\x02}\x04d\x02}\x05d\x01}\x06|\x02\x90\x01r\xa0|\x02j\x05\x90\x01r\xa0t\x06|\x02j\x05t\x07\x83\x02r\x92|\x00\xa0\x08d\x03t\t\xa0\nt\x0b\xa1\x01\x9b\x00d\x03\x9d\x03\xa1\x01I\x00d\x01H\x00\x01\x00t\x0c\xa0\r\xa1\x00}\x03t\x00\xa0\x0e|\x02j\x0f|\x03\xa1\x02I\x00d\x01H\x00}\x03\x90\x01q\xb4d\x04|\x02j\x05j\x10j\x11\xa0\x12d\x05\xa1\x01k\x06\x90\x01r\x10|\x00\xa0\x08d\x03t\t\xa0\nt\x0b\xa1\x01\x9b\x00d\x03\x9d\x03\xa1\x01I\x00d\x01H\x00\x01\x00t\x0c\xa0\r\xa1\x00}\x03t\x00\xa0\x13|\x02j\x05j\x10|\x03\xa1\x02I\x00d\x01H\x00\x01\x00t\x14d\x06d\x07\x8d\x01|\x02j\x05j\x10j\x15k\x06\x90\x01r\x9e|\x02j\x05j\x10j\x15d\x08\x19\x00j\x16}\x06d\t}\x04n\x8ed\n|\x02j\x05j\x10j\x11k\x06\x90\x01r\x8a|\x00\xa0\x08d\x03t\t\xa0\nt\x0b\xa1\x01\x9b\x00d\x03\x9d\x03\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0\x13|\x02j\x05j\x10d\x0b\xa1\x02I\x00d\x01H\x00\x01\x00|\x02j\x05j\x10j\x15}\x07|\x07D\x00]\x18}\x08t\x06|\x08t\x17\x83\x02\x90\x01rb|\x08j\x16}\x06\x90\x01qbd\t}\x04d\t}\x05d\x08}\x03n\x14|\x00\xa0\x08d\x0c\xa1\x01I\x00d\x01H\x00\x01\x00d\x01S\x00n\x14|\x00\xa0\x08d\r\xa1\x01I\x00d\x01H\x00\x01\x00d\x01S\x00|\x03\x90\x08r\x94|\x00j\x18\xa0\x12\xa1\x00}\t|\x04\x90\x01s\xced\x0e}\x06d\x08}\nt\x19|\t\x83\x01d\x0fk\x02\x90\x01r\xf2|\td\x10\x19\x00}\n|\td\x08\x19\x00}\x06n2t\x19|\t\x83\x01d\x10k\x02\x90\x02r$|\td\x08\x19\x00\xa0\x1a\xa1\x00\x90\x02r\x1ct\x1b|\td\x08\x19\x00\x83\x01}\nn\x08|\td\x08\x19\x00}\x06|\x01j\x02\x9b\x00|\n\x9b\x00\x9d\x02}\x0bt\x1c\x9b\x00d\x11|\n\x9b\x00\x9d\x03}\x0cd\x12}\rt\x0c\xa0\r\xa1\x00}\x0e|\x05\x90\x02stt\x1d|\x03\x83\x01I\x00d\x01H\x00}\x0fd\x13|\x0e_\x1e|\x0f\xa0\x1f|\x0ed\x14\xa1\x02\x01\x00n\x14|\x0bd\x157\x00}\x0b|\x0cd\x167\x00}\x0cd\x17}\rt j!\xa0"t j!\xa0#d\x18|\x0b\x9b\x00\x9d\x02\xa1\x01\xa1\x01}\x10|\x10\xa0$\xa1\x00\xa0%d\x19\xa1\x01\xa0\x12d\x1a\xa1\x01}\x11d\x1b|\x11k\x07\x90\x06rht\x00\xa0&d\x1c\xa1\x014\x00I\x00d\x01H\x00\x90\x03\x9a\x84}\x12|\x12\xa0\'d\x1d\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0b\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00}\x13d\x1e|\x13j\x18k\x06\x90\x05rx|\nd\x087\x00}\n|\x01j\x02\x9b\x00|\n\x9b\x00\x9d\x02}\x0bt\x1c\x9b\x00d\x1f|\n\x9b\x00\x9d\x03}\x0c|\x00\xa0\x08d t+|\n\x83\x01\x17\x00d!\x17\x00\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0b\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00}\x13|\x13j\x18d"k\x02\x90\x03r$|\x12\xa0\'|\r\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0c\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x05\x90\x04r\x1a|\x12\xa0,d\x0b\xa1\x01I\x00d\x01H\x00\x01\x00t-d\x0b\x83\x01\x01\x00n\x1e|\x0e\xa0.d#\xa1\x01\x01\x00|\x12j,|\x0ed\td$\x8d\x02I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x06\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'d%\xa1\x01I\x00d\x01H\x00\x01\x00|\x05\x90\x04r\xb2|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'d&|\x0c\x9b\x00d\'\x9d\x03\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'d(\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0b\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x00j\x08d)|\x0b\x9b\x00d*\x9d\x03d+d,\x8d\x02I\x00d\x01H\x00\x01\x00W\x005\x00Q\x00I\x00d\x01H\x00R\x00\xa3\x00d\x01S\x00\x90\x03q$|\x05\x90\x05r\x98|\x12\xa0,d\x0b\xa1\x01I\x00d\x01H\x00\x01\x00t-d\x0b\x83\x01\x01\x00n\x1e|\x0e\xa0.d#\xa1\x01\x01\x00|\x12j,|\x0ed\td$\x8d\x02I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00}\x14d-|\x14j\x18k\x06\x90\x05r\xf4|\x00\xa0\x08d.\xa1\x01I\x00d\x01H\x00\x01\x00W\x005\x00Q\x00I\x00d\x01H\x00R\x00\xa3\x00d\x01S\x00|\x12\xa0\'|\x06\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'d/\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00W\x005\x00Q\x00I\x00d\x01H\x00R\x00X\x00\x90\x02n\x10|\x00\xa0\x08d0\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0&d\x1c\xa1\x014\x00I\x00d\x01H\x00\x90\x01\x9a\xe0}\x12|\x12\xa0\'|\r\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0c\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x05\x90\x07r\x0e|\x12\xa0,d\x0b\xa1\x01I\x00d\x01H\x00\x01\x00t-d\x0b\x83\x01\x01\x00n\x1e|\x0e\xa0.d#\xa1\x01\x01\x00|\x12j,|\x0ed\td$\x8d\x02I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00}\x14d-|\x14j\x18k\x06\x90\x07rj|\x00\xa0\x08d.\xa1\x01I\x00d\x01H\x00\x01\x00W\x005\x00Q\x00I\x00d\x01H\x00R\x00\xa3\x00d\x01S\x00|\x12\xa0\'|\x06\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'d%\xa1\x01I\x00d\x01H\x00\x01\x00|\x05\x90\x07r\xd6|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'d&|\x0c\x9b\x00d\'\x9d\x03\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0\'d(\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00|\x12\xa0\'|\x0b\xa1\x01I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00|\x12\xa0(\xa1\x00I\x00d\x01H\x00\x01\x00t\x00\xa0)|\x12j*\xa1\x01I\x00d\x01H\x00\x01\x00W\x005\x00Q\x00I\x00d\x01H\x00R\x00X\x00|\x00j\x08d1|\x0b\x9b\x00d2\x9d\x03d+d,\x8d\x02I\x00d\x01H\x00\x01\x00d\x01S\x00)3z: For .colong command, kangs stickers or creates new ones. NF\xfa\x01`\xda\x05image\xfa\x01/z\x0csticker.webp)\x01\xda\tfile_name\xe9\x01\x00\x00\x00TZ\ttgstickerz\x13AnimatedSticker.tgsz\x1a`File Tidak Didukung AJG!`z\x1f`Gagal Nyolong , Cari Yg Laen.`u\x03\x00\x00\x00\xe2\x97\xbe\xe9\x03\x00\x00\x00\xe9\x02\x00\x00\x00\xfa\x01 z\x08/newpackz\x0bsticker.pngZ\x03PNGZ\x05_animz\x0b (Animated)z\x0c/newanimatedz\x18http://t.me/addstickers/\xda\x04utf8\xda\x01\nzU  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>.Z\x08Stickersz\x0b/addstickerZ\x03120z\n Animated z\x13`Switching to Pack z\x1b due to insufficient space`z\x16Invalid pack selected.r\x01\x00\x00\x00)\x01Z\x0eforce_documentz\x08/publish\xfa\x01<\xfa\x01>z\x05/skipz\xa8`Sticker added in a Different Pack !                            \nThis Pack is Newly created!                            \nYour pack can be found [here](t.me/addstickers/\xfa\x01)Z\x02md)\x01Z\nparse_modez Sorry, the file type is invalid.zI`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`z\x05/donez\x13`Get a Sticker ...`zI`Stiker Berhasil Di Colong!`            \n[Klik Disini!](t.me/addstickers/z&)Jika Ingin Menggunakan Stikernya Boss)/r\x06\x00\x00\x00Z\x06get_meZ\x08usernameZ\nfirst_name\xda\x11get_reply_messageZ\x05media\xda\nisinstancer\x05\x00\x00\x00\xda\x04edit\xda\x06randomZ\x06choice\xda\x0bKANGING_STR\xda\x02io\xda\x07BytesIOZ\x0edownload_media\xda\x05photo\xda\x08documentZ\tmime_type\xda\x05splitZ\rdownload_filer\x04\x00\x00\x00\xda\nattributesZ\x03altr\x0c\x00\x00\x00\xda\x04text\xda\x03len\xda\tisnumeric\xda\x03int\xda\x0bDEFAULTUSER\xda\x0cresize_photo\xda\x04nameZ\x04save\xda\x06urllibZ\x07requestZ\x07urlopenZ\x07Request\xda\x04read\xda\x06decodeZ\x0cconversationZ\x0csend_messageZ\x0cget_responseZ\x15send_read_acknowledgeZ\x07chat_id\xda\x03strZ\tsend_filer\x02\x00\x00\x00\xda\x04seek)\x15\xda\x04args\xda\x04user\xda\x07messager!\x00\x00\x00Z\x0bemojibypassZ\x07is_animZ\x05emojir$\x00\x00\x00Z\tattributeZ\x05splatZ\x04packZ\x08packnameZ\x08packnick\xda\x03cmd\xda\x04filer\x0e\x00\x00\x00Z\x08responseZ\x07htmlstrZ\x04conv\xda\x01xZ\x03rsp\xa9\x00r7\x00\x00\x00\xda\x00\xda\x04kang-\x00\x00\x00sh\x01\x00\x00\x00\x03\x0e\x01\x06\x01\x08\x01\x0e\x01\x04\x01\x04\x01\x04\x01\x04\x02\x0e\x01\x0c\x01\x1e\x01\x08\x01\x18\x01\x16\x01\x1e\x01\x08\x01\x16\x02\x08\x01\x08\xff\x02\xff\x04\x04\x10\x01\x06\x01\x10\x01\x1e\x01\x16\x02\n\x01\x08\x01\x0c\x01\n\x02\x04\x01\x04\x01\x06\x02\x10\x01\x06\x02\x10\x01\x04\x02\x06\x01\n\x01\x06\x01\x04\x01\x04\x01\x0e\x01\x08\x01\n\x01\x0e\x01\x0e\x03\x0e\x04\x08\x02\x0e\x01\x0e\x01\x04\x01\x08\x02\x06\x01\x0e\x01\x06\x01\x0e\x02\x08\x01\x08\x01\x04\x02\x06\x01\x10\xff\x04\x03\x14\x03\x02\x01\x02\xff\x02\xff\x04\x04\x16\x01\x10\x01\x0e\x02\x12\x01\x10\x01\x0e\x01\x0c\x01\x08\x01\x0e\x01\x0e\x01\x04\x01\x02\x01\x06\xff\x02\x02\x02\xfe\x02\xff\n\x05\x10\x01\x0e\x01\x0c\x01\x10\x01\x0e\x02\x12\x01\x10\x01\x0e\x02\x12\x01\x06\x01\x10\x01\n\x02\n\x01\x14\x01\x0e\x01\x10\x02\x12\x01\x0e\x01\x10\x01\x06\x01\x0e\x01\x18\x02\x0e\x01\x12\x01\x10\x02\x12\x01\x0e\x01\x10\x02\x12\x01\x0e\x02\x12\x01\x04\x01\x02\x02\x02\xfe\x06\x03\x02\xfc\x0c\x06\x18\x01\x06\x01\x10\x01\n\x02\n\x01\x14\x01\x0e\x01\x0c\x01\x04\x01\x02\xff\n\x03\x14\x01\x10\x02\x12\x01\x0e\x01\x10\x01\x0e\x02&\x02\x10\x01\x16\x01\x10\x01\x0e\x02\x12\x01\x10\x01\x0e\x02\x12\x01\x06\x01\x10\x01\n\x02\n\x01\x14\x01\x0e\x01\x0c\x01\x04\x01\x02\xff\n\x03\x14\x01\x10\x02\x12\x01\x0e\x01\x10\x01\x06\x01\x0e\x01\x18\x02\x0e\x01\x12\x01\x10\x02\x12\x01\x0e\x01\x10\x02\x12\x01\x0e\x02"\x02\x06\x01\x02\xff\x06\x02\x02\xfer9\x00\x00\x00c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\t\x00\x00\x00\x03\x00\x00\x00\xc3\x00\x00\x00s\x92\x00\x00\x00t\x00\xa0\x01|\x00\xa1\x01}\x01|\x01j\x02o\x14|\x01j\x03d\x01k\x00r\x80|\x01j\x02}\x02|\x01j\x03}\x03|\x02|\x03k\x04rDd\x01|\x02\x1b\x00}\x04d\x01}\x05|\x03|\x04\x14\x00}\x06n\x14d\x01|\x03\x1b\x00}\x04|\x02|\x04\x14\x00}\x05d\x01}\x06t\x04\xa0\x05|\x05\xa1\x01}\x05t\x04\xa0\x05|\x06\xa1\x01}\x06|\x05|\x06f\x02}\x07|\x01\xa0\x06|\x07\xa1\x01}\x01n\x0ed\x02}\x08|\x01\xa0\x07|\x08\xa1\x01\x01\x00|\x01S\x00)\x03z# Resize the given photo to 512x512 \xe9\x00\x02\x00\x00)\x02r:\x00\x00\x00r:\x00\x00\x00)\x08r\x03\x00\x00\x00\xda\x04open\xda\x05widthZ\x06height\xda\x04mathZ\x05floorZ\x06resizeZ\tthumbnail)\tr!\x00\x00\x00r\x0e\x00\x00\x00Z\x05size1Z\x05size2Z\x05scaleZ\x08size1newZ\x08size2newZ\x07sizenew\xda\x07maxsizer7\x00\x00\x00r7\x00\x00\x00r8\x00\x00\x00r*\x00\x00\x00\x08\x01\x00\x00s$\x00\x00\x00\x00\x02\n\x01\x10\x01\x06\x01\x06\x01\x08\x01\x08\x01\x04\x01\n\x02\x08\x01\x08\x01\x04\x01\n\x01\n\x01\x08\x01\x0c\x02\x04\x01\n\x02r*\x00\x00\x00z\x0b^.stkrinfo$c\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\x0e\x00\x00\x00\xc3\x00\x00\x00sH\x01\x00\x00|\x00j\x00s\x1a|\x00\xa0\x01d\x01\xa1\x01I\x00d\x00H\x00\x01\x00d\x00S\x00|\x00\xa0\x02\xa1\x00I\x00d\x00H\x00}\x01|\x01j\x03sB|\x00\xa0\x01d\x02\xa1\x01I\x00d\x00H\x00\x01\x00d\x00S\x00z |\x01j\x03j\x04d\x03\x19\x00}\x02|\x00\xa0\x01d\x04\xa1\x01I\x00d\x00H\x00\x01\x00W\x00n&\x04\x00t\x05k\nr\x88\x01\x00\x01\x00\x01\x00|\x00\xa0\x01d\x05\xa1\x01I\x00d\x00H\x00\x01\x00Y\x00d\x00S\x00X\x00t\x06|\x02t\x07\x83\x02s\xa8|\x00\xa0\x01d\x05\xa1\x01I\x00d\x00H\x00\x01\x00d\x00S\x00t\x08t\tt\n|\x02j\x0bj\x0c|\x02j\x0bj\rd\x06\x8d\x02\x83\x01\x83\x01I\x00d\x00H\x00}\x03g\x00}\x04|\x03j\x0eD\x00]\x1a}\x05|\x05j\x0f|\x04k\x07r\xd4|\x04\xa0\x10|\x05j\x0f\xa1\x01\x01\x00q\xd4d\x07|\x03j\x11j\x12\x9b\x00d\x08|\x03j\x11j\x13\x9b\x00d\t|\x03j\x11j\x14\x9b\x00d\n|\x03j\x11j\x15\x9b\x00d\x0bt\x16|\x03j\x0e\x83\x01\x9b\x00d\x0cd\r\xa0\x17|\x04\xa1\x01\x9b\x00\x9d\x0c}\x06|\x00\xa0\x01|\x06\xa1\x01I\x00d\x00H\x00\x01\x00d\x00S\x00)\x0eNz+`I can\'t fetch info from nothing, can I ?!`z,`Reply to a sticker to get the pack details`r\x11\x00\x00\x00z5`Fetching details of the sticker pack, please wait..`z,`This is not a sticker. Reply to a sticker.`)\x02\xda\x02id\xda\x0baccess_hashz\x14**Sticker Title:** `z\x1b\n`**Sticker Short Name:** `z\x11`\n**Official:** `z\x11`\n**Archived:** `z\x19`\n**Stickers In Pack:** `z\x16`\n**Emojis In Pack:**\nr\x14\x00\x00\x00)\x18Z\x08is_replyr\x1c\x00\x00\x00r\x1a\x00\x00\x00r"\x00\x00\x00r$\x00\x00\x00\xda\rBaseExceptionr\x1b\x00\x00\x00r\x0c\x00\x00\x00r\x06\x00\x00\x00r\n\x00\x00\x00r\x0b\x00\x00\x00Z\nstickersetr?\x00\x00\x00r@\x00\x00\x00Z\x05packsZ\x08emoticon\xda\x06append\xda\x03set\xda\x05titleZ\nshort_nameZ\x08officialZ\x08archivedr&\x00\x00\x00\xda\x04join)\x07Z\x05eventZ\x07rep_msgZ\x0fstickerset_attrZ\x0eget_stickersetZ\x0bpack_emojisZ\x10document_stickerZ\x06OUTPUTr7\x00\x00\x00r7\x00\x00\x00r8\x00\x00\x00\xda\rget_pack_info!\x01\x00\x00s>\x00\x00\x00\x00\x02\x06\x01\x10\x01\x04\x02\x0e\x01\x06\x01\x10\x01\x04\x02\x02\x01\x0c\x01\x14\x01\x0e\x01\x10\x01\x08\x02\n\x01\x10\x01\x04\x02\x02\x01\x02\x01\x02\x01\x06\x01\x06\xfe\x04\xff\x02\xff\n\x08\x04\x01\n\x01\n\x01\x0e\x03B\xff\x02\trF\x00\x00\x00Z\x08stickersuX\x01\x00\x00>`.colong|kang [emoji(\'s)]?`\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack \nor specify the emoji you want to.\n\n>`.colong|kang (emoji[\'s]]?` [number]?\nUsage: Kang\'s the sticker/image to the specified pack but uses \xf0\x9f\xa4\x94 as emoji or choose the emoji you want to.\n\n>`.stkrinfo`\nUsage: Gets info about the sticker pack.) \xda\x07__doc__r\x1f\x00\x00\x00r=\x00\x00\x00Z\x0eurllib.requestr,\x00\x00\x00\xda\x02osr\x02\x00\x00\x00Z\x03PILr\x03\x00\x00\x00r\x1d\x00\x00\x00Z\x11telethon.tl.typesr\x04\x00\x00\x00r\x05\x00\x00\x00Z\x07userbotr\x06\x00\x00\x00r\x07\x00\x00\x00r\x08\x00\x00\x00Z\x0euserbot.eventsr\t\x00\x00\x00Z\x1etelethon.tl.functions.messagesr\n\x00\x00\x00r\x0b\x00\x00\x00r\x0c\x00\x00\x00r/\x00\x00\x00\xda\x05unameZ\x04noder)\x00\x00\x00r\x1e\x00\x00\x00r9\x00\x00\x00r*\x00\x00\x00rF\x00\x00\x00\xda\x06updater7\x00\x00\x00r7\x00\x00\x00r7\x00\x00\x00r8\x00\x00\x00\xda\x08<module>\x06\x00\x00\x00sR\x00\x00\x00\x04\x02\x08\x01\x08\x01\x08\x01\x0c\x01\x0c\x01\x08\x01\x10\x01\x14\x01\x0c\x01\x0c\x01\x0c\x01\x0c\x03\x14\x04\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\x01\x02\xf0\x04\x14\n\x01\n\x7f\x00[\x08\x19\n\x01\n.\x04\x02\x02\x01\x02\xfe\x02\xff'))
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+#
+
+import io
+import math
+import random
+import urllib.request
+from os import remove
+
+from PIL import Image
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.types import (
+    DocumentAttributeFilename,
+    DocumentAttributeSticker,
+    InputStickerSetID,
+    MessageMediaPhoto,
+)
+
+from userbot import CMD_HELP, bot, ALIVE_NAME
+from userbot.events import register
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
+
+
+
+
+
+KANGING_STR = [
+    "Wao.,Bagus Nih...Colong Dulu Yekan..",
+    "Colong Sticker dulu yee kan",
+    "ehh, mantep nih.....aku colong ya...",
+    "Ini Sticker aku colong yaa\nDUARR!",
+    "leh ugha ni Sticker\nColong ahh~",
+    "Pim Pim Pom!!!\nni Sticker punya aing sekarang hehe",
+    "Colong lagi yee kan.....",
+    "COLONG TROSS!!!",
+	"Bolehkah saya colong ni sticker\nau ah colong aja hehe",
+	"Colong Sticker ahh.....",
+]
+
+
+@register(outgoing=True, pattern=r"^\.(?:colong|kang)\s?(.)?")
+async def kang(args):
+    user = await bot.get_me()
+    if not user.username:
+        user.username = user.first_name
+    message = await args.get_reply_message()
+    photo = None
+    emojibypass = False
+    is_anim = False
+    emoji = None
+
+    if message and message.media:
+        if isinstance(message.media, MessageMediaPhoto):
+            await args.edit(f"`{random.choice(KANGING_STR)}`")
+            photo = io.BytesIO()
+            photo = await bot.download_media(message.photo, photo)
+        elif "image" in message.media.document.mime_type.split("/"):
+            await args.edit(f"`{random.choice(KANGING_STR)}`")
+            photo = io.BytesIO()
+            await bot.download_file(message.media.document, photo)
+            if (
+                DocumentAttributeFilename(file_name="sticker.webp")
+                in message.media.document.attributes
+            ):
+                emoji = message.media.document.attributes[1].alt
+                if emoji != "":
+                    emojibypass = True
+        elif "tgsticker" in message.media.document.mime_type:
+            await args.edit(f"`{random.choice(KANGING_STR)}`")
+            await bot.download_file(message.media.document, "AnimatedSticker.tgs")
+
+            attributes = message.media.document.attributes
+            for attribute in attributes:
+                if isinstance(attribute, DocumentAttributeSticker):
+                    emoji = attribute.alt
+
+            emojibypass = True
+            is_anim = True
+            photo = 1
+        else:
+            return await args.edit("`File Tidak Didukung AJG!`")
+    else:
+        return await args.edit("`Gagal Colong Cari Yang Laen!`")
+
+    if photo:
+        splat = args.text.split()
+        if not emojibypass:
+            emoji = "鉁筹笍"
+        pack = 1
+        if len(splat) == 3:
+            pack = splat[2]  # User sent both
+            emoji = splat[1]
+        elif len(splat) == 2:
+            if splat[1].isnumeric():
+                # User wants to push into different pack, but is okay with
+                # thonk as emote.
+                pack = int(splat[1])
+            else:
+                # User sent just custom emote, wants to push to default
+                # pack
+                emoji = splat[1]
+
+        packname = f"sticker_by_{user.username}_{pack}"
+        packnick = f"@{user.username}-{ALIVE_NAME} Vol.{pack}"
+        cmd = "/newpack"
+        file = io.BytesIO()
+
+        if not is_anim:
+            image = await resize_photo(photo)
+            file.name = "sticker.png"
+            image.save(file, "PNG")
+        else:
+            packname += "_anim"
+            packnick += " (Animated)"
+            cmd = "/newanimated"
+
+        response = urllib.request.urlopen(
+            urllib.request.Request(f"http://t.me/addstickers/{packname}")
+        )
+        htmlstr = response.read().decode("utf8").split("\n")
+
+        if (
+            "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>."
+            not in htmlstr
+        ):
+            async with bot.conversation("Stickers") as conv:
+                await conv.send_message("/addsticker")
+                await conv.get_response()
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.send_message(packname)
+                x = await conv.get_response()
+                while "120" in x.text:
+                    pack += 1
+                    packname = f"sticker_by_{user.username}_{pack}"
+                    packnick = f"@{user.username}-{ALIVE_NAME} Vol.{pack}"
+                    await args.edit(
+                        "`Switching to Pack "
+                        + str(pack)
+                        + " due to insufficient space`"
+                    )
+                    await conv.send_message(packname)
+                    x = await conv.get_response()
+                    if x.text == "Invalid pack selected.":
+                        await conv.send_message(cmd)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.send_message(packnick)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        if is_anim:
+                            await conv.send_file("AnimatedSticker.tgs")
+                            remove("AnimatedSticker.tgs")
+                        else:
+                            file.seek(0)
+                            await conv.send_file(file, force_document=True)
+                        await conv.get_response()
+                        await conv.send_message(emoji)
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        await conv.send_message("/publish")
+                        if is_anim:
+                            await conv.get_response()
+                            await conv.send_message(f"<{packnick}>")
+                        # Ensure user doesn't get spamming notifications
+                        await conv.get_response()
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.send_message("/skip")
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        await conv.send_message(packname)
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        await conv.get_response()
+                        # Ensure user doesn't get spamming notifications
+                        await bot.send_read_acknowledge(conv.chat_id)
+                        return await args.edit(
+                            "`Sticker ditambahkan ke pack yang berbeda !"
+                            "\nIni pack yang baru saja kamu buat!"
+                            f"\nKlik [disini](t.me/addstickers/{packname}) untuk liat pack kamu",
+                            parse_mode="md",
+                        )
+                if is_anim:
+                    await conv.send_file("AnimatedSticker.tgs")
+                    remove("AnimatedSticker.tgs")
+                else:
+                    file.seek(0)
+                    await conv.send_file(file, force_document=True)
+                rsp = await conv.get_response()
+                if "Sorry, the file type is invalid." in rsp.text:
+                    return await args.edit(
+                        "`gagal menambahkan sticker, gunakan` @Stickers `bot untuk menambahkan sticker.`"
+                    )
+                await conv.send_message(emoji)
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.get_response()
+                await conv.send_message("/done")
+                await conv.get_response()
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+        else:
+            await args.edit("`Membuat Pack baru`")
+            async with bot.conversation("Stickers") as conv:
+                await conv.send_message(cmd)
+                await conv.get_response()
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.send_message(packnick)
+                await conv.get_response()
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                if is_anim:
+                    await conv.send_file("AnimatedSticker.tgs")
+                    remove("AnimatedSticker.tgs")
+                else:
+                    file.seek(0)
+                    await conv.send_file(file, force_document=True)
+                rsp = await conv.get_response()
+                if "Sorry, the file type is invalid." in rsp.text:
+                    return await args.edit(
+                        "`gagal menambahkan sticker, gunakan` @Stickers `bot untuk menambahkan sticker.`"
+                    )
+                await conv.send_message(emoji)
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.get_response()
+                await conv.send_message("/publish")
+                if is_anim:
+                    await conv.get_response()
+                    await conv.send_message(f"<{packnick}>")
+                # Ensure user doesn't get spamming notifications
+                await conv.get_response()
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.send_message("/skip")
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.get_response()
+                await conv.send_message(packname)
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+                await conv.get_response()
+                # Ensure user doesn't get spamming notifications
+                await bot.send_read_acknowledge(conv.chat_id)
+
+        await args.edit(
+            "`Sticker Sukses Dibuat!`"
+            f"\n? [Klik Disini](t.me/addstickers/{packname}) ?\nUntuk Menggunakan Sticker",
+            parse_mode="md",
+        )
+
+
+async def resize_photo(photo):
+    image = Image.open(photo)
+    if (image.width and image.height) < 512:
+        size1 = image.width
+        size2 = image.height
+        if size1 > size2:
+            scale = 512 / size1
+            size1new = 512
+            size2new = size2 * scale
+        else:
+            scale = 512 / size2
+            size1new = size1 * scale
+            size2new = 512
+        size1new = math.floor(size1new)
+        size2new = math.floor(size2new)
+        sizenew = (size1new, size2new)
+        image = image.resize(sizenew)
+    else:
+        maxsize = (512, 512)
+        image.thumbnail(maxsize)
+
+    return image
+
+
+@register(outgoing=True, pattern=r"^\.stkrinfo$")
+async def get_pack_info(event):
+    if not event.is_reply:
+        return await event.edit(
+            "`Aku tidak bisa mengambil info dari apapun, bisakah aku?!`"
+        )
+
+    rep_msg = await event.get_reply_message()
+    if not rep_msg.document:
+        return await event.edit("`Balas ke sticker untuk melihat detail pack`")
+
+    try:
+        stickerset_attr = rep_msg.document.attributes[1]
+        await event.edit("`Fetching details of the sticker pack, please wait..`")
+    except BaseException:
+        return await event.edit("`Ini bukan sticker,balas ke sticker.`")
+
+    if not isinstance(stickerset_attr, DocumentAttributeSticker):
+        return await event.edit("`Ini bukan sticker,balas ke sticker.`")
+
+    get_stickerset = await bot(
+        GetStickerSetRequest(
+            InputStickerSetID(
+                id=stickerset_attr.stickerset.id,
+                access_hash=stickerset_attr.stickerset.access_hash,
+            )
+        )
+    )
+    pack_emojis = []
+    for document_sticker in get_stickerset.packs:
+        if document_sticker.emoticon not in pack_emojis:
+            pack_emojis.append(document_sticker.emoticon)
+
+    OUTPUT = (
+        f"**Sticker Title:** `{get_stickerset.set.title}\n`"
+        f"**Sticker Short Name:** `{get_stickerset.set.short_name}`\n"
+        f"**Official:** `{get_stickerset.set.official}`\n"
+        f"**Archived:** `{get_stickerset.set.archived}`\n"
+        f"**Stickers In Pack:** `{len(get_stickerset.packs)}`\n"
+        f"**Emojis In Pack:**\n{' '.join(pack_emojis)}"
+    )
+
+    await event.edit(OUTPUT)
+
+
+@register(outgoing=True, pattern=r"^\.getsticker$")
+async def sticker_to_png(sticker):
+    if not sticker.is_reply:
+        await sticker.edit("`NULL information to fetch...`")
+        return False
+
+    img = await sticker.get_reply_message()
+    if not img.document:
+        await sticker.edit("`Reply ke suatu stiker...`")
+        return False
+
+    try:
+        img.document.attributes[1]
+    except Exception:
+        await sticker.edit("`Ini bukan sticker...`")
+        return
+
+    with io.BytesIO() as image:
+        await sticker.client.download_media(img, image)
+        image.name = "sticker.png"
+        image.seek(0)
+        try:
+            await img.reply(file=image, force_document=True)
+        except Exception:
+            await sticker.edit("`Err, gak bisa ngirim file...`")
+        else:
+            await sticker.delete()
+    return
+
+
+CMD_HELP.update(
+    {
+        "stickers": ">`.kang [emoji('s)]?`"
+        "\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack "
+        "\nor specify the emoji you want to."
+        "\n\n>`.kang (emoji['s]]?` [number]?"
+        "\nUsage: Kang's the sticker/image to the specified pack but uses 馃 as emoji "
+        "or choose the emoji you want to."
+        "\n\n>`.stkrinfo`"
+        "\nUsage: Gets info about the sticker pack."
+        "\n\n>`.getsticker`"
+        "\nUsage: reply to a sticker to get 'PNG' file of sticker."
+    }
+)
