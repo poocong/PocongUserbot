@@ -99,11 +99,11 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit(`**XBOT** Berhasil Di Update!`)
+    await event.edit('`**XBOT** Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit(`XBOT Di Restart....`)
+    await event.edit(XBOT Di Restart....)
     await asyncio.sleep(1)
-    await event.edit(`Silahkan Tunggu Beberapa Detik!`)
+    await event.edit(Silahkan Tunggu Beberapa Detik!)
     
     if BOTLOG:
             await event.client.send_message(
