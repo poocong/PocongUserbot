@@ -104,7 +104,7 @@ async def update(event, repo, ups_rem, ac_br):
     await event.edit('`XBOT Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Silahkan Tunggu Beberapa Detik!`')
-    
+
     if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#NOTICE \n"
@@ -189,6 +189,8 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond('`ketik ".update now/deploy" untuk mengupdate`')
+        await asyncio.sleep(10)
+        await event.delete()
 
     if force_update:
         await event.edit(
