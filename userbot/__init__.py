@@ -323,7 +323,6 @@ with bot:
             "BOTLOG_CHATID environment variable isn't a "
             "valid entity. Check your environment variables/config.env file.")
         quit(1)
-     await bot.send_message.delete()
        
 # Global Variables
 COUNT_MSG = 0
