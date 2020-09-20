@@ -163,7 +163,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "XBOT-REMIX")
 
 #Bot version
-BOT_VER = os.environ.get("BOT_VER", "2.1")
+BOT_VER = os.environ.get("BOT_VER", "3.0")
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
@@ -313,6 +313,7 @@ with bot:
 
 async def check_alive():
     await bot.send_message(BOTLOG_CHATID, f"`OK, XBOT BERHASIL DIAKTIFKAN...`")
+    await bot.send_message.delete()
     return
 
 with bot:
