@@ -41,4 +41,4 @@ async def help(event):
                           \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐'")
         await asyncio.sleep(30)
         await event.delete()
-        await string.delete()
+        await event.delete(string)
