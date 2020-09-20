@@ -313,7 +313,6 @@ with bot:
 
 async def check_alive():
     await bot.send_message(BOTLOG_CHATID, f"`OK, XBOT BERHASIL DIAKTIFKAN...`")
-    await bot.send_message.delete()
     return
 
 with bot:
@@ -324,7 +323,8 @@ with bot:
             "BOTLOG_CHATID environment variable isn't a "
             "valid entity. Check your environment variables/config.env file.")
         quit(1)
-
+     await bot.send_message.delete()
+       
 # Global Variables
 COUNT_MSG = 0
 USERS = {}
