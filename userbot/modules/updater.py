@@ -204,8 +204,6 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond('`ketik ".update now/deploy" untuk mengupdate`')
-            await event.delete()
-            await msg.delete()
 
     if force_update:
         await event.edit(
