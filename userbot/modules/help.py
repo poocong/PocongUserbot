@@ -31,9 +31,7 @@ async def help(event):
             \n│   Contoh: .help <nama module>\
             \n│   Modules Aktif: {len(modules)}\
            \n╰━━━━━━━━━━━━━━━━━━━━━╯")
-        await asyncio.sleep(30)
-        await event.delete()
-
+     
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
@@ -42,4 +40,5 @@ async def help(event):
                          "\n\n╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐'")
         await asyncio.sleep(30)
+        await event.delete()
         await string.delete()
