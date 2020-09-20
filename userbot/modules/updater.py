@@ -204,7 +204,6 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond('`ketik ".update now/deploy" untuk mengupdate`')
-            await asyncio.sleep(10)
             await event.delete()
             await msg.delete()
 
