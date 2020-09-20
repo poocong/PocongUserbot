@@ -76,9 +76,18 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         except GitCommandError as error:
             await event.edit(f'{txt}\n`Here is the error log:\n{error}`')
             return repo.__del__()
-        await event.edit('`Successfully Updated!\n'
-                         'Restarting, please wait...`')
-
+        build = app.builds(order_by="created_at", sort="desc")[0]
+        if build.status == "failed":
+            await event.edit(
+                "`Build failed!\n" "Cancelled or there were some errors...`"
+            )
+            await asyncio.sleep(5)
+            return await event.delete()
+        else:
+            await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
+            await asyncio.sleep(15)
+            await event.delete()
+        
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#NOTE \n"
@@ -104,6 +113,8 @@ async def update(event, repo, ups_rem, ac_br):
     await event.edit('`XBOT Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Silahkan Tunggu Beberapa Detik!`')
+    await asyncio.sleep(10)
+    await event.delete()
 
     if BOTLOG:
             await event.client.send_message(
@@ -171,6 +182,8 @@ async def upstream(event):
     if changelog == '' and force_update is False:
         await event.edit(
             f'\n`🔥XBOT-REMIX🔥\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n')
+        await asyncio.sleep(15)
+        await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
@@ -187,10 +200,17 @@ async def upstream(event):
             )
             remove("output.txt")
         else:
-            await event.edit(changelog_str)
-        return await event.respond('`ketik ".update now/deploy" untuk mengupdate`')
-        await asyncio.sleep(10)
+        cl = await event.client.send_message(
+            event.chat_id,
+            changelog_str,
+            reply_to=event.id,
+        )
         await event.delete()
+        msg = await event.respond('ketik ".update now/deploy" untuk mengupdate')
+        await asyncio.sleep(15)
+        await cl.delete()
+        await msg.delete()
+    return True
 
     if force_update:
         await event.edit(
@@ -202,6 +222,8 @@ async def upstream(event):
         await event.edit('`Proses Update XBOT-REMIX, silahkan tunggu....🛠️`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
+        await asyncio.sleep(10)
+        await event.delete()
     elif conf == "deploy":
         await deploy(event, repo, ups_rem, ac_br, txt)
         await asyncio.sleep(10)
