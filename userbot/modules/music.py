@@ -148,6 +148,8 @@ async def _(event):
         ),
     )
     await event.edit(f"**{query}** `Uploaded Successfully..!`")
+    await asyncio.sleep(10)
+    await event.delete()
     os.remove(thumb_image)
     os.system("rm -rf *.mkv")
     os.system("rm -rf *.mp4")
