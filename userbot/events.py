@@ -142,7 +142,7 @@ def register(**args):
                     
                     if LOGSPAMMER:
                         await check.edit(
-                            "`Maaf, sepertinya ada yang error.\nSilahkan cek log di [DISINI](https://dashboard.heroku.com/).`"
+                            f"`Maaf, sepertinya ada yang error.\nSilahkan cek log di [heroku.com].`"
                         )
 
                         log = codecs.open("error.log", "r", encoding="utf-8")
