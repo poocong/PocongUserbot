@@ -6,6 +6,8 @@
 """ Userbot module for managing events.
  One of the main components of the userbot. """
 
+
+import codecs
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
@@ -96,9 +98,9 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT ERROR REPORT**\n"
-                    link = "Support chat PM: @adekmaulana"
-                    text += "If you want to, you can report it"
+                    text = "**USERXBOT ERROR REPORT**\n"
+                    link = "Silahkan chat PM: @X_Newbie"
+                    text += "Untuk melaporkan kesalahan"
                     text += f"- just forward this message to {link}.\n"
                     text += "Nothing is logged except the fact of error and date\n"
 
@@ -137,7 +139,27 @@ def register(**args):
                     file = open("error.log", "w+")
                     file.write(ftext)
                     file.close()
+                    
+                    if LOGSPAMMER:
+                        await check.edit(
+                            "`Maaf, sepertinya ada yang error.\nSilahkan cek log di heroku.`"
+                        )
 
+                        log = codecs.open("error.log", "r", encoding="utf-8")
+                        data = log.read()
+                        key = (
+                            requests.post(
+                                "https://nekobin.com/api/documents",
+                                json={"content": data},
+                            )
+                            .json()
+                            .get("result")
+                            .get("key")
+                        )
+                        url = f"https://nekobin.com/raw/{key}"
+                        anu = f"{text}\n`Silahkan cek error disini:`\nPasted to: [Nekobin]({url})"
+                        await check.client.send_message(send_to, anu)
+                        remove("error.log")
 
             else:
                 pass
