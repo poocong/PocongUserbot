@@ -8,6 +8,7 @@
 
 
 import codecs
+import asyncio
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
@@ -144,7 +145,9 @@ def register(**args):
                         await check.edit(
                             f"`Maaf, sepertinya ada yang error.\nSilahkan cek log di [heroku.com].`"
                         )
-
+                        await asyncio.sleep(8)
+                        await check.delete()
+                         
                         log = codecs.open("error.log", "r", encoding="utf-8")
                         data = log.read()
                         key = (
