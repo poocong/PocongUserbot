@@ -103,6 +103,7 @@ async def ocr_space_file(filename,
     return r.json()
 
 DOGBIN_URL = "https://del.dog/"    
+NEKOBIN_URL = "https://nekobin.com/"
 
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
@@ -1225,6 +1226,59 @@ async def get_dogbin_content(dog_url):
         )
 
 
+@register(outgoing=True, pattern=r"^\.neko(?: |$)([\s\S]*)")
+async def neko(nekobin):
+    """For .paste command, pastes the text directly to dogbin."""
+    nekobin_final_url = ""
+    match = nekobin.pattern_match.group(1).strip()
+    reply_id = nekobin.reply_to_msg_id
+
+    if not match and not reply_id:
+        return await pstl.edit("`Cannot paste text.`")
+
+    if match:
+        message = match
+    elif reply_id:
+        message = await nekobin.get_reply_message()
+        if message.media:
+            downloaded_file_name = await nekobin.client.download_media(
+                message,
+                TEMP_DOWNLOAD_DIRECTORY,
+            )
+            m_list = None
+            with open(downloaded_file_name, "rb") as fd:
+                m_list = fd.readlines()
+            message = ""
+            for m in m_list:
+                message += m.decode("UTF-8")
+            os.remove(downloaded_file_name)
+        else:
+            message = message.text
+
+    # Nekobin
+    await nekobin.edit("`Pasting text . . .`")
+    resp = post(NEKOBIN_URL + "api/documents", json={"content": message})
+
+    if resp.status_code == 201:
+        response = resp.json()
+        key = response["result"]["key"]
+        nekobin_final_url = NEKOBIN_URL + key
+        reply_text = (
+            "`Pasted successfully!`\n\n"
+            f"[Nekobin URL]({nekobin_final_url})\n"
+            f"[View RAW]({NEKOBIN_URL}raw/{key})"
+        )
+    else:
+        reply_text = "`Failed to reach Nekobin`"
+
+    await nekobin.edit(reply_text)
+    if BOTLOG:
+        await nekobin.client.send_message(
+            BOTLOG_CHATID,
+            "Paste query was executed successfully",
+        )
+
+
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
     """ For .ss command, capture a website's screenshot and send the photo. """
@@ -1325,6 +1379,9 @@ CMD_HELP.update({
 "getpaste":
 "`.getpaste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
+"neko":
+"`.neko` <text/reply>\
+\nUsage: Create a paste or a shortened url using nekobin (https://nekobin.com/)",
 "direct":
 "`.direct` <url>\
 \nUsage: Reply to a link or paste a URL to generate a direct download link\
