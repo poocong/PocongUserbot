@@ -96,19 +96,19 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("`Wait..! I am finding your videosong..`")
+        await event.edit("`Mencari Music Video..`")
     elif reply:
         query = str(reply.message)
-        await event.edit("`Wait..! I am finding your videosong..`")
+        await event.edit("`Mencari Music Video..`")
     else:
-        await event.edit("`What I am Supposed to find?`")
+        await event.edit("`Apa yang harus saya cari?`")
         return
     await getmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm"))
     if l:
-        await event.edit("`Yeah..! i found something..`")
+        await event.edit("`Music Video Ditemukan..`")
     else:
-        await event.edit(f"`Sorry..! i can't find anything with` **{query}**")
+        await event.edit(f"`Maaf..! Saya tidak menemukan` **{query}**")
         return
     loa = l[0]
     metadata = extractMetadata(createParser(loa))
