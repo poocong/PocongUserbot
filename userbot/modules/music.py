@@ -149,8 +149,6 @@ async def _(event):
             ),
         )
         await event.edit(f"**{query}** `Uploaded Successfully..!`")
-        await asyncio.sleep(10)
-        await event.delete()
         os.remove(thumb_image)
         os.system("rm -rf *.mkv")
         os.system("rm -rf *.mp4")
@@ -161,7 +159,6 @@ async def _(event):
         os.system("rm -rf *.mp4")
         os.system("rm -rf *.webm")
         return
-    
 
 @register(outgoing=True, pattern=r"^\.smd(?: |$)(.*)")
 async def _(event):
