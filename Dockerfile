@@ -1,5 +1,6 @@
 # We're using Ubuntu 20.10
 FROM xnewbie/remix:latest
+USER xnewbie
 
 #
 # Clone repo and prepare working directory
