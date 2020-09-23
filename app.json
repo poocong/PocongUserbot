@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/X-Newbi/XBot-Remix",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/PPE_Support",
+  "success_url": "https://t.me/XBOT_SUPPORT",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -224,10 +224,6 @@
       "description": "Set this to True in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
       "value": "True",
       "required": true
-    },
-    "ALIVE_LOGO": {
-      "description": "Show Image/Logo in .alive message. Fill value of image your link image, use telegra.ph / i.ibb.co to get your own image",
-      "required": false
     },
     "DEEZER_ARL_TOKEN": {
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
