@@ -142,12 +142,7 @@ def register(**args):
                     file.close()
                     
                     if LOGSPAMMER:
-                        await check.edit(
-                            f"`Maaf, sepertinya ada yang error.\nSilahkan cek log di [heroku.com].`"
-                        )
-                        await asyncio.sleep(5)
-                        await check.delete()
-                         
+                       
                         log = codecs.open("error.log", "r", encoding="utf-8")
                         data = log.read()
                         key = (
