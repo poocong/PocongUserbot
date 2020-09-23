@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/remix:latest
+FROM xnewbie/xremix:remix
 USER xnewbie
 
 #
