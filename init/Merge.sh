@@ -13,7 +13,7 @@ export SEMAPHORE_PROJECT_DIR=`pwd`
 . "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"/telegram
 TELEGRAM_TOKEN=${BOT_API_KEY}
 export BOT_API_KEY TELEGRAM_TOKEN
-tg_sendinfo "<code>I am gonna merge staging into sql-extended</code>"
+tg_sendinfo "<code>I am gonna merge staging into x-sql-extended</code>"
 cd
 git clone https://github.com/X-Newbie/XBot-Remix.git
 cd XBot-Remix
@@ -22,4 +22,4 @@ git fetch
 git checkout staging
 git pull origin staging
 git push --force origin staging:x-sql-extended
-tg_sendinfo "<code>I have merged all commits from staging into sql-extended</code>"
+tg_sendinfo "<code>I have merged all commits from staging into x-sql-extended</code>"
