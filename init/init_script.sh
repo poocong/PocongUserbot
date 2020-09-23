@@ -48,11 +48,11 @@ botclone() {
     cd ~
     echo "Cloning bot sources..."
     if [ -z "$bot_clone" ]; then
-        git clone https://github.com/mkaraniya/OpenUserBot -b sql-extended
+        git clone https://github.com/X-Newbie/XBot-Remix -b x-sql-extended
         save_prog "bot_clone"
     fi
     echo "DONE!!"
-    cd Telegram-UserBot
+    cd XBot-Remix
 }
 
 # Requirement install function
@@ -125,7 +125,7 @@ LOGGER=$LOGGER
 LOGGER_GROUP=$LOGGER_GROUP
 OPEN_WEATHER_MAP_APPID=$OPEN_WEATHER_MAP_APPID
 DATABASE_URL=$DB_URI" >> config.env
-    sudo mv config.env ~/Telegram-UserBot
+    sudo mv config.env ~/XBot-Remix
     save_prog "gen_conf"
     fi
     echo "DONE!!"
@@ -149,7 +149,7 @@ dockerspin() {
     sudo systemctl start docker
     sudo systemctl enable docker
     sudo chmod 777 /var/run/docker.sock
-    cd ~/Telegram-UserBot
+    cd ~/XBot-Remix
     docker build -t userbot .
     save_prog "dock"
     fi
