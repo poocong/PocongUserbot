@@ -75,7 +75,7 @@
     },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbot is running on a Heroku Dyno.",
-      "value": "False",
+      "value": "True",
       "required": true
     },
     "GITHUB_ACCESS_TOKEN": {
