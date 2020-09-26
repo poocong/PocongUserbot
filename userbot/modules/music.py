@@ -161,6 +161,7 @@ async def _(event):
         os.system("rm -rf *.webm")
         return
 
+
 @register(outgoing=True, pattern=r"^\.smd(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -192,7 +193,8 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(outgoing=True,
+          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     if event.fwd_from:
         return

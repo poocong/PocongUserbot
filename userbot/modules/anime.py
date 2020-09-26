@@ -17,7 +17,7 @@ import jikanpy
 import pendulum
 import requests
 from html_telegraph_poster import TelegraphPoster
-from jikanpy import Jikan, AioJikan
+from jikanpy import Jikan
 from jikanpy.exceptions import APIException
 from telethon.errors.rpcerrorlist import FilePartsInvalidError
 from telethon.tl.types import (DocumentAttributeAnimated,

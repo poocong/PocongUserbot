@@ -16,7 +16,6 @@ import requests
 from os import popen
 from userbot.utils import chrome, options
 import urllib.parse
-import logging
 from bs4 import BeautifulSoup
 import re
 from re import match
@@ -29,25 +28,17 @@ from barcode.writer import ImageWriter
 import emoji
 from googletrans import Translator
 from time import sleep
-from html import unescape
 from re import findall
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
-from urllib.error import HTTPError
-from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
-from urbandict import define
 from requests import get
 from requests import get, post, exceptions
 from search_engine_parser import GoogleSearch
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 from googletrans import LANGUAGES, Translator
-from shutil import rmtree
-from gtts import gTTS, gTTSError
+from gtts import gTTS
 from gtts.lang import tts_langs
 from emoji import get_emoji_regexp
 from telethon.tl.types import MessageMediaPhoto
@@ -58,12 +49,10 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, OCR_SPACE_API_KEY, LOGS
+from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, LOGS, OCR_SPACE_API_KEY, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, humanbytes, time_formatter, chrome, googleimagesdownload
-import subprocess
-from datetime import datetime
+from userbot.utils import chrome, googleimagesdownload, progress
 import asyncurban
 
 
@@ -71,6 +60,7 @@ CARBONLANG = "auto"
 TTS_LANG = "id"
 TRT_LANG = "id"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
+
 
 async def ocr_space_file(filename,
                          overlay=False,
@@ -102,14 +92,16 @@ async def ocr_space_file(filename,
         )
     return r.json()
 
-DOGBIN_URL = "https://del.dog/"    
+DOGBIN_URL = "https://del.dog/"
 NEKOBIN_URL = "https://nekobin.com/"
+
 
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
+
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
@@ -151,7 +143,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -175,8 +167,8 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
-    
+
+
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
@@ -314,7 +306,7 @@ async def _(event):
         await event.edit("Text: **{}**\n\nMeaning: **{}**\n\nExample: __{}__".format(mean.word, mean.definition, mean.example))
     except asyncurban.WordNotFoundError:
         await event.edit("No result found for **" + word + "**")
-       
+
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
@@ -356,6 +348,7 @@ async def text_to_speech(query):
                 BOTLOG_CHATID, "Text to Speech executed successfully !")
         await query.delete()
 
+
 @register(outgoing=True, pattern="^.tr(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -390,7 +383,6 @@ async def _(event):
         await event.edit(output_str)
     except Exception as exc:
         await event.edit(str(exc))
-
 
 
 @register(pattern=".lang (tr|tts) (.*)", outgoing=True)
@@ -467,6 +459,7 @@ async def yt_search(video_q):
             break
 
     await video_q.edit(output, link_preview=False)
+
 
 @register(outgoing=True, pattern=r".rip(audio|video) (.*)")
 async def download_video(v_url):
@@ -599,6 +592,7 @@ def deEmojify(inputString):
     """ Remove emojis and other non-safe characters from string """
     return get_emoji_regexp().sub(u'', inputString)
 
+
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
 async def kbg(remob):
     """ For .rbg command, Remove Image Background. """
@@ -678,7 +672,8 @@ async def ReTrieveURL(input_url):
                       data=data,
                       allow_redirects=True,
                       stream=True)
-    return r    
+    return r
+
 
 @register(pattern=r".ocr (.*)", outgoing=True)
 async def ocr(event):
@@ -702,6 +697,7 @@ async def ocr(event):
         await event.edit(f"`Here's what I could read from it:`\n\n{ParsedText}"
                          )
     os.remove(downloaded_file_name)
+
 
 @register(pattern=r"^.decode$", outgoing=True)
 async def parseqr(qr_e):
@@ -814,6 +810,7 @@ async def make_qr(makeqr):
                                   reply_to=reply_msg_id)
     os.remove("img_file.webp")
     await makeqr.delete()
+
 
 @register(outgoing=True, pattern=r"^.direct(?: |$)([\s\S]*)")
 async def direct_link_generator(request):
@@ -1298,13 +1295,11 @@ async def capture(url):
     height = driver.execute_script(
         "return Math.max(document.body.scrollHeight, document.body.offsetHeight, "
         "document.documentElement.clientHeight, document.documentElement.scrollHeight, "
-        "document.documentElement.offsetHeight);"
-    )
+        "document.documentElement.offsetHeight);")
     width = driver.execute_script(
         "return Math.max(document.body.scrollWidth, document.body.offsetWidth, "
         "document.documentElement.clientWidth, document.documentElement.scrollWidth, "
-        "document.documentElement.offsetWidth);"
-    )
+        "document.documentElement.offsetWidth);")
     driver.set_window_size(width + 125, height + 125)
     wait_for = height / 1000
     await url.edit(
@@ -1327,67 +1322,48 @@ async def capture(url):
                                    caption=input_str,
                                    force_document=True,
                                    reply_to=message_id)
-        await url.delete()        
+        await url.delete()
 
-CMD_HELP.update({
-   "image_search":
-    ">`.img <search_query>`\
+CMD_HELP.update(
+    {
+        "image_search": ">`.img <search_query>`\
     \nUsage: Does an image search on Google and shows 5 images.",
-    "currency":
-    "`.currency` <amount> <from> <to>\
+        "currency": "`.currency` <amount> <from> <to>\
     \nUsage: Converts various currencies for you.",
-    "carbon":
-    "`.carbon` <text or reply>\
+        "carbon": "`.carbon` <text or reply>\
     \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.",
-   "gogle":
-   "`.google` <query>\
+        "gogle": "`.google` <query>\
   \nUsage: Does a search on Google.",
-   "wiki":
-   "`.wiki` <query>\
+        "wiki": "`.wiki` <query>\
 \nUsage: Does a search on Wikipedia.",
-"ud":
-"`.ud` <query>\
+        "ud": "`.ud` <query>\
 \nUsage: Usage: Does a search on Urban Dictionary.",
-"tts":
-"`.tts` <text> [or reply]\
+        "tts": "`.tts` <text> [or reply]\
 \nUsage:Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)",
-"translate":
-"`.tr` <text> [or reply]\
+        "translate": "`.tr` <text> [or reply]\
 \nUsage: Translates text to the language which is set.\nUse .lang tr <language code> to set language for tr. (Default is English)",
-"youtube":
-"`.yt` <count> <query>\
+        "youtube": "`.yt` <count> <query>\
 \nUsage: Does a YouTube search.\
 \n\nCan specify the number of results needed (default is 5).",
-"rip":
-"`.ripaudio` <url> or ripvideo <url>\
+        "rip": "`.ripaudio` <url> or ripvideo <url>\
 \nUsage: Download videos and songs from YouTube.",
-"removebg":
-"`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
+        "removebg": "`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
 \nUsage: Removes the background of images, using remove.bg API.",
-"ocr":
-"`.ocr` <language>\
+        "ocr": "`.ocr` <language>\
 \nUsage: Reply to an image or sticker to extract text from it.",
-"qrcode":
-"`.makeqr <content>`\
+        "qrcode": "`.makeqr <content>`\
 \nUsage: Make a QR Code from the given content.\nExample: .makeqr www.google.com\nNote: use .decode <reply to barcode/qrcode> to get decoded content.",
-"barcode":
-"`.barcode` <content>\
+        "barcode": "`.barcode` <content>\
 \nUsage: Make a BarCode from the given content\nExample: `.barcode www.google.com`.",
-"paste":
-"`.paste` <text/reply>\
+        "paste": "`.paste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
-"getpaste":
-"`.getpaste` <text/reply>\
+        "getpaste": "`.getpaste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
-"neko":
-"`.neko` <text/reply>\
+        "neko": "`.neko` <text/reply>\
 \nUsage: Create a paste or a shortened url using nekobin (https://nekobin.com/)",
-"direct":
-"`.direct` <url>\
+        "direct": "`.direct` <url>\
 \nUsage: Reply to a link or paste a URL to generate a direct download link\
 \n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`",
-"screenshot":
-"`.ss <url>`\
+        "screenshot": "`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
-\n\nExample of a valid URL : `https://www.google.com`"    
-})
+\n\nExample of a valid URL : `https://www.google.com`"})

@@ -31,23 +31,23 @@ DEF_UNAPPROVED_MSG = (
     f"   `{DEFAULTUSER}` CHAT\n"
     "╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
 
-f"Saya Bot Assisten `{DEFAULTUSER}`\n"
-"╾─────────────────────╼\n\n"
+    f"Saya Bot Assisten `{DEFAULTUSER}`\n"
+    "╾─────────────────────╼\n\n"
 
-"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-" Mohon untuk tidak\n"
-" melakukan spam chat\n"
-" Atau Saya Akan Otomatis\n"
-" Mereport & Block Kamu\n"
-" Silahkan Tungguu Sampai\n"
-f" `{DEFAULTUSER}` Menerima Pesanmu\n"
-"╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
+    "╭━━━━━━━━━━━━━━━━━━━━━╮\n"
+    " Mohon untuk tidak\n"
+    " melakukan spam chat\n"
+    " Atau Saya Akan Otomatis\n"
+    " Mereport & Block Kamu\n"
+    " Silahkan Tungguu Sampai\n"
+    f" `{DEFAULTUSER}` Menerima Pesanmu\n"
+    "╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
 
-"╾─────────────────────╼\n"
-"   ♥️♥️TERIMAKASIH ❤️♥️\n"
-"─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
-f"- ©Bot Assisten `{DEFAULTUSER}`\n"
-"- Protected By 🔥XBOT-REMIX🔥")
+    "╾─────────────────────╼\n"
+    "   ♥️♥️TERIMAKASIH ❤️♥️\n"
+    "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
+    f"- ©Bot Assisten `{DEFAULTUSER}`\n"
+    "- Protected By 🔥XBOT-REMIX🔥")
 # =================================================================
 
 

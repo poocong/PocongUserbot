@@ -36,6 +36,7 @@ class RedisSession(MemorySession):
     """Session to store the authentication information in Redis.
     The entities and files are cached in memory instead of Redis.
     """
+
     def __init__(self, session_name=None, redis_connection=None):
         if not isinstance(session_name, (str, bytes)):
             raise TypeError("Session name must be a string or bytes.")
@@ -153,7 +154,6 @@ class RedisSession(MemorySession):
     def delete(self):
         keys = self.redis_connection.keys(f"{self.sess_prefix}*")
         self.redis_connection.delete(*keys)
-        pass
 
     """
     def get_update_state(self, entity_id):

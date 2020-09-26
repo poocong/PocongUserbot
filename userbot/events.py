@@ -8,7 +8,6 @@
 
 
 import codecs
-import asyncio
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
@@ -87,7 +86,8 @@ def register(**args):
 
             except events.StopPropagation:
                 raise events.StopPropagation
-            # This is a gay exception and must be passed out. So that it doesnt spam chats
+            # This is a gay exception and must be passed out. So that it doesnt
+            # spam chats
             except KeyboardInterrupt:
                 pass
             except BaseException:
@@ -140,9 +140,9 @@ def register(**args):
                     file = open("error.log", "w+")
                     file.write(ftext)
                     file.close()
-                    
+
                     if LOGSPAMMER:
-                       
+
                         log = codecs.open("error.log", "r", encoding="utf-8")
                         data = log.read()
                         key = (

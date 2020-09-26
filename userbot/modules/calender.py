@@ -1,5 +1,3 @@
-from telethon import events
-import asyncio
 from datetime import datetime
 import requests
 import json
@@ -18,23 +16,27 @@ async def _(event):
         yyyy = input_sgra[0]
         mm = input_sgra[1]
         dd = input_sgra[2]
-        required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(yyyy, mm, dd, "en")
+        required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(
+            yyyy, mm, dd, "en")
         headers = {"Accept": "application/json"}
         response_content = requests.get(required_url, headers=headers).json()
         a = ""
         if "error" not in response_content:
             current_date_detail_arraays = response_content["months"][0]["days"][0]
-            a = json.dumps(current_date_detail_arraays, sort_keys=True, indent=4)
+            a = json.dumps(
+                current_date_detail_arraays,
+                sort_keys=True,
+                indent=4)
         else:
             a = response_content["error"]
         await event.edit(str(a))
     else:
         await event.edit("SYNTAX: .calendar YYYY-MM-DD")
     end = datetime.now()
-    ms = (end - start).seconds
+    (end - start).seconds
 
 CMD_HELP.update({
-        "calender": 
+    "calender":
         ".calender \
           \nUsage: To shows today's date.\n"
-    })
+})
