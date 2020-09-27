@@ -96,19 +96,19 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("`Mencari Music Video...`")
+        await event.edit("`Wait..! I am finding your videosong..`")
     elif reply:
         query = str(reply.message)
-        await event.edit("`Mencari Music Video..`")
+        await event.edit("`Wait..! I am finding your videosong..`")
     else:
-        await event.edit("`Apa Yang Harus Saya Cari?`")
+        await event.edit("`What I am Supposed to find?`")
         return
     await getmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm"))
     if l:
-        await event.edit("`OK..! Music Video Ditemukan..`")
+        await event.edit("`Yeah..! i found something..`")
     else:
-        await event.edit(f"`Sorry..! Saya tidak dapat menemukan` **{query}**")
+        await event.edit(f"`Sorry..! i can't find anything with` **{query}**")
         return
     try:
         loa = l[0]
@@ -149,7 +149,6 @@ async def _(event):
             ),
         )
         await event.edit(f"**{query}** `Uploaded Successfully..!`")
-        await event.delete()
         os.remove(thumb_image)
         os.system("rm -rf *.mkv")
         os.system("rm -rf *.mp4")
