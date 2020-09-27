@@ -18,8 +18,7 @@
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
 <p align="center">&nbsp;</p>
 
-<p align="center"><b>How To Host:</p>
-
+<p align="center">
 <details>
   <summary> How To Deploy 👷 </summary>
 
@@ -41,6 +40,7 @@
 
 </details>
 
+</p><br>
 <p align="center"><b>GENERATE STRING SESSION</p>
 
 ## Run on your terminal
