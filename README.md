@@ -10,10 +10,6 @@
     <img alt="Docker Automated build" src="https://img.shields.io/docker/automated/xnewbie/xbot?color=g&label=DOCKER%20VESRION&logo=LATEST&logoColor=LATEST&style=for-the-badge"/>    
 </p>
 
-<p align="center">
-<a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
-</p>
-
 
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
 <p align="center">&nbsp;</p>
