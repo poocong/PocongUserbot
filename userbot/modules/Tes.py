@@ -2,18 +2,11 @@ import asyncio
 import glob
 import os
 import time
-from asyncio.exceptions import TimeoutError
 
-import requests
-from bs4 import BeautifulSoup
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from pylast import User
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import CMD_HELP, LASTFM_USERNAME, bot, lastfm
 from userbot.events import register
 from userbot.utils import progress
 
