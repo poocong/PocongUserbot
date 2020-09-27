@@ -22,18 +22,6 @@
 <details>
   <summary> How To Deploy 👷 </summary>
 
-  [HEROKU](https://www.heroku.com/) Method 🔧
-
-  > First click the button below. 
-
-  > If you don't have HU_STRING_SESSION just ignore it.  
-
-  > After Deployed to Heroku first turn off the app (resources -> turn off) and run `bash genStr` in console (more -> run console).  
-
-  > After that copy the string session and past it in Config Vars (settings -> reveal config vars). 
-
-  > Finally turn on the app and check the logs (settings -> view logs) :)
-
 <p align="center">JOIN CHANNEL TO GET DEPLOY BUTTON</p>
 <p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
 </p>
@@ -41,8 +29,9 @@
 </details>
 
 </p><br>
-<p align="center"><b>GENERATE STRING SESSION</p>
 
+<p align="center"><b>GENERATE STRING SESSION</p>
+<br>
 ## Run on your terminal
 ```
 wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
