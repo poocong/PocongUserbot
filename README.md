@@ -16,7 +16,7 @@
 
 
 <p align="center">JOIN CHANNEL TO GET DEPLOY BUTTON</p>
-<p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/JOIN%20CHANNEL-blueviolet?style=flat&logo%22%20width=%22210%22%20height=%2234.45" /></a>
+<p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/JOIN%20CHANNEL-blueviolet?style=flat&logo" width="210" height="34.45" /></a>
 <br>
 
 <p align="center"><b>GENERATE STRING SESSION</p>
