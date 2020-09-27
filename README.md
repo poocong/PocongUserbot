@@ -20,7 +20,7 @@
 
 
 <p align="center">JOIN CHANNEL TO GET DEPLOY BUTTON</p>
-<p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
+<p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/JOIN%20CHANNEL-red?style=flat&logo=heroku" width="210" height="34.45" /></a>
 <br>
 
 <p align="center"><b>GENERATE STRING SESSION</p>
