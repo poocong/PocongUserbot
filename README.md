@@ -18,13 +18,9 @@
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
 <p align="center">&nbsp;</p>
 
-<p align="center"><details><summary> How To Deploy 👷 </summary></p>
 
 <p align="center">JOIN CHANNEL TO GET DEPLOY BUTTON</p>
 <p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
-</p>
-
-</details>
 <br>
 
 <p align="center"><b>GENERATE STRING SESSION</p>
