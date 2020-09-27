@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/X-Newbi/XBot-Remix",
+  "repository": "https://github.com/X-Newbie/XBot-Remix",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "success_url": "https://t.me/XBOT_SUPPORT",
   "stack": "container",
@@ -48,10 +48,6 @@
       "description": "Get this value from http://antiddos.systems! Please do not steal",
       "required": false
     },
-    "API_URL": {
-      "description": "The value is http://antiddos.systems!",
-      "value": "http://antiddos.systems"
-    },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
       "required": false
@@ -60,23 +56,9 @@
       "description": "Your MongoDB Atlas URL, Get your guide from https://telegra.ph/Mongo-DB-12-24.",
       "required": false
     },
-    "NC_LOG_P_M_S": {
-      "description": "set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID",
-      "value": "False",
-      "required": true
-    },
-    "PM_LOGGR_BOT_API_ID": {
-      "description": "send .getid in any channel to forward all your NEW PMs to this group",
-      "required": false
-    },
     "GENIUS": {
       "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
       "required": false
-    },
-    "HEROKU_MEMEZ": {
-      "description": "This should be True if the userbot is running on a Heroku Dyno.",
-      "value": "True",
-      "required": true
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
@@ -109,11 +91,6 @@
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
       "required": false
-    },
-      "CONSOLE_LOGGER_VERBOSE": {
-      "description": "If you need verbosity on the console logging",
-      "value": "False",
-      "required": true
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
