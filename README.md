@@ -20,6 +20,11 @@
 
 <p align="center"><b>How To Host:</p>
 
+<p align="center">
+JOIN CHANNEL TO GET DEPLOY BUTTON 😄
+<a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/Join%20Channel-!-red " /></a>
+</p>
+
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended/"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 <p align="center"><b>GENERATE STRING SESSION</p>
