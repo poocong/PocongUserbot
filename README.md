@@ -32,6 +32,7 @@
 
 <p align="center"><b>GENERATE STRING SESSION</p>
 <br>
+
 ## Run on your terminal
 ```
 wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
