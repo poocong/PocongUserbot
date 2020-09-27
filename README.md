@@ -1,5 +1,3 @@
-<p align="center"><img src="https://telegra.ph/file/0705b18189a4163a94a4a.png"/></p>
-
 <p align="center">
     <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-3.0-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-17.08.2020-brightgreen"/>
