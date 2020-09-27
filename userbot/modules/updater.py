@@ -2,7 +2,7 @@
 This module updates the userbot based on upstream revision
 """
 
-from os import remove, execl, execle, path, environ
+from os import environ, execle, path, remove
 import asyncio
 import sys
 
