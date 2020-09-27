@@ -211,7 +211,7 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
 # Photo Chat - Get this value from http://antiddos.systems
-API_TOKEN = os.environ.get("API_TOKEN", "")
+API_TOKEN = os.environ.get("API_TOKEN", none)
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
