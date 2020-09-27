@@ -23,7 +23,7 @@ from userbot import (
     lastfm,
 )
 from userbot.events import register
-from userbot.utils import progress
+from userbot.utils import progress, check_media
 
 
 async def getmusicvideo(cat):
