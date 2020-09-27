@@ -96,17 +96,17 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("`Wait..! I am finding your videosong..`")
+        await event.edit("`Mencari Music Video..`")
     elif reply:
         query = str(reply.message)
-        await event.edit("`Wait..! I am finding your videosong..`")
+        await event.edit("`Mencari Music Video..`")
     else:
         await event.edit("`What I am Supposed to find?`")
         return
     await getmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm"))
     if l:
-        await event.edit("`Yeah..! i found something..`")
+        await event.edit("`Music Video di Temukan..`")
     else:
         await event.edit(f"`Sorry..! i can't find anything with` **{query}**")
         return
@@ -336,7 +336,7 @@ async def upload_track(track_location, message):
 
 CMD_HELP.update(
     {
-        "getmusic": ">`.netease <Artist - Song Title>`"
+        "music": ">`.netease <Artist - Song Title>`"
         "\nUsage: Download music with @WooMaiBot"
         "\n\n>`.netease now`"
         "\nUsage: Download current LastFM scrobble use `@WooMaiBot`."
