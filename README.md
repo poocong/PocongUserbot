@@ -30,7 +30,7 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 ```
 
 ## How to setup Google Drive
-<p align="center"><a href="https://semawur.com/gGEs1KN"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/gd.png"/></a></p>
+<p align="center"><a href="https://semawur.com/gGEs1KN"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png"/></a></p>
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
