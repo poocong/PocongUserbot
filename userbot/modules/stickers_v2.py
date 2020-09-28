@@ -82,7 +82,7 @@ async def _(event):
                 await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
             else:
                 await event.edit("try again")
-                await event.client.delete_messages(conv.chat_id, event.chat_id, [msg.id, response.id])
+                await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.stoi$")
