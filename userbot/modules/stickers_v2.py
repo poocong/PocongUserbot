@@ -83,7 +83,7 @@ async def _(event):
                 await event.client.delete_messages(conv.chat_id, event.chat_id, [msg.id, response.id])
             else:
                 await event.edit("try again")
-                
+
 
 @register(outgoing=True, pattern="^.stoi$")
 async def sticker_to_png(sticker):
