@@ -59,9 +59,9 @@ async def _(event):
                     from_users=611085086))
             msg = await event.client.forward_messages(chat, reply_message)
             response = await response
-        await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
         except YouBlockedUserError:
             await event.reply("unblock me (@stickers_to_image_bot) to work")
+            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
             return
         if response.text.startswith("I understand only stickers"):
             await event.edit("Sorry i cant't convert it check wheter is non animated sticker or not")
