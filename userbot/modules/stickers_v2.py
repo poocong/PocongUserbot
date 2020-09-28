@@ -61,14 +61,19 @@ async def _(event):
             response = await response
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await event.reply("unblock me (@stickers_to_image_bot) and try again")
-            return
-        if response.text.startswith("Hi!"):
-            await event.edit("Gagal!!!")
-        else:
-            await event.delete()
-            await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
-            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
+            await event.reply("unblock me (@stickers_to_image_bot) to work")
+              return
+          if response.text.startswith("I understand only stickers"):
+              await event.edit("Sorry i cant't convert it check wheter is non animated sticker or not")
+          else:
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=611085086))
+              response = await response
+              if response.text.startswith("..."):
+                  response = conv.wait_event(events.NewMessage(incoming=True,from_users=611085086))
+                  response = await response
+                  await event.delete()
+              await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
+              await event.client.delete_messages(conv.chat_id=3, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.stoi$")
