@@ -77,7 +77,7 @@ async def _(event):
                         from_users=611085086))
                 response = await response
                 await event.delete()
-                await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)               
+                await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
             else:
                 await event.edit("try again")
         await bot.send_read_acknowledge(conv.chat_id)
