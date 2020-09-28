@@ -65,13 +65,13 @@ async def _(event):
             return
         if response.text.startswith("I understand only stickers"):
             await event.edit("Sorry i cant't convert it check wheter is non animated sticker or not")
+            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
         else:
             response = conv.wait_event(
                 events.NewMessage(
                     incoming=True,
                     from_users=611085086))
             response = await response
-            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
             if response.text.startswith("..."):
                 response = conv.wait_event(
                     events.NewMessage(
