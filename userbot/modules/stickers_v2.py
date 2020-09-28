@@ -77,12 +77,11 @@ async def _(event):
                         from_users=611085086))
                 response = await response
                 await event.delete()
-                await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
-                await event.delete_message(event.chat_id, [msg.id, response.id])
+                await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)               
             else:
                 await event.edit("try again")
         await bot.send_read_acknowledge(conv.chat_id)
-        await event.client.delete_message(event.chat_id, [msg.id, response.id])
+        await event.client.delete_message(event.chat_id, conv.chat_id, response.message, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.stoi$")
