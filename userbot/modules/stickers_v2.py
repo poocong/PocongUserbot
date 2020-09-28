@@ -35,7 +35,7 @@ async def _(event):
         else:
             await event.delete()
             await event.client.send_message(event.chat_id, response.message)
-            await event.client.delete_messages(event.chat_id, [msg.id, response.id])
+            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.get$")
@@ -80,11 +80,10 @@ async def _(event):
                 await bot.send_read_acknowledge(conv.chat_id)
                 await event.delete()
                 await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
-                await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
+                await event.client.delete_messages(conv.chat_id, event.chat_id, [msg.id, response.id])
             else:
                 await event.edit("try again")
-                await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
-
+                
 
 @register(outgoing=True, pattern="^.stoi$")
 async def sticker_to_png(sticker):
