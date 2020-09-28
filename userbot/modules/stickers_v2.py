@@ -1,6 +1,4 @@
-import codecs
-import asyncio
-import sys, time, io
+import io
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
