@@ -1,3 +1,7 @@
+import codecs
+import asyncio
+import sys
+import time
 import io
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
