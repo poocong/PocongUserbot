@@ -81,6 +81,7 @@ async def _(event):
                 await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
                 await event.client.delete_message(conv.chat_id(3), [msg.id, response.id])
 
+
 @register(outgoing=True, pattern="^.stoi$")
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
