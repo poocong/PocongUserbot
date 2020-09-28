@@ -1,6 +1,8 @@
+import codecs
+import asyncio
+import sys, time, io
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-import io
 from userbot import bot, CMD_HELP
 from userbot.events import register
 
@@ -26,16 +28,15 @@ async def _(event):
                     from_users=164977173))
             msg = await event.client.forward_messages(chat, reply_message)
             response = await response
+            await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.reply("unblock me (@buildstickerbot) and try again")
             return
         if response.text.startswith("Hi!"):
             await event.edit("Can you kindly disable your forward privacy settings for good?")
         else:
-            await event.delete()
-            await bot.send_read_acknowledge(conv.chat_id)
             await event.client.send_message(event.chat_id, response.message)
-            await event.client.delete_message(event.chat_id, [msg.id, response.id])
+            await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.get$")
@@ -58,6 +59,7 @@ async def _(event):
                     incoming=True,
                     from_users=611085086))
             msg = await event.client.forward_messages(chat, reply_message)
+            await bot.send_read_acknowledge(conv.chat_id)
             response = await response
         except YouBlockedUserError:
             await event.reply("unblock me (@stickers_to_image_bot) to work")
@@ -76,12 +78,12 @@ async def _(event):
                         incoming=True,
                         from_users=611085086))
                 response = await response
+                await bot.send_read_acknowledge(conv.chat_id)
                 await event.delete()
                 await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
             else:
                 await event.edit("try again")
-        await bot.send_read_acknowledge(conv.chat_id)
-        await event.client.delete_message(event.chat_id, conv.chat_id, response.message, [msg.id, response.id])
+                await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.stoi$")
