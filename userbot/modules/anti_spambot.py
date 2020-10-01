@@ -1,5 +1,201 @@
-# Encript Marshal By XVenom
-# https://github.com/xvenom15
-import marshal
-exec(marshal.loads(
-    b'\xe3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00@\x00\x00\x00s|\x00\x00\x00d\x00Z\x00d\x01d\x02l\x01m\x02Z\x02\x01\x00d\x01d\x03l\x03m\x04Z\x04\x01\x00d\x01d\x04l\x05m\x06Z\x06\x01\x00d\x01d\x05l\x07m\x08Z\x08m\tZ\t\x01\x00d\x01d\x06l\nm\x0bZ\x0bm\x0cZ\x0cm\rZ\rm\x0eZ\x0em\x0fZ\x0fm\x10Z\x10\x01\x00e\x10\xa0\x11e\x06\xa1\x01d\x07d\x08\x84\x00\x83\x01Z\x12e\r\xa0\x13d\td\ni\x01\xa1\x01\x01\x00d\x0bS\x00)\x0cz/ A module for helping ban group join spammers. \xe9\x00\x00\x00\x00)\x01\xda\x05sleep)\x01\xda\x03get)\x01\xda\nChatAction)\x02\xda\x19ChannelParticipantsAdmins\xda\x07Message)\x06\xda\x06BOTLOG\xda\rBOTLOG_CHATID\xda\x08CMD_HELP\xda\x0cANTI_SPAMBOT\xda\x12ANTI_SPAMBOT_SHOUT\xda\x03botc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x15\x00\x00\x00\x11\x00\x00\x00\xc3\x00\x00\x00s\x18\x04\x00\x00\x90\x03z\xfat\x00s\x0eW\x00d\x00S\x00|\x00j\x01s\x1c|\x00j\x02\x90\x03r\xfad\x00}\x01d\x01}\x02d\x00}\x03|\x00j\x02rXd\x01}\x02z\x0c|\x00j\x03j\x04}\x01W\x00n\x18\x04\x00t\x05k\nrV\x01\x00\x01\x00\x01\x00Y\x00W\x00d\x00S\x00X\x00t\x06j\x07|\x00j\x08t\td\x02\x8d\x022\x00z\x1e3\x00d\x00H\x00W\x00}\x04|\x04j\n|\x01k\x02rhd\x03}\x02\x01\x00q\x8aqh6\x00|\x02r\x94W\x00d\x00S\x00|\x00j\x01r\xc2t\x0b|\x00j\x03j\x0cd\x04\x83\x02}\x05|\x05r\xb8|\x00j\x03j\x0cj\r}\x03n\n|\x00j\x03j\x04g\x01}\x03t\x0ed\x05\x83\x01I\x00d\x00H\x00\x01\x00d\x01}\x06|\x03s\xdeW\x00d\x00S\x00|\x03D\x00\x90\x01]\xdc}\x07t\x06j\x0f|\x00j\x08|\x07d\x06\x8d\x022\x00\x90\x01z\xc23\x00d\x00H\x00W\x00}\x08t\x10|\x08t\x11\x83\x02}\t|\x08\x90\x01r\x1c|\t\x90\x01s \x01\x00q\xe2|\x00j\x03j\x12}\n|\x08j\x12}\x0b|\x0b|\nk\x00\x90\x01r:q\xf8|\x00j\x13\xa0\x14|\x07\xa1\x01I\x00d\x00H\x00}\x0ct\x15d\x07|\x0cj\x16\x9b\x00d\x08|\x0cj\n\x9b\x00d\t\x9d\x05\x83\x01\x01\x00t\x15d\n|\x00j\x17j\x18\x9b\x00\x9d\x02\x83\x01\x01\x00t\x15d\x0b|\n\x9b\x00\x9d\x02\x83\x01\x01\x00t\x15d\x0c|\x08j\x19\x9b\x00d\r|\x0b\x9b\x00d\t\x9d\x05\x83\x01\x01\x00z$d\x0e|\x0cj\n\x9b\x00\x9d\x02}\rt\x1a|\rd\x0fd\x10\x8d\x02}\x0e|\x0e\xa0\x1b\xa1\x00}\x0fW\x00n"\x04\x00t\x1ck\n\x90\x01r\xe4\x01\x00\x01\x00\x01\x00t\x15d\x11\x83\x01\x01\x00d\x00}\x0fY\x00n\x02X\x00|\x0f\x90\x02r\n|\x0fd\x12\x19\x00\x90\x02r\nd\x13|\x0cj\n\x9b\x00d\x14\x9d\x03}\x10d\x03}\x06n\x8ad\x15|\x08j\x19k\x06\x90\x02r d\x16}\x10d\x03}\x06ntd\x17|\x08j\x19k\x06\x90\x02r6d\x18}\x10d\x03}\x06n^|\x08j\x1d\x90\x02rHd\x19}\x10d\x03}\x06nLd\x1a|\x08j\x19k\x06\x90\x02r^d\x1b}\x10d\x03}\x06n6d\x1c|\x08j\x19k\x06\x90\x02rtd\x1d}\x10d\x03}\x06n |\x0cj\x16d\x1ek\x06\x90\x02r\x94|\x03j\x1ed\x1fk\x02\x90\x02r\x94d }\x10d\x03}\x06|\x06r\xf8t\x15d!|\x08j\x19\x9b\x00\x9d\x02\x83\x01\x01\x00|\x08\xa0\x1f\xa1\x00I\x00d\x00H\x00\x01\x00\x01\x00q\xe2q\xf8q\xf86\x00q\xe2|\x06\x90\x03r\xfa|\x00\xa0 \xa1\x00I\x00d\x00H\x00}\x11|\x11j!}\x04|\x11j"}\x12|\x04\x90\x03s\x14|\x12\x90\x03s\x14t#\x90\x03r\x9c|\x00\xa0$d"|\x10\x9b\x00\x9d\x02\xa1\x01I\x00d\x00H\x00\x01\x00d\x01}\x13d\x03}\x14n\x88zL|\x00\xa0$d#|\x10\x9b\x00d$|\x0cj\x16\x9b\x00d%|\x0cj\n\x9b\x00d\x14\x9d\x07\xa1\x01I\x00d\x00H\x00\x01\x00|\x00j\x13\xa0%|\x00j\x08|\x0cj\n\xa1\x02I\x00d\x00H\x00\x01\x00d\x03}\x13d\x01}\x14W\x00n:\x04\x00t\x1ck\n\x90\x03r\x9a\x01\x00\x01\x00\x01\x00t#\x90\x03r\x96|\x00\xa0$d"|\x10\x9b\x00\x9d\x02\xa1\x01I\x00d\x00H\x00\x01\x00d\x01}\x13d\x03}\x14Y\x00n\x02X\x00t&\x90\x03r\xfa|\x13\x90\x03s\xae|\x14\x90\x03r\xfa|\x00j\x13\xa0\'t(d&|\x03j\x16\x9b\x00d%|\x0cj\n\x9b\x00d\'|\x0cj\n\x9b\x00d(|\x00j\x17j\x18\x9b\x00d)|\x00j\x08\x9b\x00d*|\x10\x9b\x00d+|\x08j\x19\x9b\x00\x9d\x0e\xa1\x02I\x00d\x00H\x00\x01\x00W\x00n\x16\x04\x00t)k\n\x90\x04r\x12\x01\x00\x01\x00\x01\x00Y\x00n\x02X\x00d\x00S\x00),NF)\x01\xda\x06filterT\xda\x05users\xe9\x05\x00\x00\x00)\x01Z\tfrom_userz\rUser Joined: z\x06 [ID: \xfa\x01]z\x06Chat: z\x06Time: z\x0eMessage Sent: z\t\n\n[Time: z)https://combot.org/api/cas/check?user_id=\xe9\x03\x00\x00\x00)\x01Z\x07timeoutz@CAS check failed, falling back to legacy anti_spambot behaviour.\xda\x02okz<[Banned by Combot Anti Spam](https://combot.org/cas/query?u=\xfa\x01)z\x05t.cn/z\x14Match on `t.cn` URLsz\rt.me/joinchatz\x1bPotential Promotion Messagez\x11Forwarded Messagez\x07?start=z\x19Telegram bot `start` linkz\x07bit.ly/z\x16Match on `bit.ly` URLs)\x06Z\x06BitmexZ\tPromotionZ\x0bInformationZ\x03DexZ\rAnnouncementsZ\x04InfoZ\x03Botz\rKnown spambotz\x18Potential Spam Message: zV@admins\n`ANTI SPAMBOT DETECTOR!\nTHIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`REASON: z*`Potential Spambot Detected !!`\n`REASON:` zF\nKicking away for now, will log the ID for further purposes.\n`USER:` [z\x0f](tg://user?id=z\x1c#ANTI_SPAMBOT REPORT\nUSER: [z\x0c)\nUSER ID: `z\x08`\nCHAT: z\x0b\nCHAT ID: `z\n`\nREASON: z\x0b\nMESSAGE:\n\n)*r\n\x00\x00\x00Z\x0buser_joinedZ\nuser_addedZ\x0eaction_messageZ\x07from_id\xda\x0eAttributeErrorr\x0c\x00\x00\x00Z\x11iter_participantsZ\x07chat_idr\x05\x00\x00\x00\xda\x02id\xda\x07hasattrZ\x06actionr\x0e\x00\x00\x00r\x02\x00\x00\x00Z\riter_messages\xda\nisinstancer\x06\x00\x00\x00\xda\x04dateZ\x06clientZ\nget_entity\xda\x05printZ\nfirst_name\xda\x04chat\xda\x05title\xda\x04textr\x03\x00\x00\x00Z\x04json\xda\rBaseExceptionZ\x08fwd_fromZ\tlast_name\xda\x06deleteZ\x08get_chatZ\x0cadmin_rights\xda\x07creatorr\x0b\x00\x00\x00Z\x05replyZ\x10kick_participantr\x07\x00\x00\x00Z\x0csend_messager\x08\x00\x00\x00\xda\nValueError)\x15Z\x05welcmZ\x05adder\xda\x06ignorer\x0e\x00\x00\x00Z\x05adminZ\nusers_listZ\x07spambotZ\x07user_id\xda\x07messageZ\x0ccorrect_typeZ\tjoin_timeZ\x0cmessage_dateZ\ncheck_userZ\x07cas_url\xda\x01r\xda\x04data\xda\x06reasonr\x1a\x00\x00\x00r\x1f\x00\x00\x00Z\x06kickedZ\x08reported\xa9\x00r&\x00\x00\x00\xda\x00\xda\rANTI_SPAMBOTS\x11\x00\x00\x00s\xf8\x00\x00\x00\x00\x02\x04\x03\x04\x01\x06\x01\x0e\x01\x04\x01\x04\x01\x04\x02\x06\x01\x04\x01\x02\x01\x0c\x01\x0e\x01\n\x02\x04\x01\x04\x00\x02\xff\x12\x02\n\x01\x04\x01\x08\x02\x04\x01\x06\x02\x06\x01\x0e\x01\x04\x01\x0c\x02\n\x02\x0e\x01\x04\x02\x04\x01\x06\x02\n\x01\x08\x01\x02\xff\x14\x03\n\x01\x0c\x01\x04\x02\x08\x01\x06\x02\n\x01\x02\x02\x12\x03\x02\x01\x14\xff\x04\x03\x12\x01\x0e\x01\x02\x01\x12\xff\x04\x05\x02\x01\x0c\x01\x0c\x01\x0c\x01\x10\x01\x02\x01\x02\xff\x04\x03\x04\x01\x06\x02\x10\x01\x0e\x01\x06\x01\x0c\x01\x04\x01\x06\x01\x0c\x01\x04\x01\x06\x01\x08\x01\x04\x01\x06\x01\x0c\x01\x04\x01\x06\x01\x0c\x01\x04\x01\x06\x02\x0c\x03\x0c\x01\x04\x01\x04\x02\x04\x01\x10\x01\x0e\x01\x04\x02\x08\x02\x06\x01\x0e\x01\x06\x01\x06\x01\x0c\x01\x06\x01\x04\x01\x08\xff\n\x05\x04\x01\x06\x02\x02\x02\x04\x01\x1a\xff\n\x07\x06\x01\x04\x00\x04\xff\n\x02\x04\x01\x08\x02\x10\x01\x06\x01\x04\x01\x08\xff\n\x05\x04\x01\n\x02\x06\x01\x0c\x01\x06\x01\x02\x00:\xff\x0e\x08\x10\x01r(\x00\x00\x00Z\x0canti_spambotz\xa2If enabled in config.env or env var,\nthis module will ban(or inform the admins of the group about) the\nspammer(s) if they match the userbot\'s anti-spam algorithm.N)\x14\xda\x07__doc__Z\x07asyncior\x02\x00\x00\x00Z\x08requestsr\x03\x00\x00\x00Z\x0ftelethon.eventsr\x04\x00\x00\x00Z\x11telethon.tl.typesr\x05\x00\x00\x00r\x06\x00\x00\x00Z\x07userbotr\x07\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00r\n\x00\x00\x00r\x0b\x00\x00\x00r\x0c\x00\x00\x00Z\x02onr(\x00\x00\x00\xda\x06updater&\x00\x00\x00r&\x00\x00\x00r&\x00\x00\x00r\'\x00\x00\x00\xda\x08<module>\x06\x00\x00\x00s\x18\x00\x00\x00\x04\x02\x0c\x01\x0c\x02\x0c\x01\x10\x02 \x03\x08\x01\n\x7f\x00$\x04\x01\x02\x01\x02\xfe'))
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+#
+
+from asyncio import sleep
+
+from requests import get
+from telethon.events import ChatAction
+from telethon.tl.types import ChannelParticipantsAdmins, Message
+
+from userbot import (
+    ANTI_SPAMBOT,
+    ANTI_SPAMBOT_SHOUT,
+    BOTLOG,
+    BOTLOG_CHATID,
+    CMD_HELP,
+    bot,
+)
+
+
+@bot.on(ChatAction)
+async def ANTI_SPAMBOTS(welcm):
+    try:
+        """Ban a recently joined user if it
+        matches the spammer checking algorithm."""
+        if not ANTI_SPAMBOT:
+            return
+        if welcm.user_joined or welcm.user_added:
+            adder = None
+            ignore = False
+            users = None
+
+            if welcm.user_added:
+                ignore = False
+                try:
+                    adder = welcm.action_message.from_id
+                except AttributeError:
+                    return
+
+            async for admin in bot.iter_participants(
+                welcm.chat_id, filter=ChannelParticipantsAdmins
+            ):
+                if admin.id == adder:
+                    ignore = True
+                    break
+
+            if ignore:
+                return
+
+            elif welcm.user_joined:
+                users_list = hasattr(welcm.action_message.action, "users")
+                if users_list:
+                    users = welcm.action_message.action.users
+                else:
+                    users = [welcm.action_message.from_id]
+
+            await sleep(5)
+            spambot = False
+
+            if not users:
+                return
+
+            for user_id in users:
+                async for message in bot.iter_messages(
+                    welcm.chat_id, from_user=user_id
+                ):
+
+                    correct_type = isinstance(message, Message)
+                    if not message or not correct_type:
+                        break
+
+                    join_time = welcm.action_message.date
+                    message_date = message.date
+
+                    if message_date < join_time:
+                        continue  # The message was sent before the user joined, thus ignore it
+
+                    check_user = await welcm.client.get_entity(user_id)
+
+                    # DEBUGGING. LEAVING IT HERE FOR SOME TIME ###
+                    print(f"User Joined: {check_user.first_name} [ID: {check_user.id}]")
+                    print(f"Chat: {welcm.chat.title}")
+                    print(f"Time: {join_time}")
+                    print(f"Message Sent: {message.text}\n\n[Time: {message_date}]")
+                    ##############################################
+
+                    try:
+                        # https://t.me/combotnews/283
+                        cas_url = f"https://api.cas.chat/check?user_id={check_user.id}"
+                        r = get(cas_url, timeout=3)
+                        data = r.json()
+                    except BaseException:
+                        print(
+                            "CAS check failed, falling back to legacy anti_spambot behaviour."
+                        )
+                        data = None
+
+                    if data and data["ok"]:
+                        reason = f"[Banned by Combot Anti Spam](https://combot.org/cas/query?u={check_user.id})"
+                        spambot = True
+                    elif "t.cn/" in message.text:
+                        reason = "Match on `t.cn` URLs"
+                        spambot = True
+                    elif "t.me/joinchat" in message.text:
+                        reason = "Potential Promotion Message"
+                        spambot = True
+                    elif message.fwd_from:
+                        reason = "Forwarded Message"
+                        spambot = True
+                    elif "?start=" in message.text:
+                        reason = "Telegram bot `start` link"
+                        spambot = True
+                    elif "bit.ly/" in message.text:
+                        reason = "Match on `bit.ly` URLs"
+                        spambot = True
+                    else:
+                        if check_user.first_name in (
+                            "Bitmex",
+                            "Promotion",
+                            "Information",
+                            "Dex",
+                            "Announcements",
+                            "Info",
+                        ):
+                            if users.last_name == "Bot":
+                                reason = "Known spambot"
+                                spambot = True
+
+                    if spambot:
+                        print(f"Potential Spam Message: {message.text}")
+                        await message.delete()
+                        break
+
+                    continue  # Check the next messsage
+
+            if spambot:
+                chat = await welcm.get_chat()
+                admin = chat.admin_rights
+                creator = chat.creator
+                if not admin and not creator:
+                    if ANTI_SPAMBOT_SHOUT:
+                        await welcm.reply(
+                            "@admins\n"
+                            "`ANTI SPAMBOT DETECTOR!\n"
+                            "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
+                            f"REASON: {reason}"
+                        )
+                        kicked = False
+                        reported = True
+                else:
+                    try:
+
+                        await welcm.reply(
+                            "`Potential Spambot Detected !!`\n"
+                            f"`REASON:` {reason}\n"
+                            "Kicking away for now, will log the ID for further purposes.\n"
+                            f"`USER:` [{check_user.first_name}](tg://user?id={check_user.id})"
+                        )
+
+                        await welcm.client.kick_participant(
+                            welcm.chat_id, check_user.id
+                        )
+                        kicked = True
+                        reported = False
+
+                    except BaseException:
+                        if ANTI_SPAMBOT_SHOUT:
+                            await welcm.reply(
+                                "@admins\n"
+                                "`ANTI SPAMBOT DETECTOR!\n"
+                                "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
+                                f"REASON: {reason}"
+                            )
+                            kicked = False
+                            reported = True
+
+                if BOTLOG:
+                    if kicked or reported:
+                        await welcm.client.send_message(
+                            BOTLOG_CHATID,
+                            "#ANTI_SPAMBOT REPORT\n"
+                            f"USER: [{users.first_name}](tg://user?id={check_user.id})\n"
+                            f"USER ID: `{check_user.id}`\n"
+                            f"CHAT: {welcm.chat.title}\n"
+                            f"CHAT ID: `{welcm.chat_id}`\n"
+                            f"REASON: {reason}\n"
+                            f"MESSAGE:\n\n{message.text}",
+                        )
+    except ValueError:
+        pass
+
+
+CMD_HELP.update(
+    {
+        "anti_spambot": "If enabled in config.env or env var,"
+        "\nthis module will ban(or inform the admins of the group about) the"
+        "\nspammer(s) if they match the userbot's anti-spam algorithm."
+    }
+)
