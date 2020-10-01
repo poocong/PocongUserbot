@@ -131,9 +131,9 @@ async def dyno_usage(dyno):
     )
     user_id = Heroku.account().id
     headers = {
-     'User-Agent': useragent,
-     'Authorization': f'Bearer {HEROKU_API_KEY}',
-     'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
+        'User-Agent': useragent,
+        'Authorization': f'Bearer {HEROKU_API_KEY}',
+        'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
     }
     path = "/accounts/" + user_id + "/actions/get-quota"
     async with aiohttp.ClientSession() as session:
@@ -173,17 +173,18 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                 "**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n"
-                 f"-> `Penggunaan Dyno Untuk`  **{app.name}**:\n"
-                 f"    •**{AppHours} jam - "
-                 f"{AppMinutes} menit  -  {AppPercentage}%**"
-                 "\n◐━─━─━─━─━──━─━─━─━─━◐\n"
-                 "-> `Sisa Waktu Dyno Bulan Ini`:\n"
-                 f"    •**{hours} jam - {minutes} menit  "
-                 f"-  {percentage}%**\n"
-                 "╰━━━━━━━━━━━━━━━━━━━━╯"
+                "**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n"
+                f"-> `Penggunaan Dyno Untuk`  **{app.name}**:\n"
+                f"    •**{AppHours} jam - "
+                f"{AppMinutes} menit  -  {AppPercentage}%**"
+                "\n◐━─━─━─━─━──━─━─━─━─━◐\n"
+                "-> `Sisa Waktu Dyno Bulan Ini`:\n"
+                f"    •**{hours} jam - {minutes} menit  "
+                f"-  {percentage}%**\n"
+                "╰━━━━━━━━━━━━━━━━━━━━╯"
             )
             return True
+
 
 @register(outgoing=True, pattern=r"^\.logs")
 async def _(dyno):
@@ -204,5 +205,3 @@ async def _(dyno):
     url = f"https://nekobin.com/raw/{key}"
     await dyno.edit(f"`Here the heroku logs:`\n\nPasted to: [Nekobin]({url})")
     return os.remove("logs.txt")
-
-
