@@ -196,7 +196,8 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(outgoing=True,
+          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     if event.fwd_from:
         return
