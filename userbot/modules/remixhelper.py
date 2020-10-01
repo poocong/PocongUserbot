@@ -1,5 +1,4 @@
 """ Userbot module for other small commands. """
-import sys
 from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
 
@@ -7,6 +6,7 @@ from userbot.events import register
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
+
 
 @register(outgoing=True, pattern="^.remixhelp$")
 async def usit(e):
@@ -18,14 +18,15 @@ async def usit(e):
         "\n[Ubuntu Linux Method](https://telegra.ph/How-to-keep-OUB-repo-updated-while-keeping-your-changes-through-Ubuntu-Terminal-method-04-01-2)"
         "\n[Gdrive Tutorial](https://telegra.ph/How-To-Setup-Google-Drive-04-03)"
         "\n[video-tutorial](https://youtu.be/us1O-AnWmHA)")
-    
+
+
 @register(outgoing=True, pattern="^.remixvar$")
 async def var(m):
     await m.edit(
         f"Here's a list of VARS for {DEFAULTUSER} on **XBot-Remix**:\n"
         "\n[HEROKU VARS](https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/varshelper.txt)")
-    
-    
+
+
 CMD_HELP.update({
     "remixhelper":
     "`.remixhelp`\
