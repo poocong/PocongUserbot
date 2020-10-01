@@ -11,7 +11,7 @@ from userbot.events import register
 from asyncio.exceptions import TimeoutError
 
 
-@register(outgoing=True, pattern=r"^\.sg(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
         return
