@@ -44,6 +44,10 @@
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
       "required": true
     },
+    "CONSOLE_LOGGER_VERBOSE": {
+      "description": "If you need verbosity on the console logging",
+      "value": "False"
+    },
     "QUOTES_API_TOKEN": {
       "description": "Get this value from http://antiddos.systems! Please do not steal",
       "required": false
@@ -54,6 +58,10 @@
     },
     "MONGO_URI": {
       "description": "Your MongoDB Atlas URL, Get your guide from https://telegra.ph/Mongo-DB-12-24.",
+      "required": false
+    },
+    "NC_LOG_P_M_S": {
+      "description": "set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID",
       "required": false
     },
     "GENIUS": {
@@ -76,17 +84,21 @@
     "TZ_NUMBER": {
       "description": "Change this value in case your country has multiple Time Zones.",
       "value": "1",
-      "required": true
+      "required": false
     },
     "CHROME_DRIVER": {
       "description": "ChromeDriver location for selenium based modules.",
       "value": "/usr/bin/chromedriver",
-      "required": true
+      "required": false
     },
     "GOOGLE_CHROME_BIN": {
       "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
       "value": "/usr/bin/chromium-browser",
-      "required": true
+      "required": false
+    },
+    "PM_LOGGR_BOT_API_ID": {
+      "description": "send .getid in any channel to forward all your NEW PMs to this group",
+      "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
@@ -112,26 +124,27 @@
     "ANTI_SPAMBOT": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
       "value": "False",
-      "required": true
     },
     "ANTI_SPAMBOT_SHOUT": {
       "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
       "value": "False",
-      "required": true
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "Download location for many modules (GDrive, .download etc..)",
-      "value": "./downloads/",
-      "required": true
+      "value": "./downloads/"
     },
     "CLEAN_WELCOME": {
       "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "True",
-      "required": true
+      "value": "True"
     },
     "G_DRIVE_FOLDER_ID": {
       "description": "Create a folder and put that folder's id here.check folder link for id.",
       "required": false
+    },
+    "HEROKU_MEMEZ": {
+      "description": "This should be True if the userbot is running on a Heroku Dyno.",
+      "value": "True",
+      "required": true
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
@@ -155,7 +168,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = BLOCK + REPORT SPAM]",
+      "value": "[🔥 PM = BLOCK + REPORT SPAM 🔥]",
       "required": false
     },
     "ALIVE_NAME": {
@@ -185,7 +198,7 @@
       "required": false
     },
     "UB_BLACK_LIST_CHAT": {
-      "description": "Ga usah di isi",
+      "description": "Serahlu",
       "required": false
     },
     "LYDIA_API_KEY": {
@@ -206,14 +219,16 @@
       "description": "Input your DEEZER ARL TOKEN https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken",
       "required": false
     },
+    "UPSTREAM_REPO_URL": {
+      "description": "In case you maintain a fork, add your repo URL here.",
+      "required": false
+    },
     "BOT_TOKEN": {
       "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "value": "salah auto hangus akun lo ?",
       "required": false
     },
     "BOT_USERNAME": {
       "description": "Username of the bot you created with @BotFather",
-      "value": "@",
       "required": false
     }
   },
