@@ -1,5 +1,76 @@
-# Encript Marshal By XVenom
-# https://github.com/xvenom15
-import marshal
-exec(marshal.loads(
-    b'\xe3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00@\x00\x00\x00s\x96\x00\x00\x00d\x00d\x01l\x00m\x01Z\x01\x01\x00d\x00d\x02l\x02Z\x02d\x00d\x02l\x03Z\x03d\x00d\x03l\x04m\x05Z\x05m\x06Z\x06m\x07Z\x07\x01\x00d\x00d\x02l\x08Z\x08d\x00d\x02l\tZ\td\x00d\x02l\nZ\nd\x00d\x04l\x0bm\x0cZ\x0c\x01\x00d\x00d\x05l\rm\x0eZ\x0em\x0fZ\x0f\x01\x00d\x00d\x06l\rm\x10Z\x10\x01\x00e\x0cd\x07d\x08d\t\x8d\x02d\nd\x0b\x84\x00\x83\x01Z\x11e\x0e\xa0\x12d\x0cd\ri\x01\xa1\x01\x01\x00d\x02S\x00)\x0e\xe9\x00\x00\x00\x00)\x01\xda\x06eventsN)\x03\xda\x11MessageEmptyError\xda\x13MessageTooLongError\xda\x17MessageNotModifiedError)\x01\xda\x08register)\x02\xda\x08CMD_HELP\xda\x03bot)\x01\xda\x17TEMP_DOWNLOAD_DIRECTORYTzY^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles))\x02Z\x08outgoingZ\x07patternc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0e\x00\x00\x00\x08\x00\x00\x00\xc3\x00\x00\x00s\x0e\x01\x00\x00|\x00j\x00r\nd\x00S\x00|\x00\xa0\x01d\x01\xa1\x01I\x00d\x00H\x00\x01\x00d\x02}\x01|\x00j\x02\xa0\x03d\x03\xa1\x01}\x02|\x00j\x02\xa0\x03d\x04\xa1\x01}\x03|\x02r@|\x02}\x04n"|\x00\xa0\x04\xa1\x00I\x00d\x00H\x00}\x05t\x05\xa0\x06|\x05j\x07t\x08\xa1\x02I\x00d\x00H\x00}\x04|\x00j\tj\n}\x06d\x05d\x06d\x07d\x08d\td\nd\x0b\x9c\x06}\x07z\x12|\x07|\x03\x19\x00\xa0\x0b|\x04\xa1\x01}\x08W\x00n$\x04\x00t\x0ck\nr\xb2\x01\x00\x01\x00\x01\x00|\x00\xa0\x01d\x0c\xa1\x01I\x00d\x00H\x00\x01\x00Y\x00n\x02X\x00|\x08}\tt\r\xa0\r\xa1\x00|\x01\x17\x00}\nt\x0ej\x0f|\tt\x0ej\x10j\x11t\x0ej\x10j\x11d\r\x8d\x03I\x00d\x00H\x00}\x0b|\x0b\xa0\x12\xa1\x00I\x00d\x00H\x00\\\x02}\x0c}\r|\x00\xa0\x01|\x0c\xa0\x13\xa1\x00\x9b\x00\xa1\x01I\x00d\x00H\x00\x01\x00d\x00S\x00)\x0eNz\x0eProcessing ...\xe9d\x00\x00\x00\xe9\x01\x00\x00\x00\xe9\x02\x00\x00\x00z3curl -F "file=@{}" https://anonfiles.com/api/uploadzIcurl --upload-file "{}" https://transfer.sh/{os.path.basename(file_name)}zNcurl -X POST --data-binary "@test.png" -H "filename: {}" "https://filebin.net"z1curl -F file="@{}" https://api.anonymousfiles.io/z3curl -F "file=@{}" https://megaupload.is/api/uploadz8.exec curl -F "file=@{}" https://bayfiles.com/api/upload)\x06Z\tanonfilesZ\x08transferZ\x07filebinZ\x0eanonymousfilesZ\nmegauploadZ\x08bayfilesz\x19Invalid selected Transfer)\x02\xda\x06stdout\xda\x06stderr)\x14Z\x08fwd_fromZ\x04editZ\rpattern_match\xda\x05groupZ\x11get_reply_messager\x08\x00\x00\x00Z\x0edownload_mediaZ\x05mediar\t\x00\x00\x00\xda\x07message\xda\x02id\xda\x06format\xda\x08KeyError\xda\x04time\xda\x07asyncioZ\x17create_subprocess_shell\xda\nsubprocess\xda\x04PIPEZ\x0bcommunicate\xda\x06decode)\x0eZ\x05eventZ\x10PROCESS_RUN_TIMEZ\tinput_strZ\x11selected_transfer\xda\tfile_nameZ\x05replyZ\x0breply_to_idZ\x07CMD_WEBZ\x0cselected_one\xda\x03cmdZ\nstart_timeZ\x07processr\r\x00\x00\x00r\x0e\x00\x00\x00\xa9\x00r\x1b\x00\x00\x00\xda\x00\xda\x01_\x12\x00\x00\x00s2\x00\x00\x00\x00\x02\x06\x01\x04\x01\x10\x01\x04\x01\x0c\x01\x0c\x01\x04\x01\x06\x02\x0e\x01\x14\x01\x08\x01\x12\x01\x02\x01\x12\x01\x0e\x01\x16\x01\x04\x01\x0c\x01\x04\x01\x02\x00\x06\x00\x06\xff\x0c\x03\x12\x01r\x1d\x00\x00\x00Z\twebuploadz\xd4\n`.webupload --`(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`)         \nUsage: reply `.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website. )\x13Z\x08telethonr\x02\x00\x00\x00r\x16\x00\x00\x00\xda\x02osZ\x0ftelethon.errorsr\x03\x00\x00\x00r\x04\x00\x00\x00r\x05\x00\x00\x00\xda\x02ior\x15\x00\x00\x00r\x14\x00\x00\x00Z\x0euserbot.eventsr\x06\x00\x00\x00Z\x07userbotr\x07\x00\x00\x00r\x08\x00\x00\x00r\t\x00\x00\x00r\x1d\x00\x00\x00\xda\x06updater\x1b\x00\x00\x00r\x1b\x00\x00\x00r\x1b\x00\x00\x00r\x1c\x00\x00\x00\xda\x08<module>\x05\x00\x00\x00s\x1e\x00\x00\x00\x0c\x01\x08\x01\x08\x01\x14\x01\x08\x01\x08\x01\x08\x01\x0c\x01\x10\x01\x0c\x04\n\x01\n\x1a\x04\x01\x02\x01\x02\xfe'))
+# Kanged from UniBorg
+# Modified by AnggaR96s
+
+import asyncio
+import json
+import os
+
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot.events import register
+
+
+@register(
+    outgoing=True,
+    pattern=r"^\.web ?(.+?|) (anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles|letsupload|0x0)",
+)
+async def _(event):
+    await event.edit("`Processing ...`")
+    input_str = event.pattern_match.group(1)
+    selected_transfer = event.pattern_match.group(2)
+    if input_str:
+        file_name = input_str
+    else:
+        reply = await event.get_reply_message()
+        file_name = await event.client.download_media(
+            reply.media, TEMP_DOWNLOAD_DIRECTORY
+        )
+
+    CMD_WEB = {
+        "anonfiles": 'curl -F "file=@{full_file_path}" https://anonfiles.com/api/upload',
+        "transfer": 'curl --upload-file "{full_file_path}" https://transfer.sh/{bare_local_name}',
+        "filebin": 'curl -X POST --data-binary "@{full_file_path}" -H "filename: {bare_local_name}" "https://filebin.net"',
+        "anonymousfiles": 'curl -F file="@{full_file_path}" https://api.anonymousfiles.io/',
+        "megaupload": 'curl -F "file=@{full_file_path}" https://megaupload.is/api/upload',
+        "bayfiles": 'curl -F "file=@{full_file_path}" https://bayfiles.com/api/upload',
+        "letsupload": 'curl -F "file=@{full_file_path}" https://api.letsupload.cc/upload',
+        "0x0": 'curl -F "file=@{full_file_path}" https://0x0.st',
+    }
+    filename = os.path.basename(file_name)
+    try:
+        selected_one = CMD_WEB[selected_transfer].format(
+            full_file_path=file_name, bare_local_name=filename
+        )
+    except KeyError:
+        await event.edit("`Invalid selected Transfer.`")
+        return
+    cmd = selected_one
+    # start the subprocess $SHELL
+    process = await asyncio.create_subprocess_shell(
+        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    stderr.decode().strip()
+    # logger.info(e_response)
+    t_response = stdout.decode().strip()
+    # logger.info(t_response)
+    """if e_response:
+		await event.edit(f"**FAILED** to __transload__: `{e_response}`")
+		return"""
+    if t_response:
+        try:
+            t_response = json.dumps(json.loads(t_response), sort_keys=True, indent=4)
+        except Exception:
+            # some sites don't return valid JSONs
+            pass
+        # assuming, the return values won't be longer than
+        # 4096 characters
+        await event.edit(t_response)
+
+
+CMD_HELP.update(
+    {
+        "webupload": ">`.web` **File** **Server**"
+        "\nServer List: anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles|lestupload|0x0"
+        "\nUsage: Upload file to web."
+    }
+)
