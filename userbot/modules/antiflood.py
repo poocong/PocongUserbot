@@ -1,12 +1,9 @@
 import asyncio
-from telethon import events
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 from userbot.utils.tools import is_admin
 import userbot.modules.sql_helper.antiflood_sql as sql
-from userbot.events import register 
-from userbot import CMD_HELP, bot
-
+from userbot.events import register
 
 
 CHAT_FLOOD = sql.__load_flood_settings()
@@ -66,7 +63,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     try:
         sql.set_flood(event.chat_id, input_str)
-        CHAT_FLOOD = sql.__load_flood_settings()
+        sql.__load_flood_settings()
         await event.edit("Antiflood updated to {} in the current chat".format(input_str))
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))

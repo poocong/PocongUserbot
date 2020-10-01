@@ -37,7 +37,7 @@ async def shortener(short):
         string_output = f"{raw_output}"
         output = string_output.replace("['", "").replace("']", "")
         await short.edit(f"`Your link shortened successfully!`\nHere is your link {output}")
-        if BOTLOG: 
-           await short.client.send_message(BOTLOG_CHATID, f"`#SHORTLINK \nThis Your Link!`\n {output}")
+        if BOTLOG:
+            await short.client.send_message(BOTLOG_CHATID, f"`#SHORTLINK \nThis Your Link!`\n {output}")
     else:
         await short.edit("Set bit.ly API token first\nGet from [here](https://bitly.com/a/sign_up)")
