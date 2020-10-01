@@ -123,11 +123,11 @@
     },
     "ANTI_SPAMBOT": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
-      "value": "False",
+      "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
       "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
-      "value": "False",
+      "value": "False"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "Download location for many modules (GDrive, .download etc..)",
