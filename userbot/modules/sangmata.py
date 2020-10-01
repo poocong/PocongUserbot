@@ -65,6 +65,6 @@ async def lastname(steal):
 
 CMD_HELP.update({
         "sangmata": 
-        "`.sm`\
+        "`.sg`\
           \nUsage: Steal ur or friend name."
 })
