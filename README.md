@@ -15,8 +15,13 @@
 <p align="center">&nbsp;</p>
 
 
-<p align="center">JOIN CHANNEL TO GET DEPLOY BUTTON</p>
-<p align="center"><a href="https://t.me/XBOT_SUPPORT">   <img src="https://img.shields.io/badge/JOIN%20CHANNEL-blueviolet?style=flat&logo" width="210" height="34.45" /></a>
+## How To Host?
+
+The easiest way to deploy this great bot! is click on button below
+Make sure you have an account of heroku and follow all the steps required.
+
+Deploy to Heroku:
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-success?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 <br>
 
 <br><p align="center"><b>GENERATE STRING SESSION</p>
