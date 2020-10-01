@@ -4,9 +4,6 @@
 """A Plugin to tagall in the chat for @UniBorg and cmd is `.all`"""
 
 
-
-
-
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
