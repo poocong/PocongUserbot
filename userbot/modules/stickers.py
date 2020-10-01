@@ -11,7 +11,6 @@ import urllib.request
 from os import remove
 
 from PIL import Image
-from userbot.utils import defender_kanger
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import (
     DocumentAttributeFilename,
@@ -28,9 +27,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-
-
-
 KANGING_STR = [
     "Wao.,Bagus Nih...Colong Dulu Yekan..",
     "Colong Sticker dulu yee kan",
@@ -40,8 +36,8 @@ KANGING_STR = [
     "Pim Pim Pom!!!\nni Sticker punya aing sekarang hehe",
     "Colong lagi yee kan.....",
     "COLONG TROSS!!!",
-	"Bolehkah saya colong ni sticker\nau ah colong aja hehe",
-	"Colong Sticker ahh.....",
+    "Bolehkah saya colong ni sticker\nau ah colong aja hehe",
+    "Colong Sticker ahh.....",
 ]
 
 
@@ -371,6 +367,4 @@ CMD_HELP.update(
         "\n\n>`.stkrinfo`"
         "\nUsage: Gets info about the sticker pack."
         "\n\n>`.getsticker`"
-        "\nUsage: reply to a sticker to get 'PNG' file of sticker."
-    }
-)
+        "\nUsage: reply to a sticker to get 'PNG' file of sticker."})

@@ -7,7 +7,6 @@ from PIL import Image, ImageOps
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
-from userbot.utils import defender_kanger
 from userbot.utils.tools import check_media
 
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"

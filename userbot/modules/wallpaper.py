@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup as soup
 from PIL import Image
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, WALL_API
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
 down_p = str(TEMP_DOWNLOAD_DIRECTORY.rstrip("/"))

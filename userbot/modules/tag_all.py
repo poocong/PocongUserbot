@@ -3,21 +3,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """A Plugin to tagall in the chat for @UniBorg and cmd is `.all`"""
 
-from telethon import events
-from asyncio import sleep
-from random import choice, getrandbits, randint
-from re import sub
-import time
 
-from collections import deque
 
-import requests
 
-from cowpy import cow
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
-from userbot.modules.admin import get_user_from_event
 
 
 @register(outgoing=True, pattern="^.all$")

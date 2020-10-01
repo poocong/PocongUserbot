@@ -4,7 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Original source for the deepfrying code (used under the following license): https://github.com/Ovyerus/deeppyer
+# Original source for the deepfrying code (used under the following
+# license): https://github.com/Ovyerus/deeppyer
 
 # MIT License
 #
@@ -27,7 +28,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-#Ported from Xtra-telegram by @heyworld
+# Ported from Xtra-telegram by @heyworld
 """ Userbot module for frying stuff. ported by @NeoMatrix90 """
 
 import io
@@ -36,13 +37,11 @@ from random import randint, uniform
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot.events import register 
-from telethon import events
-from userbot import bot, CMD_HELP
+from userbot.events import register
+from userbot import CMD_HELP
 
 
-
-@register(outgoing=True, pattern="^.df(?: |$)(.*)") 
+@register(outgoing=True, pattern="^.df(?: |$)(.*)")
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -92,9 +91,12 @@ async def deepfry(img: Image) -> Image:
     # Crush image to hell and back
     img = img.convert("RGB")
     width, height = img.width, img.height
-    img = img.resize((int(width ** uniform(0.8, 0.9)), int(height ** uniform(0.8, 0.9))), resample=Image.LANCZOS)
-    img = img.resize((int(width ** uniform(0.85, 0.95)), int(height ** uniform(0.85, 0.95))), resample=Image.BILINEAR)
-    img = img.resize((int(width ** uniform(0.89, 0.98)), int(height ** uniform(0.89, 0.98))), resample=Image.BICUBIC)
+    img = img.resize((int(width ** uniform(0.8, 0.9)),
+                      int(height ** uniform(0.8, 0.9))), resample=Image.LANCZOS)
+    img = img.resize((int(width ** uniform(0.85, 0.95)),
+                      int(height ** uniform(0.85, 0.95))), resample=Image.BILINEAR)
+    img = img.resize((int(width ** uniform(0.89, 0.98)),
+                      int(height ** uniform(0.89, 0.98))), resample=Image.BICUBIC)
     img = img.resize((width, height), resample=Image.BICUBIC)
     img = ImageOps.posterize(img, randint(3, 7))
 
@@ -117,7 +119,8 @@ async def check_media(reply_message):
         if reply_message.photo:
             data = reply_message.photo
         elif reply_message.document:
-            if DocumentAttributeFilename(file_name='AnimatedSticker.tgs') in reply_message.media.document.attributes:
+            if DocumentAttributeFilename(
+                    file_name='AnimatedSticker.tgs') in reply_message.media.document.attributes:
                 return False
             if reply_message.gif or reply_message.video or reply_message.audio or reply_message.voice:
                 return False
@@ -131,8 +134,8 @@ async def check_media(reply_message):
         return False
     else:
         return data
-        
-        
+
+
 CMD_HELP.update({
     "deepfry":
     "`.df` or `.df` [level(1-8)]"

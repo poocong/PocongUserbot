@@ -1,17 +1,8 @@
 import asyncio
-import io
 import os
-import random
-import re
 import textwrap
-from random import randint, uniform
-from userbot.utils import defender_kanger
 
-from glitch_this import ImageGlitcher
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
-from telethon import events, functions, types
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.types import DocumentAttributeFilename
+from PIL import Image, ImageDraw, ImageFont
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
@@ -47,7 +38,8 @@ async def mim(event):
             file_name = "meme.jpg"
             reply_message = await event.get_reply_message()
             to_download_directory = TEMP_DOWNLOAD_DIRECTORY
-            downloaded_file_name = os.path.join(to_download_directory, file_name)
+            downloaded_file_name = os.path.join(
+                to_download_directory, file_name)
             downloaded_file_name = await bot.download_media(
                 reply_message,
                 downloaded_file_name,
@@ -167,7 +159,6 @@ async def draw_meme_text(image_path, text):
     webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
     img.save(webp_file, "WebP")
     return webp_file
-    
 
 
 @register(outgoing=True, pattern=r"^\.mmf2(?: |$)(.*)")
@@ -198,7 +189,8 @@ async def mim(event):
             file_name = "meme.jpg"
             reply_message = await event.get_reply_message()
             to_download_directory = TEMP_DOWNLOAD_DIRECTORY
-            downloaded_file_name = os.path.join(to_download_directory, file_name)
+            downloaded_file_name = os.path.join(
+                to_download_directory, file_name)
             downloaded_file_name = await bot.download_media(
                 reply_message,
                 downloaded_file_name,
@@ -318,12 +310,12 @@ async def draw_meme_text(image_path, text):
     webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
     img.save(webp_file, "WebP")
     return webp_file
-    
+
 
 CMD_HELP.update({
-    "memify": 
+    "memify":
         "`.mmf` texttop ; textbottom\
         \nUsage: Reply a sticker/image/gif and send with cmd.\n"
         "`.mmf2` texttop ; textbottom\
         \nUsage: Reply a sticker/image/gif and send with cmd."
-        })
+})

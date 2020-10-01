@@ -1,43 +1,11 @@
 import os
-import time
-import asyncio
-import random
-import asyncio
-import shutil
-from bs4 import BeautifulSoup
-import re
 from time import sleep
-from html import unescape
-from re import findall
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
-from urllib.error import HTTPError
-from telethon import events
-from wikipedia import summary
-from wikipedia.exceptions import DisambiguationError, PageError
-from urbandict import define
-from requests import get
-from search_engine_parser import GoogleSearch
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from googletrans import LANGUAGES, Translator
-from gtts import gTTS
-from gtts.lang import tts_langs
-from emoji import get_emoji_regexp
-from youtube_dl import YoutubeDL
-from youtube_dl.utils import (DownloadError, ContentTooShortError,
-                              ExtractorError, GeoRestrictedError,
-                              MaxDownloadsReached, PostProcessingError,
-                              UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot
+from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
 from userbot.events import register
-from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, humanbytes, time_formatter, googleimagesdownload
-import subprocess
-from datetime import datetime
 
 
 CARBONLANG = "auto"
@@ -45,11 +13,13 @@ TTS_LANG = "en"
 TRT_LANG = "en"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
+
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
+
 
 @register(outgoing=True, pattern="^.carbon1")
 async def carbon_api(e):
@@ -91,7 +61,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -115,7 +85,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
+
 
 @register(outgoing=True, pattern="^.carbon2")
 async def carbon_api(e):
@@ -157,7 +127,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -181,7 +151,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
+
 
 @register(outgoing=True, pattern="^.carbon3")
 async def carbon_api(e):
@@ -223,7 +193,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -247,8 +217,8 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
-    
+
+
 @register(outgoing=True, pattern="^.carbon4")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
@@ -289,7 +259,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -313,7 +283,7 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-    
+
 
 @register(outgoing=True, pattern="^.carbon5")
 async def carbon_api(e):
@@ -355,7 +325,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    command_result = driver.execute("send_command", params)
+    driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -379,8 +349,8 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
- 
-    
+
+
 CMD_HELP.update({
     "carbon":
     "`.carbon`value <values=1,2,3,4,5>\

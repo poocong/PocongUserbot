@@ -9,18 +9,9 @@
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, ALIVE_LOGO,UPSTREAM_REPO_URL, UPSTREAM_REPO_BRANCH, bot, StartTime
+from userbot import CMD_HELP, StartTime
 from userbot.events import register
-from platform import python_version, uname
-from shutil import which
-from os import remove
-from telethon import version, functions
-from telethon import __version__, version
-import platform
-import sys
 import time
-import psutil
-from userbot.utils import defender_kanger
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -99,6 +90,7 @@ async def pingme(pong):
     duration = (end - start).microseconds / 1000
     await pong.edit(f"**PONG!! 🍭**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
 
+
 @register(outgoing=True, pattern="^.pong$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
@@ -114,5 +106,5 @@ CMD_HELP.update(
     \n\n`.speed`\
     \nUsage: Does a speedtest and shows the results.\
     \n\n`.pong`\
-    \nUsage: Shows how long it takes to ping your bot."\
-    })
+    \nUsage: Shows how long it takes to ping your bot."
+     })

@@ -13,7 +13,7 @@ import sys
 import os
 import io
 import sys
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, GIT_REPO_NAME, ALIVE_NAME
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
 from userbot.utils import time_formatter
 import urllib
@@ -21,7 +21,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from PIL import Image
-
 
 
 # ================= CONSTANT =================
@@ -84,6 +83,7 @@ async def killdabot(event):
     # Shut the existing one down
     exit()
 
+
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
     await e.edit("XBOT OFFICIAL MODULES\nMOD BY: [➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐](https://semawur.com/lOirqhYMWxO)")
@@ -98,7 +98,7 @@ async def reedme(e):
         "\n[Setup Guide - LastFM Module](https://semawur.com/4IOqxAz)"
         "\n[Video Tutorial - 576p](https://semawur.com/8GVxqwyCMTMU)"
         "\n[Video Tutorial - 1080p](https://semawur.com/9OO8d)")
-    
+
 
 @register(outgoing=True, pattern="^.repeat (.*)")
 async def repeat(rep):
@@ -144,6 +144,7 @@ async def raw(event):
             allow_cache=False,
             reply_to=reply_to_id,
             caption="`Here's the decoded message data !!`")
+
 
 @register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
 async def okgoogle(img):

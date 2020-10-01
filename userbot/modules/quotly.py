@@ -7,16 +7,11 @@
 
 import random
 import requests
-import base64
-import json
-import telethon
 from asyncio.exceptions import TimeoutError
 
-from PIL import Image
-from io import BytesIO
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP, QUOTES_API_TOKEN
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 if 1 == 1:
@@ -38,13 +33,13 @@ if 1 == 1:
         "admin": "admin",
         "creator": "creator",
         "hidden": "hidden",
-        "channel": "Channel"
-    }
+        "channel": "Channel"}
 
     config = {"api_url": "http://api.antiddos.systems",
-                                          "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
-                                                              "#62d4e3", "#65bdf3", "#ff5694"],
-                                          "default_username_color": "#b48bf2"}
+              "username_colors": ["#fb6169", "#faa357", "#b48bf2", "#85de85",
+                                  "#62d4e3", "#65bdf3", "#ff5694"],
+              "default_username_color": "#b48bf2"}
+
 
 @register(outgoing=True, pattern=r"^\.q")
 async def quotess(qotli):
@@ -83,8 +78,7 @@ async def quotess(qotli):
                                                    [msg.id, response.id])
     except TimeoutError:
         await qotli.edit()
-        
-        
+
 
 @register(outgoing=True, pattern="^.quote(?: |$)(.*)")
 async def quote_search(event):
@@ -92,21 +86,23 @@ async def quote_search(event):
         return
     await event.edit("Processing...")
     search_string = event.pattern_match.group(1)
-    input_url = "https://bots.shrimadhavuk.me/Telegram/GoodReadsQuotesBot/?q={}".format(search_string)
+    input_url = "https://bots.shrimadhavuk.me/Telegram/GoodReadsQuotesBot/?q={}".format(
+        search_string)
     headers = {"USER-AGENT": "UniBorg"}
     try:
         response = requests.get(input_url, headers=headers).json()
-    except:
+    except BaseException:
         response = None
     if response is not None:
-        result = random.choice(response).get("input_message_content").get("message_text")
+        result = random.choice(response).get(
+            "input_message_content").get("message_text")
     else:
         result = None
     if result:
         await event.edit(result.replace("<code>", "`").replace("</code>", "`"))
     else:
         await event.edit("Zero results found")
-        
+
 
 CMD_HELP.update({
     "quotly":
@@ -114,4 +110,4 @@ CMD_HELP.update({
 \nUsage: Enhance ur text to sticker.\
 \n\n`.quote`\
 \nUsage: Enhance ur text to stickers."
-})    
+})

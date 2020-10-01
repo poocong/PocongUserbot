@@ -26,7 +26,6 @@ from telethon import events
 
 from userbot import (
     BOTLOG_CHATID,
-    CMD_HELP,
     G_PHOTOS_AUTH_TOKEN_ID,
     G_PHOTOS_CLIENT_ID,
     G_PHOTOS_CLIENT_SECRET,

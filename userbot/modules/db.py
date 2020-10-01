@@ -5,21 +5,15 @@
 #
 """ Userbot module for getting information about the server. """
 
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
-from os import remove
-from platform import python_version, uname
-from shutil import which
+from platform import uname
 
-from telethon import version
 
-from userbot import CMD_HELP, is_mongo_alive, is_redis_alive, ALIVE_NAME, BOT_VER
+from userbot import ALIVE_NAME, BOT_VER, is_mongo_alive, is_redis_alive
 from userbot.events import register
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
-
 
 
 @register(outgoing=True, pattern="^.db$")
@@ -33,11 +27,7 @@ async def amireallydbs(dbs):
     else:
         db = "Databases functioning normally!"
     await dbs.edit(""
-                     f"`User:` {DEFAULTUSER} \n"
-                     f"`Database status: {db}\n`"
-                     f"`XBOT-REMIX: {BOT_VER}`"
-                     "")
-                     
-                     
-                     
-
+                   f"`User:` {DEFAULTUSER} \n"
+                   f"`Database status: {db}\n`"
+                   f"`XBOT-REMIX: {BOT_VER}`"
+                   "")
