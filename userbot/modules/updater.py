@@ -2,21 +2,14 @@
 This module updates the userbot based on upstream revision
 """
 
-from os import environ, execle, path, remove
+from os import remove, execle, path, environ
 import asyncio
 import sys
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import (
-    BOTLOG,
-    BOTLOG_CHATID,
-    CMD_HELP,
-    HEROKU_API_KEY,
-    HEROKU_APP_NAME,
-    UPSTREAM_REPO_URL,
-    UPSTREAM_REPO_BRANCH)
+from userbot import (BOTLOG, BOTLOG_CHATID, CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_REPO_URL, UPSTREAM_REPO_BRANCH, TERM_ALIAS)
 from userbot.events import register
 
 requirements_path = path.join(
@@ -94,7 +87,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
             await asyncio.sleep(15)
             await event.delete()
-
+        
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#NOTE \n"
@@ -124,17 +117,17 @@ async def update(event, repo, ups_rem, ac_br):
     await event.delete()
 
     if BOTLOG:
-        await event.client.send_message(
-            BOTLOG_CHATID, "#NOTICE \n"
-            "OK XBOT-REMIX Berhasil Di Update")
-        await asyncio.sleep(10)
-        await event.delete()
+            await event.client.send_message(
+                BOTLOG_CHATID, "#NOTICE \n"
+                "OK XBOT-REMIX Berhasil Di Update")
+            await asyncio.sleep(10)
+            await event.delete()
 
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     return
-
+   
 
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
@@ -163,10 +156,9 @@ async def upstream(event):
         origin = repo.create_remote('upstream', off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head('x-sql-extended', origin.refs.x - sql - extended)
-        repo.heads.x - sql - \
-            extended.set_tracking_branch(origin.refs.x - sql - extended)
-        repo.heads.x - sql - extended.checkout(True)
+        repo.create_head('x-sql-extended', origin.refs.x-sql-extended)
+        repo.heads.x-sql-extended.set_tracking_branch(origin.refs.x-sql-extended)
+        repo.heads.x-sql-extended.checkout(True)
 
     ac_br = repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:

@@ -16,6 +16,7 @@ import requests
 from os import popen
 from userbot.utils import chrome, options
 import urllib.parse
+import logging
 from bs4 import BeautifulSoup
 import re
 from re import match
@@ -28,17 +29,25 @@ from barcode.writer import ImageWriter
 import emoji
 from googletrans import Translator
 from time import sleep
+from html import unescape
 from re import findall
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
+from urllib.error import HTTPError
+from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
+from urbandict import define
 from requests import get
 from requests import get, post, exceptions
 from search_engine_parser import GoogleSearch
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 from googletrans import LANGUAGES, Translator
-from gtts import gTTS
+from shutil import rmtree
+from gtts import gTTS, gTTSError
 from gtts.lang import tts_langs
 from emoji import get_emoji_regexp
 from telethon.tl.types import MessageMediaPhoto
@@ -49,10 +58,12 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, LOGS, OCR_SPACE_API_KEY, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, OCR_SPACE_API_KEY, LOGS
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import chrome, googleimagesdownload, progress
+from userbot.utils import progress, humanbytes, time_formatter, chrome, googleimagesdownload
+import subprocess
+from datetime import datetime
 import asyncurban
 
 
@@ -60,7 +71,6 @@ CARBONLANG = "auto"
 TTS_LANG = "id"
 TRT_LANG = "id"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
-
 
 async def ocr_space_file(filename,
                          overlay=False,
@@ -92,16 +102,13 @@ async def ocr_space_file(filename,
         )
     return r.json()
 
-DOGBIN_URL = "https://del.dog/"
-NEKOBIN_URL = "https://nekobin.com/"
-
+DOGBIN_URL = "https://del.dog/"    
 
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
-
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
@@ -143,7 +150,7 @@ async def carbon_api(e):
             'downloadPath': download_path
         }
     }
-    driver.execute("send_command", params)
+    command_result = driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
@@ -167,8 +174,8 @@ async def carbon_api(e):
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-
-
+    
+    
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
@@ -306,7 +313,7 @@ async def _(event):
         await event.edit("Text: **{}**\n\nMeaning: **{}**\n\nExample: __{}__".format(mean.word, mean.definition, mean.example))
     except asyncurban.WordNotFoundError:
         await event.edit("No result found for **" + word + "**")
-
+       
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
@@ -348,7 +355,6 @@ async def text_to_speech(query):
                 BOTLOG_CHATID, "Text to Speech executed successfully !")
         await query.delete()
 
-
 @register(outgoing=True, pattern="^.tr(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -383,6 +389,7 @@ async def _(event):
         await event.edit(output_str)
     except Exception as exc:
         await event.edit(str(exc))
+
 
 
 @register(pattern=".lang (tr|tts) (.*)", outgoing=True)
@@ -459,7 +466,6 @@ async def yt_search(video_q):
             break
 
     await video_q.edit(output, link_preview=False)
-
 
 @register(outgoing=True, pattern=r".rip(audio|video) (.*)")
 async def download_video(v_url):
@@ -592,7 +598,6 @@ def deEmojify(inputString):
     """ Remove emojis and other non-safe characters from string """
     return get_emoji_regexp().sub(u'', inputString)
 
-
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
 async def kbg(remob):
     """ For .rbg command, Remove Image Background. """
@@ -672,8 +677,7 @@ async def ReTrieveURL(input_url):
                       data=data,
                       allow_redirects=True,
                       stream=True)
-    return r
-
+    return r    
 
 @register(pattern=r".ocr (.*)", outgoing=True)
 async def ocr(event):
@@ -697,7 +701,6 @@ async def ocr(event):
         await event.edit(f"`Here's what I could read from it:`\n\n{ParsedText}"
                          )
     os.remove(downloaded_file_name)
-
 
 @register(pattern=r"^.decode$", outgoing=True)
 async def parseqr(qr_e):
@@ -810,7 +813,6 @@ async def make_qr(makeqr):
                                   reply_to=reply_msg_id)
     os.remove("img_file.webp")
     await makeqr.delete()
-
 
 @register(outgoing=True, pattern=r"^.direct(?: |$)([\s\S]*)")
 async def direct_link_generator(request):
@@ -1113,16 +1115,16 @@ def useragent():
     user_agent = choice(useragents)
     return user_agent.text
 
-
-@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
-    """For .paste command, pastes the text directly to dogbin."""
+    """ For .paste command, pastes the text directly to dogbin. """
     dogbin_final_url = ""
     match = pstl.pattern_match.group(1).strip()
     reply_id = pstl.reply_to_msg_id
 
     if not match and not reply_id:
-        return await pstl.edit("`Cannot paste text.`")
+        await pstl.edit("`Elon Musk said I cannot paste void.`")
+        return
 
     if match:
         message = match
@@ -1138,7 +1140,7 @@ async def paste(pstl):
                 m_list = fd.readlines()
             message = ""
             for m in m_list:
-                message += m.decode("UTF-8")
+                message += m.decode("UTF-8") + "\r"
             os.remove(downloaded_file_name)
         else:
             message = message.message
@@ -1154,14 +1156,12 @@ async def paste(pstl):
 
         if response['isUrl']:
             reply_text = ("`Pasted successfully!`\n\n"
-                          f"[Shortened URL]({dogbin_final_url})\n\n"
+                          f"`Shortened URL:` {dogbin_final_url}\n\n"
                           "`Original(non-shortened) URLs`\n"
-                          f"[Dogbin URL]({DOGBIN_URL}v/{key})\n"
-                          f"[View RAW]({DOGBIN_URL}raw/{key})")
+                          f"`Dogbin URL`: {DOGBIN_URL}v/{key}\n")
         else:
             reply_text = ("`Pasted successfully!`\n\n"
-                          f"[Dogbin URL]({dogbin_final_url})\n"
-                          f"[View RAW]({DOGBIN_URL}raw/{key})")
+                          f"`Dogbin URL`: {dogbin_final_url}")
     else:
         reply_text = ("`Failed to reach Dogbin`")
 
@@ -1169,13 +1169,13 @@ async def paste(pstl):
     if BOTLOG:
         await pstl.client.send_message(
             BOTLOG_CHATID,
-            "Paste query was executed successfully",
+            f"Paste query was executed successfully",
         )
 
 
-@register(outgoing=True, pattern=r"^\.getpaste(?: |$)(.*)")
+@register(outgoing=True, pattern="^.paste(?: |$)(.*)")
 async def get_dogbin_content(dog_url):
-    """For .getpaste command, fetches the content of a dogbin URL."""
+    """ For .getpaste command, fetches the content of a dogbin URL. """
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
     await dog_url.edit("`Getting dogbin content...`")
@@ -1193,7 +1193,8 @@ async def get_dogbin_content(dog_url):
     elif message.startswith("del.dog/"):
         message = message[len("del.dog/"):]
     else:
-        return await dog_url.edit("`Is that even a dogbin url?`")
+        await dog_url.edit("`Is that even a dogbin url?`")
+        return
 
     resp = get(f'{DOGBIN_URL}raw/{message}')
 
@@ -1212,8 +1213,7 @@ async def get_dogbin_content(dog_url):
             str(RedirectsErr))
         return
 
-    reply_text = ("`Fetched dogbin URL content successfully!`"
-                  "\n\n`Content:` " + resp.text)
+    reply_text = "`Fetched dogbin URL content successfully!`\n\n`Content:` " + resp.text
 
     await dog_url.edit(reply_text)
     if BOTLOG:
@@ -1221,60 +1221,6 @@ async def get_dogbin_content(dog_url):
             BOTLOG_CHATID,
             "Get dogbin content query was executed successfully",
         )
-
-
-@register(outgoing=True, pattern=r"^\.neko(?: |$)([\s\S]*)")
-async def neko(nekobin):
-    """For .paste command, pastes the text directly to dogbin."""
-    nekobin_final_url = ""
-    match = nekobin.pattern_match.group(1).strip()
-    reply_id = nekobin.reply_to_msg_id
-
-    if not match and not reply_id:
-        return await pstl.edit("`Cannot paste text.`")
-
-    if match:
-        message = match
-    elif reply_id:
-        message = await nekobin.get_reply_message()
-        if message.media:
-            downloaded_file_name = await nekobin.client.download_media(
-                message,
-                TEMP_DOWNLOAD_DIRECTORY,
-            )
-            m_list = None
-            with open(downloaded_file_name, "rb") as fd:
-                m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
-            os.remove(downloaded_file_name)
-        else:
-            message = message.text
-
-    # Nekobin
-    await nekobin.edit("`Pasting text . . .`")
-    resp = post(NEKOBIN_URL + "api/documents", json={"content": message})
-
-    if resp.status_code == 201:
-        response = resp.json()
-        key = response["result"]["key"]
-        nekobin_final_url = NEKOBIN_URL + key
-        reply_text = (
-            "`Pasted successfully!`\n\n"
-            f"[Nekobin URL]({nekobin_final_url})\n"
-            f"[View RAW]({NEKOBIN_URL}raw/{key})"
-        )
-    else:
-        reply_text = "`Failed to reach Nekobin`"
-
-    await nekobin.edit(reply_text)
-    if BOTLOG:
-        await nekobin.client.send_message(
-            BOTLOG_CHATID,
-            "Paste query was executed successfully",
-        )
-
 
 @register(pattern="^.ss (.*)", outgoing=True)
 async def capture(url):
@@ -1295,11 +1241,13 @@ async def capture(url):
     height = driver.execute_script(
         "return Math.max(document.body.scrollHeight, document.body.offsetHeight, "
         "document.documentElement.clientHeight, document.documentElement.scrollHeight, "
-        "document.documentElement.offsetHeight);")
+        "document.documentElement.offsetHeight);"
+    )
     width = driver.execute_script(
         "return Math.max(document.body.scrollWidth, document.body.offsetWidth, "
         "document.documentElement.clientWidth, document.documentElement.scrollWidth, "
-        "document.documentElement.offsetWidth);")
+        "document.documentElement.offsetWidth);"
+    )
     driver.set_window_size(width + 125, height + 125)
     wait_for = height / 1000
     await url.edit(
@@ -1322,48 +1270,64 @@ async def capture(url):
                                    caption=input_str,
                                    force_document=True,
                                    reply_to=message_id)
-        await url.delete()
+        await url.delete()        
 
-CMD_HELP.update(
-    {
-        "image_search": ">`.img <search_query>`\
+CMD_HELP.update({
+   "image_search":
+    ">`.img <search_query>`\
     \nUsage: Does an image search on Google and shows 5 images.",
-        "currency": "`.currency` <amount> <from> <to>\
+    "currency":
+    "`.currency` <amount> <from> <to>\
     \nUsage: Converts various currencies for you.",
-        "carbon": "`.carbon` <text or reply>\
+    "carbon":
+    "`.carbon` <text or reply>\
     \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.",
-        "gogle": "`.google` <query>\
+   "gogle":
+   "`.google` <query>\
   \nUsage: Does a search on Google.",
-        "wiki": "`.wiki` <query>\
+   "wiki":
+   "`.wiki` <query>\
 \nUsage: Does a search on Wikipedia.",
-        "ud": "`.ud` <query>\
+"ud":
+"`.ud` <query>\
 \nUsage: Usage: Does a search on Urban Dictionary.",
-        "tts": "`.tts` <text> [or reply]\
+"tts":
+"`.tts` <text> [or reply]\
 \nUsage:Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)",
-        "translate": "`.tr` <text> [or reply]\
+"translate":
+"`.tr` <text> [or reply]\
 \nUsage: Translates text to the language which is set.\nUse .lang tr <language code> to set language for tr. (Default is English)",
-        "youtube": "`.yt` <count> <query>\
+"youtube":
+"`.yt` <count> <query>\
 \nUsage: Does a YouTube search.\
 \n\nCan specify the number of results needed (default is 5).",
-        "rip": "`.ripaudio` <url> or ripvideo <url>\
+"rip":
+"`.ripaudio` <url> or ripvideo <url>\
 \nUsage: Download videos and songs from YouTube.",
-        "removebg": "`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
+"removebg":
+"`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
 \nUsage: Removes the background of images, using remove.bg API.",
-        "ocr": "`.ocr` <language>\
+"ocr":
+"`.ocr` <language>\
 \nUsage: Reply to an image or sticker to extract text from it.",
-        "qrcode": "`.makeqr <content>`\
+"qrcode":
+"`.makeqr <content>`\
 \nUsage: Make a QR Code from the given content.\nExample: .makeqr www.google.com\nNote: use .decode <reply to barcode/qrcode> to get decoded content.",
-        "barcode": "`.barcode` <content>\
+"barcode":
+"`.barcode` <content>\
 \nUsage: Make a BarCode from the given content\nExample: `.barcode www.google.com`.",
-        "paste": "`.paste` <text/reply>\
+"paste":
+"`.paste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
-        "getpaste": "`.getpaste` <text/reply>\
+"getpaste":
+"`.getpaste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
-        "neko": "`.neko` <text/reply>\
-\nUsage: Create a paste or a shortened url using nekobin (https://nekobin.com/)",
-        "direct": "`.direct` <url>\
+"direct":
+"`.direct` <url>\
 \nUsage: Reply to a link or paste a URL to generate a direct download link\
 \n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`",
-        "screenshot": "`.ss <url>`\
+"screenshot":
+"`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
-\n\nExample of a valid URL : `https://www.google.com`"})
+\n\nExample of a valid URL : `https://www.google.com`"    
+})
