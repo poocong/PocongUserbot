@@ -163,7 +163,7 @@ TERM_ALIAS = os.environ.get("TERM_ALIAS", "XBOT-REMIX")
 BOT_VER = os.environ.get("BOT_VER", "3.0")
 
 # Default .alive username
-ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME") or None
+ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
@@ -171,7 +171,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO", "[PM = BLOCK + REPORT SPAM]")
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
@@ -217,8 +217,6 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
-
-MAX_MESSAGE_LENGTH = 4096
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
