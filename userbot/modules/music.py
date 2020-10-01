@@ -1,3 +1,7 @@
+# Copyright (C) 2020 Aidil Aryanto.
+# DeeezLoad Ported from UniBorg by AnggaR96s
+# All rights reserved.
+
 import asyncio
 import glob
 import os
@@ -96,17 +100,17 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("`Mencari Music Video..`")
+        await event.edit("`Wait..! I am finding your videosong..`")
     elif reply:
         query = str(reply.message)
-        await event.edit("`Mencari Music Video..`")
+        await event.edit("`Wait..! I am finding your videosong..`")
     else:
         await event.edit("`What I am Supposed to find?`")
         return
     await getmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm"))
     if l:
-        await event.edit("`Music Video di Temukan..`")
+        await event.edit("`Yeah..! i found something..`")
     else:
         await event.edit(f"`Sorry..! i can't find anything with` **{query}**")
         return
@@ -192,8 +196,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True,
-          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(outgoing=True, pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     if event.fwd_from:
         return
@@ -202,7 +205,7 @@ async def _(event):
         "name": "DeezLoad",
         "arl_token_cfg_doc": "ARL Token for Deezer",
         "invalid_arl_token": "please set the required variables for this module",
-        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session �朮",
+        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session 🥺",
         "server_error": "We're experiencing technical difficulties.",
         "processing": "`Downloading..`",
         "uploading": "`Uploading...`",
@@ -336,7 +339,7 @@ async def upload_track(track_location, message):
 
 CMD_HELP.update(
     {
-        "music": ">`.netease <Artist - Song Title>`"
+        "getmusic": ">`.netease <Artist - Song Title>`"
         "\nUsage: Download music with @WooMaiBot"
         "\n\n>`.netease now`"
         "\nUsage: Download current LastFM scrobble use `@WooMaiBot`."
