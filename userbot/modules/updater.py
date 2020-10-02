@@ -210,9 +210,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond('`Command to Update\n >.update now\n >.update deploy\n\nuntuk mengupdate fitur terbaru.`')
-        await asyncio.sleep(20)
-        await event.delete()
-
+        
     if force_update:
         await event.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
