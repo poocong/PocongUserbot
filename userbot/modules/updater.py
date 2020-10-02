@@ -207,11 +207,11 @@ async def upstream(event):
                 reply_to=event.id,
             )
             remove("output.txt")
-            await asyncio.sleep(10)
-            await event.delete()
         else:
             await event.edit(changelog_str)
-        return await event.respond('`Command to Update\n >.update now\n >.update deploy\n untuk mengupdate fitur terbaru.`')
+        return await event.respond('`Command to Update\n >.update now\n >.update deploy\n\nuntuk mengupdate fitur terbaru.`')
+            await asyncio.sleep(20)
+            await event.delete()
 
     if force_update:
         await event.edit(
