@@ -17,10 +17,26 @@
 
 import re
 import hashlib
-from userbot import bot
+import asyncio
+import shlex
+import datetime
+import logging
+import os
+from os.path import basename
+import math
+import os.path
+import sys
+import time
+from typing import Tuple, Union, Optional
+from userbot import bot, LOGS
 
+from telethon import errors
+from telethon.tl import types
+from telethon.utils import get_display_name
+from telethon import events
+from telethon.tl.functions.messages import GetPeerDialogsRequest
 from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
 
 
 async def md5(fname: str) -> str:
@@ -85,6 +101,30 @@ async def is_admin(chat_id, user_id):
         return True
     return False
 
+
+async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
+    """ run command in terminal """
+    args = shlex.split(cmd)
+    process = await asyncio.create_subprocess_exec(*args,
+                                                   stdout=asyncio.subprocess.PIPE,
+                                                   stderr=asyncio.subprocess.PIPE)
+    stdout, stderr = await process.communicate()
+    return (stdout.decode('utf-8', 'replace').strip(),
+            stderr.decode('utf-8', 'replace').strip(),
+            process.returncode,
+            process.pid)
+
+
+async def take_screen_shot(video_file: str, duration: int, path: str = '') -> Optional[str]:
+    """ take a screenshot """
+    LOGS.info('[[[Extracting a frame from %s ||| Video duration => %s]]]', video_file, duration)
+    ttl = duration // 2
+    thumb_image_path = path or os.path.join("./temp/", f"{basename(video_file)}.jpg")
+    command = f"ffmpeg -ss {ttl} -i '{video_file}' -vframes 1 '{thumb_image_path}'"
+    err = (await runcmd(command))[1]
+    if err:
+        LOGS.error(err)
+    return thumb_image_path if os.path.exists(thumb_image_path) else None
 
 async def check_media(reply_message):
     if reply_message and reply_message.media:
