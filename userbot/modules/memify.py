@@ -58,7 +58,7 @@ async def draw_meme_text(image_path, text):
     os.remove(image_path)
     i_width, i_height = img.size
     m_font = ImageFont.truetype(
-        "fontx/FontRemix.ttf", int((95 / 730) * i_width)
+        "userbot/resources/FontRemix.ttf", int((95 / 730) * i_width)
     )
     if ";" in text:
         upper_text, lower_text = text.split(";")
@@ -209,7 +209,7 @@ async def draw_meme_text(image_path, text):
     os.remove(image_path)
     i_width, i_height = img.size
     m_font = ImageFont.truetype(
-        "fontx/FontRemix2.ttf", int((95 / 730) * i_width)
+        "userbot/resources/FontRemix2.ttf", int((95 / 730) * i_width)
     )
     if ";" in text:
         upper_text, lower_text = text.split(";")
