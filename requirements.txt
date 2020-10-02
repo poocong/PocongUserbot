@@ -17,6 +17,7 @@ gitpython
 asyncurban
 google-api-python-client
 google-auth-oauthlib
+google-auth-httplib2
 googletrans
 google_images_download
 googletrans
@@ -89,3 +90,6 @@ validators
 twitter_scraper
 pyaztro
 glitch_this
+vcsi
+lottie
+cairosvg
