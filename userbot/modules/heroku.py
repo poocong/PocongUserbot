@@ -8,6 +8,7 @@ import aiohttp
 import math
 import os
 import requests
+import asyncio
 
 from userbot import (HEROKU_APP_NAME, HEROKU_API_KEY, BOTLOG, BOTLOG_CHATID)
 from userbot.events import register
@@ -174,15 +175,17 @@ async def dyno_usage(dyno):
 
             await dyno.edit(
                 "**Dyno Usage**:\n\n╭━━━━━━━━━━━━━━━━━━━━╮\n"
-                f"-> `Penggunaan Dyno Untuk`  **{app.name}**:\n"
+                f"-> `Penggunaan Dyno `  **{app.name}**:\n"
                 f"    •**{AppHours} jam - "
                 f"{AppMinutes} menit  -  {AppPercentage}%**"
-                "\n◐━─━─━─━─━──━─━─━─━─━◐\n"
-                "-> `Sisa Waktu Dyno Bulan Ini`:\n"
+                "\n ◐━─━─━─━─━──━─━─━─━─━◐\n"
+                "-> `Sisa Dyno Bulan Ini`:\n"
                 f"    •**{hours} jam - {minutes} menit  "
                 f"-  {percentage}%**\n"
                 "╰━━━━━━━━━━━━━━━━━━━━╯"
             )
+            await asyncio.sleep(20)
+            await event.delete()
             return True
 
 
