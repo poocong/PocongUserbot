@@ -17,8 +17,6 @@
 
 import re
 import hashlib
-import os
-import os.path
 from userbot import bot
 
 from telethon.tl.functions.channels import GetParticipantRequest
