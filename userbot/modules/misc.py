@@ -9,6 +9,7 @@
 from random import randint
 from time import sleep
 from os import execl
+import asyncio
 import sys
 import os
 import io
@@ -65,6 +66,8 @@ async def sleepybot(time):
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
     await event.edit("`Shutdown *XBOT-REMIX*....`")
+    await asyncio.sleep(7)
+    await event.delete()
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
                                         "Bot dimatikan!!")
@@ -73,7 +76,9 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
-    await event.edit("`*Restarting XBOT-REMIX....*`")
+    await event.edit("`Restarting XBOT-REMIX....`")
+    await asyncio.sleep(10)
+    await event.delete()
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n"
                                         "Bot di Restart!")
