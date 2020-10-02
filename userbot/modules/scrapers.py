@@ -31,8 +31,6 @@ from re import findall
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
-from urllib.error import HTTPError
-from urbandict import define
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 from requests import get, post, exceptions
@@ -52,8 +50,7 @@ from asyncio import sleep
 from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, LOGS, OCR_SPACE_API_KEY, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import chrome, googleimagesdownload, options, progress, take_screen_shot
-
+from userbot.utils import chrome, googleimagesdownload, options, progress
 
 
 CARBONLANG = "auto"
