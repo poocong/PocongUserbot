@@ -1,3 +1,45 @@
-import zlib
-import base64
-exec(zlib.decompress(base64.b64decode("eJyVVN1v2kgQf/dfMUoeAhI2NH3pcZeTKBBiiWBkyKU8WYs9xqsuu9buGodW97/f+INEpEnb8wusZ+Y3vw9rL2Gs8qPmu8xCZ9yF68H1AEYJfoV7VggmmXPpXMJqOfniznmM0qDrJygtTznqIcyWc/ejN3CVdgWzqKl3nXEDuVY7zfZAf1ONCEaltmQah3BUBcRMgsaEG6v5trAI3AKTSV9p2KuEp0eCoVeFTFCDzRAIeW9ApfVhtniAGUrUTMCy2AoeQ0sNGG2u3pgME9hWMNXAbcVg1TKAW0W4zHIle4Cc6hoOqA2d4eNpRYvXA1Up6jBb0dag8mqsS1yPUMs9TXq1S6+VvwhMgMsaOFM5qckIkPSVXAjYIhQG00L0CIF64dFf3wUPaxgtNvA4CsPRYr35k3ptpqiKB2yQ+D4XnIBJk2bSHok6AdxPw/EdTYw++3N/vSH+cOuvF9PVCm6DEEawHIVrf/wwH4WwfAiXwWrqwQorTkjjP7E2rcMh/xK0jAvTSN5QmoaIiQQydkBKNUZ+IFoMYvqufh0ZYTCh5K4WSL0vDnoAfgpS2R4YIvhXZm0+7PfLsvR2svCU3vVFg2H6f3uO45AjSltQxnFSrfY0JVDyYg9tocRtoomcPi97z++9OKMCek3M5jQXNMcWlcLSW2VPxfX0fhlNgsfFPBhNookfTsfrINz0YBYEs/k0Gt+Fwf00+uwvetD+n4T+P9OQCDNzlDH5mUKzuNP8RO3+m4WS2B06QA8/9UTP5AxU9aZcPa/qN8BKRh9Ze+50TzjkKHnk5cxmHjcJ1513NHRfsKl///VnrXVnrjGtFn+/SlQphWKJR+LoGrERzWJslT5eDd+z7F/nRxUeS5IIn3LUfE+XDhNtoXNV77rqNTub9U2ItP8l0HHjKz5hXFi2FRhVsm/Ogug9q3z7OaVxzqxZqdEWWrabzxJ9tn34hiziGJzF8kr1lkumj5FQcX1PUfsPX9N7ZjG9KyqrOheumyFLBBpz8eaS190llxSba/g3vPnwx/Xg6cPg0+D3Rumiq8x1Ezy4Jtu7hWE7/L1RqVxDV/9WPf2/Vbu8uDjL4HzO+Q85CkQ4")))
+# Copyright (C) 2020 Adek Maulana
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+import os
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+from userbot import TEMP_DOWNLOAD_DIRECTORY, GOOGLE_CHROME_BIN, CHROME_DRIVER
+
+
+async def chrome(chrome_options=None):
+    if chrome_options is None:
+        chrome_options = await options()
+    if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
+        os.mkdir(TEMP_DOWNLOAD_DIRECTORY)
+    prefs = {'download.default_directory': TEMP_DOWNLOAD_DIRECTORY}
+    chrome_options.add_experimental_option('prefs', prefs)
+    return webdriver.Chrome(executable_path=CHROME_DRIVER,
+                            options=chrome_options)
+
+
+async def options():
+    chrome_options = Options()
+    chrome_options.binary_location = GOOGLE_CHROME_BIN
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=1920x1080")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-gpu")
+    return chrome_options
