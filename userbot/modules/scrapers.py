@@ -8,21 +8,21 @@
 """ Userbot module containing various scrapers. """
 
 import os
+import io
 import time
 import asyncio
 import shutil
 import json
 import requests
 from os import popen
-import urllib.parse
 from bs4 import BeautifulSoup
 import re
 from re import match
-import io
 from random import choice
 from humanize import naturalsize
 import qrcode
 import barcode
+import asyncurban
 from barcode.writer import ImageWriter
 import emoji
 from googletrans import Translator
@@ -31,9 +31,10 @@ from re import findall
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
+from urllib.error import HTTPError
+from urbandict import define
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
-from requests import get
 from requests import get, post, exceptions
 from search_engine_parser import GoogleSearch
 from googletrans import LANGUAGES, Translator
@@ -51,9 +52,8 @@ from asyncio import sleep
 from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, LOGS, OCR_SPACE_API_KEY, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import chrome, googleimagesdownload, options, progress
+from userbot.utils import chrome, googleimagesdownload, options, progress, take_screen_shot
 
-import asyncurban
 
 
 CARBONLANG = "auto"
