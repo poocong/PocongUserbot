@@ -196,8 +196,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True,
-          pattern=r"^\.deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
+@register(pattern=r"^/deez (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
 async def _(event):
     if event.fwd_from:
         return
@@ -246,7 +245,6 @@ async def _(event):
             await event.edit(strings["uploading"])
             await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)
-            await event.delete()
 
         elif "album" in required_link:
             reqd_albums = loader.download_albumspo(
@@ -262,7 +260,6 @@ async def _(event):
                 await event.edit(strings["uploading"])
                 await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)
-            await event.delete()
 
     elif "deezer" in required_link:
         if "track" in required_link:
@@ -330,6 +327,7 @@ async def upload_track(track_location, message):
         force_document=force_document,
         supports_streaming=supports_streaming,
         allow_cache=False,
+        reply_to=message.message.id,
         attributes=document_attributes,
         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
             progress(d, t, message, c_time, "[UPLOAD]")
