@@ -1,5 +1,6 @@
 """ Userbot module which contains afk-related commands """
 
+import asyncio
 from datetime import datetime
 import time
 from random import choice, randint
@@ -16,8 +17,7 @@ AFKSTR = [
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
     "`#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!`",
-    "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
-    "`Saya Sedang OFFLINE Anjing!!!`",
+    "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`"
 ]
 
 
@@ -52,10 +52,14 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**AFK!**\nSaya Offline Dulu Bro...\
+        await afk_e.edit(f"**AFK!**\nSaya Offline Dulu...\
         \nReason: `{string}`")
+        await asyncio.sleep(5)
+        await afk_e.delete()
     else:
-        await afk_e.edit("**AFK!**\nSaya Offline Dulu Bro...")
+        await afk_e.edit("**AFK!**\nSaya Offline Dulu...")
+        await asyncio.sleep(5)
+        await afk_e.delete()
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ OFFLINE ]"))
     else:
