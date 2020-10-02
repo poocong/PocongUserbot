@@ -261,7 +261,6 @@ async def gsearch(q_event):
         )
 
 
-
 @register(outgoing=True, pattern=r"^.wiki (.*)")
 async def wiki(wiki_q):
     """ For .wiki command, fetch content from Wikipedia. """
