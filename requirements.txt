@@ -62,7 +62,6 @@ redis
 PyDrive2
 pyDownload
 beautifulsoup4
-youtube-dl
 PyGithub
 bs4
 covid
@@ -81,6 +80,7 @@ git+https://github.com/ahupp/python-magic
 pytube
 pymongo[srv]
 youtube_search
+youtube-dl
 justwatch
 deezloader
 zipfile38
