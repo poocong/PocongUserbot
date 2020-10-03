@@ -49,7 +49,7 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 ```
 
 ## How to setup Google Drive
-<p align="center"><a href="https://semawur.com/gGEs1KN"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png"/></a></p>
+<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png"/></a></p>
 
 ## Credits
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
@@ -61,6 +61,8 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 *   [AidilAryanto](https://github.com/aidilaryanto) - ProjectDils 
 *   [Alfianandaa](https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
 *   [AnggaR69s](https://github.com/GengKapak/DCLXVI) - DCLXVI
+*   [kandnub](https://github.com/kandnub) - TG-UserBot
+*   [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
 *   AND OTHER
