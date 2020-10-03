@@ -14,7 +14,7 @@ async def _(event):
     link = event.pattern_match.group(1)
     wall = f"wall"
     await event.edit("```Processing```")
-    async with bot.conversation("@xbotgroup_xbot") as conv:
+    async with bot.conversation("@LyndaRobot") as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(
@@ -23,7 +23,7 @@ async def _(event):
             await conv.send_message(f'/{wall} {link}')
             response = await response
         except YouBlockedUserError:
-            await event.edit("```Unblock @xbotgroup_xbot dulu Goblok!!```")
+            await event.edit("```Unblock @LyndaRobot dulu Goblok!!```")
             return
         else:
             downloaded_file_name = await event.client.download_media(
