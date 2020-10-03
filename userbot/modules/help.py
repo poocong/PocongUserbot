@@ -23,19 +23,19 @@ async def hep(event):
             await asyncio.sleep(5)
             await event.delete()
     else:
-        string1 = "╭━━━━━━━━━━━━━━━━━━━━━╮\n│   Help for [🔥XBOT - REMIX🔥]\
+        string1 = f"╭━━━━━━━━━━━━━━━━━━━━━╮\n│   Help for [🔥XBOT - REMIX🔥]\
             \n│   ╾────────────────╼ \
             \n│   Untuk melihat lengkap Command\
-            \n│   Contoh: .help < nama module > n│   Modules Aktif: {len(modules)}\
+            \n│   Contoh: .help < nama module > \n│   Modules Aktif: {len(modules)}\
             \n╰━━━━━━━━━━━━━━━━━━━━━╯\n\n"
         string = "𖠄 "
         string3 = "List for all available commands below: "
         string2 = "--------------------------------------------------------"
         string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
-                          \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
+                          \n **Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`  •  "
+            string += "`  𖠄  "
         await event.edit(
             f"{string1}" f"{string3}" f"{string2}\n" f"{string}" f"{string4}"
         )
