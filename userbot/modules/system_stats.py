@@ -1,4 +1,4 @@
-#Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import CMD_HELP, ALIVE_NAME, BOT_VER, ALIVE_LOGO,UPSTREAM_REPO_URL, UPSTREAM_REPO_BRANCH, bot, StartTime
+from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -39,7 +39,9 @@ async def get_readable_time(seconds: int) -> str:
 
     while count < 4:
         count += 1
-        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
+        remainder, result = divmod(
+            seconds, 60) if count < 3 else divmod(
+            seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -70,8 +72,10 @@ async def psu(event):
     softw += f"`Boot Time: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
     # CPU Cores
     cpuu = "**CPU Info**\n"
-    cpuu += "`Physical cores   : " + str(psutil.cpu_count(logical=False)) + "`\n"
-    cpuu += "`Total cores      : " + str(psutil.cpu_count(logical=True)) + "`\n"
+    cpuu += "`Physical cores   : " + \
+        str(psutil.cpu_count(logical=False)) + "`\n"
+    cpuu += "`Total cores      : " + \
+        str(psutil.cpu_count(logical=True)) + "`\n"
     # CPU frequencies
     cpufreq = psutil.cpu_freq()
     cpuu += f"`Max Frequency    : {cpufreq.max:.2f}Mhz`\n"
@@ -124,7 +128,8 @@ async def sysdetails(sysd):
             )
 
             stdout, stderr = await fetch.communicate()
-            result = str(stdout.decode().strip()) + str(stderr.decode().strip())
+            result = str(stdout.decode().strip()) + \
+                str(stderr.decode().strip())
 
             await sysd.edit("`" + result + "`")
         except FileNotFoundError:
@@ -160,12 +165,12 @@ async def bot_ver(event):
 
         await event.edit(
             "`╭━━━━━━━━━━━━━━━━━━━━╮\n "
-                             "` Userbot Version: \n "
-                             f"{verout}"
-                             "` \n"
-                             "   Revision: "
-                             f"{revout}🇲🇨\n"
-                             "╰━━━━━━━━━━━━━━━━━━━━╯ "
+            "` Userbot Version: \n "
+            f"{verout}"
+            "` \n"
+            "   Revision: "
+            f"{revout}🇲🇨\n"
+            "╰━━━━━━━━━━━━━━━━━━━━╯ "
         )
     else:
         await event.edit(
@@ -225,20 +230,20 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
-    output = (f"۝⩵꙰ཱི►XBOT-REMIX◄⩵꙰ཱི۝\n running on 🤖 `{UPSTREAM_REPO_BRANCH}` 🤖\n"
-             f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-             f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
-             f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
-             "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-             f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
-             f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
-             f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
-             f"┣[•🛠 `Version  :`{BOT_VER} 🔥\n"
-             f"┣[•🗃 `Modules  :`{len(modules)} Loaded🔥\n"
-             f"┣[•🕒 `Uptime   :`{uptime} 🔥\n"
-             f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
-             f" •MOD BY : `{DEFAULTUSER}`"
-    )
+    output = (
+        f"۝⩵꙰ཱི►XBOT-REMIX◄⩵꙰ཱི۝\n running on 🤖 `{UPSTREAM_REPO_BRANCH}` 🤖\n"
+        f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
+        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
+        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
+        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
+        f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
+        f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
+        f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
+        f"┣[•🛠 `Version  :`{BOT_VER} 🔥\n"
+        f"┣[•🗃 `Modules  :`{len(modules)} Loaded🔥\n"
+        f"┣[•🕒 `Uptime   :`{uptime} 🔥\n"
+        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
+        f" •MOD BY : `{DEFAULTUSER}`")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -295,5 +300,5 @@ CMD_HELP.update({
 \n\n`.db`\
 \nUsage:Shows database related info.\
 \n\n.`.spc`\
-\nUsage:Show system specification."   
-})  
+\nUsage:Show system specification."
+})
