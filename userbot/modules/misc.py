@@ -89,21 +89,19 @@ async def killdabot(event):
     exit()
 
 
-@register(outgoing=True, pattern="^.creator$")
-async def creator(e):
-    await e.edit("XBOT OFFICIAL MODULES\nMOD BY: [➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐](https://semawur.com/lOirqhYMWxO)")
-
 
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
         "Here's something for you to read:\n"
-        "\n[Setup Guide - Basic](https://semawur.com/RKUKGP)"
-        "\n[Setup Guide - Google Drive](https://semawur.com/ddQ6e2GJUq)"
-        "\n[Setup Guide - LastFM Module](https://semawur.com/4IOqxAz)"
-        "\n[Video Tutorial - 576p](https://semawur.com/8GVxqwyCMTMU)"
-        "\n[Video Tutorial - 1080p](https://semawur.com/9OO8d)")
-
+        "\n[OpenUserBot's README.md file](https://github.com/mkaraniya/OpenUserBot/blob/sql-extended/README.md)"
+        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
+        "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
+        "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
+        "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
+        "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
+        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
+    
 
 @register(outgoing=True, pattern="^.repeat (.*)")
 async def repeat(rep):
@@ -279,9 +277,6 @@ CMD_HELP.update({
     "shutdown":
     ">`.shutdown`\
     \nUsage: Shutdown bot",
-    "creator":
-    "`.creator`\
-   \nUsage: Know who created this awesome userbot !!",
     "repo":
     ">`.repo`\
     \nUsage: Github Repo of this bot",
