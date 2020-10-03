@@ -39,3 +39,8 @@ async def _(event):
             await event.delete()
             await event.client.delete_messages(conv.chat_id,
                                                [msg.id, response.id])
+
+
+CMD_HELP.update({"wallpaper": ">`.wall` <query>."
+                 "\nUsage: Search some wallpaper picture."})
+
