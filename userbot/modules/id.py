@@ -11,13 +11,13 @@ async def image_maker(event):
         replied_user.from_id, file="user.png", download_big=True
     )
     user_photo = Image.open("user.png")
-    id_template = Image.open("userbot/utils/XB.png")
+    id_template = Image.open("userbot/resources/FrameID.png")
     user_photo = user_photo.resize((989, 1073))
     id_template.paste(user_photo, (1229, 573))
     position = (2473, 481)
     draw = ImageDraw.Draw(id_template)
     color = "rgb(23, 43, 226)"  # red color
-    font = ImageFont.truetype("userbot/utils/fontx.ttf", size=200)
+    font = ImageFont.truetype("userbot/resources/fontx.ttf", size=200)
     draw.text(
         position,
         replied_user.sender.first_name.replace("\u2060", ""),
