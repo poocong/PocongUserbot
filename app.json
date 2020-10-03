@@ -86,16 +86,6 @@
       "value": "1",
       "required": false
     },
-    "CHROME_DRIVER": {
-      "description": "ChromeDriver location for selenium based modules.",
-      "value": "/usr/bin/chromedriver",
-      "required": false
-    },
-    "GOOGLE_CHROME_BIN": {
-      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
-      "value": "/usr/bin/chromium-browser",
-      "required": false
-    },
     "PM_LOGGR_BOT_API_ID": {
       "description": "send .getid in any channel to forward all your NEW PMs to this group",
       "required": false
