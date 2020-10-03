@@ -1,18 +1,9 @@
-import io
 import os
-import random
-import re
-import textwrap
 
-from telethon import events, functions, types
+from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from random import randint, uniform
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
-from telethon.tl.types import DocumentAttributeFilename
-
-
 
 
 @register(outgoing=True, pattern=r"^\.wall(?: |$)(.*)")
@@ -20,7 +11,6 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@XBOTGBOT"
     wall = f"wall"
     await event.edit("```Processing```")
     async with bot.conversation("@XBOTGBOT") as conv:
