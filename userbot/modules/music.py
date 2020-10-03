@@ -100,17 +100,17 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("`Mencari Video Music..`")
+        await event.edit("`Mencari Musik Video..`")
     elif reply:
         query = str(reply.message)
-        await event.edit("`Mencari Video Music....`")
+        await event.edit("`Mencari Musik Video..`")
     else:
         await event.edit("`Apa yang harus saya cari?`")
         return
     await getmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm"))
     if l:
-        await event.edit("`OK, Video di Temukan...`")
+        await event.edit("`OK, Video Musik di Temukan..`")
     else:
         await event.edit(f"`Maaf Saya Tidak dapat Menemukan` **{query}**")
         return
@@ -153,8 +153,6 @@ async def _(event):
             ),
         )
         await event.edit(f"**{query}** `Uploaded Successfully..!`")
-        await asyncio.sleep(10)
-        await event.delete()
         os.remove(thumb_image)
         os.system("rm -rf *.mkv")
         os.system("rm -rf *.mp4")
@@ -207,7 +205,7 @@ async def _(event):
         "name": "DeezLoad",
         "arl_token_cfg_doc": "ARL Token for Deezer",
         "invalid_arl_token": "please set the required variables for this module",
-        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session 🥺",
+        "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session ð¥º",
         "server_error": "We're experiencing technical difficulties.",
         "processing": "`Downloading..`",
         "uploading": "`Uploading...`",
