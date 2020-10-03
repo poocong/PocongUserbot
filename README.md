@@ -13,7 +13,22 @@
 
 <h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
 <p align="center">&nbsp;</p>
+<P align="center">Based on RaphielGang's [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)</p>
 
+```
+/**
+    Your Telegram account may get banned.
+    I am not responsible for any improper use of this bot
+    This bot is intended for the purpose of having fun with memes,
+    as well as efficiently managing groups.
+    You ended up spamming groups, getting reported left and right,
+    and you ended up in a Finale Battle with Telegram and at the end
+    Telegram Team deleted your account?
+    And after that, then you pointed your fingers at us
+    for getting your acoount deleted?
+    I will be rolling on the floor laughing at you.
+/**
+```
 
 ## How To Host?
 
@@ -34,6 +49,20 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 
 ## How to setup Google Drive
 <p align="center"><a href="https://semawur.com/gGEs1KN"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png"/></a></p>
+
+## Credits
+*   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
+*   [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
+*   [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - OpenUserBot
+*   [Mr.Miss](https://github.com/keselekpermen69) - UserButt
+*   [adekmaulana](https://github.com/adekmaulana) - ProjectBish
+*   [MoveAngel](https://github.com/MoveAngel) - One4uBot
+*   [AidilAryanto](https://github.com/aidilaryanto) - ProjectDils 
+*   [Alfianandaa](https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
+*   [AnggaR69s](https://github.com/GengKapak/DCLXVI) - DCLXVI
+*   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
+*   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
+*   AND OTHER
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
