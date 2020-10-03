@@ -7,7 +7,7 @@ from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
 import os
 
 
-@register(outgoing=True, pattern=r"^\.o(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.wall(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
