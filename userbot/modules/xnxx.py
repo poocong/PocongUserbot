@@ -1,18 +1,10 @@
 import os
-from telethon import events, functions, types
+from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.events import register
-from userbot.utils import defender_kanger
 from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
-import io
 import os
-import random
-import re
-import textwrap
-from random import randint, uniform
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
-from telethon.tl.types import DocumentAttributeFilename
 
 
 @register(outgoing=True, pattern=r"^\.o(?: |$)(.*)")
@@ -20,7 +12,6 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@xbotgroup_xbot"
     wall = f"wall"
     await event.edit("```Processing```")
     async with bot.conversation("@xbotgroup_xbot") as conv:
