@@ -43,4 +43,3 @@ async def _(event):
 
 CMD_HELP.update({"wallpaper": ">`.wall` <query>."
                  "\nUsage: Search some wallpaper picture."})
-
