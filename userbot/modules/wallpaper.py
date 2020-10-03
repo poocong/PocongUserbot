@@ -36,8 +36,8 @@ async def _(event):
             )
             os.remove(downloaded_file_name)
             await event.delete()
-            await event.client.delete_messages(conv.chat_id,
-                                               [msg.id, response.id])
+            await event.client.delete_messages(event.chat_id,
+                                               [msg.id, downloaded_file_name, response.media])
 
 
 CMD_HELP.update({"wallpaper": ">`.wall` <query>."
