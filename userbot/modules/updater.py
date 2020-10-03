@@ -160,13 +160,12 @@ async def upstream(event):
                 "\nBut we can fix that by force updating the userbot using .update now.`"
             )
         repo = Repo.init()
-        origin = repo.create_remote('upstream', off_repo)
+        origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head('x-sql-extended', origin.refs.x - sql - extended)
-        repo.heads.x - sql - \
-            extended.set_tracking_branch(origin.refs.x - sql - extended)
-        repo.heads.x - sql - extended.checkout(True)
+        repo.create_head("x-sql-extended", origin.refs.x-sql-extended)
+        repo.heads.x-sql-extended.set_tracking_branch(origin.refs.x-sql-extended)
+        repo.heads.x-sql-extended.checkout(True)
 
     ac_br = repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:
