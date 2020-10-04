@@ -37,15 +37,15 @@
 ```
 * **[HEROKU](https://www.heroku.com/) Method** 🔧
 
-  > First click the button below. 
+  > First get API_KE & API_HASH in my.telegram.org (required)
 
-  > If you don't have HU_STRING_SESSION just ignore it.  
+  > Get String Session on command below run in your terminal (required)
 
-  > After Deployed to Heroku first turn off the app (resources -> turn off) and run `bash genStr` in console (more -> run console).  
+  > Next click Deploy the button below. 
 
-  > After that copy the string session and past it in Config Vars (settings -> reveal config vars). 
+  > Fill in the required fields on heroku
 
-  > Finally turn on the app and check the logs (settings -> view logs) :)
+  > Finally turn on the app and check the logs (settings -> view logs) enjoy :)
 ```
 
 ## <p align="center">Deploy to Heroku Methods</p>
