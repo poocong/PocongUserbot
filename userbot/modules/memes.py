@@ -1512,10 +1512,6 @@ async def stfu(e):
                      "`\n█████████████████████████████████`")
 
 
-
-
-
-
 @register(outgoing=True, pattern=r"^\.gtfo$")
 async def gtfo(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -1528,7 +1524,6 @@ async def gtfo(e):
                      "`\n█──▀▀▀──███──███──██████──────█ `"
                      "`\n█▄▄▄▄▄▄▄███▄▄███▄▄██████▄▄▄▄▄▄█ `"
                      "`\n███████████████████████████████ `")
-
 
 
 @register(outgoing=True, pattern=r"^\.nih$")
