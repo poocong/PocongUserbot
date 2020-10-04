@@ -229,7 +229,7 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
 
-kp = Client("XbotPyro", api_id=API_KEY, api_hash=API_HASH)
+kp = Client("XbotPyro", API_KEY, API_HASH)
 
 
 def is_mongo_alive():
