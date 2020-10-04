@@ -29,12 +29,12 @@ async def hep(event):
         string3 = "Untuk melihat lengkap Command\nContoh: .help < nama module >\nModules Aktif: 250\n"
         string2 = "--------------------------------------------------------"
         string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
-                          \n **Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
+                          \n **Mod By**➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "`  𖠄  "
         await event.edit(
             f"{string1}" f"{string3}" f"{string2}\n" f"{string}" f"{string4}"
         )
-        await asyncio.sleep(30)
+        await asyncio.sleep(60)
         await event.delete()
