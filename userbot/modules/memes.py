@@ -765,10 +765,6 @@ GAMBAR_OK = """
 ░▐▄▄▄▄▄▄▄▄▌▐▄▌▀▀▀▄▄▓▄
 """
 
-GAMBAR_BABI = """
-⠀⠀⠀⣠⣶⡾⠏⠉⠙⠳⢦⡀⠀⠀⠀⢠⠞⠉⠙⠲⡀⠀ ⠀⠀⠀⣴⠿⠏⠀⠀⠀⠀⠀⠀⢳⡀⠀⡏⠀⠀⠀⠀⠀⢷ ⠀⠀⢠⣟⣋⡀⢀⣀⣀⡀⠀⣀⡀⣧⠀⢸⠀⠀⠀⠀⠀ ⡇ ⠀⠀⢸⣯⡭⠁⠸⣛⣟⠆⡴⣻⡲⣿⠀⣸ BABI!!   ⡇ ⠀⠀⣟⣿⡭⠀⠀⠀⠀⠀⢱⠀⠀⣿⠀⢹⠀⠀⠀⠀⠀ ⡇ ⠀⠀⠙⢿⣯⠄⠀⠀⠀⢀⡀⠀⠀⡿⠀⠀⡇⠀⠀⠀⠀⡼
-⠀⠀⠀⠀⠹⣶⠆⠀⠀⠀⠀⠀⡴⠃⠀⠀⠘⠤⣄⣠⠞⠀ ⠀⠀⠀⠀⠀⢸⣷⡦⢤⡤⢤⣞⣁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⢀⣤⣴⣿⣏⠁⠀⠀⠸⣏⢯⣷⣖⣦⡀⠀⠀⠀⠀⠀⠀ ⢀⣾⣽⣿⣿⣿⣿⠛⢲⣶⣾⢉⡷⣿⣿⠵⣿⠀⠀⠀⠀⠀⠀ ⣼⣿⠍⠉⣿⡭⠉⠙⢺⣇⣼⡏⠀⠀⠀⣄⢸⠀⠀⠀⠀⠀⠀ ⣿⣿⣧⣀⣿.........⣀⣰⣏⣘⣆⣀⠀⠀⠀
-"""
 
 GAMBAR_TENGKORAK = """
 ░░░░░░░░░░░░░▄▐░░░░
@@ -804,20 +800,6 @@ GAMBAR_KONTL = """
 ⠀⠀⠀⠀⠀⠀⢹⡄⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃
 ⠀⠀⠀⠀⠀⠀⠀⠙⢦⣀⣳⡀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⢦⣀⣀⣀⣀⣠⡴⠚⠁⠉⠉⠉
-"""
-
-HUMAN = """
-⣿⣿⣿⣿⣿⡿⠋              ⠘⠩⢿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠻⣿⣿⣿⣿
-⣿⣿⣿⣿⠄⠄⣀⣤⣤⣤⣄⡀⠄⠄⠄⠄⠙⣿⣿⣿
-⣿⣿⣿⣿⡀⢰⣿⣿⣿⣿⣿⢿⠄⠄⠄⠄⠄⠹⢿⣿
-⣿⣿⣿⣿⣿⡞⠻⠿⠟⠋⠉⠁⣤⡀⠄⠄⠄⠄⠄⠄
-⣿⣿⣿⣿⣿⣿⣶⢼⣷⡤⣦⣿⠛⡰⢃⠄⠐⠄⠄⢸
-⣿⣿⣿⣿⣿⣿⣿⡯⢍⠿⢾⡿⣸⣿⠰⠄⢀⠄⠄⡬
-⣿⣿⣿⣿⣿⣿⣿⣴⣴⣅⣾⣿⣿⡧⠦⡶⠃⠄⠠⢴
-⣿⣿⣿⣿⠿⠍⣿⣿⣿⣿⣿⣿⣿⢇⠟⠁⠄⠄⠄⠄
-⠟⠛⠉⠄⠄⠄⡽⣿⣿⣿⣿⣿⣯⠏⠄⠄⠄⠄⠄⠄
-⠄⠄⠄⢀⣾⣾⣿⣤⣯⣿⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄
 """
 
 
@@ -1530,6 +1512,10 @@ async def stfu(e):
                      "`\n█████████████████████████████████`")
 
 
+
+
+
+
 @register(outgoing=True, pattern=r"^\.gtfo$")
 async def gtfo(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -1542,6 +1528,7 @@ async def gtfo(e):
                      "`\n█──▀▀▀──███──███──██████──────█ `"
                      "`\n█▄▄▄▄▄▄▄███▄▄███▄▄██████▄▄▄▄▄▄█ `"
                      "`\n███████████████████████████████ `")
+
 
 
 @register(outgoing=True, pattern=r"^\.nih$")
@@ -1715,39 +1702,21 @@ async def emoji_kontl(e):
 
 
 @register(outgoing=True, pattern=r"^\.ok$")
-async def emoji_ok(e):
+async def emoji_oke(e):
     emoji = e.pattern_match.group(1)
-    ok = GAMBAR_OK
+    oke = GAMBAR_OK
     if emoji:
-        ok = ok.replace('😂', emoji)
-    await e.edit(ok)
+        oke = oke.replace('😂', emoji)
+    await e.edit(oke)
 
 
 @register(outgoing=True, pattern=r"^\.skull$")
-async def emoji_skull(e):
+async def emoji_tengkorak(e):
     emoji = e.pattern_match.group(1)
-    skull = GAMBAR_TENGKORAK
+    tengkorak = GAMBAR_TENGKORAK
     if emoji:
-        skull = skull.replace('😂', emoji)
-    await e.edit(skull)
-
-
-@register(outgoing=True, pattern=r"^\.babi$")
-async def emoji_babi(e):
-    emoji = e.pattern_match.group(1)
-    babi = GAMBAR_BABI
-    if emoji:
-        babi = babi.replace('😂', emoji)
-    await e.edit(babi)
-
-
-@register(outgoing=True, pattern=r"^\.hum$")
-async def emoji_human(e):
-    emoji = e.pattern_match.group(1)
-    human = HUMAN
-    if emoji:
-        human = human.replace('😂', emoji)
-    await e.edit(human)
+        tengkorak = tengkorak.replace('😂', emoji)
+    await e.edit(tengkorak)
 
 
 CMD_HELP.update({
@@ -1819,6 +1788,6 @@ CMD_HELP.update({
     "`\n>.nou ; .bot ; .gey ; .tf ; .paw ; .taco ; .nih ;`"
     "`\n>.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .leave`"
     "`\n>.iwi ; .sayhi ; .koc ; .gas ; .earth ; .love ; .rain`"
-    "`\n>.penis ; .emo ; .fuck ; .ok ; .babi ; .skull`"
+    "`\n>.penis ; .emo ; .fuck ; .ok ; .skull`"
     "\n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
 })
