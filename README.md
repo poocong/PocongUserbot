@@ -32,7 +32,7 @@
 ```
 
 <details>
-  <summary> How To Deploy 👷 </summary>
+  <summary> HOW TO DEPLOY 👷 <=Klick This </summary>
 
 ```
 * **[HEROKU](https://www.heroku.com/) Method** 🔧
