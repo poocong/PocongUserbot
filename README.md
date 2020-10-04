@@ -31,14 +31,31 @@
 /**
 ```
 
-## How To Host?
+<details>
+  <summary> How To Deploy 👷 </summary>
 
-The easiest way to deploy this great bot! is click on button below
-Make sure you have an account of heroku and follow all the steps required.
+```
+* **[HEROKU](https://www.heroku.com/) Method** 🔧
 
-Deploy to Heroku:
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-magenta?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+  > First click the button below. 
+
+  > If you don't have HU_STRING_SESSION just ignore it.  
+
+  > After Deployed to Heroku first turn off the app (resources -> turn off) and run `bash genStr` in console (more -> run console).  
+
+  > After that copy the string session and past it in Config Vars (settings -> reveal config vars). 
+
+  > Finally turn on the app and check the logs (settings -> view logs) :)
+```
+
+## <p align="center">Deploy to Heroku Methods</p>
+
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+
 <br>
+</p>
+
+</details>
 
 <br><p align="center"><b>GENERATE STRING SESSION</p>
 <br>
