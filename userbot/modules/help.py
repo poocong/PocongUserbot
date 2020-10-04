@@ -8,9 +8,9 @@
 import asyncio
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import defender_kanger
 
 modules = CMD_HELP
+
 
 @register(outgoing=True, pattern="^.help(?: |$)(.*)")
 async def help(event):
@@ -37,7 +37,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t•\t "
         await event.reply(f"{string}"
-                         "\n\n╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
+                          "\n\n╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n**Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐'")
         await asyncio.sleep(100)
         await event.delete()
