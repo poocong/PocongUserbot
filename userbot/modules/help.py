@@ -26,8 +26,7 @@ async def hep(event):
         string1 = "╭━━━━━━━━━━━━━━━━━━━━━━━━━━━╮\n│   Help for [🔥XBOT - REMIX🔥]\
             \n╰━━━━━━━━━━━━━━━━━━━━━━━━━━━╯\n\n"
         string = "𖠄 "
-        string3 = "Untuk melihat lengkap Command\
-            \nContoh: .help < nama module > \nModules Aktif: {len(modules)}\"
+        string3 = "Untuk melihat lengkap Command\nContoh: .help < nama module >\nModules Aktif: 250"
         string2 = "--------------------------------------------------------"
         string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n **Mod By**'➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
