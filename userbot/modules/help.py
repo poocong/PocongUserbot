@@ -23,7 +23,7 @@ async def hep(event):
             await asyncio.sleep(5)
             await event.delete()
     else:
-        string1 = "╭━━━━━━━━━━━━━━━━━━━━╮\n│    Help for [🔥XBOT - REMIX🔥]    │\
+        string1 = "╭━━━━━━━━━━━━━━━━━━━━╮\n│    Help for [🔥XBOT - REMIX🔥]   │\
             \n╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
         string = "𖠄 "
         string3 = "Untuk melihat lengkap Command\nContoh: .help < nama module >\nModules Aktif: 250\n"
