@@ -1333,7 +1333,7 @@ CMD_HELP.update(
     \nUsage: Converts various currencies for you.",
         "carbon": "`.carbon` <text or reply>\
     \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.",
-        "gogle": "`.google` <query>\
+        "google": "`.google` <query>\
   \nUsage: Does a search on Google.",
         "wiki": "`.wiki` <query>\
 \nUsage: Does a search on Wikipedia.",
