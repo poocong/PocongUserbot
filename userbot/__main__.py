@@ -11,6 +11,7 @@ from sys import argv
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import LOGS, BOT_VER, bot, kp
 from userbot.modules import ALL_MODULES
+from pyrogram import idle, Client
 
 INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
              '\n Tip: Use Country Code along with number.' \
@@ -25,7 +26,6 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-kp.start()
 
 LOGS.info(
     f"🔥 XBOT-REMIX 🔥 V{BOT_VER} [SUCCESSFUL ACTIVATED! ⚙️]")
@@ -34,3 +34,5 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
+
+kp.start()
