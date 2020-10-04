@@ -2,14 +2,127 @@
 # Ported from Userge by Alfiananda P.A
 
 import os
-
+import random
+import numpy as np
+from colour import Color
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+
+
+@register(outgoing=True, pattern=r"^\.(ascii|asciis)$")
+async def ascii(event):
+    if not event.reply_to_msg_id:
+        await event.edit("`Reply to Any media..`")
+        return
+    reply_message = await event.get_reply_message()
+    if not reply_message.media:
+        await event.edit("`reply to a image/sticker/video`")
+        return
+    await event.edit("`Downloading Media..`")
+    if reply_message.photo:
+        IMG = await bot.download_media(
+            reply_message,
+            "ascii.png",
+        )
+    elif (
+        DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
+        in reply_message.media.document.attributes
+    ):
+        await bot.download_media(
+            reply_message,
+            "ASCII.tgs",
+        )
+        os.system("lottie_convert.py ASCII.tgs ascii.png")
+        IMG = "ascii.png"
+    elif reply_message.video:
+        video = await bot.download_media(
+            reply_message,
+            "ascii.mp4",
+        )
+        extractMetadata(createParser(video))
+        os.system("ffmpeg -i ascii.mp4 -vframes 1 -an -s 480x360 -ss 1 ascii.png")
+        IMG = "ascii.png"
+    else:
+        IMG = await bot.download_media(
+            reply_message,
+            "ascii.png",
+        )
+    try:
+        list = await random_color()
+        color1 = list[0]
+        color2 = list[1]
+        bgcolor = "black"
+        await asciiart(IMG, color1, color2, bgcolor)
+        cmd = event.pattern_match.group(1)
+        if cmd == "asciis":
+            os.system("cp ascii.png ascii.webp")
+            ascii_file = "ascii.webp"
+        else:
+            ascii_file = "ascii.png"
+        await event.client.send_file(
+            event.chat_id,
+            ascii_file,
+            force_document=False,
+            reply_to=event.reply_to_msg_id,
+        )
+        await event.delete()
+        os.system("rm *.png")
+        os.system("rm *.webp")
+        os.system("rm *.mp4")
+        os.system("rm *.tgs")
+    except BaseException as e:
+        os.system("rm *.png")
+        os.system("rm *.webp")
+        os.system("rm *.mp4")
+        os.system("rm *.tgs")
+        return await event.edit(str(e))
+
+
+async def asciiart(IMG, color1, color2, bgcolor):
+    chars = np.asarray(list(" .,:irs?@9B&#"))
+    font = ImageFont.load_default()
+    letter_width = font.getsize("x")[0]
+    letter_height = font.getsize("x")[1]
+    letter_height / letter_width
+    img = Image.open(IMG)
+    widthByLetter = round(img.size[0] * 0.1 * 2)
+    heightByLetter = round(img.size[1] * 0.1)
+    S = (widthByLetter, heightByLetter)
+    img = img.resize(S)
+    img = np.sum(np.asarray(img), axis=2)
+    img -= img.min()
+    img = (1.0 - img / img.max()) ** 2 * (chars.size - 1)
+    lines = ("\n".join(("".join(r) for r in chars[img.astype(int)]))).split("\n")
+    nbins = len(lines)
+    colorRange = list(Color(color1).range_to(Color(color2), nbins))
+    newImg_width = letter_width * widthByLetter
+    newImg_height = letter_height * heightByLetter
+    newImg = Image.new("RGBA", (newImg_width, newImg_height), bgcolor)
+    draw = ImageDraw.Draw(newImg)
+    leftpadding = 0
+    y = 0
+    lineIdx = 0
+    for line in lines:
+        color = colorRange[lineIdx]
+        lineIdx += 1
+        draw.text((leftpadding, y), line, color.hex, font=font)
+        y += letter_height
+    IMG = newImg.save("ascii.png")
+    return IMG
+
+
+async def random_color():
+    color = [
+        "#" + "".join([random.choice("0123456789ABCDEF") for k in range(6)])
+        for i in range(2)
+    ]
+    return color
+
 
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
 
@@ -145,6 +258,10 @@ CMD_HELP.update(
     {
         "transform": ">`.ghost`"
         "\nUsage: Enchance your image to become a ghost!."
+        "\n\n>`.ascii`"
+        "\nUsage:create ascii art from media"
+        "\n\n>`.asciis`"
+        "\nUsage:same but upload result as sticker"
         "\n\n>`.flip`"
         "\nUsage: To flip your image"
         "\n\n>`.mirror`"
