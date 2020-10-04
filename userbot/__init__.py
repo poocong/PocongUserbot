@@ -231,6 +231,7 @@ MONGO = MONGOCLIENT.userbot
 
 kp = Client("XbotPyro", api_id=API_KEY, api_hash=API_HASH)
 
+
 def is_mongo_alive():
     try:
         MONGOCLIENT.server_info()
