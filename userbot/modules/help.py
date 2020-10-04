@@ -28,7 +28,7 @@ async def hep(event):
         string = "• "
         string3 = "╭━━━━━━━━━━━━━━━━━━━━╮\n   Untuk melihat lengkap Command\n   Contoh: .help < nama module >\n   Modules Aktif: 250\n╰━━━━━━━━━━━━━━━━━━━━╯\n"
         string2 = " ╾──────────────────────────────╼"
-        string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
+        string4 = "\n╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n **Mod By**➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
         for i in CMD_HELP:
             string += "`" + str(i)
