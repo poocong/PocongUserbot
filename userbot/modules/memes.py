@@ -1818,18 +1818,18 @@ CMD_HELP.update({
     "\n\nAnd many more"
     "`\n>.nou ; .bot ; .gey ; .tf ; .paw ; .taco ; .nih ;`"
     "`\n>.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .leave`"
-    "`\n > .iwi` ;
-    .sayhi` ;
-    .koc` ;
-    .gas` ;
-    .earth` ;
-    .love` ;
-    .rain` ;
-    .penis` ;
-    .emo` ;
-    .fuck` ;
-    .ok` ;
-    .babi` ;
+    "`\n > .iwi`
+    .sayhi`
+    .koc`
+    .gas`
+    .earth`
+    .love`
+    .rain`
+    .penis`
+    .emo`
+    .fuck`
+    .ok`
+    .babi`
     .skull`"
     "\n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
 })
