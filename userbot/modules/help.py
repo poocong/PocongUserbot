@@ -24,9 +24,9 @@ async def hep(event):
             await event.delete()
     else:
         string1 = "╭━━━━━━━━━━━━━━━━━━━━╮\n│    Help for [🔥XBOT - REMIX🔥]   │\
-            \n╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
+            \n╰━━━━━━━━━━━━━━━━━━━━╯\n"
         string = "• "
-        string3 = "Untuk melihat lengkap Command\nContoh: .help < nama module >\nModules Aktif: 250\n"
+        string3 = "╭━━━━━━━━━━━━━━━━━━━━╮\n Untuk melihat lengkap Command\n Contoh: .help < nama module >\n Modules Aktif: 250\n╰━━━━━━━━━━━━━━━━━━━━╯\n"
         string2 = "--------------------------------------------------------"
         string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n **Mod By**➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
