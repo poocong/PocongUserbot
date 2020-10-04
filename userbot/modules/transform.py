@@ -53,10 +53,14 @@ async def ascii(event):
             "ascii.png",
         )
     try:
+        await event.edit("`Processing..`")
         list = await random_color()
         color1 = list[0]
         color2 = list[1]
-        bgcolor = "black"
+        if bground:
+            bgcolor = bground
+        else:
+            bgcolor = "black"
         await asciiart(IMG, color1, color2, bgcolor)
         cmd = event.pattern_match.group(1)
         if cmd == "asciis":
@@ -88,17 +92,16 @@ async def asciiart(IMG, color1, color2, bgcolor):
     font = ImageFont.load_default()
     letter_width = font.getsize("x")[0]
     letter_height = font.getsize("x")[1]
-    letter_height / letter_width
+    WCF = letter_height / letter_width
     img = Image.open(IMG)
-    widthByLetter = round(img.size[0] * 0.1 * 2)
-    heightByLetter = round(img.size[1] * 0.1)
+    widthByLetter = round(img.size[0] * 0.15 * WCF)
+    heightByLetter = round(img.size[1] * 0.15)
     S = (widthByLetter, heightByLetter)
     img = img.resize(S)
     img = np.sum(np.asarray(img), axis=2)
     img -= img.min()
-    img = (1.0 - img / img.max()) ** 2 * (chars.size - 1)
-    lines = ("\n".join(("".join(r)
-                        for r in chars[img.astype(int)]))).split("\n")
+    img = (1.0 - img / img.max()) ** 2.2 * (chars.size - 1)
+    lines = ("\n".join(("".join(r) for r in chars[img.astype(int)]))).split("\n")
     nbins = len(lines)
     colorRange = list(Color(color1).range_to(Color(color2), nbins))
     newImg_width = letter_width * widthByLetter
@@ -117,12 +120,25 @@ async def asciiart(IMG, color1, color2, bgcolor):
     return IMG
 
 
+# this is from userge
 async def random_color():
     color = [
         "#" + "".join([random.choice("0123456789ABCDEF") for k in range(6)])
         for i in range(2)
     ]
     return color
+
+
+@register(outgoing=True, pattern=r"^\.asciibg(?: |$)(.*)")
+async def _(event):
+    BG = event.pattern_match.group(1)
+    if BG:
+        global bground
+        bground = BG
+    else:
+        return await event.edit("`please insert bg of ascii`")
+    await event.edit(f"`Successfully set bg of ascii to` **{BG}**")
+
 
 
 Converted = TEMP_DOWNLOAD_DIRECTORY + "sticker.webp"
@@ -263,6 +279,8 @@ CMD_HELP.update(
         "\nUsage:create ascii art from media"
         "\n\n>`.asciis`"
         "\nUsage:same but upload result as sticker"
+        "\n\n>`.asciibg <color>`"
+        "\nUsage:Now to use ASCII module change first background color past"
         "\n\n>`.flip`"
         "\nUsage: To flip your image"
         "\n\n>`.mirror`"
