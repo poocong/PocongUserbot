@@ -22,7 +22,6 @@ from dotenv import load_dotenv
 from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
-from pyrogram import Client, errors
 
 load_dotenv("config.env")
 
@@ -228,8 +227,6 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
-
-kp = Client("XbotPyro", API_KEY, API_HASH)
 
 
 def is_mongo_alive():
