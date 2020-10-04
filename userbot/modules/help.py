@@ -25,14 +25,14 @@ async def hep(event):
     else:
         string1 = "╭━━━━━━━━━━━━━━━━━━━━╮\n│    Help for [🔥XBOT - REMIX🔥]   │\
             \n╰━━━━━━━━━━━━━━━━━━━━╯\n\n"
-        string = "𖠄 "
+        string = "• "
         string3 = "Untuk melihat lengkap Command\nContoh: .help < nama module >\nModules Aktif: 250\n"
         string2 = "--------------------------------------------------------"
         string4 = "╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n **Mod By**➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`  𖠄  "
+            string += "` •  "
         await event.edit(
             f"{string1}" f"{string3}" f"{string2}\n" f"{string}" f"{string4}"
         )
