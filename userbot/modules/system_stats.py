@@ -23,6 +23,11 @@ import psutil
 from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import ChatSendMediaForbidden
+from pyrogram.errors.exceptions import FileIdInvalid, FileReferenceEmpty
+from pyrogram.errors.exceptions.bad_request_400 import BadRequest, ChannelInvalid, MediaEmpty
+
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
@@ -237,6 +242,7 @@ async def amireallyalive(alive):
         f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
         "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
         f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
+        f"┣[•⚙️ `Pyrogram :`v {version.__pyro_version__} 🔥\n"
         f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
         f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
         f"┣[•🛠 `Version  :`{BOT_VER} 🔥\n"
