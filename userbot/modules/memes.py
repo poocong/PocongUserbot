@@ -1713,6 +1713,7 @@ async def emoji_kontl(e):
         kontl = kontl.replace('😂', emoji)
     await e.edit(kontl)
 
+
 @register(outgoing=True, pattern=r"^\.ok$")
 async def emoji_ok(e):
     emoji = e.pattern_match.group(1)
@@ -1720,6 +1721,7 @@ async def emoji_ok(e):
     if emoji:
         ok = ok.replace('😂', emoji)
     await e.edit(ok)
+
 
 @register(outgoing=True, pattern=r"^\.skull$")
 async def emoji_skull(e):
@@ -1729,6 +1731,7 @@ async def emoji_skull(e):
         skull = skull.replace('😂', emoji)
     await e.edit(skull)
 
+
 @register(outgoing=True, pattern=r"^\.babi$")
 async def emoji_babi(e):
     emoji = e.pattern_match.group(1)
@@ -1736,6 +1739,7 @@ async def emoji_babi(e):
     if emoji:
         babi = babi.replace('😂', emoji)
     await e.edit(babi)
+
 
 @register(outgoing=True, pattern=r"^\.hum$")
 async def emoji_human(e):
@@ -1814,7 +1818,18 @@ CMD_HELP.update({
     "\n\nAnd many more"
     "`\n>.nou ; .bot ; .gey ; .tf ; .paw ; .taco ; .nih ;`"
     "`\n>.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .leave`"
-    "`\n>.iwi ; .sayhi` ; .koc` ; .gas` ; .earth` ; .love` ; .rain` ; .penis` ; .emo` ; .fuck` ;
-     .ok` ; .babi` ; .skull`"
+    "`\n > .iwi
+    .sayhi`
+    .koc`
+    .gas`
+    .earth`
+    .love`
+    .rain`
+    .penis`
+    .emo`
+    .fuck`
+    .ok`
+    .babi`
+    .skull`"
     "\n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
 })
