@@ -50,6 +50,7 @@ search-engine-parser
 speedtest-cli
 sqlalchemy
 telethon
+pyrogram
 telethon-session-sqlalchemy
 urbandict
 wikipedia
