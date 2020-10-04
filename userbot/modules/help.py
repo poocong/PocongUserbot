@@ -27,14 +27,14 @@ async def hep(event):
             \n╰━━━━━━━━━━━━━━━━━━━━╯\n"
         string = "• "
         string3 = "╭━━━━━━━━━━━━━━━━━━━━╮\n   Untuk melihat lengkap Command\n   Contoh: .help < nama module >\n   Modules Aktif: 250\n╰━━━━━━━━━━━━━━━━━━━━╯\n"
-        string2 = " ╾──────────────────────────────╼"
+        string2 = " ╾───────────────────────╼"
         string4 = "\n╰━┉┄═━┉┄═━┉✫┄═━═━┉┄═━╯\
                           \n **Mod By**➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ"
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "` •  "
         await event.edit(
-            f"{string1}" f"{string3}" f"{string2}\n" f"{string}" f"{string4}"
+            f"{string1}" f"{string3}" f"{string2}\n" f"{string}\n" f"{string4}"
         )
         await asyncio.sleep(60)
         await event.delete()
