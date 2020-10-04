@@ -18,6 +18,7 @@ INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
 
 try:
     bot.start()
+    kp.start()
 except PhoneNumberInvalidError:
     print(INVALID_PH)
     exit(1)
@@ -34,4 +35,3 @@ if len(argv) not in (1, 3, 4):
 else:
     bot.run_until_disconnected()
 
-kp.start()
