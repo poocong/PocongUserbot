@@ -1,6 +1,5 @@
 """ Userbot module which contains afk-related commands """
 
-import asyncio
 from datetime import datetime
 import time
 from random import choice, randint
@@ -8,8 +7,8 @@ from random import choice, randint
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import (AFKREASON, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     bot)
+from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, bot)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
@@ -17,7 +16,8 @@ AFKSTR = [
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
     "`#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!`",
-    "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`"
+    "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
+    "`Saya Sedang OFFLINE Anjing!!!`",
 ]
 
 
@@ -30,12 +30,10 @@ afk_time = None
 afk_start = {}
 
 # =================================================================
-
-
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
-    afk_e.text
+    message = afk_e.text
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
@@ -52,14 +50,10 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**AFK!**\nSaya Offline Dulu...\
+        await afk_e.edit(f"**AFK!**\nSaya Offline Dulu Bro...\
         \nReason: `{string}`")
-        await asyncio.sleep(5)
-        await afk_e.delete()
     else:
-        await afk_e.edit("**AFK!**\nSaya Offline Dulu...")
-        await asyncio.sleep(5)
-        await afk_e.delete()
+        await afk_e.edit("**AFK!**\nSaya Offline Dulu Bro...")
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ OFFLINE ]"))
     else:
@@ -125,7 +119,7 @@ async def mention_afk(mention):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    await bot.get_me()
+    user = await bot.get_me()
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**Terakhir Aktif**"
@@ -193,7 +187,7 @@ async def afk_on_pm(sender):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    await bot.get_me()
+    user = await bot.get_me()
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**a while ago**"
