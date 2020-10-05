@@ -7,8 +7,8 @@ from random import choice, randint
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import (AFKREASON, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     bot)
+from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN, bot)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
@@ -17,25 +17,22 @@ AFKSTR = [
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
     "`#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!`",
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
-    "`Saya Sedang OFFLINE Anjing!!!`",
 ]
 
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
-global afk_start
+global afk_start 
 global afk_end
 USER_AFK = {}
 afk_time = None
 afk_start = {}
 
 # =================================================================
-
-
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
-    afk_e.text
+    message = afk_e.text # pylint:disable=E0602
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
@@ -43,7 +40,7 @@ async def set_afk(afk_e):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()
+    user = await bot.get_me() # pylint:disable=E0602
     global reason
     USER_AFK = {}
     afk_time = None
@@ -78,7 +75,7 @@ async def type_afk_is_not_true(notafk):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()
+    user = await bot.get_me() # pylint:disable=E0602
     last = user.last_name
     if last and last.endswith(" [ OFFLINE ]"):
         last1 = last[:-12]
@@ -121,7 +118,7 @@ async def mention_afk(mention):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    await bot.get_me()
+    user = await bot.get_me() # pylint:disable=E0602
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**Terakhir Aktif**"
@@ -189,7 +186,7 @@ async def afk_on_pm(sender):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    await bot.get_me()
+    user = await bot.get_me() # pylint:disable=E0602
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**a while ago**"
