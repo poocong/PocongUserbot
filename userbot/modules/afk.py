@@ -7,8 +7,18 @@ from random import choice, randint
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import (AFKREASON, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     bot)
+from userbot import (  # noqa pylint: disable=unused-import isort:skip
+    AFKREASON,
+    BOTLOG,
+    BOTLOG_CHATID,
+    CMD_HELP,
+    COUNT_MSG,
+    ISAFK,
+    PM_AUTO_BAN,
+    USERS, 
+    PM_AUTO_BAN, 
+    bot,
+)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
