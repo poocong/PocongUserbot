@@ -13,6 +13,8 @@ from telethon.tl.types import DocumentAttributeFilename
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 
+bground = "black"
+
 
 @register(outgoing=True, pattern=r"^\.(ascii|asciis)$")
 async def ascii(event):
@@ -57,10 +59,7 @@ async def ascii(event):
         list = await random_color()
         color1 = list[0]
         color2 = list[1]
-        if bground:
-            bgcolor = bground
-        else:
-            bgcolor = "black"
+        bgcolor = bground
         await asciiart(IMG, color1, color2, bgcolor)
         cmd = event.pattern_match.group(1)
         if cmd == "asciis":
@@ -101,8 +100,7 @@ async def asciiart(IMG, color1, color2, bgcolor):
     img = np.sum(np.asarray(img), axis=2)
     img -= img.min()
     img = (1.0 - img / img.max()) ** 2.2 * (chars.size - 1)
-    lines = ("\n".join(("".join(r)
-                        for r in chars[img.astype(int)]))).split("\n")
+    lines = ("\n".join(("".join(r) for r in chars[img.astype(int)]))).split("\n")
     nbins = len(lines)
     colorRange = list(Color(color1).range_to(Color(color2), nbins))
     newImg_width = letter_width * widthByLetter
@@ -133,7 +131,9 @@ async def random_color():
 @register(outgoing=True, pattern=r"^\.asciibg(?: |$)(.*)")
 async def _(event):
     BG = event.pattern_match.group(1)
-    if BG:
+    if BG.isnumeric():
+        return await event.edit("`Please input a color not a number!`")
+    elif BG:
         global bground
         bground = BG
     else:
