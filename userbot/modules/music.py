@@ -154,14 +154,10 @@ async def _(event):
         )
         await event.edit(f"**{query}** `Uploaded Successfully..!`")
         os.remove(thumb_image)
-        os.system("rm -rf *.mkv")
-        os.system("rm -rf *.mp4")
-        os.system("rm -rf *.webm")
+        os.system("rm *.mkv *.mp4 *.webm")
     except BaseException:
         os.remove(thumb_image)
-        os.system("rm -rf *.mkv")
-        os.system("rm -rf *.mp4")
-        os.system("rm -rf *.webm")
+        os.system("rm *.mkv *.mp4 *.webm")
         return
 
 
