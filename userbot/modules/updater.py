@@ -79,11 +79,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         try:
-            remote.push(refspec="HEAD:refs/heads/x-sql-extended", force=True # noqa pylint: disable=unused-import isort:skip)
+            remote.push(refspec="HEAD:refs/heads/x-sql-extended", force=True  # noqa pylint: disable=unused-import isort:skip)
         except GitCommandError as error:
             await event.edit(f'{txt}\n`Here is the error log:\n{error}`')
             return repo.__del__()
-        build = app.builds(order_by="created_at", sort="desc")[0]
+        build=app.builds(order_by="created_at", sort="desc")[0]
         if build.status == "failed":
             await event.edit(
                 "`Build failed!\n" "Cancelled or there were some errors...`"
@@ -131,22 +131,22 @@ async def update(event, repo, ups_rem, ac_br):
         await event.delete()
 
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "userbot"]
+    args=[sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
     return
 
 
-@register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
+@ register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Checking for updates, please wait....`")
-    conf = event.pattern_match.group(1)
-    off_repo = UPSTREAM_REPO_URL
-    force_update = False
+    conf=event.pattern_match.group(1)
+    off_repo=UPSTREAM_REPO_URL
+    force_update=False
     try:
-        txt = "`Oops.. Updater cannot continue due to "
+        txt="`Oops.. Updater cannot continue due to "
         txt += "some problems occured`\n\n**LOGTRACE:**\n"
-        repo = Repo()
+        repo=Repo()
     except NoSuchPathError as error:
         await event.edit(f'{txt}\n`directory {error} is not found`')
         return repo.__del__()
@@ -159,15 +159,15 @@ async def upstream(event):
                 f"`Unfortunately, the directory {error} does not seem to be a git repository."
                 "\nBut we can fix that by force updating the userbot using .update now.`"
             )
-        repo = Repo.init()
-        origin = repo.create_remote("upstream", off_repo)
+        repo=Repo.init()
+        origin=repo.create_remote("upstream", off_repo)
         origin.fetch()
-        force_update = True
-        repo.create_head("master", origin.refs.x-sql-extended # noqa pylint: disable=unused-import isort:skip)
-        repo.heads.master.set_tracking_branch(origin.refs.x-sql-extended # noqa pylint: disable=unused-import isort:skip) 
+        force_update=True
+        repo.create_head("master", origin.refs.x - sql - extended  # noqa pylint: disable=unused-import isort:skip)
+        repo.heads.master.set_tracking_branch(origin.refs.x - sql - extended  # noqa pylint: disable=unused-import isort:skip)
         repo.heads.master.checkout(True)
 
-    ac_br = repo.active_branch.name
+    ac_br=repo.active_branch.name
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             '**[UPDATER]:**\n'
@@ -181,10 +181,10 @@ async def upstream(event):
     except BaseException:
         pass
 
-    ups_rem = repo.remote('upstream')
+    ups_rem=repo.remote('upstream')
     ups_rem.fetch(ac_br)
 
-    changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
+    changelog=await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
     if changelog == '' and force_update is False:
         await event.edit(
@@ -194,10 +194,10 @@ async def upstream(event):
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**UPDATE Terbaru Untuk 🔥XBOT-REMIX🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
+        changelog_str=f'**UPDATE Terbaru Untuk 🔥XBOT-REMIX🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog is too big, view the file to see it.`")
-            file = open("output.txt", "w+")
+            file=open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
             await event.client.send_file(
