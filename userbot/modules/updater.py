@@ -164,8 +164,7 @@ async def upstream(event):
         origin.fetch()
         force_update=True
         repo.create_head("x-sql-extended", origin.refs.x - sql - extended)
-        repo.heads.x - sql - \
-            extended.set_tracking_branch(origin.refs.x - sql - extended)
+        repo.heads.x - sql - extended.set_tracking_branch(origin.refs.x - sql - extended)
         repo.heads.x - sql - extended.checkout(True)
 
     ac_br=repo.active_branch.name
