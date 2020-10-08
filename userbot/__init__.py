@@ -171,6 +171,9 @@ BOT_VER = os.environ.get("BOT_VER", "4.0")
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
+# Sticker Custom Pack Name
+S_PACK_NAME = os.environ.get("S_PACK_NAME", "")
+
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
