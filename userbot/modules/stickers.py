@@ -19,7 +19,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot, S_PACK_NAME
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
