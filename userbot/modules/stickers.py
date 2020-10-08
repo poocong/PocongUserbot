@@ -19,13 +19,10 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot, ALIVE_NAME
+from userbot import CMD_HELP, bot, S_PACK_NAME
 from userbot.events import register
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
-
+S_PACK_NAME = custom_pack
 
 KANGING_STR = [
     "Wao.,Bagus Nih...Colong Dulu Yekan..",
@@ -104,7 +101,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"sticker_by_{user.username}_{pack}"
-        packnick = f"@{user.username}-{ALIVE_NAME} Vol.{pack}"
+        packnick = f"{custom_pack} Vol.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
@@ -136,7 +133,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"sticker_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}-{ALIVE_NAME} Vol.{pack}"
+                    packnick = f"{custom_pack} Vol.{pack}"
                     await args.edit(
                         "`Switching to Pack "
                         + str(pack)
