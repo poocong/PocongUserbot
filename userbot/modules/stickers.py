@@ -19,7 +19,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, bot
+from userbot import CMD_HELP, bot, S_PACK_NAME as custompack
 from userbot.events import register
 
 
@@ -105,7 +105,7 @@ async def kang(args):
         else:
             u_name = user.first_name or user.id
         packname = f"sticker_by_{u_name}_{pack}"
-        custom_packnick = Config.S_PACK_NAME or f"{u_name}'s kang pack"
+        custom_packnick = f"{custompack}" or f"{u_name}'s kang pack"
         packnick = f"{custom_packnick} Vol.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
