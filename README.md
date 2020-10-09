@@ -32,7 +32,7 @@
 /**
 ```
 
-<p align="center"> HOW TO DEPLOY 👷 </p>
+<p align="center"><b> 👷 HOW TO DEPLOY 👷 </p>
 
 ```
 * **[HEROKU](https://www.heroku.com/) Method** 🔧
