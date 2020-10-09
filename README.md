@@ -32,7 +32,7 @@
 /**
 ```
 
-<p align="center"><b> 👷 HOW TO DEPLOY 👷 </p>
+<br><p align="center"><b> 👷 HOW TO DEPLOY 👷 </p>
 
 ```
 * **[HEROKU](https://www.heroku.com/) Method** 🔧
@@ -55,10 +55,9 @@
 <br>
 </p>
 
-<br><p align="center"><b>GENERATE STRING SESSION</p>
-<br>
+## GENERATE STRING SESSION
+<br><p align="center"><b>Run on your terminal</p>
 
-## Run on your terminal
 ```
 wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
 ```
