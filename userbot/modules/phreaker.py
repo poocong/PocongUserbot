@@ -9,7 +9,8 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    nmap = f"nmap"
+    chat = "@scriptkiddies_bot" # pylint:disable=E0602
+    nmap = f"nmap" # pylint:disable=E0602
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
@@ -32,7 +33,8 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    f"subdomain"
+    chat = "@scriptkiddies_bot" # pylint:disable=E0602
+    subd = f"subdomain" # pylint:disable=E0602
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
@@ -55,7 +57,8 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    f"nmap"
+    chat = "@scriptkiddies_bot" # pylint:disable=E0602
+    httph = f"httpheader" # pylint:disable=E0602
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
@@ -81,4 +84,4 @@ CMD_HELP.update({
 \nUsage: to get subdomain bug/host.\
 \n\n`.cek <bug hosts>`\
 \nUsage: to cek respons bug/host."
-})
+})    
