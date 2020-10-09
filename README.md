@@ -32,8 +32,7 @@
 /**
 ```
 
-<details>
-  <summary>            HOW TO DEPLOY 👷 </summary>
+<p align="center"> HOW TO DEPLOY 👷 </p>
 
 ```
 * **[HEROKU](https://www.heroku.com/) Method** 🔧
@@ -51,12 +50,10 @@
 
 ## <p align="center">Deploy to Heroku Methods</p>
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="hmm" width="250px" /></a></p>
 
 <br>
 </p>
-
-</details>
 
 <br><p align="center"><b>GENERATE STRING SESSION</p>
 <br>
