@@ -4,8 +4,9 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot
 from userbot.events import register
- 
-@register(outgoing=True, pattern="^\.nmap(?: |$)(.*)")
+
+
+@register(outgoing=True, pattern=r"^\.nmap(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -13,17 +14,20 @@ async def _(event):
     chat = "@scriptkiddies_bot"
     nmap = f"nmap"
     await event.edit("
-Processing
-")
+                     Processing
+                     ")
     async with bot.conversation("@scriptkiddies_bot") as conv:
-          try:
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=510263282))
-              await conv.send_message(f'/{nmap} {link}')
-              response = await response
-          except YouBlockedUserError:
-              await event.reply("
-Unblock @scriptkiddies_bot dulu Goblok!!")
-              return
-          else:
-             await event.edit(f"{response.message.message}")
-             await event.client_delete(chat, conv.id)
+        try:
+            response = conv.wait_event(
+                events.NewMessage(
+                    incoming=True,
+                    from_users=510263282))
+            await conv.send_message(f'/{nmap} {link}')
+            response = await response
+        except YouBlockedUserError:
+            await event.reply("
+                              Unblock @ scriptkiddies_bot dulu Goblok!!")
+            return
+        else:
+            await event.edit(f"{response.message.message}")
+            await event.client_delete(chat, conv.id)
