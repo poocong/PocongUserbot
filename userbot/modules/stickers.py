@@ -100,8 +100,6 @@ async def kang(args):
                 emoji = splat[1]
 
         u_name = user.username
-        if u_name:
-            u_name = "@" + u_name
         else:
             u_name = user.first_name or user.id
         packname = f"sticker_by_{u_name}_{pack}X"
