@@ -40,6 +40,8 @@ KANGING_STR = [
 @register(outgoing=True, pattern=r"^\.(?:colong|kang)\s?(.)?")
 async def kang(args):
     user = await bot.get_me()
+    if not user.username:
+        user.username = user.first_name
     message = await args.get_reply_message()
     photo = None
     emojibypass = False
