@@ -9,7 +9,6 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@scriptkiddies_bot"
     nmap = f"nmap"
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
@@ -33,8 +32,7 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@scriptkiddies_bot"
-    subd = f"subdomain"
+    f"subdomain"
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
@@ -57,8 +55,7 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@scriptkiddies_bot"
-    nmap = f"nmap"
+    f"nmap"
     await event.edit("Processing....")
     async with bot.conversation("@scriptkiddies_bot") as conv:
         try:
@@ -84,4 +81,4 @@ CMD_HELP.update({
 \nUsage: to get subdomain bug/host.\
 \n\n`.cek <bug hosts>`\
 \nUsage: to cek respons bug/host."
-})    
+})
