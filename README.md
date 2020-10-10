@@ -32,6 +32,14 @@
 /**
 ```
 
+## GENERATE STRING SESSION
+<br><p align="center"><b>Run on your terminal</p>
+
+```
+wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
+```
+<br>
+
 <br><p align="center"><b> 👷 HOW TO DEPLOY 👷 </p>
 
 ```
@@ -54,13 +62,6 @@
 
 <br>
 </p>
-
-## GENERATE STRING SESSION
-<br><p align="center"><b>Run on your terminal</p>
-
-```
-wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
-```
 
 ## How to setup Google Drive
 <p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png" alt="haa" width="250px" /></a></p>
