@@ -32,8 +32,12 @@
 /**
 ```
 
-## GENERATE STRING SESSION
-<br><p align="center"><b>Run on your terminal</p>
+## Generate String Session
+Generate string session on Repl.it:
+
+<p align="center"><a href="https://stringsession.xnewbiex.repl.run"> <img src="https://telegra.ph/file/3ef54caa322b1c5feadb9.png" alt="Generate String Session" width="200" height="33.33"/></a></p>
+
+### Or Run on your terminal
 
 ```
 wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstring.sh && bash Getstring.sh
@@ -58,13 +62,13 @@ wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/Getstr
 
 ## <p align="center">Deploy to Heroku Methods</p>
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="hmm" width="250px" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/x-sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="hmm" width="200px" height="33.33"/></a></p>
 
 <br>
 </p>
 
 ## How to setup Google Drive
-<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png" alt="haa" width="250px" /></a></p>
+<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/userbot/resources/gd.png" alt="haa" width="200px" height="33.33"/></a></p>
 
 ## Credits
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
