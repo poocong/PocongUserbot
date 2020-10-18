@@ -57,6 +57,5 @@ async def _(event):
         return await event.edit("`@XBOTGBOT isnt responding..`")
 
 
-CMD_HELP.update(
-    {"wallpaper": ">`.wall <query>`" "\nUsage: search beautiful wallpaper image."}
-)
+CMD_HELP.update({"wallpaper": ">`.wall <query>`"
+                 "\nUsage: search beautiful wallpaper image."})
