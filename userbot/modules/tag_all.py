@@ -8,7 +8,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.all$")
+@register(outgoing=True, pattern="^.xll$")
 async def all(event):
     if event.fwd_from:
         return
