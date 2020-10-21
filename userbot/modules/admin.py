@@ -581,18 +581,6 @@ async def rm_deletedacc(show):
         )
 
 
-@register(outgoing=True, pattern=r"^\.all$")
-async def tagaso(event):
-    if event.fwd_from:
-        return
-    await event.delete()
-    mentions = "@all"
-    chat = await event.get_input_chat()
-    async for user in bot.iter_participants(chat, 500):
-        mentions += f"[\u2063](tg://user?id={user.id})"
-    await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
-
-
 @register(outgoing=True, pattern=r"^\.admins$")
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
