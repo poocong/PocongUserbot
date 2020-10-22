@@ -72,7 +72,7 @@ async def ocr_space_file(filename,
                     Defaults to 'helloworld'.
     :param language: Language code to be used in OCR.
                     List of available language codes can be found on https://ocr.space/OCRAPI
-                    Defaults to 'en'.
+                    Defaults to 'eng'.
     :return: Result in JSON format.
     """
 
