@@ -484,6 +484,7 @@ async def _(event):
         else:
             await event.delete()
             await event.client.send_message(event.chat_id, response.message)
+            await event.client.delete_message(chat, event.chat_id, response.message)
 
 
 @register(outgoing=True, pattern="^.clone(?: |$)(.*)")
@@ -540,7 +541,7 @@ async def _(event):
     await event.delete()
     await bot.send_message(
         event.chat_id,
-        "**cloned like pero.**",
+        "**User Berhasil di Clone!!.**",
         reply_to=reply_message
     )
 
@@ -1053,22 +1054,8 @@ CMD_HELP.update({
 \nUsage:makes your text <bold,cursive,cursivebold,medival,medivalbold,gayishbold>\
 \n\n`.randompp`\
 \nUsage:Automatically changes your profile picture after one hour. To stop this use .restart.\
-\n\n`.gps` <location name>.\
-\nUsage:Sends you the given location name.\
-\n\n`.ls` <directory>.\
-\nUsage:Get list file inside directory.\
-\n\n<`.modi` or `.trump` or `.cmm` or `.kanna`> <text>\
-\nUsage: Just for Fun.\
 \n\n<`.ph` or `.threat` or `.trash` or `.trap` >\
 \nUsage: Reply to image or sticker and see magik.\
-\n\n`.hc` **sign**\
-\nExample:`.hc scorpio`\
-\nUsage:Gets your horoscope.\
-\n\n`.tweet` <username>.<tweet>\
-\nUsage:Create tweet with custom username.\
-\n\nmention: Mention users with a custom name.\
-\nUsage:`Hi @ender1324[bluid boi]`\
-\nResult:Hi [bluid boi](tg://resolve?domain=ender1324).\
 \n\n`.glitch` reply to media file\
 \nUsage:glitches the given mediafile(gif , stickers , image, videos) to a gif and glitch range is from 1 to 8.\
 If nothing is mentioned then by default it is 2\
