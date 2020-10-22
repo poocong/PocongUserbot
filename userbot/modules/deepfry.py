@@ -41,7 +41,7 @@ from userbot.events import register
 from userbot import CMD_HELP
 
 
-@register(outgoing=True, pattern="^.df(?: |$)(.*)")
+@register(outgoing=True, pattern="^.deepfry(?: |$)(.*)")
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -138,7 +138,7 @@ async def check_media(reply_message):
 
 CMD_HELP.update({
     "deepfry":
-    "`.df` or `.df` [level(1-8)]"
+    "`.deepfry` or `.deepfry` [level(1-8)]"
     "\nUsage: deepfry image/sticker from the reply."
     "\n@image_deepfrybot"
     "\n`.deepfry [level(1-5)]`"
