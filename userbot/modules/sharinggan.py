@@ -66,6 +66,7 @@ async def _(fry):
     await fry.delete()
     return os.remove(downloaded_file_name)
 
+
 @register(outgoing=True, pattern=r'^.df(:? |$)([1-8])?')
 async def _(fry):
     await fry.edit("`Deepfryer......`")
