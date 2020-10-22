@@ -3,15 +3,15 @@ Group Administrations bots where you are SUDO
 Available Commands:
 .gban REASON
 .ungban REASON"""
-from telethon import events
 import asyncio
-from userbot.events import register 
-from userbot import  CMD_HELP, bot, G_BAN_LOGGER_GROUP, ALIVE_NAME
-#imported from uniborg by @heyworld
+from userbot.events import register
+from userbot import CMD_HELP, bot, G_BAN_LOGGER_GROUP, ALIVE_NAME
+# imported from uniborg by @heyworld
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
+
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
 async def _(event):
@@ -60,8 +60,8 @@ async def _(event):
     await event.edit(f"**User ungbanned by {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
-    
-    
+
+
 CMD_HELP.update({
     "gban": "\
 `.gban reason`\
