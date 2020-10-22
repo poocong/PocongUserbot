@@ -150,5 +150,5 @@ CMD_HELP.update({
     "`.waifu` text\
 \nUsage: for custom stickers.\
 \n\n`.hz` or `.hz [flip, x2, rotate (degree), background (number), black]`\
-\nUsage: Reply to a image / sticker to suit up!.\
+\nUsage: Reply to a image / sticker to suit up!."
 })
