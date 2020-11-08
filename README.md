@@ -33,9 +33,6 @@
 ```
 
 ## Generate String Session
-Generate string session on Repl.it:
-
-<p align="center"><a href="https://stringsessions.xbotx.repl.run"> <img src="https://telegra.ph/file/7193be9fb5f9caa50bae8.png" alt="Generate String Session"/></a></p>
 
 ### Or Run on your terminal
 
