@@ -33,7 +33,6 @@ async def _(event):
         )
     await event.delete()
     await event.reply("**gbanning...**")
-    asyncio.sleep(4)
     await event.edit(f"**User gbanned by {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
