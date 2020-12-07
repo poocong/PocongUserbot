@@ -75,6 +75,7 @@ async def _(event):
             await event.edit(f"{response.message.message}")
             await event.client.delete_messages(httpheader, response.message.message)
 
+
 @register(outgoing=True, pattern=r"^\.bin(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -97,6 +98,7 @@ async def _(event):
         else:
             await event.edit(f"{response.message.message}")
             await event.client.delete_messages(response.message.message)
+
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
 async def _(event):
@@ -129,9 +131,9 @@ CMD_HELP.update({
 \n\n`.subd <bug hosts>`\
 \nUsage: to get subdomain bug/host.\
 \n\n`.cek <bug hosts>`\
-\nUsage: to cek respons bug/host."\
-\n\n`.bin <bug hosts>`\
-\nUsage: to cek bin ip."\
+\nUsage: to cek respons bug/host."
+    \n\n`.bin < bug hosts >`
+    \nUsage: to cek bin ip."\
 \n\n`.cc <mm|yy|cvv`\
 \nUsage: to cek Credits Card Stats."
 })
