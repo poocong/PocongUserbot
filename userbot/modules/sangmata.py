@@ -11,7 +11,15 @@ from userbot.events import register
 from asyncio.exceptions import TimeoutError
 
 
-@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+# Port to userbot by @MoveAngel
+
+
+@register(outgoing=True, pattern=r"^\.sg(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -39,7 +47,7 @@ async def lastname(steal):
                 return
             if r.text.startswith("Name"):
                 respond = await conv.get_response()
-                await steal.edit(f"`{r.message}`")
+                await steal.edit(f"{r.message}")
                 await steal.client.delete_messages(
                     conv.chat_id, [msg.id, r.id, response.id, respond.id]
                 )
@@ -54,7 +62,7 @@ async def lastname(steal):
                 return
             else:
                 respond = await conv.get_response()
-                await steal.edit(f"```{response.message}```")
+                await steal.edit(f"{response.message}")
             await steal.client.delete_messages(
                 conv.chat_id, [msg.id, r.id, response.id, respond.id]
             )
