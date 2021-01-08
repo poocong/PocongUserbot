@@ -5,10 +5,11 @@
 #
 # Ported by @azrim
 """ Userbot module which contains afk-related commands """
-
+import asyncio
 from datetime import datetime
 import time
 from random import choice, randint
+from asyncio import sleep  # pylint:disable=E0602
 
 from telethon.events import StopPropagation
 
