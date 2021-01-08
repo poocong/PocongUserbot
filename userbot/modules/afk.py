@@ -42,7 +42,7 @@ async def set_afk(afk_e):
         await afk_e.edit("`afk Commad isn't permitted on channels`")
         return
     """ For .afk command, allows you to inform people that you are afk when they message you """
-    afk_e.text
+    message = afk_e.text  # pylint:disable=E0602
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
