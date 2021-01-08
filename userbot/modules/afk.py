@@ -9,12 +9,10 @@
 from datetime import datetime
 import time
 from random import choice, randint
-from asyncio import sleep
 
 from telethon.events import StopPropagation
 
-from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
-                     BOTLOG_CHATID, USERS, PM_AUTO_BAN)
+from userbot import (AFKREASON, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
@@ -35,14 +33,16 @@ afk_time = None
 afk_start = {}
 
 # =================================================================
+
+
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
-    #Prevent Channel Bug to use afk
+    # Prevent Channel Bug to use afk
     if afk_e.is_channel and not afk_e.is_group:
         await afk_e.edit("`afk Commad isn't permitted on channels`")
         return
     """ For .afk command, allows you to inform people that you are afk when they message you """
-    message = afk_e.text
+    afk_e.text
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
@@ -70,7 +70,7 @@ async def set_afk(afk_e):
 
 @register(outgoing=True, pattern="^.unafk(?: |$)(.*)", disable_errors=True)
 async def type_afk_is_not_true(notafk):
-    #Prevent Channel Bug to use afk
+    # Prevent Channel Bug to use afk
     if notafk.is_channel and not notafk.is_group:
         await notafk.edit("`unafk Commad isn't permitted on channels`")
         return
