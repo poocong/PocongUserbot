@@ -1,24 +1,20 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+# Ported by @azrim
 """ Userbot module which contains afk-related commands """
 
 from datetime import datetime
 import time
 from random import choice, randint
+from asyncio import sleep
 
 from telethon.events import StopPropagation
-from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import (  # noqa pylint: disable=unused-import isort:skip
-    AFKREASON,
-    BOTLOG,
-    BOTLOG_CHATID,
-    CMD_HELP,
-    COUNT_MSG,
-    ISAFK,
-    PM_AUTO_BAN,
-    USERS,
-    PM_AUTO_BAN,
-    bot,
-)
+from userbot import (AFKREASON, COUNT_MSG, CMD_HELP, ISAFK, BOTLOG,
+                     BOTLOG_CHATID, USERS, PM_AUTO_BAN)
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
@@ -27,8 +23,8 @@ AFKSTR = [
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
     "`#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!`",
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
+    "`#AFK\n Saya Sedang OFFLINE ANJING !!!!!`",
 ]
-
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
@@ -39,12 +35,14 @@ afk_time = None
 afk_start = {}
 
 # =================================================================
-
-
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
+    #Prevent Channel Bug to use afk
+    if afk_e.is_channel and not afk_e.is_group:
+        await afk_e.edit("`afk Commad isn't permitted on channels`")
+        return
     """ For .afk command, allows you to inform people that you are afk when they message you """
-    message = afk_e.text  # pylint:disable=E0602
+    message = afk_e.text
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
@@ -52,7 +50,6 @@ async def set_afk(afk_e):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()  # pylint:disable=E0602
     global reason
     USER_AFK = {}
     afk_time = None
@@ -61,23 +58,22 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**AFK!**\nSaya Offline Dulu Bro...\
-        \nReason: `{string}`")
+        await afk_e.edit("**AFK!**\nSaya Offline Dulu Guys...")
     else:
-        await afk_e.edit("**AFK!**\nSaya Offline Dulu Bro...")
-    if user.last_name:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ OFFLINE ]"))
-    else:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=" [ OFFLINE ]"))
+        await afk_e.edit("**AFK!**\nSaya Offline Dulu Guys...")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nKamu Sekarang AFK!")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
 
 
-@register(outgoing=True)
+@register(outgoing=True, pattern="^.unafk(?: |$)(.*)", disable_errors=True)
 async def type_afk_is_not_true(notafk):
+    #Prevent Channel Bug to use afk
+    if notafk.is_channel and not notafk.is_group:
+        await notafk.edit("`unafk Commad isn't permitted on channels`")
+        return
     """ This sets your status as not afk automatically when you write something while being afk """
     global ISAFK
     global COUNT_MSG
@@ -87,25 +83,18 @@ async def type_afk_is_not_true(notafk):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()  # pylint:disable=E0602
-    last = user.last_name
-    if last and last.endswith(" [ OFFLINE ]"):
-        last1 = last[:-12]
-    else:
-        last1 = ""
     back_alive = datetime.now()
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("**OK Saya Kembali....**")
+        msg = await notafk.edit("**OK Saya Kembali....!**")
         time.sleep(3)
         await msg.delete()
-        await notafk.client(UpdateProfileRequest(first_name=user.first_name, last_name=last1))
         if BOTLOG:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "You've recieved " + str(COUNT_MSG) + " messages from " +
-                str(len(USERS)) + " chats while you were away",
+                "Kamu Menerima " + str(COUNT_MSG) + " Pesan Dari " +
+                str(len(USERS)) + " User disaat Kamu Offline",
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
@@ -113,7 +102,7 @@ async def type_afk_is_not_true(notafk):
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
                     "[" + name0 + "](tg://user?id=" + str(i) + ")" +
-                    " sent you " + "`" + str(USERS[i]) + " messages`",
+                    " Mengirim " + "`" + str(USERS[i]) + " Pesan Untukmu`",
                 )
         COUNT_MSG = 0
         USERS = {}
@@ -130,7 +119,6 @@ async def mention_afk(mention):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()  # pylint:disable=E0602
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**Terakhir Aktif**"
@@ -158,15 +146,15 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)}h {int(minutes)}m`"
+                afk_since = f"`{int(hours)}jam {int(minutes)}mnt`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m {int(seconds)}s`"
+                afk_since = f"`{int(minutes)}mnt {int(seconds)}dtk`"
             else:
-                afk_since = f"`{int(seconds)}s`"
+                afk_since = f"`{int(seconds)}dtk`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"Saya OFFLINE {afk_since} Yg Lalu.\
-                        \nReason: `{AFKREASON}`")
+                    await mention.reply(f"Saya **OFFLINE** Sekarang \nKarena: **{AFKREASON}** \
+                        \nSejak **{afk_since}** Yg Lalu.")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -174,8 +162,8 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"I'm still AFK since {afk_since}.\
-                            \nReason: `{AFKREASON}`")
+                        await mention.reply(f"Saya **OFFLINE** Sekarang \nKarena: **{AFKREASON}** \
+                        \nSejak **{afk_since}** Yg Lalu.")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -198,7 +186,6 @@ async def afk_on_pm(sender):
     global afk_time  # pylint:disable=E0602
     global afk_start
     global afk_end
-    user = await bot.get_me()  # pylint:disable=E0602
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**a while ago**"
@@ -224,7 +211,7 @@ async def afk_on_pm(sender):
             time %= 60
             seconds = time
             if days == 1:
-                afk_since = "**yesterday**"
+                afk_since = "**Yesterday**"
             elif days > 1:
                 if days > 6:
                     date = now + \
@@ -235,15 +222,15 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)}h {int(minutes)}m`"
+                afk_since = f"`{int(hours)}jam {int(minutes)}mnt`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m {int(seconds)}s`"
+                afk_since = f"`{int(minutes)}mnt {int(seconds)}dtk`"
             else:
-                afk_since = f"`{int(seconds)}s`"
+                afk_since = f"`{int(seconds)}dtk`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"Maaf Saya Sedang Offline... {afk_since}.\
-                        \nReason: `{AFKREASON}`")
+                    await sender.reply(f"Maaf Saya Sedang **OFFLINE** Sekarang \nKarena: **{AFKREASON}** \
+                        \nSejak **{afk_since}** Yg Lalu")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -251,8 +238,8 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"Maaf Saya Sedang Offline... {afk_since}.\
-                            \nReason: `{AFKREASON}`")
+                        await sender.reply(f"**Maaf Saya Sedang **OFFLINE** Sekarang \nKarena: **{AFKREASON}** \
+                        \nSejak **{afk_since}** Yg Lalu")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -264,8 +251,9 @@ async def afk_on_pm(sender):
 
 CMD_HELP.update({
     "afk":
-    "`.afk` [Optional Reason]\
-\nUsage: Sets you as afk.\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere.\
+    ".afk [Optional Reason]\
+\nUsage: Sets you as afk.\nReplies to anyone who tags/PM's you telling them that you are AFK(reason).\
+\n\n.unafk\
+\nUsage: Back from afk state\
 "
 })
