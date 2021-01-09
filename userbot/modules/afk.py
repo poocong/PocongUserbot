@@ -266,7 +266,6 @@ async def afk_on_pm(sender):
                     COUNT_MSG = COUNT_MSG + 1
 
 
-
 CMD_HELP.update({
     "afk":
     ".afk [Optional Reason]\
