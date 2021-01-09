@@ -44,6 +44,7 @@ afk_start = {}
 
 # =================================================================
 
+
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
@@ -263,6 +264,7 @@ async def afk_on_pm(sender):
                 else:
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
                     COUNT_MSG = COUNT_MSG + 1
+
 
 @register(outgoing=True, pattern="^.afk2(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
