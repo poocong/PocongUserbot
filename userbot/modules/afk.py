@@ -26,7 +26,7 @@ AFKSTR = [
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE!!`",
     "`#AFK\n Maaf Boss Saya Sedang OFFLINE\n Tolong Jangan Ganggu Saya!!",
     "`#AFK\n Saya Sedang OFFLINE\n Jangan Ganggu Saya !!!!!`",
-    "`#AFK\n Maaf Boss Saya Sedang ANJING!!`",
+    "`#AFK\n Maaf Boss Saya Sedang OFFLINE ANJING!!`",
 ]
 
 
