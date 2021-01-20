@@ -92,9 +92,9 @@ async def permitpm(event):
                         event.chat_id, from_user="me", search=UNAPPROVED_MSG
                     ):
                         await message.delete()
-                    await event.reply(f"`{UNAPPROVED_MSG}`")
+                    await event.reply(f"{UNAPPROVED_MSG}")
             else:
-                await event.reply(f"`{UNAPPROVED_MSG}`")
+                await event.reply(f"{UNAPPROVED_MSG}")
             LASTMSG.update({event.chat_id: event.text})
             if notifsoff:
                 await event.client.send_read_acknowledge(event.chat_id)
@@ -346,7 +346,7 @@ async def add_pmsg(cust_msg):
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
-        await cust_msg.edit("`Running on Non-SQL mode!`")
+        await cust_msg.edit("Running on Non-SQL mode!")
         return
 
     await cust_msg.edit("Processing...")
@@ -382,9 +382,9 @@ async def add_pmsg(cust_msg):
     if conf.lower() == "reset":
         if custom_message is not None:
             sql.delgvar("unapproved_msg")
-            await cust_msg.edit("`Unapproved message reset to default`")
+            await cust_msg.edit("Unapproved message reset to default")
         else:
-            await cust_msg.edit("`You haven't set a custom message yet`")
+            await cust_msg.edit("You haven't set a custom message yet")
 
     if conf.lower() == "get":
         if custom_message is not None:
@@ -394,7 +394,7 @@ async def add_pmsg(cust_msg):
         else:
             await cust_msg.edit(
                 "*You Have not set unapproved message yet*\n"
-                f"Using default message: \n\n`{DEF_UNAPPROVED_MSG}`"
+                f"Using default message: \n\n{DEF_UNAPPROVED_MSG}"
             )
 
 
