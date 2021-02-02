@@ -80,6 +80,8 @@ async def add_new_filter(new_handler):
         await new_handler.edit(success.format(keyword, 'added'))
     else:
         await new_handler.edit(success.format(keyword, 'updated'))
+        await asyncio.sleep(2)
+        wait new_handler.delete()
 
 
 @register(outgoing=True, pattern=r"^.stop (.*)")
@@ -120,7 +122,6 @@ async def kick_marie_filter(event):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "I cleaned all filters at " + str(event.chat_id))
-
 
 @register(outgoing=True, pattern="^.filters$")
 async def filters_active(event):
