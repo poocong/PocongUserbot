@@ -81,7 +81,7 @@ async def add_new_filter(new_handler):
     else:
         await new_handler.edit(success.format(keyword, 'updated'))
         await asyncio.sleep(2)
-        wait new_handler.delete()
+        await new_handler.delete()
 
 
 @register(outgoing=True, pattern=r"^.stop (.*)")
