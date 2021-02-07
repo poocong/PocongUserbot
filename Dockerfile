@@ -9,6 +9,6 @@ RUN mkdir /root/userbot/.bin
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/requirements.txt -U
+RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/sql-extended/requirements.txt -U
 
 CMD ["python3","-m","userbot"]
