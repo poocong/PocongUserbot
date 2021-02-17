@@ -67,6 +67,9 @@
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
       "value": "False"
     },
+    "YOUTUBE_API_KEY": {
+      "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "required": false
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
       "required": false
@@ -127,6 +130,11 @@
       "description": "Your client_secret.json.",
       "required": false
     },
+    "G_BAN_LOGGER_GROUP": {
+      "description": "Add all sudo bots in your group and type id of that group.",
+      "value": "isi id group lu",
+      "required": false
+    },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
       "required": false
@@ -176,7 +184,7 @@
     },
     "ALIVE_LOGO": {
       "description": "Image in .alive message. the value MUST A DIRECT LINK or Will Crash!",
-      "value": "https://telegra.ph/file/09b16d6627c5dfe47342e.jpg",
+      "value": "https://telegra.ph/file/099b2bf1c3256847946bf.mp4",
       "required": false
     },
     "USR_TOKEN_UPTOBOX": {
