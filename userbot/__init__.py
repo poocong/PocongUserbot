@@ -123,6 +123,9 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "X.1")
 
+# Sticker Custom Pack Name
+S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
+
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID") or None
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or None
