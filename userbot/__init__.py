@@ -276,6 +276,7 @@ with bot:
             "valid entity. Check your environment variables/config.env file.")
         quit(1)
 
+
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
     number_of_cols = 2
