@@ -3,56 +3,59 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for managing events.
- One of the main components of the userbot. """
 
-
+import codecs
 import sys
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
+from os import remove
 from time import gmtime, strftime
 from traceback import format_exc
 
+import requests
 from telethon import events
 
-from userbot import LOGSPAMMER, bot
+from userbot import BOTLOG_CHATID, LOGSPAMMER, bot
 
 
 def register(**args):
-    """ Register a new event. """
-    pattern = args.get('pattern', None)
-    disable_edited = args.get('disable_edited', False)
-    ignore_unsafe = args.get('ignore_unsafe', False)
-    unsafe_pattern = r'^[^/!#@\$A-Za-z]'
-    groups_only = args.get('groups_only', False)
-    trigger_on_fwd = args.get('trigger_on_fwd', False)
-    disable_errors = args.get('disable_errors', False)
-    insecure = args.get('insecure', False)
+    pattern = args.get("pattern", None)
+    disable_edited = args.get("disable_edited", False)
+    ignore_unsafe = args.get("ignore_unsafe", False)
+    unsafe_pattern = r"^[^/!#@\$A-Za-z]"
+    groups_only = args.get("groups_only", False)
+    trigger_on_fwd = args.get("trigger_on_fwd", False)
+    disable_errors = args.get("disable_errors", False)
+    insecure = args.get("insecure", False)
+    trigger_on_inline = args.get("trigger_on_inline", False)
 
-    if pattern is not None and not pattern.startswith('(?i)'):
-        args['pattern'] = '(?i)' + pattern
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
 
     if "disable_edited" in args:
-        del args['disable_edited']
+        del args["disable_edited"]
 
     if "ignore_unsafe" in args:
-        del args['ignore_unsafe']
+        del args["ignore_unsafe"]
 
     if "groups_only" in args:
-        del args['groups_only']
+        del args["groups_only"]
 
     if "disable_errors" in args:
-        del args['disable_errors']
+        del args["disable_errors"]
 
     if "trigger_on_fwd" in args:
-        del args['trigger_on_fwd']
+        del args["trigger_on_fwd"]
 
     if "insecure" in args:
-        del args['insecure']
+        del args["insecure"]
+
+    if "trigger_on_inline" in args:
+        del args["trigger_on_inline"]
 
     if pattern:
         if not ignore_unsafe:
-            args['pattern'] = pattern.replace('^.', unsafe_pattern, 1)
+            args["pattern"] = pattern.replace("^.", unsafe_pattern, 1)
 
     def decorator(func):
         async def wrapper(check):
@@ -61,9 +64,9 @@ def register(**args):
                 # Ignore edits that take place in channels.
                 return
             if not LOGSPAMMER:
-                check.chat_id
+                send_to = check.chat_id
             else:
-                pass
+                send_to = BOTLOG_CHATID
 
             if not trigger_on_fwd and check.fwd_from:
                 return
@@ -73,6 +76,9 @@ def register(**args):
                 return
 
             if check.via_bot_id and not insecure and check.out:
+                return
+
+            if check.via_bot_id and not trigger_on_inline:
                 return
 
             try:
@@ -97,11 +103,10 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERXBOT ERROR REPORT**\n"
-                    link = "Silahkan chat PM: @X_Newbie"
-                    text += "Untuk melaporkan kesalahan"
-                    text += f"- just forward this message to {link}.\n"
-                    text += "Nothing is logged except the fact of error and date\n"
+                    text = "#ERROR\n"
+                    text += "If you want to, you can report it.\n"
+                    text += "just forward this message to @userbotindo.\n"
+                    text += "Nothing is logged except the fact of error and date.\n"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nThis file uploaded ONLY here,"
@@ -118,20 +123,20 @@ def register(**args):
                     ftext += str(check.text)
                     ftext += "\n\nTraceback info:\n"
                     ftext += str(format_exc())
-                    ftext += "\n\nError text:\n"
+                    ftext += "Error text:\n"
                     ftext += str(sys.exc_info()[1])
                     ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
 
-                    command = "git log --pretty=format:\"%an: %s\" -10"
+                    command = 'git log --pretty=format:"%an: %s" -10'
 
-                    ftext += "\n\n\nLast 10 commits:\n"
+                    ftext += "\n\nLast 10 commits:\n"
 
-                    process = await asyncsubshell(command,
-                                                  stdout=asyncsub.PIPE,
-                                                  stderr=asyncsub.PIPE)
+                    process = await asyncsubshell(
+                        command, stdout=asyncsub.PIPE, stderr=asyncsub.PIPE
+                    )
                     stdout, stderr = await process.communicate()
-                    result = str(stdout.decode().strip()) \
-                        + str(stderr.decode().strip())
+                    result = str(stdout.decode().strip()) + \
+                        str(stderr.decode().strip())
 
                     ftext += result
 
@@ -139,6 +144,26 @@ def register(**args):
                     file.write(ftext)
                     file.close()
 
+                    if LOGSPAMMER:
+                        await check.edit(
+                            "`Sorry, my userbot has crashed.\nThe error logs are stored in the userbot's log chat.`"
+                        )
+
+                        log = codecs.open("error.log", "r", encoding="utf-8")
+                        data = log.read()
+                        key = (
+                            requests.post(
+                                "https://nekobin.com/api/documents",
+                                json={"content": data},
+                            )
+                            .json()
+                            .get("result")
+                            .get("key")
+                        )
+                        url = f"https://nekobin.com/raw/{key}"
+                        anu = f"{text}\n`Here the error:`\nPasted to: [Nekobin]({url})"
+                        await check.client.send_message(send_to, anu)
+                        remove("error.log")
             else:
                 pass
 
@@ -146,4 +171,5 @@ def register(**args):
             bot.add_event_handler(wrapper, events.MessageEdited(**args))
         bot.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
+
     return decorator
