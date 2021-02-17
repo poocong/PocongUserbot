@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/docker:groovy
+FROM xnewbie/remix:groovy
 
 #
 # Clone repo and prepare working directory
