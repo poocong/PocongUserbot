@@ -8,4 +8,6 @@ RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/xnewbie/
 RUN mkdir /home/xnewbie/bin/
 WORKDIR /home/xnewbie/
 
+pip install -r requirements.txt
+
 CMD ["python3","-m","userbot"]
