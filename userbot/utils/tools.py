@@ -29,7 +29,6 @@ from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
 
 
-
 async def md5(fname: str) -> str:
     hash_md5 = hashlib.md5()
     with open(fname, "rb") as f:
@@ -76,6 +75,7 @@ def human_to_bytes(size: str) -> int:
         size = re.sub(r'([KMGT])', r' \1', size)
     number, unit = [string.strip() for string in size.split()]
     return int(float(number) * units[unit])
+
 
 async def is_admin(chat_id, user_id):
     req_jo = await bot(GetParticipantRequest(
