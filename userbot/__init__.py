@@ -124,7 +124,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 BOT_VER = os.environ.get("BOT_VER", "X.1")
 
 # Sticker Custom Pack Name
-S_PACK_NAME = os.environ.get("S_PACK_NAME", "Remix")
+S_PACK_NAME = os.environ.get("S_PACK_NAME", "Remix_Packs")
 
 # Zipfile module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
