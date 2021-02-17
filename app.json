@@ -183,6 +183,11 @@
       "description": "Get an API KEY from products.wolframalpha.com/api/",
       "required": false
     },
+    "S_PACK_NAME": {
+      "description": "change your sticker pack name",
+      "value": "Remix_Packs",
+      "required": true
+    },
     "ALIVE_LOGO": {
       "description": "Image in .alive message. the value MUST A DIRECT LINK or Will Crash!",
       "value": "https://telegra.ph/file/099b2bf1c3256847946bf.mp4",
