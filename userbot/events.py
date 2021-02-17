@@ -103,9 +103,9 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "#ERROR\n"
-                    text += "If you want to, you can report it.\n"
-                    text += "just forward this message to @userbotindo.\n"
+                    text = "#CRASH\n"
+                    text += "Jika mau, Anda bisa melaporkannya.\n"
+                    text += "teruskan saja pesan ini ke @xbotgrup.\n"
                     text += "Nothing is logged except the fact of error and date.\n"
 
                     ftext = "========== DISCLAIMER =========="
