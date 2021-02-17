@@ -126,6 +126,9 @@ BOT_VER = os.environ.get("BOT_VER", "X.1")
 # Sticker Custom Pack Name
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
+# Zipfile module
+ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
+
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID") or None
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or None
