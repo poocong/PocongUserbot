@@ -30,8 +30,7 @@ for module_name in ALL_MODULES:
 
 
 LOGS.info(
-    "🔥 XBOT-REMIX 🔥 V.X1 SUCCESSFUL ACTIVATED! ⚙️")
-
+    f"🔥 XBOT-REMIX 🔥 V{BOT_VER} [SUCCESSFUL ACTIVATED! ⚙️]")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
