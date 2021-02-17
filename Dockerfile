@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/latest:groovy
+FROM xnewbie/remix:latest
 
 #
 # Clone repo and prepare working directory
