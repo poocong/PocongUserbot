@@ -1,6 +1,7 @@
 aiohttp
 aria2p
 async_generator
+bitlyshortener
 bs4
 cowpy
 cffi
