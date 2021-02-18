@@ -250,7 +250,7 @@ async def approvepm(apprvpm):
 
     await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `OK, Pesan Telah Diterima..`")
     await apprvpm.delete(getmsg)
-    await message.delete()
+    await apprvpm.delete()
 
     if BOTLOG:
         await apprvpm.client.send_message(
