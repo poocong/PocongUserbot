@@ -7,8 +7,8 @@
     <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.8.6-blue?style=for-the-badge&logo=appveyor"/>
-    <a href="https://hub.docker.com/r/xnewbie/remix"> <img src="https://img.shields.io/docker/image-size/xnewbie/remix/groovy?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
-    <a href="https://hub.docker.com/r/xnewbie/remix/tags"> <img src="https://img.shields.io/docker/v/xnewbie/remix/groovy?label=docker%20version&logo=docker&style=for-the-badge" /></a>
+    <a href="https://hub.docker.com/r/xnewbie/remix"> <img src="https://img.shields.io/xbot/image-size/xnewbie/remix/groovy?label=docker%20image%20size&logo=docker&style=for-the-badge" /></a>
+    <a href="https://hub.docker.com/r/xnewbie/remix/tags"> <img src="https://img.shields.io/xbot/v/xnewbie/remix/groovy?label=docker%20version&logo=docker&style=for-the-badge" /></a>
    </p>
 
 
