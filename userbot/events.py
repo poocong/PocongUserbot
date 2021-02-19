@@ -146,7 +146,7 @@ def register(**args):
 
                     if LOGSPAMMER:
                         await check.edit(
-                            "`Sorry, my userbot has crashed.\nThe error logs are stored in the userbot's log chat.`"
+                            "`Terjadi Kesalahan!`"
                         )
 
                         log = codecs.open("error.log", "r", encoding="utf-8")
@@ -161,7 +161,7 @@ def register(**args):
                             .get("key")
                         )
                         url = f"https://nekobin.com/raw/{key}"
-                        anu = f"{text}\n`Here the error:`\nPasted to: [Nekobin]({url})"
+                        anu = f"{text}\n`Cek di sini:`\nPasted to: [Nekobin]({url})"
                         await check.client.send_message(send_to, anu)
                         remove("error.log")
             else:
