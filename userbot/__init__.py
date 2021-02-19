@@ -464,4 +464,3 @@ ISAFK = False
 AFKREASON = None
 ENABLE_KILLME = True
 ZALG_LIST = {}
-
