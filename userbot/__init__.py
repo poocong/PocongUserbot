@@ -326,7 +326,7 @@ with bot:
         async def handler(event):
             if event.message.from_id != uid:
                 await event.reply(
-                    "I'm [ProjectAlf](https://github.com/X-Newbie/XBot-Remix) modules helper...\nplease make your own bot, don't use mine 😋"
+                    "I'm [XBOT](https://github.com/X-Newbie/XBot-Remix) modules helper...\nplease make your own bot, don't use mine 😋"
                 )
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
@@ -341,7 +341,7 @@ with bot:
                 result = builder.article(
                     "Please Use Only With .help Command",
                     text="{}\nTotal loaded modules: {}".format(
-                        "[ProjectAlf](https://github.com/X-Newbie/XBot-Remix) modules helper.\n",
+                        "[XBOT](https://github.com/X-Newbie/XBot-Remix) modules helper.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -356,7 +356,7 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    "ProjectAlf",
+                    "XBOT",
                     text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
@@ -462,3 +462,6 @@ COUNT_PM = {}
 LASTMSG = {}
 ISAFK = False
 AFKREASON = None
+ENABLE_KILLME = True
+ZALG_LIST = {}
+
