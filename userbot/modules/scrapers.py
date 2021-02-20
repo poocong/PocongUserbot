@@ -591,7 +591,7 @@ def deEmojify(inputString):
 
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
 async def remove_background(event):
-    if Config.REM_BG_API_KEY is None:
+    if REM_BG_API_KEY is None:
         return await edit_delete(
             event,
             "`You have to set REM_BG_API_KEY in Config vars with API token from remove.bg to use this plugin .`",
