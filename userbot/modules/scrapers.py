@@ -17,6 +17,7 @@ import requests
 from os import popen
 from bs4 import BeautifulSoup
 import re
+from . import convert_toimage, convert_tosticker
 from re import match
 from random import choice
 from humanize import naturalsize
@@ -590,55 +591,64 @@ def deEmojify(inputString):
 
 
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
-async def kbg(remob):
-    """ For .rbg command, Remove Image Background. """
-    if REM_BG_API_KEY is None:
-        await remob.edit(
-            "`Error: Remove.BG API key missing! Add it to environment vars or config.env.`"
+async def remove_background(event):
+    if Config.REM_BG_API_KEY is None:
+        return await edit_delete(
+            event,
+            "`You have to set REM_BG_API_KEY in Config vars with API token from remove.bg to use this plugin .`",
+            5,
+        )
+    cmd = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(2)
+    message_id = await reply_id(event)
+    if event.reply_to_msg_id and not input_str:
+        reply_message = await event.get_reply_message()
+        catevent = await edit_or_reply(event, "`Analysing this Image/Sticker...`")
+        file_name = os.path.join(Config.TEMP_DIR, "rmbg.png")
+        try:
+            await event.client.download_media(reply_message, file_name)
+        except Exception as e:
+            await edit_delete(catevent, f"`{str(e)}`", 5)
+            return
+        else:
+            await catevent.edit("`Removing Background of this media`")
+            file_name = convert_toimage(file_name)
+            response = ReTrieveFile(file_name)
+            os.remove(file_name)
+    elif input_str:
+        catevent = await edit_or_reply(event, "`Removing Background of this media`")
+        response = ReTrieveURL(input_str)
+    else:
+        await edit_delete(
+            event,
+            "`Reply to any image or sticker with rmbg/srmbg to get background less png file or webp format or provide image link along with command`",
+            5,
         )
         return
-    input_str = remob.pattern_match.group(1)
-    message_id = remob.message.id
-    if remob.reply_to_msg_id:
-        message_id = remob.reply_to_msg_id
-        reply_message = await remob.get_reply_message()
-        await remob.edit("`Processing..`")
-        try:
-            if isinstance(
-                    reply_message.media, MessageMediaPhoto
-            ) or "image" in reply_message.media.document.mime_type.split('/'):
-                downloaded_file_name = await remob.client.download_media(
-                    reply_message, TEMP_DOWNLOAD_DIRECTORY)
-                await remob.edit("`Removing background from this image..`")
-                output_file_name = await ReTrieveFile(downloaded_file_name)
-                os.remove(downloaded_file_name)
-            else:
-                await remob.edit("`How do I remove the background from this ?`"
-                                 )
-        except Exception as e:
-            await remob.edit(str(e))
-            return
-    elif input_str:
-        await remob.edit(
-            f"`Removing background from online image hosted at`\n{input_str}")
-        output_file_name = await ReTrieveURL(input_str)
-    else:
-        await remob.edit("`I need something to remove the background from.`")
-        return
-    contentType = output_file_name.headers.get("content-type")
+    contentType = response.headers.get("content-type")
+    remove_bg_image = "backgroundless.png"
     if "image" in contentType:
-        with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "removed_bg.png"
-            await remob.client.send_file(
-                remob.chat_id,
-                remove_bg_image,
-                caption="Background removed using remove.bg",
-                force_document=True,
-                reply_to=message_id)
-            await remob.delete()
+        with open("backgroundless.png", "wb") as removed_bg_file:
+            removed_bg_file.write(response.content)
     else:
-        await remob.edit("**Error (Invalid API key, I guess ?)**\n`{}`".format(
-            output_file_name.content.decode("UTF-8")))
+        await edit_delete(catevent, f"`{response.content.decode('UTF-8')}`", 5)
+        return
+    if cmd == "srmbg":
+        file = convert_tosticker(remove_bg_image, filename="backgroundless.webp")
+        await event.client.send_file(
+            event.chat_id,
+            file,
+            reply_to=message_id,
+        )
+    else:
+        file = remove_bg_image
+        await event.client.send_file(
+            event.chat_id,
+            file,
+            force_document=True,
+            reply_to=message_id,
+        )
+    await catevent.delete()
 
 
 # this method will call the API, and return in the appropriate format
