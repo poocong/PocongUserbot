@@ -144,26 +144,6 @@ def register(**args):
                     file.write(ftext)
                     file.close()
 
-                    if LOGSPAMMER:
-                        await check.edit(
-                            "`Terjadi Kesalahan!`"
-                        )
-
-                        log = codecs.open("error.log", "r", encoding="utf-8")
-                        data = log.read()
-                        key = (
-                            requests.post(
-                                "https://nekobin.com/api/documents",
-                                json={"content": data},
-                            )
-                            .json()
-                            .get("result")
-                            .get("key")
-                        )
-                        url = f"https://nekobin.com/raw/{key}"
-                        anu = f"{text}\n`Cek di sini:`\nPasted to: [Nekobin]({url})"
-                        await check.client.send_message(send_to, anu)
-                        remove("error.log")
             else:
                 pass
 
