@@ -17,7 +17,6 @@ import requests
 from os import popen
 from bs4 import BeautifulSoup
 import re
-from . import convert_toimage, convert_tosticker
 from re import match
 from random import choice
 from humanize import naturalsize
@@ -51,6 +50,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROM
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import chrome, googleimagesdownload, options, progress
+from userbot.utils.tools import convert_toimage, convert_tosticker
 
 
 CARBONLANG = "auto"
