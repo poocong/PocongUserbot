@@ -4,7 +4,7 @@ from telethon.tl.types import (
     MessageEntityMentionName,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import bot, BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 
@@ -115,7 +115,7 @@ async def gspider(userbot):
     )
 
     if BOTLOG:
-        await userbot.client.send_message(
+        await bot.send_message(
             BOTLOG_CHATID,
             "#GBANNED\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})"
