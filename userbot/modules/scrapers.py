@@ -40,7 +40,6 @@ from googletrans import LANGUAGES, Translator
 from gtts import gTTS
 from gtts.lang import tts_langs
 from emoji import get_emoji_regexp
-from telethon.tl.types import MessageMediaPhoto
 from youtube_search import YoutubeSearch
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
@@ -634,7 +633,9 @@ async def remove_background(event):
         await edit_delete(catevent, f"`{response.content.decode('UTF-8')}`", 5)
         return
     if cmd == "srmbg":
-        file = convert_tosticker(remove_bg_image, filename="backgroundless.webp")
+        file = convert_tosticker(
+            remove_bg_image,
+            filename="backgroundless.webp")
         await event.client.send_file(
             event.chat_id,
             file,
