@@ -162,7 +162,7 @@ def convert_toimage(image):
 async def convert_tosticker(image):
     img = open(image)
     if img.mode != "RGB":
-        img = img.convert("RGB")
+        img = img.open(file_name).convert("RGB")
     img.save("./temp/temp.webp", "webp")
     os.remove(image)
     return "./temp/temp.webp"
