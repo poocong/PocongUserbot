@@ -118,7 +118,7 @@ async def gspider(userbot):
         await friday.client.send_message(
             BOTLOG_CHATID,
             "#GBANNED\n"
-            f"USER: [{user.first_name}](tg: // user?id={user.id})
+            f"USER: [{user.first_name}](tg://user?id={user.id})"
         )
 
 
