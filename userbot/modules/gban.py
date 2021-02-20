@@ -4,7 +4,7 @@ from telethon.tl.types import (
     MessageEntityMentionName,
 )
 
-from userbot import CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 
@@ -114,6 +114,12 @@ async def gspider(userbot):
         f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Dari : {a} Group**"
     )
 
+    if BOTLOG:
+        await friday.client.send_message(
+            BOTLOG_CHATID,
+            "#GBANNED\n"
+            f"USER: [{user.first_name}](tg://user?id={user.id})
+        )
 
 @register(outgoing=True, pattern=r"^\.ungban(?: |$)(.*)")
 async def gspider(userbot):
