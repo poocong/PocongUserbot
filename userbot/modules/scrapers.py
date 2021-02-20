@@ -598,7 +598,7 @@ async def remove_background(event):
             5,
         )
     input_str = event.pattern_match.group(1)
-    message_id = await reply_id(event)
+    message_id = event.message.id
     if event.reply_to_msg_id and not input_str:
         reply_message = await event.get_reply_message()
         catevent = await edit_or_reply(event, "`Analysing this Image/Sticker...`")
