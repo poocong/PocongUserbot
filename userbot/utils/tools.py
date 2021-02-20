@@ -153,7 +153,7 @@ async def check_media(reply_message):
 def convert_toimage(image):
     img = open(image)
     if img.mode != "RGB":
-        img = img.convert("RGB")
+        img = img.open(file_name).convert("RGB")
     img.save("./temp/temp.jpg", "jpeg")
     os.remove(image)
     return "./temp/temp.jpg"
