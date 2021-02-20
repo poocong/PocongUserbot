@@ -1,14 +1,8 @@
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-import html
-from telethon import events
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
-from telethon.events import ChatAction
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import admin_cmd
+from userbot import CMD_HELP
+
 
 async def get_full_user(event):
     args = event.pattern_match.group(1).split(':', 1)
