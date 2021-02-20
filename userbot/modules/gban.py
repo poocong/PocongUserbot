@@ -1,18 +1,11 @@
 
 
-
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import admin_cmd
-import html
-from telethon import events
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
+from userbot import CMD_HELP
 from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
-from telethon.events import ChatAction
 
-async def get_full_user(event):  
+
+async def get_full_user(event):
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
@@ -38,7 +31,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("Something Went Wrong", str(err))           
+            return await event.edit("Something Went Wrong", str(err))
     return user_obj, extra
 
 
@@ -51,6 +44,7 @@ async def get_user_sender_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
+
 
 @register(outgoing=True, pattern=r"^\.gban(?: |$)(.*)")
 async def gspider(userbot):
@@ -74,12 +68,12 @@ async def gspider(userbot):
         userbot.chat.title
     try:
         user, reason = await get_full_user(userbot)
-    except:
+    except BaseException:
         pass
     try:
         if not reason:
             reason = "Private"
-    except:
+    except BaseException:
         return await friday.edit(f"**Something W3NT Wrong 🤔**")
     if user:
         if user.id == 1411273575:
@@ -88,11 +82,11 @@ async def gspider(userbot):
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
-        except:
+        except BaseException:
             pass
         try:
             await userbot.client(BlockRequest(user))
-        except:
+        except BaseException:
             pass
         testuserbot = [
             d.entity.id
@@ -104,14 +98,14 @@ async def gspider(userbot):
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
                 await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
-            except:
+            except BaseException:
                 b += 1
     else:
         await friday.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
             return await friday.edit(f"**Error! User probably already gbanned.**")
-    except:
+    except BaseException:
         pass
     return await friday.edit(
         f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
@@ -140,23 +134,23 @@ async def gspider(userbot):
         userbot.chat.title
     try:
         user, reason = await get_full_user(userbot)
-    except:
+    except BaseException:
         pass
     try:
         if not reason:
             reason = "Private"
-    except:
+    except BaseException:
         return await friday.edit("Someting Went Wrong 🤔")
     if user:
         if user.id == 1411273575:
             return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
-        except:
+        except BaseException:
             pass
         try:
             await userbot.client(UnblockRequest(user))
-        except:
+        except BaseException:
             pass
         testuserbot = [
             d.entity.id
@@ -168,20 +162,19 @@ async def gspider(userbot):
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
-            except:
+            except BaseException:
                 b += 1
     else:
         await friday.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
             return await friday.edit("**Error! User probably already ungbanned.**")
-    except:
+    except BaseException:
         pass
     return await friday.edit(
         f"**UNGBANNED // USER - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
     )
 
 
-
 CMD_HELP.update({
-    "gban":"gban any user using username or tag dont use id "})
+    "gban": "gban any user using username or tag dont use id "})
