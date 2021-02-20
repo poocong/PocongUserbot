@@ -590,64 +590,55 @@ def deEmojify(inputString):
 
 
 @register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
-async def remove_background(event):
+async def kbg(remob):
+    """ For .rbg command, Remove Image Background. """
     if REM_BG_API_KEY is None:
-        return await edit_delete(
-            event,
-            "`You have to set REM_BG_API_KEY in Config vars with API token from remove.bg to use this plugin .`",
-            5,
+        await remob.edit(
+            "`Error: Remove.BG API key missing! Add it to environment vars or config.env.`"
         )
-    input_str = event.pattern_match.group(1)
-    message_id = event.message.id
-    if event.reply_to_msg_id and not input_str:
-        reply_message = await event.get_reply_message()
-        file_name = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "rmbg.png")
+        return
+    input_str = remob.pattern_match.group(1)
+    message_id = remob.message.id
+    if remob.reply_to_msg_id:
+        message_id = remob.reply_to_msg_id
+        reply_message = await remob.get_reply_message()
+        await remob.edit("`Processing..`")
         try:
-            await event.client.download_media(reply_message, file_name)
+            if isinstance(
+                    reply_message.media, MessageMediaPhoto
+            ) or "image" in reply_message.media.document.mime_type.split('/'):
+                downloaded_file_name = await remob.client.download_media(
+                    reply_message, TEMP_DOWNLOAD_DIRECTORY)
+                await remob.edit("`Removing background from this image..`")
+                output_file_name = await ReTrieveFile(downloaded_file_name)
+                os.remove(downloaded_file_name)
+            else:
+                await remob.edit("`How do I remove the background from this ?`"
+                                 )
         except Exception as e:
-            await edit_delete(f"`{str(e)}`", 5)
+            await remob.edit(str(e))
             return
-        else:
-            await event.edit("`Removing Background of this media`")
-            file_name = convert_toimage(file_name)
-            response = ReTrieveFile(file_name)
-            os.remove(file_name)
     elif input_str:
         await remob.edit(
             f"`Removing background from online image hosted at`\n{input_str}")
-        response = ReTrieveURL(input_str)
+        output_file_name = await ReTrieveURL(input_str)
     else:
-        await edit_delete(
-            event,
-            "`Reply to any image or sticker with rmbg/srmbg to get background less png file or webp format or provide image link along with command`",
-            5,
-        )
+        await remob.edit("`I need something to remove the background from.`")
         return
-    contentType = response.headers.get("content-type")
-    remove_bg_image = "backgroundless.png"
+    contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
-        with open("backgroundless.png", "wb") as removed_bg_file:
-            removed_bg_file.write(response.content)
+        with io.BytesIO(output_file_name.content) as remove_bg_image:
+            remove_bg_image.name = "removed_bg.png"
+            await remob.client.send_file(
+                remob.chat_id,
+                remove_bg_image,
+                caption="Background removed using remove.bg",
+                force_document=True,
+                reply_to=message_id)
+            await remob.delete()
     else:
-        await edit_delete(f"`{response.content.decode('UTF-8')}`", 5)
-        return
-    if cmd == "srmbg":
-        file = convert_tosticker(
-            remove_bg_image,
-            filename="backgroundless.webp")
-        await event.client.send_file(
-            event.chat_id,
-            file,
-            reply_to=message_id,
-        )
-    else:
-        file = remove_bg_image
-        await event.client.send_file(
-            event.chat_id,
-            file,
-            force_document=True,
-            reply_to=message_id,
-        )
+        await remob.edit("**Error (Invalid API key, I guess ?)**\n`{}`".format(
+            output_file_name.content.decode("UTF-8")))
 
 
 # this method will call the API, and return in the appropriate format
