@@ -597,8 +597,7 @@ async def remove_background(event):
             "`You have to set REM_BG_API_KEY in Config vars with API token from remove.bg to use this plugin .`",
             5,
         )
-    cmd = event.pattern_match.group(1)
-    input_str = event.pattern_match.group(2)
+    input_str = event.pattern_match.group(1)
     message_id = await reply_id(event)
     if event.reply_to_msg_id and not input_str:
         reply_message = await event.get_reply_message()
