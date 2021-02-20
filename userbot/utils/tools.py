@@ -151,7 +151,7 @@ async def check_media(reply_message):
 
 
 def convert_toimage(image):
-    img = Image.open(image)
+    img = open(image)
     if img.mode != "RGB":
         img = img.convert("RGB")
     img.save("./temp/temp.jpg", "jpeg")
@@ -160,7 +160,7 @@ def convert_toimage(image):
 
 
 async def convert_tosticker(image):
-    img = Image.open(image)
+    img = open(image)
     if img.mode != "RGB":
         img = img.convert("RGB")
     img.save("./temp/temp.webp", "webp")
