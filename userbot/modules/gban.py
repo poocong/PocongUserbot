@@ -55,11 +55,11 @@ async def gspider(userbot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("Gbanning This Retard DumbAss😁😁")
+        friday = await lol.reply("Gbanning User..")
     else:
         friday = await lol.edit("Wait Processing.....")
     me = await userbot.client.get_me()
-    await friday.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
+    await friday.edit(f"**Global Ban user..**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -77,11 +77,11 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await friday.edit(f"**Something W3NT Wrong 🤔**")
+        return await friday.edit(f"**Terjadi Kesalahan!!**")
     if user:
         if user.id == 1411273575:
             return await friday.edit(
-                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
+                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator🖕**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -107,11 +107,11 @@ async def gspider(userbot):
         await friday.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await friday.edit(f"**Error! User probably already gbanned.**")
+            return await friday.edit(f"**Error! User telah di gbanned.**")
     except BaseException:
         pass
     return await friday.edit(
-        f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
+        f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Dari : {a} Group**"
     )
 
 
@@ -143,7 +143,7 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await friday.edit("Someting Went Wrong 🤔")
+        return await friday.edit("Terjadi Kesalahan!!")
     if user:
         if user.id == 1411273575:
             return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
@@ -180,4 +180,9 @@ async def gspider(userbot):
 
 
 CMD_HELP.update({
-    "gban": "gban any user using username or tag dont use id "})
+    "gban": "\
+`.gban reason`\
+\nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
+\n\n`.ungban reason`\
+\nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
+})
