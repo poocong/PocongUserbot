@@ -4,7 +4,7 @@ from telethon.tl.types import (
     MessageEntityMentionName,
 )
 
-from userbot import bot, BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 
