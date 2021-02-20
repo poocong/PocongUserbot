@@ -1,69 +1,187 @@
-"""Globally Ban users from all the
-Group Administrations bots where you are SUDO
-Available Commands:
-.gban REASON
-.ungban REASON"""
-import asyncio
-from userbot.events import register
-from userbot import CMD_HELP, bot, G_BAN_LOGGER_GROUP, ALIVE_NAME
-# imported from uniborg by @heyworld
-
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
 
 
-@register(outgoing=True, pattern="^.gban(?: |$)(.*)")
-async def _(event):
-    if G_BAN_LOGGER_GROUP is None:
-        await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
-        return
-    if event.fwd_from:
-        return
-    reason = event.pattern_match.group(1)
-    if event.reply_to_msg_id:
-        r = await event.get_reply_message()
-        if r.forward:
-            r_from_id = r.forward.from_id or r.from_id
-        else:
-            r_from_id = r.from_id
-        await bot.send_message(
-            G_BAN_LOGGER_GROUP,
-            "/gban [user](tg://user?id={}) {}".format(r_from_id, reason)
-        )
-    await event.reply("**gbanning...**")
-    await event.edit(f"**User gbanned by {DEFAULTUSER}**")
-    asyncio.sleep(5)
-    await event.delete()
+
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot.utils import admin_cmd
+import html
+from telethon import events
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon.utils import get_input_location
+from telethon.events import ChatAction
+
+async def get_full_user(event):  
+    args = event.pattern_match.group(1).split(':', 1)
+    extra = None
+    if event.reply_to_msg_id and not len(args) == 2:
+        previous_message = await event.get_reply_message()
+        user_obj = await event.client.get_entity(previous_message.sender_id)
+        extra = event.pattern_match.group(1)
+    elif len(args[0]) > 0:
+        user = args[0]
+        if len(args) == 2:
+            extra = args[1]
+        if user.isnumeric():
+            user = int(user)
+        if not user:
+            await event.edit("`User ID Is Required")
+            return
+        if event.message.entities is not None:
+            probable_user_mention_entity = event.message.entities[0]
+            if isinstance(probable_user_mention_entity,
+                          MessageEntityMentionName):
+                user_id = probable_user_mention_entity.user_id
+                user_obj = await event.client.get_entity(user_id)
+                return user_obj
+        try:
+            user_obj = await event.client.get_entity(user)
+        except Exception as err:
+            return await event.edit("Something Went Wrong", str(err))           
+    return user_obj, extra
 
 
-@register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
-async def _(event):
-    if G_BAN_LOGGER_GROUP is None:
-        await event.edit("Set G_BAN_LOGGER_GROUP in vars otherwise module won't work.")
-        return
-    if event.fwd_from:
-        return
-    reason = event.pattern_match.group(1)
-    if event.reply_to_msg_id:
-        r = await event.get_reply_message()
-        r_from_id = r.from_id
-        await bot.send_message(
-            G_BAN_LOGGER_GROUP,
-            "/ungban [user](tg://user?id={}) {}".format(r_from_id, reason)
-        )
-    await event.delete()
-    await event.reply("**ungbanning...**")
-    asyncio.sleep(3.5)
-    await event.edit(f"**User ungbanned by {DEFAULTUSER}**")
-    asyncio.sleep(5)
-    await event.delete()
+async def get_user_sender_id(user, event):
+    if isinstance(user, str):
+        user = int(user)
+    try:
+        user_obj = await event.client.get_entity(user)
+    except (TypeError, ValueError) as err:
+        await event.edit(str(err))
+        return None
+    return user_obj
+
+@register(outgoing=True, pattern=r"^\.gban(?: |$)(.*)")
+async def gspider(userbot):
+    lol = userbot
+    sender = await lol.get_sender()
+    me = await lol.client.get_me()
+    if not sender.id == me.id:
+        friday = await lol.reply("Gbanning This Retard DumbAss😁😁")
+    else:
+        friday = await lol.edit("Wait Processing.....")
+    me = await userbot.client.get_me()
+    await friday.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
+    my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
+    f"@{me.username}" if me.username else my_mention
+    await userbot.get_chat()
+    a = b = 0
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
+    else:
+        userbot.chat.title
+    try:
+        user, reason = await get_full_user(userbot)
+    except:
+        pass
+    try:
+        if not reason:
+            reason = "Private"
+    except:
+        return await friday.edit(f"**Something W3NT Wrong 🤔**")
+    if user:
+        if user.id == 1411273575:
+            return await friday.edit(
+                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
+            )
+        try:
+            from userbot.modules.sql_helper.gmute_sql import gmute
+        except:
+            pass
+        try:
+            await userbot.client(BlockRequest(user))
+        except:
+            pass
+        testuserbot = [
+            d.entity.id
+            for d in await userbot.client.get_dialogs()
+            if (d.is_group or d.is_channel)
+        ]
+        for i in testuserbot:
+            try:
+                await userbot.client.edit_permissions(i, user, view_messages=False)
+                a += 1
+                await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
+            except:
+                b += 1
+    else:
+        await friday.edit(f"**Reply to a user !!**")
+    try:
+        if gmute(user.id) is False:
+            return await friday.edit(f"**Error! User probably already gbanned.**")
+    except:
+        pass
+    return await friday.edit(
+        f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
+    )
+
+
+@register(outgoing=True, pattern=r"^\.ungban(?: |$)(.*)")
+async def gspider(userbot):
+    lol = userbot
+    sender = await lol.get_sender()
+    me = await lol.client.get_me()
+    if not sender.id == me.id:
+        friday = await lol.reply("`Wait Let Me Process`")
+    else:
+        friday = await lol.edit("Just a Second ")
+    me = await userbot.client.get_me()
+    await friday.edit(f"Trying To Ungban User !")
+    my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
+    f"@{me.username}" if me.username else my_mention
+    await userbot.get_chat()
+    a = b = 0
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
+    else:
+        userbot.chat.title
+    try:
+        user, reason = await get_full_user(userbot)
+    except:
+        pass
+    try:
+        if not reason:
+            reason = "Private"
+    except:
+        return await friday.edit("Someting Went Wrong 🤔")
+    if user:
+        if user.id == 1411273575:
+            return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
+        try:
+            from userbot.modules.sql_helper.gmute_sql import ungmute
+        except:
+            pass
+        try:
+            await userbot.client(UnblockRequest(user))
+        except:
+            pass
+        testuserbot = [
+            d.entity.id
+            for d in await userbot.client.get_dialogs()
+            if (d.is_group or d.is_channel)
+        ]
+        for i in testuserbot:
+            try:
+                await userbot.client.edit_permissions(i, user, send_messages=True)
+                a += 1
+                await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
+            except:
+                b += 1
+    else:
+        await friday.edit("**Reply to a user !!**")
+    try:
+        if ungmute(user.id) is False:
+            return await friday.edit("**Error! User probably already ungbanned.**")
+    except:
+        pass
+    return await friday.edit(
+        f"**UNGBANNED // USER - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
+    )
+
 
 
 CMD_HELP.update({
-    "gban": "\
-`.gban reason`\
-\nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
-\n\n`.ungban reason`\
-\nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
-})
+    "gban":"gban any user using username or tag dont use id "})
