@@ -96,9 +96,8 @@ async def _(event):
             await event.reply("Unblock @Carol5_bot dulu Goblok!!")
             return
         else:
-            await event.edit(f"{response.message.message}")
-            await event.edit(f"{response.message.message}")
-            await event.client.delete_messages(response.message.message)
+            await event.edit(f"{response.message.message}:2")
+            await event.delete_messages(response.message.message)
 
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
