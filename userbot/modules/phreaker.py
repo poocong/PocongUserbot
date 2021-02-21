@@ -107,8 +107,6 @@ async def _(event):
                 )
 
 
-
-
 CMD_HELP.update({
     "phreaker":
     "`.nmap <bug hosts>`\
