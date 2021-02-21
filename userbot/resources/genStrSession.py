@@ -7,7 +7,6 @@
 
 import os
 import asyncio
-from telethon import TelegramClient
 from dotenv import load_dotenv
 
 
