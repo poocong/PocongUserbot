@@ -91,13 +91,13 @@ async def _(event):
                     incoming=True,
                     from_users=1247032902))
             await conv.send_message(f'/{bin} {link}')
-            await response
-            x2 = await response
+            x1 = await conv.get_response()
+            x2 = await conv.get_response()
         except YouBlockedUserError:
             await event.reply("Unblock @Carol5_bot dulu Goblok!!")
             return
         else:
-            await event.edit(f"{x2.message.message}")
+            await event.edit(event.chat_id, x2)
             await event.delete_messages(response.message.message)
 
 
