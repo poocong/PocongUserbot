@@ -146,11 +146,6 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT") or "False")
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT") or "False")
 
-# Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
-if G_BAN_LOGGER_GROUP:
-    G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
-
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY") or "")
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 1)
@@ -267,7 +262,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**🔥 XBOT-REMIX 🔥\n☠️BERHASIL DIAKTIFKAN☠️**")
+    await bot.send_message(BOTLOG_CHATID, "**🔥 XBOT-REMIX 🔥\n☠️ BERHASIL DIAKTIFKAN ☠️**")
     return
 
 with bot:
@@ -366,7 +361,7 @@ with bot:
                             ),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/UserBotIndo"),
+                                "https://t.me/xbotgrup"),
                         ],
                     ],
                     link_preview=False,
