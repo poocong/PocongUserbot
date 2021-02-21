@@ -7,7 +7,6 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 
-
 @register(outgoing=True, pattern=r"^\.nmap(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
@@ -106,7 +105,6 @@ async def _(event):
                 await event.client.delete_messages(
                     conv.chat_id, [r1.id, r2.id, query1.id]
                 )
-
 
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
