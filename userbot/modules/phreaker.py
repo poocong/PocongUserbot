@@ -97,6 +97,7 @@ async def _(event):
             return
         else:
             await event.edit(f"{response.message.message}")
+            await event.edit(f"{response.message.message}")
             await event.client.delete_messages(response.message.message)
 
 
