@@ -95,13 +95,14 @@ async def _(event):
             else:
                 p = await event.client.send_messages(
                     event.chat_id,
-                   r1, r2, 
+                    r1, r2,
                     reply_to=event.reply_to_msg_id,
                 )
 
                 await event.client.delete_messages(
                     conv.chat_id, [r1.id, r2.id, query1.id]
                 )
+
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
 async def _(event):
