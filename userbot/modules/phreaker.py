@@ -1,7 +1,11 @@
+import asyncio
+import os
+from asyncio.exceptions import TimeoutError
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
+
 
 
 @register(outgoing=True, pattern=r"^\.nmap(?: |$)(.*)")
@@ -102,6 +106,7 @@ async def _(event):
                 await event.client.delete_messages(
                     conv.chat_id, [r1.id, r2.id, query1.id]
                 )
+
 
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
