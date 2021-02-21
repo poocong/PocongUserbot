@@ -105,9 +105,9 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 5:
                 await event.respond(
-                    "`You were spamming my PM, which I didn't like.`\n"
-                    "`I Wouldn't let you to chat me again until further notice`\n"
-                    "`Bye`"
+                    "`Maaf Kamu Saya Block`\n"
+                    "`Karena Telah Melakukan Spam`\n"
+                    "`Silahkan Tunggu Owner Saya Membukanya!!`"
                 )
 
                 try:
