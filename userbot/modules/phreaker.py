@@ -105,7 +105,9 @@ async def _(event):
                 await event.client.delete_messages(
                     conv.chat_id, [r1.id, r2.id, query1.id]
                 )
-
+          await event.delete()
+    except TimeoutError:
+        return await event.edit("`@Carol5_bot isnt responding..`")
 
 CMD_HELP.update({
     "phreaker":
