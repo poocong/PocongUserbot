@@ -78,28 +78,30 @@ async def _(event):
 
 @register(outgoing=True, pattern=r"^\.bin(?: |$)(.*)")
 async def _(event):
-    if event.fwd_from:
-        return
-    link = event.pattern_match.group(1)
-    chat = "@Carol5_bot"  # pylint:disable=E0602
-    bin = f"bin"  # pylint:disable=E0602
-    await event.edit("Processing....")
-    async with bot.conversation("@Carol5_bot") as conv:
-        try:
-            response = conv.wait_event(
-                events.NewMessage(
-                    incoming=True,
-                    from_users=1247032902))
-            await conv.send_message(f'/{bin} {link}')
-            await conv.get_response()
-            x2 = await conv.get_response()
-        except YouBlockedUserError:
-            await event.reply("Unblock @Carol5_bot dulu Goblok!!")
-            return
-        else:
-            await event.edit(event.chat_id, x2)
-            await event.delete_messages(response.message.message)
+    try:
+        query = event.pattern_match.group(1)
+        await event.edit("`Processing..`")
+        async with bot.conversation("@Carol5_bot") as conv:
+            try:
+                query1 = await conv.send_message(f"/bin {query}")
+                asyncio.sleep(3)
+                r1 = await conv.get_response()
+                r2 = await conv.get_response()
+                await bot.send_read_acknowledge(conv.chat_id)
+            except YouBlockedUserError:
+                return await event.reply("Unblock @Carol5_bot plox")
+            if r1.text.startswith("No"):
+                return await event.edit(f"`No result found for` **{query}**")
+            else:
+                p = await event.client.send_messages(
+                    event.chat_id,
+                   r1, r2, 
+                    reply_to=event.reply_to_msg_id,
+                )
 
+                await event.client.delete_messages(
+                    conv.chat_id, [r1.id, r2.id, query1.id]
+                )
 
 @register(outgoing=True, pattern=r"^\.cc(?: |$)(.*)")
 async def _(event):
