@@ -8,14 +8,14 @@
 import os
 import asyncio
 from dotenv import load_dotenv
-
+from telethon import TelegramClient
 
 if os.path.isfile("config.env"):
     load_dotenv("config.env")
 
 
 async def genStrSession() -> None:  # pylint: disable=missing-function-docstring
-    async with Client(
+    async with TelegramClient(
             "XBOT",
             api_key=int(os.environ.get("API_KEY") or input("Enter Telegram API KEY: ")),
             api_hash=os.environ.get("API_HASH") or input("Enter Telegram API HASH: ")
