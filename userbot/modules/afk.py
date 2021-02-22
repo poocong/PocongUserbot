@@ -66,9 +66,9 @@ async def set_afk(afk_e):
     else:
         await afk_e.edit("**AFK!**\nSaya Offline Dulu Guys...")
     if user.last_name:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ OFFLINE ]"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ ×OFF× ]"))
     else:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=" [ OFFLINE ]"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=" [ ×OFF× ]"))
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nKamu Sekarang AFK!")
     ISAFK = True
