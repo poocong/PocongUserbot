@@ -61,6 +61,9 @@ if CONFIG_CHECK:
 API_KEY = os.environ.get("API_KEY") or None
 API_HASH = os.environ.get("API_HASH") or None
 
+# set blacklist_chats where you do not want userbot's features
+UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", None)
+
 # Userbot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION") or None
 
