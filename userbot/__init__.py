@@ -93,11 +93,12 @@ GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME") or None
 GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN") or None
 
 # Custom (forked) repo URL for updater.
-UPSTREAM_REPO_URL = (os.environ.get("UPSTREAM_REPO_URL")
-                     or "https://github.com/X-Newbie/XBot-Remix")
+UPSTREAM_REPO_URL = os.environ.get(
+    "UPSTREAM_REPO_URL",
+    "https://github.com/X-Newbie/XBot-Remix.git")
 
-# UPSTREAM_REPO_URL branch, the default is alpha
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "alpha"
+UPSTREAM_REPO_BRANCH = os.environ.get(
+    "UPSTREAM_REPO_BRANCH", "alpha")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get(
@@ -147,7 +148,7 @@ ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT") or "False")
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT") or "False")
 
 # Time & Date - Country and Time Zone
-COUNTRY = str(os.environ.get("COUNTRY") or "")
+COUNTRY = str(os.environ.get("COUNTRY") or "ID")
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 1)
 
 # Clean Welcome
@@ -178,18 +179,14 @@ G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID") or None
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET") or None
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA") or None
 G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID") or None
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
-    "TMP_DOWNLOAD_DIRECTORY") or "./downloads"
+TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
+                                         "./downloads")
 
 # Terminal Alias
 TERM_ALIAS = os.environ.get("TERM_ALIAS") or "XBOT-REMIX"
 
 # Genius Lyrics API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN") or None
-
-# IMG Stuff
-IMG_LIMIT = os.environ.get("IMG_LIMIT") or None
-CMD_HELP = {}
 
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN") or None
@@ -277,14 +274,16 @@ with bot:
 
 def paginate_help(page_number, loaded_modules, prefix):
     number_of_rows = 5
-    number_of_cols = 2
+    number_of_cols = 4
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {}".format("▫️", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {}".format("⚙️", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
-    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
+    pairs = list(zip(modules[::number_of_cols],
+                     modules[1::number_of_cols],
+                     modules[2::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
@@ -295,11 +294,11 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⬅️", data="{}_prev({})".format(prefix, modulo_page)
+                    "⌫️", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "➡️", data="{}_next({})".format(prefix, modulo_page)
-                ),
+                    "⌦️", data="{}_next({})".format(prefix, modulo_page)
+                )
             )
         ]
     return pairs
@@ -320,9 +319,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply(
-                    "I'm [XBOT](https://github.com/X-Newbie/XBot-Remix) modules helper...\nplease make your own bot, don't use mine 😋"
-                )
+                await event.reply("I'm [XBOT-REMIX](https://github.com/X-Newbie/XBot-Remix) modules helper...\nplease make your own bot, don't use mine 😋")
             else:
                 await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
 
@@ -331,12 +328,12 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith(""):
+            if event.query.user_id == uid and query.startswith("@UserButt"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Please Use Only With .help Command",
-                    text="{}\nTotal loaded modules: {}".format(
-                        "[XBOT](https://github.com/X-Newbie/XBot-Remix) modules helper.\n",
+                    text="{}\nTotal loaded Modules: {}\n               \n🖥 **Main Menu** 🖥\n".format(
+                        "🔥XBOT-REMIX🔥 modules helper",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -344,25 +341,22 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "ProjectAlf Helper",
+                    "🔥XBOT-REMIX🔥 Helper",
                     text="List of Modules",
                     buttons=[],
-                    link_preview=True,
-                )
+                    link_preview=True)
             else:
                 result = builder.article(
-                    "XBOT",
+                    "XBOT-REMIX",
                     text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/X-Newbie/XBot-Remix",
-                            ),
+                                "https://github.com/X-Newbie/XBot-Remix"),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/xbotgrup"),
-                        ],
+                                "www.pornhub.com")],
                     ],
                     link_preview=False,
                 )
@@ -415,14 +409,13 @@ with bot:
                 cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "")[:150]
-                        + "..."
+                        str(CMD_HELP[modul_name]).replace('`', '')[:150] + "..."
                         + "\n\nRead more .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace("`", "")
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
                 reply_pop_up_alert = (
                     help_string
@@ -451,6 +444,7 @@ with bot:
         sys.exit(1)
 
 # Global Variables
+CMD_HELP = {}
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
