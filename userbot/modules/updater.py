@@ -67,7 +67,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nUserbot dyno build in progress, please wait it can take 7-8 mins`'
+                         '\nUpdate Deploy Dark-Remix, Silahkan Tunggu 5-8 menit..`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,14 +91,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
+            await event.edit("`Berhasil Update Deploy!\n" "Merestart XBot-Remix, silahkan tunggu...`")
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#NOTE \n"
-                "OK XBOT-REMIX Berhasil Di Update")
+                "XBot-Remix Berhasil Di Update✓")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -115,18 +115,18 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('`**XBOT** Berhasil Di Update!`')
+    await event.edit('**XBot-Remix** Berhasil Di Update✓')
     await asyncio.sleep(1)
-    await event.edit('`XBOT Di Restart....`')
+    await event.edit('`XBot-Remix Di Restart....`')
     await asyncio.sleep(1)
-    await event.edit('`Silahkan Tunggu Beberapa Detik!`')
+    await event.edit('`Silahkan Tunggu Beberapa Detik..`')
     await asyncio.sleep(10)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#NOTICE \n"
-            "OK XBOT-REMIX Berhasil Di Update")
+            "XBot-Remix Berhasil Di Update✓")
         await asyncio.sleep(10)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n`🔥XBOT-REMIX🔥\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n')
+            f'\n`🔥XBot-Remix🔥\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**UPDATE Terbaru Untuk 🔥XBOT-REMIX🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
+        changelog_str = f'**UPDATE Terbaru Untuk 🔥XBot-Remix🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog is too big, view the file to see it.`")
             file = open("output.txt", "w+")
@@ -214,10 +214,10 @@ async def upstream(event):
         await event.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
-        await event.edit('`Proses Update XBOT-REMIX, ....🛠️`')
-        await event.edit('`Proses Update XBOT-REMIX, loading....🛠️`')
-        await event.edit('`Proses Update XBOT-REMIX, updating....🛠️`')
-        await event.edit('`Proses Update XBOT-REMIX, silahkan tunggu....🛠️`')
+        await event.edit('`Proses Update XBot-Remix, ....🛠️`')
+        await event.edit('`Proses Update XBot-Remix, loading....🛠️`')
+        await event.edit('`Proses Update XBot-Remix, updating....🛠️`')
+        await event.edit('`Proses Update XBot-Remix, silahkan tunggu....🛠️`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
