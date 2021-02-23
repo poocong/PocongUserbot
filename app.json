@@ -151,10 +151,9 @@
       "description": "Get this value from https://genius.com/developers.",
       "required": false 
     },
-    "IMG_LIMIT": {
-      "description": "Set limit for .img module",
-      "value": "6",
-      "required": true
+    "G_DRIVE_FOLDER_ID": {
+      "description": "Create a folder and put that folder's id here.check folder link for id.",
+      "required": false
     },
     "WATCH_COUNTRY": {
       "description": "Country code for justwatch.com",
