@@ -131,6 +131,10 @@
       "description": "Your client_secret.json.",
       "required": false
     },
+    "UB_BLACK_LIST_CHAT": {
+      "description": "isi id blacklist user",
+      "required": false
+    },
     "GENIUS_ACCESS_TOKEN": {
       "description": "Client Access Token from https://genius.com/api-clients.",
       "required": false
