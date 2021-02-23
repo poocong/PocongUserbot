@@ -99,7 +99,8 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 9000
     await pong.edit("`Ping!\n%sms`" % (duration))
-    
+
+
 @register(outgoing=True, pattern="^.pink$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
