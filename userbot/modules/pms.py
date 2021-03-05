@@ -11,7 +11,7 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
 from userbot import (
-    bot, 
+    bot,
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
