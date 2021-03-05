@@ -5,14 +5,10 @@
 #
 """Userbot module for keeping control who PM you."""
 
-import os
 from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
-from telethon.tl.types import User, MessageEntityMentionName
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.utils import get_input_location
+from telethon.tl.types import User
 
 from userbot import (
     BOTLOG,
@@ -30,10 +26,10 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-f"**Hai Selamat datang di chat {DEFAULTUSER}**\n"
+    f"**Hai Selamat datang di chat {DEFAULTUSER}**\n"
     "╾─────────────────────╼\n"
     " __Mohon untuk tidak__\n"
-" __melakukan spam chat__\n"
+    " __melakukan spam chat__\n"
     " __Atau Saya Akan Otomatis\n"
     " Mereport & Block Kamu__\n"
     " __Silahkan Tunggu Sampai__\n"
