@@ -11,6 +11,7 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
 from userbot import (
+    bot, 
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
@@ -26,7 +27,7 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"**Hai Selamat datang di chat {DEFAULTUSER}**\n"
+    f"Hai Selamat datang di chat {DEFAULTUSER}\n"
     "╾─────────────────────╼\n"
     " Mohon untuk tidak\n"
     " melakukan spam chat\n"
@@ -239,6 +240,7 @@ async def approvepm(apprvpm):
 
     await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `OK, Pesan Telah Diterima..`")
     await apprvpm.delete()
+    await bot.delete_message(getmsg)
 
     if BOTLOG:
         await apprvpm.client.send_message(
