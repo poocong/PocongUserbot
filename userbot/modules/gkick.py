@@ -1,19 +1,15 @@
-#Ported by X_ImFine
-#Mukalu Kek Kontol
+# Ported by X_ImFine
+# Mukalu Kek Kontol
 
-import asyncio
-from telethon import events
-from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.types import (PeerChat, PeerChannel,ChannelParticipantsAdmins, ChatAdminRights,ChatBannedRights, MessageEntityMentionName,MessageMediaPhoto, ChannelParticipantsBots)
-from telethon.tl.types import Channel
+from telethon.tl.types import (
+    MessageEntityMentionName)
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from telethon.tl.functions.messages import GetCommonChatsRequest
 
 from userbot.events import register
-from userbot import bot, BOTLOG_CHATID, ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP
 
 
-async def get_user_from_event(event):  
+async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
@@ -39,7 +35,7 @@ async def get_user_from_event(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("Failed \n **Error**\n", str(err))           
+            return await event.edit("Failed \n **Error**\n", str(err))
     return user_obj, extra
 
 
@@ -54,55 +50,63 @@ async def get_user_from_id(user, event):
     return user_obj
 
 try:
-   from userbot import client2, client3
-except:
-   client2 = client3 = None
-   pass
+    from userbot import client2, client3
+except BaseException:
+    client2 = client3 = None
+
+
 @register(outgoing=True, pattern=r"^\.gkick(?: |$)(.*)")
-async def gspide(rk): 
-   lazy = rk ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
-   if not sender.id == me.id:
+async def gspide(rk):
+    lazy = rk
+    sender = await lazy.get_sender()
+    me = await lazy.client.get_me()
+    if not sender.id == me.id:
         rkp = await lazy.reply("`processing...`")
-   else:
-    	rkp = await lazy.edit("`processing...`")      
-   me = await rk.client.get_me() ; await rkp.edit(f"`{ALIVE_NAME}:` **Requesting  to gkick user!**") ; my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id) ; my_username = f"@{me.username}" if me.username else my_mention ; chat = await rk.get_chat() ; a = b = 0
-   if rk.is_private:       
-   	user = rk.chat ; reason = rk.pattern_match.group(1) ; chat_title = 'PM'  
-   else:
-   	chat_title = rk.chat.title  
-   try:       
-    user, reason = await get_user_from_event(rk)  
-   except:
-      pass
-   try:
-     if not reason:
-       reason = 'Private'
-   except:
-   	return await rkp.edit(f"`{ALIVE_NAME}:`**Error! Unknown user.**")
-   if user:      
-        if user.id == 1411273575:     
-    	             return await rkp.edit(f"`{ALIVE_NAME}:`**HEY THAT'S MY DEV**")
+    else:
+        rkp = await lazy.edit("`processing...`")
+    me = await rk.client.get_me()
+    await rkp.edit(f"`{ALIVE_NAME}:` **Requesting  to gkick user!**")
+    my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
+    f"@{me.username}" if me.username else my_mention
+    await rk.get_chat()
+    a = b = 0
+    if rk.is_private:
+        user = rk.chat
+        reason = rk.pattern_match.group(1)
+    else:
+        rk.chat.title
+    try:
+        user, reason = await get_user_from_event(rk)
+    except BaseException:
+        pass
+    try:
+        if not reason:
+            reason = 'Private'
+    except BaseException:
+        return await rkp.edit(f"`{ALIVE_NAME}:`**Error! Unknown user.**")
+    if user:
+        if user.id == 1411273575:
+            return await rkp.edit(f"`{ALIVE_NAME}:`**HEY THAT'S MY DEV**")
         try:
-          await rk.client(BlockRequest(user))
-          await rk.client(UnblockRequest(user))
-          block = 'True'
-        except:      
-           pass
-        testrk = [d.entity.id for d in await rk.client.get_dialogs() if (d.is_group or d.is_channel) ]                          
+            await rk.client(BlockRequest(user))
+            await rk.client(UnblockRequest(user))
+        except BaseException:
+            pass
+        testrk = [d.entity.id for d in await rk.client.get_dialogs() if (d.is_group or d.is_channel)]
         for i in testrk:
             try:
-                 await rk.client.edit_permissions(i, user, view_messages=False)
-                 await rk.client.edit_permissions(i, user, send_messages=True)
-                 a += 1
-                 await rkp.edit(f"`{ALIVE_NAME}:` **Requesting  to gkicking user!\nGkicked {a} chats.....**")
-                 
-            except:
-                 b += 1                     
-   else:
-       await rkp.edit(f"`{ALIVE_NAME}:` **Reply to a user !! **")        
+                await rk.client.edit_permissions(i, user, view_messages=False)
+                await rk.client.edit_permissions(i, user, send_messages=True)
+                a += 1
+                await rkp.edit(f"`{ALIVE_NAME}:` **Requesting  to gkicking user!\nGkicked {a} chats.....**")
 
-   return await rkp.edit(f"`{ALIVE_NAME}:` **GKicked [{user.first_name}](tg://user?id={user.id}) in {a} chat(s) **") 
-   
+            except BaseException:
+                b += 1
+    else:
+        await rkp.edit(f"`{ALIVE_NAME}:` **Reply to a user !! **")
+
+    return await rkp.edit(f"`{ALIVE_NAME}:` **GKicked [{user.first_name}](tg://user?id={user.id}) in {a} chat(s) **")
+
 CMD_HELP.update({
     "gkick": "\
 `.gkick reason`\

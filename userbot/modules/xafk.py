@@ -1,7 +1,7 @@
 # Ultroid - UserBot
 # Copyright (C) 2020 TeamUltroid
 #
-#Ported by X_ImFine
+# Ported by X_ImFine
 
 import asyncio
 from datetime import datetime
@@ -35,6 +35,7 @@ afk_time = None
 last_afk_message = {}
 last_afk_msg = {}
 afk_start = {}
+
 
 @bot.on(events.NewMessage(outgoing=True))
 @bot.on(events.MessageEdited(outgoing=True))
@@ -107,9 +108,8 @@ async def set_not_afk(event):
         afk_time = None
 
 
-@bot.on(
-    events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
-)
+@bot.on(events.NewMessage(incoming=True,
+                          func=lambda e: bool(e.mentioned or e.is_private)))
 async def on_afk(event):
     if event.fwd_from:
         return
@@ -159,7 +159,8 @@ async def on_afk(event):
             pass
 
 
-@register(outgoing=True, pattern="^.xafk(?: |$)(.*)", disable_errors=True)  # pylint:disable=E0602
+@register(outgoing=True, pattern="^.xafk(?: |$)(.*)",
+          disable_errors=True)  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -247,9 +248,5 @@ async def _(event):
             BOTLOG_CHATIDger.warn(str(e))
 
 
-CMD_HELP.update(
-    {
-        "xafk": ".xafk (reason) (link of any media) or reply to it "
-        "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."
-    }
-)
+CMD_HELP.update({"xafk": ".xafk (reason) (link of any media) or reply to it "
+                 "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."})
