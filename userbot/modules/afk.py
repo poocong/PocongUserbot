@@ -5,11 +5,8 @@
 import os
 import asyncio
 from datetime import datetime
-from random import choice, randint
 from telethon import events
 from telethon.tl import functions, types
-from telethon.events import StopPropagation
-from telethon.tl.functions.account import UpdateProfileRequest
 
 from userbot import (  # noqa pylint: disable=unused-import isort:skip
     AFKREASON,
@@ -35,6 +32,7 @@ afk_time = None
 last_afk_message = {}
 last_afk_msg = {}
 afk_start = {}
+
 
 @bot.on(events.NewMessage(outgoing=True))
 @bot.on(events.MessageEdited(outgoing=True))
@@ -85,6 +83,7 @@ async def set_not_afk(event):
         os.system("rm -rf *.png")
         os.system("rm -rf *.jpg")
 
+
 @bot.on(events.NewMessage(incoming=True,
                           func=lambda e: bool(e.mentioned or e.is_private)))
 async def on_afk(event):
@@ -111,7 +110,8 @@ async def on_afk(event):
                 + f"**◈Karena:- `**{reason}`"
             )
         else:
-            message_to_reply = f"**◈Maaf Saya Sedang Offline**\n" + f"**◈Sejak : {total_afk_time}**"
+            message_to_reply = f"**◈Maaf Saya Sedang Offline**\n" + \
+                f"**◈Sejak : {total_afk_time}**"
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)
