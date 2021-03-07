@@ -107,12 +107,13 @@ async def set_not_afk(event):
             pass
         USER_AFK = {}
         afk_time = None
-        
+
         os.system("rm -rf *.webp")
         os.system("rm -rf *.mp4")
         os.system("rm -rf *.tgs")
         os.system("rm -rf *.png")
         os.system("rm -rf *.jpg")
+
 
 @bot.on(events.NewMessage(incoming=True,
                           func=lambda e: bool(e.mentioned or e.is_private)))
