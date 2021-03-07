@@ -67,7 +67,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nUpdate Deploy Dark-Remix, Silahkan Tunggu 5-8 menit..`'
+                         '\nUpdate Deploy XBot-Remix, Silahkan Tunggu 5-8 menit..`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -217,7 +217,7 @@ async def upstream(event):
         await event.edit('`Proses Update XBot-Remix, ....🛠️`')
         await event.edit('`Proses Update XBot-Remix, loading....🛠️`')
         await event.edit('`Proses Update XBot-Remix, updating....🛠️`')
-        await event.edit('`Proses Update XBot-Remix, silahkan tunggu....🛠️`')
+        await event.edit('`Proses Update XBot-Remix\nSilahkan tunggu....🛠️`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
