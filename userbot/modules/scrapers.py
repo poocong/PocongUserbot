@@ -28,6 +28,7 @@ import emoji
 from googletrans import Translator
 from time import sleep
 from re import findall
+from shutil import rmtree
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
@@ -178,22 +179,22 @@ async def img_sampler(event):
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
         lim = 5
-    response = googleimagesdownload()
+    kinthil = googleimagesdownload()
 
     # creating list of arguments
     arguments = {
         "keywords": query,
         "limit": lim,
         "format": "jpg",
-        "no_directory": "no_directory"
+        "output_directory": "./downloads/"
     }
 
     # passing the arguments to the function
-    paths = response.download(arguments)
+    paths = kinthil.download(arguments)
     lst = paths[0][query]
     await event.client.send_file(
         await event.client.get_input_entity(event.chat_id), lst)
-    shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
+    rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await event.delete()
 
 
