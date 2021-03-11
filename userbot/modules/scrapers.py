@@ -179,7 +179,7 @@ async def img_sampler(event):
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
         lim = 5
-    kinthil = googleimagesdownload()
+    gi = googleimagesdownload()
 
     # creating list of arguments
     arguments = {
@@ -190,7 +190,7 @@ async def img_sampler(event):
     }
 
     # passing the arguments to the function
-    paths = kinthil.download(arguments)
+    paths = gi.download(arguments)
     lst = paths[0][query]
     await event.client.send_file(
         await event.client.get_input_entity(event.chat_id), lst)
