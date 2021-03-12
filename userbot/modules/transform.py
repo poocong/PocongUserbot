@@ -1,14 +1,17 @@
-# Authored by @Khrisna_Singhal
-# Ported from Userge by Alfiananda P.A
+# Authored by @Khrisna_Singhal & Sh1vam & @danish_00
+# Ported from Userge by Alfiananda P.A & X-ImFine
 
-import os
+import requests, os ,re
+import PIL
+import cv2
 import random
 import numpy as np
 from colour import Color
+from telegraph import upload_file
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image, ImageOps, ImageDraw, ImageFont
-from telethon.tl.types import DocumentAttributeFilename
+from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
@@ -272,6 +275,70 @@ async def rotate(event):
     os.remove(Converted)
 
 
+path = "./downloads/"
+
+@register(outgoing=True, pattern="^.wast$")
+async def hmm(event):
+    if not event.reply_to_msg_id:
+        await event.edit("`Reply to Any media..`")
+        return
+    reply = await event.get_reply_message()
+    if not reply.media:
+        await event.edit("`reply to a image/sticker`")
+        return
+    await event.edit("`Downloading Media..`")
+    #os.system(f'wget https://telegra.ph/file/26d43e25cb2095a931ab1.jpg')
+    os.system(f'wget https://telegra.ph/file/b3a6038bc825cc4edc4f0.png')
+    img = await bot.download_media(reply.media, path)
+
+    mon = "b3a6038bc825cc4edc4f0.png"
+    foreground = Image.open(mon).convert("RGBA")
+    img = cv2.VideoCapture(img) 
+    tales, miraculous = img.read()
+    cv2.imwrite("MiraculousLadybug.png",miraculous)
+    shvm=PIL.Image.open("MiraculousLadybug.png")
+    shi,vam = shvm.size
+    img=shvm.resize((512,512))
+    img.save("shivamgta.png", format="PNG", optimize=True)
+    img = cv2.VideoCapture("shivamgta.png") 
+    tales, miraculousladybug = img.read()
+    gray = cv2.cvtColor(miraculousladybug, cv2.COLOR_BGR2GRAY) 
+    #gray = cv2.medianBlur(gray, 5)
+    bug = cv2.imwrite("shivamgtas.jpg", gray)
+    image = cv2.imread("shivamgtas.jpg")
+    overlay = image.copy()########################
+
+    x, y, w, h = 0, 210, 800, 100
+    overlay =cv2.rectangle(overlay, (x, y), (x+w, y+h), (0,0,0), -1) 
+
+    alpha = 0.5  # Transparency factor.0.8
+
+    # Following line overlays transparent rectangle over the image
+    image_new = cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0)
+    cv2.imwrite("shivamgta.jpg", image_new)######################################
+
+    background = Image.open("shivamgta.jpg").convert("RGB")
+    with Image.open("shivamgta.jpg") as imge:
+        width, height = imge.size
+    fg_resized = foreground.resize((width, int(height/5)))
+    background.paste(fg_resized, box=(0,int(height/2)-50), mask=fg_resized)
+    background.save("shivamwasted.png")
+    miraculous=PIL.Image.open("shivamwasted.png")
+    img=miraculous.resize((int(shi),int(vam)))
+    img.save("shivamwastedgta.png", format="PNG", optimize=True)
+    await event.client.send_file(event.chat_id, "shivamwastedgta.png", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    os.system("rm -f .wget-hsts")
+    os.system("rm -f MiraculousLadybug.png")
+    os.system("rm -f shivamgta.jpg")
+    os.system("rm -f shivamgta.png")
+    os.system("rm -f shivamgtas.jpg")
+    os.system("rm -f shivamwastedgta.png")
+    os.system("rm -f shivamwasted.png")
+    os.system("rm -f *.png")
+    os.system("rm -f downloads/*.webp")
+    os.system("rm -f downloads/*.jpg")
+
 CMD_HELP.update(
     {
         "transform": ">`.ghost`"
@@ -292,5 +359,7 @@ CMD_HELP.update(
         "\nUsage: To posterize your image!"
         "\n\n>`.rotate <value>`"
         "\nUsage: To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90"
+        "\n\n>`.wast`"
+        "\nUsage: To wasted in image as GTA"
     }
 )
