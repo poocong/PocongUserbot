@@ -191,6 +191,10 @@
       "value": "https://telegra.ph/file/099b2bf1c3256847946bf.mp4",
       "required": false
     },
+    "UPSTREAM_REPO_URL": {
+    "description": "set this to your Xbot-Remix fork on GitHub",
+    "required": false
+    },
     "USR_TOKEN_UPTOBOX": {
       "description": "API for direct link uptobox, https://docs.uptobox.com/#how-to-find-my-api-token",
       "required": false
