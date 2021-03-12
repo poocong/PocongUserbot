@@ -1,6 +1,7 @@
 {
   "name": "XBOT REMIX",
   "description": "[XBOT] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database.",
+  "logo": "https://telegra.ph/file/0c5788a2377dfbe83ece6.jpg",
   "keywords": [
     "telegram",
     "userbot",
