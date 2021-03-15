@@ -339,6 +339,78 @@ async def hmm(event):
     os.system("rm -f downloads/*.webp")
     os.system("rm -f downloads/*.jpg")
 
+
+path = "./downloads/"
+if not os.path.isdir(path):
+    os.makedirs(path)
+
+
+@register(outgoing=True, pattern=r"^\.icircle(?: |$)(.*)")
+async def shiv(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
+        return
+    licence = event.text
+    liscence = licence[8:]
+    await event.edit("```Processing...```")
+    reply = await event.get_reply_message()
+
+    download = await bot.download_media(reply.media, path)
+    miraculous = cv2.VideoCapture(download)
+    ladybug, catnoar = miraculous.read()
+    cv2.imwrite("shivamcircular.png", catnoar)
+    #image = PIL.Image.open(download)
+    img = Image.open("shivamcircular.png").convert("RGB")
+    npImage = np.array(img)
+    h, w = img.size
+    alpha = Image.new('L', img.size, 0)
+    draw = ImageDraw.Draw(alpha)
+    draw.pieslice([0, 0, h, w], 0, 360, fill=255)
+    npAlpha = np.array(alpha)
+
+    # Add alpha layer to RGB
+    npImage = np.dstack((npImage, npAlpha))
+
+    # Save with alpha
+    Image.fromarray(npImage).save('sirsle.png')
+    # await event.edit(f"Dimensions Of Image are {shi} by {vam}")
+    #img.save("sh1vam.png", format="PNG", optimize=True)
+    await event.delete()
+    await event.client.send_file(event.chat_id, "sirsle.png", force_document=False, reply_to=event.reply_to_msg_id)
+    os.remove(download)
+    os.remove("sirsle.png")
+    os.remove("shivamcircular.png")
+
+
+@register(outgoing=True, pattern=r"^\.scircle(?: |$)(.*)")
+async def shiv(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
+        return
+    licence = event.text
+    liscence = licence[8:]
+    await event.edit("```Processing...```")
+    reply = await event.get_reply_message()
+    download = await bot.download_media(reply.media, path)
+    danish = cv2.VideoCapture(download)
+    ret, frame = danish.read()
+    cv2.imwrite("danish.jpg", frame)
+    img = Image.open("danish.jpg").convert("RGB")
+    npImage = np.array(img)
+    h, w = img.size
+    alpha = Image.new('L', img.size, 0)
+    draw = ImageDraw.Draw(alpha)
+    draw.pieslice([0, 0, h, w], 0, 360, fill=255)
+    npAlpha = np.array(alpha)
+    npImage = np.dstack((npImage, npAlpha))
+    Image.fromarray(npImage).save('shivam.webp')
+    await event.delete()
+    await event.client.send_file(event.chat_id, "shivam.webp", force_document=False, reply_to=event.reply_to_msg_id)
+    os.remove(download)
+    os.remove("shivam.webp")
+    os.remove("danish.jpg")
+
+
 CMD_HELP.update(
     {
         "transform": ">`.ghost`"
@@ -357,6 +429,10 @@ CMD_HELP.update(
         "\nUsage: To Change your colorized image to b/w image!"
         "\n\n>`.poster`"
         "\nUsage: To posterize your image!"
+        "\n\n>`.icircle`"
+        "\nUsage: To Convert image to Circle image!"
+        "\n\n>`.scircle`"
+        "\nUsage: same but upload result as sticker"
         "\n\n>`.rotate <value>`"
         "\nUsage: To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90"
         "\n\n>`.wast`"
