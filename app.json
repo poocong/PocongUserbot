@@ -194,6 +194,7 @@
     },
     "UPSTREAM_REPO_URL": {
     "description": "set this to your Xbot-Remix fork on GitHub",
+    "value": "https://github.com/X-Newbie/XBot-Remix",
     "required": false
     },
     "USR_TOKEN_UPTOBOX": {
