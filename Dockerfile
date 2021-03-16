@@ -4,9 +4,9 @@ FROM xnewbie/xbot:groovy
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/xnewbie/
-RUN mkdir /home/xnewbie/bin/
-WORKDIR /home/xnewbie/
+RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/xubot/
+RUN mkdir /home/xubot/bin/
+WORKDIR /home/xubot/
 
 #Install python requirements
 RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
