@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/remix:groovy
+FROM ximfine/xbot:groovy
 
 #
 # Clone repo and prepare working directory
@@ -10,6 +10,6 @@ WORKDIR /home/xnewbie/
 RUN pip install --upgrade pip
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
+# RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
 
 CMD ["python3","-m","userbot"]
