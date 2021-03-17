@@ -1,4 +1,4 @@
-FROM alfianandaa/alf:groovy
+FROM xnewbie/rmx:groovy
 
 RUN mkdir /xnewbie && chmod 777 /xnewbie
 ENV PATH="/xnewbie/bin:$PATH"
