@@ -35,7 +35,6 @@ jikanpy
 lyricsgenius
 lottie
 lxml
-moviepy
 oauth2client
 Pillow
 psycopg2
@@ -71,3 +70,4 @@ wordcloud
 youtube-dl
 youtube_search
 zipfile38
+fontTools
