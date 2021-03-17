@@ -1,32 +1,18 @@
-# A
 aiohttp
 aria2p
 async_generator
 asyncurban
-
-# B
 bs4
 bitlyshortener
-
-# C
 cowpy
 cffi
 covid
 cryptg
 cairosvg
 colour
-
-# D
 deezloader
 dnspython
-
-# E
 emoji
-
-# F
-fontTools
-
-# G
 gitpython
 google-api-python-client
 google-auth-httplib2
@@ -38,32 +24,18 @@ gTTS-token
 glitch_this
 geopy
 git+https://github.com/johnwmillr/LyricsGenius.git
-
-# H
 hachoir
 # heroku
 heroku3
 httplib2
 humanize
 html_telegraph_poster
-
-# J
 justwatch
 jikanpy
-
-# L
 lyricsgenius
 lottie
 lxml
-
-# M
-moviepy
-
-# O
 oauth2client
-opencv-python-headless
-
-# P
 Pillow
 psycopg2
 psycopg2-binary
@@ -78,42 +50,23 @@ python-dotenv
 python-dateutil
 pytz
 PyGithub
-
-# Q
 qrcode
-
-# R
 redis
 requests
-
-# S
 search-engine-parser
 speedtest-cli
 sqlalchemy
 scipy
-scikit-image
-
-# T
 TgCrypto
 telethon
 telethon-session-sqlalchemy
 telegraph
-
-# U
 urbandict
-
-# V
 validators
 vcsi
-
-# W
 wikipedia
 wget
 wordcloud
-
-# Y
 youtube-dl
 youtube_search
-
-# Z
 zipfile38
