@@ -35,6 +35,7 @@ jikanpy
 lyricsgenius
 lottie
 lxml
+moviepy
 oauth2client
 Pillow
 psycopg2
