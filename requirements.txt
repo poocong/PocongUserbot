@@ -70,4 +70,4 @@ wordcloud
 youtube-dl
 youtube_search
 zipfile38
-fontTools
+scikit-image
