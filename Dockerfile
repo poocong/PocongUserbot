@@ -1,14 +1,22 @@
-# We're using Ubuntu 20.10
-FROM xnewbie/rmx:groovy
+FROM xnewbie/alpenlibe:alpine-latest
+
+RUN mkdir /xnewbie && chmod 777 /xnewbie
+ENV PATH="/xnewbie/bin:$PATH"
+WORKDIR /xnewbie
+
+RUN git clone https://github.com/X-Newbie/XBot-Remix -b alpha /xnewbie
 
 #
-# Clone repo and prepare working directory
+# Copies session and config(if it exists)
 #
-RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/userbot/
-RUN mkdir /home/userbot/bin/
-WORKDIR /home/userbot/
+COPY ./sample_config.env ./userbot.session* ./config.env* /xnewbie/
 
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
+#
+# Make open port TCP
+#
+EXPOSE 80 443
 
+#
+# Finalization
+#
 CMD ["python3","-m","userbot"]
