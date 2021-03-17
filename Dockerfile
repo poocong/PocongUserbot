@@ -1,12 +1,12 @@
 # We're using Ubuntu 20.10
-FROM xnewbie/rmx:groovy
+FROM alfianandaa/alf:groovy
 
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/userbot
-RUN mkdir /home/userbot/.bin
-WORKDIR /home/userbot
+RUN git clone -b alpha https://github.com/X-Newbie/XBot-Remix /home/userbot/
+RUN mkdir /home/userbot/bin/
+WORKDIR /home/userbot/
 
 #Install python requirements
 RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
