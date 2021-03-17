@@ -7,7 +7,7 @@ WORKDIR /xnewbie
 RUN git clone https://github.com/X-Newbie/XBot-Remix -b alpha /xnewbie
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
+# RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
 
 #
 # Copies session and config(if it exists)
