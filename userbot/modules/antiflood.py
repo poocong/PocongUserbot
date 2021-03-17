@@ -4,7 +4,7 @@ from telethon.tl.types import ChatBannedRights
 from userbot.utils.tools import is_admin
 import userbot.modules.sql_helper.antiflood_sql as sql
 from userbot.events import register
-
+from userbot import bot, CMD_HELP
 
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
@@ -67,3 +67,8 @@ async def _(event):
         await event.edit("Antiflood updated to {} in the current chat".format(input_str))
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
+
+CMD_HELP.update(
+    {
+        "antiflood": ">`.setflood <value max message 0 is disable>`"
+        "\nUsage: Set flood message to avoid spam user."})
