@@ -7,7 +7,7 @@
     <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
-    <a href="https://hub.docker.com/r/xnewbie/xbot/tags"> <img src="https://img.shields.io/docker/v/xnewbie/xbot/groovy?label=docker%20version&logo=docker&style=for-the-badge" /></a>
+    <a href="https://hub.docker.com/r/ximfine/xremix/tags"> <img src="https://img.shields.io/docker/v/ximfine/xremix/groovy?label=docker%20version&logo=docker&style=for-the-badge" /></a>
    </p>
 
 
