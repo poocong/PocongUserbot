@@ -633,7 +633,7 @@ async def kbg(remob):
             await remob.client.send_file(
                 remob.chat_id,
                 remove_bg_image,               
-                force_document=False,
+                force_document=True,
                 reply_to=message_id)
             await remob.delete()
     else:
