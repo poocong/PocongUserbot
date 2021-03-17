@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM ximfine/xremix:groovy
+FROM xnewbie/rmx:groovy
 
 #
 # Clone repo and prepare working directory
