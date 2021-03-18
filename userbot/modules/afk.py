@@ -47,7 +47,7 @@ async def set_not_afk(event):
     if afk_start != {}:
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
-    if "xafk" not in current_message and "yes" in USER_AFK:
+    if "afk" not in current_message and "yes" in USER_AFK:
         try:
             if pic.endswith((".tgs", ".webp")):
                 shite = await bot.send_message(event.chat_id, file=pic)
