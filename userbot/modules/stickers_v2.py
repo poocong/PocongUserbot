@@ -35,7 +35,7 @@ async def _(event):
             await event.delete()
             await bot.send_read_acknowledge(conv.chat_id)
             await event.client.send_message(event.chat_id, response.message)
-            await event.client.delete_message(event.chat_id, [msg.id, response.id])
+            await event.client.delete_message(conv.chat_id, [msg.id, response.id])
 
 
 @register(outgoing=True, pattern="^.get$")
@@ -78,7 +78,8 @@ async def _(event):
                 response = await response
                 await event.delete()
                 await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
-                await event.client.delete_message(event.chat_id, [msg.id, response.id])
+                event.client.delete_messages(conv.chat_id,
+                                                   [msg.id, response.id])
             else:
                 await event.edit("try again")
         await bot.send_read_acknowledge(conv.chat_id)
