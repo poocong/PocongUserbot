@@ -1,12 +1,14 @@
 """Count the Number of Dialogs you have in your Telegram Account
 Syntax: .stats"""
+import io
 import logging
 import time
-
+from telethon import events
 from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
-
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from userbot import bot, CMD_HELP
 from userbot.events import register
 
 logging.basicConfig(
@@ -108,3 +110,51 @@ def user_full_name(user):
     names = [i for i in list(names) if i]
     full_name = ' '.join(names)
     return full_name
+
+@register(outgoing=True, pattern=r"^\.ustat")
+async def _(event):
+    if event.fwd_from:
+        return
+    if not event.reply_to_msg_id:
+        return await event.edit("```Balas di Pesan Goblok!!.```")
+    reply_message = await event.get_reply_message()
+    if not reply_message.text:
+        return await event.edit("```Balas di Pesan Goblok!!```")
+    chat = "@tgscanrobot"
+    await event.edit("Checking Group User....")
+    async with event.client.conversation(chat) as conv:
+        try:
+            response = conv.wait_event(
+                events.NewMessage(
+                    incoming=True,
+                    from_users=1557162396))
+            msg = await event.client.forward_messages(chat, reply_message)
+            response = await response
+        except YouBlockedUserError:
+            await event.reply("unblock me @tgscanrobot to work")
+            return
+        if response.text.startswith("I understand only text"):
+            await event.edit("Sorry i cant't check group this user **BURIK!!**")
+        else:
+            if response.text.startswith("Information"):
+                response = conv.wait_event(
+                    events.NewMessage(
+                        incoming=True,
+                        from_users=1557162396))
+                response = await response
+                await event.delete()
+                await event.client.send_message(event.chat_id, response.message, reply_to=reply_message.id)
+                await event.client.delete_messages(conv.chat_id,
+                                                   [msg.id, response.id])
+            else:
+                await event.edit("try again")
+        await bot.send_read_acknowledge(conv.chat_id)
+
+CMD_HELP.update(
+    {
+        "stats": ">`.stats`"
+        "\nUsage: To check user stats"
+        "\n\n>`.ustat`"
+        "\nUsage: to check user group join"
+    }
+)
