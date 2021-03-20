@@ -1,25 +1,11 @@
-FROM alfianandaa/alf:groovy
-
-RUN mkdir /xnewbie && chmod 777 /xnewbie
-ENV PATH="/xnewbie/bin:$PATH"
-WORKDIR /xnewbie
-
-RUN git clone https://github.com/X-Newbie/XBot-Remix -b alpha /xnewbie
-
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/requirements.txt
+# We're using Ubuntu 20.10
+FROM xnewbie/xbotrmx:groovy
 
 #
-# Copies session and config(if it exists)
+# Clone repo and prepare working directory
 #
-COPY ./sample_config.env ./userbot.session* ./config.env* /xnewbie/
+RUN git clone -b alpha https://github.com/X-Newbie/Xbot-Remix /home/xnewbie/
+RUN mkdir /home/xnewbie/bin/
+WORKDIR /home/xnewbie/
 
-#
-# Make open port TCP
-#
-EXPOSE 80 443
-
-#
-# Finalization
-#
 CMD ["python3","-m","userbot"]
