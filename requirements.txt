@@ -55,7 +55,7 @@ redis
 requests
 search-engine-parser
 speedtest-cli
-sqlalchemy
+sqlalchemy<=1.3.23
 scipy
 TgCrypto
 telethon
