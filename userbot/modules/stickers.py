@@ -37,7 +37,7 @@ KANGING_STR = [
 ]
 
 
-@register(outgoing=True, pattern=r"^\.(?:colong|kang)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:curry|kang)\s?(.)?")
 async def kang(args):
     user = await bot.get_me()
     if not user.username:
@@ -183,7 +183,7 @@ async def kang(args):
                         return await args.edit(
                             "`Sticker ditambahkan ke pack yang berbeda !"
                             "\nIni pack yang baru saja kamu buat!"
-                            f"\nKlik [disini](t.me/addstickers/{packname}) untuk liat pack kamu",
+                            f"\nKlik [Disini Ajg](t.me/addstickers/{packname}) untuk liat pack kamu",
                             parse_mode="md",
                         )
                 if is_anim:
@@ -251,7 +251,7 @@ async def kang(args):
 
         await args.edit(
             "`Sticker Sukses Dibuat!`"
-            f"\n    🔥 **[KLIK DISINI](t.me/addstickers/{packname})** 🔥\nUntuk Menggunakan Sticker",
+            f"\n    **[KLIK DISINI AJG](t.me/addstickers/{packname})**\nUntuk Menggunakan Sticker",
             parse_mode="md",
         )
 
@@ -357,13 +357,13 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": ">`.kang | .colong [emoji('s)]?`"
-        "\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack "
-        "\nor specify the emoji you want to."
-        "\n\n>`.kang | .colong  (emoji['s]]?` [number]?"
-        "\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji "
-        "or choose the emoji you want to."
+        "stickers": ">`.kang | .curry [emoji('s)]?`"
+        "\nUsage: Reply .kang | .curry ke stiker atau gambar untuk ditempelkan ke paket userbot Anda "
+        "\natau tentukan emoji yang Anda inginkan."
+        "\n\n>`.kang | .curry  (emoji['s]]?` [number]?"
+        "\nUsage: Kang stiker/gambar ke paket tertentu tetapi menggunakan 🤔 sebagai emoji "
+        "atau pilih emoji yang Anda inginkan."
         "\n\n>`.stkrinfo`"
-        "\nUsage: Gets info about the sticker pack."
+        "\nUsage: Mendapat info tentang paket stiker."
         "\n\n>`.getsticker`"
-        "\nUsage: reply to a sticker to get 'PNG' file of sticker."})
+        "\nUsage: membalas stiker untuk mendapatkan file 'PNG' stiker."})

@@ -53,17 +53,17 @@ async def set_not_afk(event):
                 shite = await bot.send_message(event.chat_id, file=pic)
                 shites = await bot.send_message(
                     event.chat_id,
-                    f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
+                    f"**Tuan Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
                 )
             else:
                 shite = await bot.send_message(
                     event.chat_id,
-                    f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
+                    f"**Tuan Saya Telah Kembali**\n\nDari AFK: {total_afk_time}",
                     file=pic,
                 )
         except BaseException:
             shite = await bot.send_message(
-                event.chat_id, f"**OK Saya Telah Kembali**\n\nDari AFK: {total_afk_time}"
+                event.chat_id, f"**Tuan Saya Telah Kembali**\n\nDari AFK: {total_afk_time}"
             )
 
         except BaseException:
@@ -110,7 +110,7 @@ async def on_afk(event):
                 + f"**◈Karena:- `**{reason}`"
             )
         else:
-            message_to_reply = f"**◈Maaf Saya Sedang Offline**\n" + \
+            message_to_reply = f"**◈Maaf Tuan Saya Sedang Offline**\n" + \
                 f"**◈Sejak : {total_afk_time}**"
         try:
             if pic.endswith((".tgs", ".webp")):
@@ -225,5 +225,5 @@ async def _(event):
             BOTLOG_CHATIDger.warn(str(e))
 
 
-CMD_HELP.update({"afk": ".afk (reason) or reply media to it "
-                 "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."})
+CMD_HELP.update({"afk": ".afk (reason) atau balas media untuk itu "
+                 "\nUsage menyebut Anda sedang afk dengan media keren ketika seseorang menandai atau membalas salah satu pesan atau PM."})

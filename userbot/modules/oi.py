@@ -14,25 +14,25 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.io(?: |$)(.*)')
+@register(outgoing=True, pattern='^.semangat(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Muka Gue Burik...`")
+    await typew.edit("`Hai Kamu...`")
     sleep(3)
-    await typew.edit("`Kayak Jemboot`")
+    await typew.edit("`Tetap Semangat Ya`")
     sleep(1)
-    await typew.edit("`Muka Gw Burik Kek Jembott`")
+    await typew.edit("`Walau Sering Di Ghosting xixixi`")
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.ll(?: |$)(.*)')
+@register(outgoing=True, pattern='^.sayang(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Lucinta Luna Berbatang ...`")
+    await typew.edit("`Ayang Ange😖`")
     sleep(3)
-    await typew.edit("`Tapi Gua sukaa`")
+    await typew.edit("`Pap Memek Dulu Dong Ayang👉👈`")
     sleep(1)
-    await typew.edit("`I love memek Oplass`")
+    await typew.edit("`Please Yang Pap Memek Aku Lagi Ange Nih 😖`")
 # Create by myself @localheart

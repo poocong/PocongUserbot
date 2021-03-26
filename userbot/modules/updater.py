@@ -52,8 +52,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
-                '`[HEROKU]: Please set up the` **HEROKU_APP_NAME** `variable'
-                ' to be able to deploy newest changes of userbot.`'
+                '`[HEROKU]: Harap siapkan` **HEROKU_APP_NAME** `variabel'
+                ' untuk dapat menerapkan perubahan terbaru dari userbot.`'
             )
             repo.__del__()
             return
@@ -63,11 +63,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Invalid Heroku credentials for deploying userbot dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk men-deploy dyno userbot.`'
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nUpdate Deploy XBot-Remix, Silahkan Tunggu 5-8 menit..`'
+                         '\nMemperbarui Pocong Userbot, Silahkan Tunggu Sebentar Ajg...`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,14 +91,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`Berhasil Update Deploy!\n" "Merestart XBot-Remix, silahkan tunggu...`")
+            await event.edit("`Berhasil Memperbarui!\n" "Memulai Ulang Bot, silahkan tunggu ya ajg...`")
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#NOTE \n"
-                "XBot-Remix Berhasil Di Update✓")
+                "Pocong Userbot Berhasil Di Update✓")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**XBot-Remix** Berhasil Di Update✓')
+    await event.edit('**Pocong Userbot** Berhasil Di Update✓')
     await asyncio.sleep(1)
-    await event.edit('`XBot-Remix Di Restart....`')
+    await event.edit('`Pocong Userbot Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Silahkan Tunggu Beberapa Detik..`')
     await asyncio.sleep(10)
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#NOTICE \n"
-            "XBot-Remix Berhasil Di Update✓")
+            "Pocong Userbot Berhasil Di Update✓")
         await asyncio.sleep(10)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n`🔥XBot-Remix🔥\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n')
+            f'\n`🔥Pocong Userbot🔥\n` sudah **versi terbaru**\n`BRANCH:`**{UPSTREAM_REPO_BRANCH}**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**UPDATE Terbaru Untuk 🔥XBot-Remix🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
+        changelog_str = f'**UPDATE Terbaru Untuk 🔥Pocong Userbot🔥 [{ac_br}]:\n\nPERUBAHAN:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog is too big, view the file to see it.`")
             file = open("output.txt", "w+")
@@ -214,10 +214,10 @@ async def upstream(event):
         await event.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
-        await event.edit('`Proses Update XBot-Remix, ....🛠️`')
-        await event.edit('`Proses Update XBot-Remix, loading....🛠️`')
-        await event.edit('`Proses Update XBot-Remix, updating....🛠️`')
-        await event.edit('`Proses Update XBot-Remix\nSilahkan tunggu....🛠️`')
+        await event.edit('`Proses Update Pocong Userbot, ....🛠️`')
+        await event.edit('`Proses Update Pocong Userbot, loading....🛠️`')
+        await event.edit('`Proses Update Pocong Userbot, updating....🛠️`')
+        await event.edit('`Proses Update Pocong Userbot\nSilahkan tunggu....🛠️`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)

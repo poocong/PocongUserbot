@@ -10,11 +10,11 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit("sir this is not a image message reply to image message")
+        await event.edit("Pak ini bukan pesan gambar balas pesan gambar")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("sir, This is not a image ")
+        await event.edit("Pak, ini bukan gambar ")
         return
     chat = "@buildstickerbot"
     await event.edit("Membuat Sticker..")
@@ -27,10 +27,10 @@ async def _(event):
             msg = await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("unblock me (@buildstickerbot) and try again")
+            await event.reply("buka blokir saya @buildstickerbot dan coba lagi")
             return
         if response.text.startswith("Hi!"):
-            await event.edit("Can you kindly disable your forward privacy settings for good?")
+            await event.edit("Bisakah Anda dengan ramah menonaktifkan pengaturan privasi Anda untuk selamanya?")
         else:
             await event.delete()
             await bot.send_read_acknowledge(conv.chat_id)
@@ -60,10 +60,10 @@ async def _(event):
             msg = await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("unblock me (@stickers_to_image_bot) to work")
+            await event.reply("buka blokir saya @stickers_to_image_bot agar bekerja")
             return
-        if response.text.startswith("I understand only stickers"):
-            await event.edit("Sorry i cant't convert it check wheter is non animated sticker or not")
+        if response.text.startswith("Saya hanya mengerti stiker"):
+            await event.edit("Maaf saya tidak bisa mengubahnya, periksa apakah stiker inj beranimasi atau tidak")
         else:
             response = conv.wait_event(
                 events.NewMessage(
@@ -111,8 +111,8 @@ async def sticker_to_png(sticker):
 CMD_HELP.update(
     {
         "stickers_v2": ">`.itos`"
-        "\nUsage: Reply .itos to a sticker or an image to kang it to your userbot no pack "
+        "\nUsage: Reply .itos ke stiker atau gambar untuk di-kang ke userbot no pack Anda "
         "\n\n>`.get`"
-        "\nUsage: reply to a sticker to get 'PNG' file of sticker."
+        "\nUsage: membalas stiker untuk mendapatkan file 'PNG' stiker."
         "\n\n>`.stoi`"
-        "\nUsage: reply to a sticker to get 'PNG' file of sticker."})
+        "\nUsage: membalas stiker untuk mendapatkan file 'PNG' stiker."})

@@ -4,7 +4,7 @@ from userbot.events import register
 from userbot import bot, CMD_HELP
 
 
-@register(outgoing=True, pattern=r"^\.gid(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.id(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -40,6 +40,6 @@ async def _(event):
 
 CMD_HELP.update({
     "get_uid":
-    "`.gid`"
+    "`.id`"
     "\nUsage: Reply in message to get user ID."
 })

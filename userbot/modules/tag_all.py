@@ -6,7 +6,7 @@ usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
 nameexp = re.compile(r"\[([\w\S]+)\]\(tg://user\?id=(\d+)\)\[(.+?)\]")
 
 
-@register(outgoing=True, pattern="^.all(?: |$)(.*)", disable_errors=True)
+@register(outgoing=True, pattern="^.tall(?: |$)(.*)", disable_errors=True)
 async def all(event):
     if event.fwd_from:
         return
@@ -21,6 +21,6 @@ async def all(event):
 
 CMD_HELP.update({
     "tag_all":
-    "`.all`\
-\nUsage: Untuk Mengetag semua anggota yang ada di group."
+    "`.tall`\
+\nUsage: Untuk Meng-tag semua anggota yang ada di group."
 })

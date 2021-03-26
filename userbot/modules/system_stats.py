@@ -62,15 +62,15 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern=r"^\.spc")
 async def psu(event):
     uname = platform.uname()
-    softw = "**System Information**\n"
-    softw += f"`System   : {uname.system}`\n"
-    softw += f"`Release  : {uname.release}`\n"
-    softw += f"`Version  : {uname.version}`\n"
-    softw += f"`Machine  : {uname.machine}`\n"
+    softw = "**Sistem Informasi**\n"
+    softw += f"`Sistem   : {uname.system}`\n"
+    softw += f"`Dirilis  : {uname.release}`\n"
+    softw += f"`Versi  : {uname.version}`\n"
+    softw += f"`Mesin  : {uname.machine}`\n"
     # Boot Time
     boot_time_timestamp = psutil.boot_time()
     bt = datetime.fromtimestamp(boot_time_timestamp)
-    softw += f"`Boot Time: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
+    softw += f"`Masa Aktif: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
     # CPU Cores
     cpuu = "**CPU Info**\n"
     cpuu += "`Physical cores   : " + \
@@ -165,13 +165,11 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "`╭━━━━━━━━━━━━━━━━━━━━╮\n "
             "` Userbot Version: \n "
             f"{verout}"
             "` \n"
             "   Revision: "
-            f"{revout}🇲🇨\n"
-            "╰━━━━━━━━━━━━━━━━━━━━╯ "
+            f"{revout}🇲🇨"
         )
     else:
         await event.edit(
@@ -232,18 +230,15 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵꙰ཱི►XBOT-REMIX◄⩵꙰ཱི۝\n running on 🤖 `{UPSTREAM_REPO_BRANCH}` 🤖\n"
-        f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
-        f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
-        f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
-        "`┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱`\n"
-        f"┣[•⚙️ `Telethon :`v {version.__version__} 🔥\n"
-        f"┣[•🐍 `Python   :`v {python_version()} 🔥\n"
-        f"┣[•💻 `Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
-        f"┣[•🛠 `Version  :`{BOT_VER} 🔥\n"
-        f"┣[•🗃 `Modules  :`{len(modules)} Loaded🔥\n"
-        f"┣[•🕒 `Uptime   :`{uptime} 🔥\n"
-        f"╰━━━━━━━━━━━━━━━━━━━━━╯\n"
+        f"**POCONG USERBOT\n berjalan di `{UPSTREAM_REPO_BRANCH}` \n"
+        f"`USER     :`{DEFAULTUSER}\n"
+        f"`Username :`@{user.username}\n"
+        f"`Telethon :`v {version.__version__} 🔥\n"
+        f"`Python   :`v {python_version()} 🔥\n"
+        f"`Base on  :`{UPSTREAM_REPO_BRANCH}🔥\n"
+        f"`Version  :`{BOT_VER} 🔥\n"
+        f"`Modules  :`{len(modules)} Loaded🔥\n"
+        f"`Uptime   :`{uptime} 🔥\n"
         f" •MOD BY : `{DEFAULTUSER}`")
     if ALIVE_LOGO:
         try:
@@ -287,19 +282,19 @@ async def amireallyalivereset(ureset):
 CMD_HELP.update({
     "system":
     "`.sysd`\
-\nUsage: Shows system information using neofetch.\
+\nUsage: Menampilkan informasi sistem menggunakan neofetch.\
 \n\n`.botver`\
-\nUsage: Shows the userbot version.\
+\nUsage: Menampilkan versi userbot.\
 \n\n`.pip` <module(s)>\
-\nUsage: Does a search of pip modules(s).\
+\nUsage: Melakukan pencarian modul pip.\
 \n\n`.start`\
-\nUsage: Type .start to see whether your bot is working or not.\
+\nUsage: Type .start untuk melihat apakah bot Anda berfungsi atau tidak.\
 \n\n`.aliveu` <text>\
-\nUsage: Changes the 'user' in alive to the text you want.\
+\nUsage: Mengubah 'pengguna' hidup ke teks yang Anda inginkan.\
 \n\n`.resetalive`\
-\nUsage: Resets the user to default.\
+\nUsage: Mengatur ulang pengguna ke default.\
 \n\n`.db`\
-\nUsage:Shows database related info.\
+\nUsage:Menampilkan info terkait database.\
 \n\n.`.spc`\
-\nUsage:Show system specification."
+\nUsage:Tampilkan spesifikasi sistem."
 })
