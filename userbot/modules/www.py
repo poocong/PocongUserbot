@@ -9,7 +9,7 @@
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import CMD_HELP, StartTime
+from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 import time
 
@@ -18,7 +18,7 @@ async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
     time_list = []
-    time_suffix_list = ["s", "m", "h", "days"]
+    time_suffix_list = ["Dtk", "Mnt", "Jam", "Hari"]
 
     while count < 4:
         count += 1
@@ -41,10 +41,25 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern="^.speed$")
+@register(outgoing=True, pattern="^.lping$")
+async def pingme(pong):
+    """ For .ping command, ping the userbot from any chat.  """
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    await pong.edit("`Love Ping..............`")
+    end = datetime.now()
+    duration = (end - start).microseconds / 100000
+    await pong.edit(f"**✣ PONG!**\n"
+                    f"❦ **Ping:** "
+                    f"`%sms` \n"
+                    f"❦ **Aktif Sejak:** "
+                    f"`{uptime}` \n" % (duration))
+
+
+@register(outgoing=True, pattern="^.speedtest$")
 async def speedtst(spd):
-    """ Untuk perintah .speed, gunakan SpeedTest untuk memeriksa kecepatan server. """
-    await spd.edit("`Menjalankan tes kecepatan tinggi . . .`")
+    """ For .speed command, use SpeedTest to check server speeds. """
+    await spd.edit("`Menjalankan Tes Kecepatan...`")
     test = Speedtest()
 
     test.get_best_server()
@@ -53,18 +68,19 @@ async def speedtst(spd):
     test.results.share()
     result = test.results.dict()
 
-    await spd.edit("`"
-                   "Dimulai pada"
-                   f"{result['timestamp']} \n\n"
-                   "Download"
-                   f"{speed_convert(result['download'])} \n"
-                   "Upload"
-                   f"{speed_convert(result['upload'])} \n"
-                   "Ping "
-                   f"{result['ping']} \n"
-                   "ISP "
-                   f"{result['client']['isp']}"
-                   "`")
+    await spd.edit("**Hasil Tes:\n**"
+                   "❖ **Dimulai Pada:** "
+                   f"`{result['timestamp']}` \n"
+                   f" **━━━━━━━━━━━━━━━━━**\n"
+                   "❖ **Download:** "
+                   f"`{speed_convert(result['download'])}` \n"
+                   "❖ **Upload:** "
+                   f"`{speed_convert(result['upload'])}` \n"
+                   "❖ **Ping:** "
+                   f"`{result['ping']}` \n"
+                   "❖ **ISP:** "
+                   f"`{result['client']['isp']}` \n"
+                   "❖ **BOT:** `𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧 UserBot`")
 
 
 def speed_convert(size):
@@ -79,21 +95,9 @@ def speed_convert(size):
         zero += 1
     return f"{round(size, 2)} {units[zero]}"
 
-
-@register(outgoing=True, pattern="^.ping$")
-async def pingme(pong):
-    """ Untuk Perintah .ping, ping userbot dari obrolan mana pun.  """
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
-    await pong.edit("`Pinging....`")
-    end = datetime.now()
-    duration = (end - start).microseconds / 100000
-    await pong.edit(f"**PONG!!**\n**Ping** : %sms\n**Bot Aktif Sejak** : {uptime}🕛" % (duration))
-
-
 CMD_HELP.update(
     {"ping": "`.ping`\
-    \nUsage: Menunjukkan berapa lama waktu yang dibutuhkan untuk melakukan ping ke bot Anda.\
+    \nPrmakaian: Untuk menunjukkan ping bot.\
     \n\n`.speed`\
-    \nUsage: Melakukan speedtest dan menunjukkan hasilnya."
+    \nPemakaian: Untuk menunjukkan kecepatan koneksi."
      })

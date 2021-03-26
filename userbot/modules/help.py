@@ -20,19 +20,16 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("**Module Salah Goblokkkk!!**")
-            await asyncio.sleep(18)
+            await event.edit("**Maaf Tuan, Saya Tidak Punya Perintah Itu ツ**")
+            await asyncio.sleep(200)
             await event.delete()
     else:
-        await event.edit(f"**BANTUAN UNTUK POCONG USERBOT** \
-            \nUntuk melihat lengkap Command\
-            \nContoh: .help <nama module>\
-            \nModules Aktif: {len(modules)}\n")
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t• "
-        await event.reply(f"•{string}•"
-                          "\nTetap Sambat Jangan Semangat 😁")
-        await asyncio.sleep(100)
+            string += "`\t✥  "
+        await event.edit("**❉ Daftar Perintah Untuk\nPocong-Userbot:\n\n**"
+                         f"✥{string}✥\n")
+        await event.reply(f"\n**Ketik Contoh** `.help afk` **Untuk Informasi Perintah**")
+        await asyncio.sleep(1000)
         await event.delete()

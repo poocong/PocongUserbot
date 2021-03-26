@@ -128,7 +128,7 @@ async def apk(e):
         app_details += "\n\n===> @heyw𝖔rld <==="
         await e.edit(app_details, link_preview=True, parse_mode='HTML')
     except IndexError:
-        await e.edit("No result found in search. Please enter **Valid app name**")
+        await e.edit("Pencarian tidak ditemukan. Mohon masukkan **Nama app yang valid**")
     except Exception as err:
         await e.edit("Exception Occured:- " + str(err))
 
@@ -143,7 +143,7 @@ async def _(event):
         for i in a:
             await event.reply(i.original.action.message)
     else:
-        await event.edit("You need administrative permissions in order to do this command")
+        await event.edit("Lord Anda memerlukan izin Admin untuk melakukan perintah ini")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -441,16 +441,16 @@ async def potocmd(event):
         try:
             id = int(id)
             if id <= 0:
-                await event.edit("`ID number you entered is invalid`")
+                await event.edit("`Nomer ID Yang Anda Masukkan Tidak Valid`")
                 return
         except BaseException:
-            await event.edit("`lol wtf`")
+            await event.edit("`Lmao`")
             return
         if int(id) <= (len(photos)):
             send_photos = await event.client.download_media(photos[id - 1])
             await bot.send_file(event.chat_id, send_photos)
         else:
-            await event.edit("`No photo found of that Nigga , now u Die`")
+            await event.edit("`Tidak Dapat Menemukan Foto Pengguna Ini`")
             return
 
 
@@ -459,15 +459,15 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit("```Reply to a Link.```")
+        await event.edit("```Mohon Balas Ke Link.```")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.text:
-        await event.edit("```Reply to a Link```")
+        await event.edit("```Mohon Balas Ke Link.```")
         return
     chat = "@CheckRestrictionsBot"
     reply_message.sender
-    await event.edit("```Processing```")
+    await event.edit("```Memproses....```")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -477,10 +477,10 @@ async def _(event):
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("`RIP Check Your Blacklist Boss`")
+            await event.reply("`Mohon Jangan Memblokir` @CheckRestrictionsBot")
             return
         if response.text.startswith(""):
-            await event.edit("Am I Dumb Or Am I Dumb?")
+            await event.edit("`Terjadi Kesalahan`")
         else:
             await event.delete()
             await event.client.send_message(event.chat_id, response.message)
@@ -535,13 +535,13 @@ async def _(event):
     #    message_id_to_reply = event.message.id
     # await bot.send_message(
     #  event.chat_id,
-    #  "Hey ? Whats Up !",
+    #  "Hai, Apa Kabarmu?",
     #  reply_to=message_id_to_reply,
     #  )
     await event.delete()
     await bot.send_message(
         event.chat_id,
-        "**User Berhasil di Clone!!.**",
+        "`Clone Berhasil Dilakukan ツ`",
         reply_to=reply_message
     )
 
@@ -721,7 +721,7 @@ async def weebify(event):
         get = await event.get_reply_message()
         args = get.text
     if not args:
-        await event.edit("`What I am Supposed to Weebify U Dumb`")
+        await event.edit("`Lord, Teks Apa Yang Harus Saya Weebify Kan?`")
         return
     string = ' '.join(args).lower()
     for normiecharacter in string:
@@ -768,7 +768,7 @@ async def thicc(bolded):
         get = await bolded.get_reply_message()
         args = get.text
     if not args:
-        await bolded.edit("`What I am Supposed to bold for U Dumb`")
+        await bolded.edit("`Tuan, Teks Apa Yang Harus Saya Bold Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -815,7 +815,7 @@ async def mediv(medievalx):
         get = await medievalx.get_reply_message()
         args = get.text
     if not args:
-        await medievalx.edit("`What I am Supposed to medieval bold for U Dumb`")
+        await medievalx.edit("`Lord, Teks Apa Yang Harus Saya Medibold Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -862,7 +862,7 @@ async def doublex(doublestrucktx):
         get = await doublestrucktx.get_reply_message()
         args = get.text
     if not args:
-        await doublestrucktx.edit("`What I am Supposed to double struck for U Dumb`")
+        await doublestrucktx.edit("`Tuan, Teks Apa Yang Harus Saya Double Struck Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -909,7 +909,7 @@ async def cursive2(cursivebolded):
         get = await cursivebolded.get_reply_message()
         args = get.text
     if not args:
-        await cursivebolded.edit("`What I am Supposed to cursive bold for U Dumb`")
+        await cursivebolded.edit("`Tuan, Teks Apa Yang Harus Saya Cursive Bold Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -957,7 +957,7 @@ async def medival22(medivallite):
         get = await medivallite.get_reply_message()
         args = get.text
     if not args:
-        await medivallite.edit("`What I am Supposed to medival for U Dumb`")
+        await medivallite.edit("`Tuan, Teks Apa Yang Harus Saya Medival Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -1004,7 +1004,7 @@ async def xcursive(cursivelite):
         get = await cursivelite.get_reply_message()
         args = get.text
     if not args:
-        await cursivelite.edit("`What I am Supposed to cursive for U Dumb`")
+        await cursivelite.edit("`Tuan, Teks Apa Yang Harus Saya Cursive Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
@@ -1024,42 +1024,40 @@ async def _(event):
     await bot(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit=n)))
     await bot(functions.account.UpdateProfileRequest(about=bio))
     await bot(functions.account.UpdateProfileRequest(first_name=name))
-    await event.edit("succesfully reverted to your account back")
+    await event.edit("`Berhasil Mengembalikan Akun Anda ツ`")
 
 CMD_HELP.update({
     "pocongmisc":
     "`.app`\
-\nUsage: type .app name and get app details.\
+\nUsage: ketik `.app namaapp` Dan Dapatkan Detail Informasi App.\
 \n\n`.undlt`\
-\nUsage: undo deleted message but u need admin permission.\
+\nUsage: urungkan pesan yang dihapus tetapi Anda harus menjadi admin.\
 \n\n`.calc`\
-\nUsage:.calc <term1><operator><term2>\nFor eg .calc 02*02 or 99*99 (the zeros are important) (two terms and two digits max).\
+\nUsage: `.calc <term1><operator><term2>\nUntuk eg .calc 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
 \n\n`.remove`\
-\nUsage:.remove d or y or m or w or o or q or r.\n(d=deletedaccount y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
+\nUsage: gunakan di grup .remove d atau y atau m atau w atau o atau q atau r.\n(d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
 \n\n`.xcd`\
-\nUsage: type xcd <query>.ps:i have no damm idea how it works 🤷\
+\nUsage: Ketik xcd <query>.ps:Aku Sangat Bosan:v\
 \n\n`.grab` <count>\
-\nUsage:replay .grab or .grab <count> to grab profile picture.\
+\nUsage: Balas Ke Pesan Pengguna Ketik `.grab` Atau `.grab <count>` Untuk Mengambil Foto Profil.\
 \n\n`.rnupload` filename.extenstion\
-\nUsage:reply to a sticker and type .rnupload xyz.jpg\
-\n\n`.clone` @username and '.rclone' for reverting\
-\nUsage: clone you whole freking account except username so stay safe\
+\nUsage: Balas Ke Sticker Dan Ketik .rnupload xyz.jpg\
+\n\n`.clone` @username Dan '.rclone' Untuk Mengembalikan\
+\nUsage: Clone Akun Orang Tapi Username Tidak Di Clone\
 \n\n`.res`\
-\nUsage: type account,channel,group or bot username and reply with .res and check restriction\
-\n\n`.watch` <movie/tv> show\
-\nUsage:know details about particular movie/show.\
+\nUsage: Ketik Username Akun,Channel,Group Atau Bot Bersama .res Dan Check Batasan\
+\n\n`.watch` <movie/tv>\
+\nUsage: Mengetahui Detail Tentang Film.\
 \n\n`.weeb` <text>\
-\nUsage:weebify a text\
-\n\nIt contains (`.bold <text>`,`.cur <text>`,`.curbold <text>`,`.medi <text>`,`.medibold <text>`,`.doublestruck <text>`)\
-\nUsage:makes your text <bold,cursive,cursivebold,medival,medivalbold,gayishbold>\
+\nUsage:Teks Weebify\
+\n\nKetik (`.bold <Teks>`,`.cur <Teks>`,`.curbold <Teks>`,`.medi <Teks>`,`.medibold <Teks>`,`.doublestruck <Teks>`)\
+\nUsage: Buat Teks <Bold,Cursive,Cursivebold,Medival,Medivalbold,Gayishbold>\
 \n\n`.randompp`\
-\nUsage:Automatically changes your profile picture after one hour. To stop this use .restart.\
-\n\n<`.ph` or `.threat` or `.trash` or `.trap` >\
-\nUsage: Reply to image or sticker and see magik.\
-\n\n`.glitch` reply to media file\
-\nUsage:glitches the given mediafile(gif , stickers , image, videos) to a gif and glitch range is from 1 to 8.\
-If nothing is mentioned then by default it is 2\
-\n\n`.glitchs` reply to media file\
-\nUsage:glitches the given mediafile(gif , stickers , image, videos) to a sticker and glitch range is from 1 to 8.\
-If nothing is mentioned then by default it is 2."
+\nUsage: Otomatis Mengganti Foto Profile Mu Untuk Stop ini Ketik .restart.\
+\n\n`.glitch` Balas Ke Media\
+\nUsage: Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Gif Dan Level Glitch 1 - 8.\
+Jika Tidak Memberikan Level Otomatis Default Ke Level 2\
+\n\n`.glitchs` Balas Ke Media\
+\nUsage: Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Sticker Dan Level Glitch 1 to 8.\
+Jika Tidak Memberikan Level Otomatis Default Ke Level 2."
 })

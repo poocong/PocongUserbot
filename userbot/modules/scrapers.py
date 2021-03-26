@@ -28,7 +28,6 @@ import emoji
 from googletrans import Translator
 from time import sleep
 from re import findall
-from shutil import rmtree
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
@@ -170,7 +169,7 @@ async def carbon_api(e):
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("Mencari Gambar...")
+    await event.edit("`Mohon Menunggu Tuan, Sedang Mencari Gambar Yang Anda Cari...`")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -178,23 +177,23 @@ async def img_sampler(event):
         lim = lim.replace("lim=", "")
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
-        lim = 5
-    gi = googleimagesdownload()
+        lim = 15
+    response = googleimagesdownload()
 
     # creating list of arguments
     arguments = {
         "keywords": query,
         "limit": lim,
         "format": "jpg",
-        "output_directory": "./downloads/"
+        "no_directory": "no_directory"
     }
 
     # passing the arguments to the function
-    paths = gi.download(arguments)
+    paths = response.download(arguments)
     lst = paths[0][query]
     await event.client.send_file(
         await event.client.get_input_entity(event.chat_id), lst)
-    rmtree(os.path.dirname(os.path.abspath(lst[0])))
+    shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await event.delete()
 
 
@@ -632,7 +631,8 @@ async def kbg(remob):
             remove_bg_image.name = "removed_bg.png"
             await remob.client.send_file(
                 remob.chat_id,
-                remove_bg_image,               
+                remove_bg_image,
+                caption="Background removed using remove.bg",
                 force_document=True,
                 reply_to=message_id)
             await remob.delete()
@@ -1328,7 +1328,7 @@ async def capture(url):
 CMD_HELP.update(
     {
         "image_search": ">`.img <search_query>`\
-    \nUsage: Does an image search on Google and shows 5 images.",
+    \nUsage: Does an image search on Google and shows 15 images.",
         "currency": "`.currency` <amount> <from> <to>\
     \nUsage: Converts various currencies for you.",
         "carbon": "`.carbon` <text or reply>\
