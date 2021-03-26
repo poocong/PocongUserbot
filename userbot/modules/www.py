@@ -80,7 +80,7 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "❖ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "❖ **BOT:** `𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧 UserBot`")
+                   "❖ **BOT:** `Pocong UserBot`")
 
 
 def speed_convert(size):
