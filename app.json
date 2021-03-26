@@ -1,6 +1,6 @@
 {
-  "name": "XBOT REMIX",
-  "description": "[XBOT] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database.",
+  "name": "POCONG USERBOT",
+  "description": "[POCONG USERBOT] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
   "logo": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
   "keywords": [
     "telegram",
@@ -15,77 +15,77 @@
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Get this value from my.telegram.org.",
+      "description": "Dapatkan nilai ini dari my.telegram.org.",
       "required": true
     },
     "API_HASH": {
-      "description": "Get this value from my.telegram.org.",
+      "description": "Dapatkan nilai ini dari my.telegram.org.",
       "required": true
     },
     "STRING_SESSION": {
-      "description": "Get this value by running [python3 string_session.py] in Termux or local system.",
+      "description": "Dapatkan nilai ini dengan [python3 string_session.py] di Termux atau sistem lokal.",
       "required": true
     },
     "HEROKU_MEMEZ": {
-      "description": "This should be True if the userbot is running on a Heroku Dyno.",
+      "description": "Ini harus True jika userbot berjalan pada Heroku Dyno.",
       "value": "True",
       "required": true
     },
     "HEROKU_API_KEY": {
-      "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
+      "description": "Dapatkan Heroku API_KEY Anda dari 'https://dashboard.heroku.com/account'",
       "value": ""
     },
     "HEROKU_APP_NAME": {
-      "description": "Add the Heroku app name here. It helps with userbot updates.",
+      "description": "Tambahkan nama aplikasi Heroku di sini. Ini membantu dengan pembaruan userbot.",
       "required": false
     },
     "COUNTRY": {
-      "description": "Set your Country to be used in the .time and .date commands.",
+      "description": "Tetapkan Negara Anda untuk digunakan diperintah .time dan .date",
       "required": false
     },
     "TZ_NUMBER": {
-      "description": "Change this value in case your country has multiple Time Zones.",
+      "description": "Ubah nilai ini jika negara Anda memiliki beberapa Zona Waktu.",
       "value": "7",
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
-      "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "description": "Dapatkan APPID (API key) dari https://api.openweathermap.org/data/2.5/weather",
       "required": false
     },
     "BOTLOG": {
-      "description": "Incase you want to turn off logging, put this to false",
+      "description": "Jika Anda ingin mematikan logging, taruh ini ke false",
       "value": "False"
     },
     "BOTLOG_CHATID": {
-      "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
-      "value": "-123456"
+      "description": "ChatID dari grup Log. Setel ke '0' jika BOTLOG = False dan/atau jika LOGSPAMMER = False.",
+      "value": "0"
     },
     "CONSOLE_LOGGER_VERBOSE": {
-      "description": "If you need verbosity on the console logging",
+      "description": "Jika Anda membutuhkan verbositas pada konsol logging",
       "value": "False"
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
+      "description": "PM Auto-Ban Fitur Switch. Juga dikenal sebagai 'bleep blop, ini adalah bot...' module.",
       "value": "False"
     },
     "YOUTUBE_API_KEY": {
-      "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "description": "YouTube Data API Key untuk perintah .yt dapatkan dari https://console.cloud.google.com",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "OCR API Key for .ocr command. Get from https://ocr.space/ocrapi",
+      "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
       "required": false
     },
     "REM_BG_API_KEY": {
-      "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "description": "API Key untuk perintah .rbg dapatkan dari https://www.remove.bg/api",
       "required": false
     },
     "ANTI_SPAMBOT": {
-      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
+      "description": "Menendang robot spam dari grup setelah mereka bergabung. [Membutuhkan kekuatan admin dalam grup untuk menendang.]",
       "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
-      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
+      "description": "Laporkan robot spam ke @admins dalam grup setelah mereka bergabung, untuk berjaga-jaga jika Anda tidak memiliki kekuatan admin untuk menendang mereka.",
       "value": "False"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
@@ -98,7 +98,7 @@
     },
     "CLEAN_WELCOME": {
       "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "True"
+      "value": "False"
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
@@ -125,7 +125,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Name to show in .alive message",
+      "description": "Nama untuk ditampilkan dipesan .alive",
       "required": false
     },
     "G_DRIVE_DATA": {
@@ -183,18 +183,17 @@
       "required": false
     },
     "S_PACK_NAME": {
-      "description": "change your sticker pack name",
-      "value": "Remix_Packs",
-      "required": true
+      "description": "ubah nama paket stiker Anda",
+      "value": " ",
+      "required": false
     },
     "ALIVE_LOGO": {
-      "description": "Image in .alive message. the value MUST A DIRECT LINK or Will Crash!",
-      "value": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
+      "description": "Media dalam pesan .alive ",
       "required": false
     },
     "UPSTREAM_REPO_URL": {
     "description": "set this to your Xbot-Remix fork on GitHub",
-    "value": "https://github.com/poocong/XBot-Remix",
+    "value": "https://github.com/poocong/Pocong-Userbot",
     "required": false
     },
     "USR_TOKEN_UPTOBOX": {
