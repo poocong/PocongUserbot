@@ -1,4 +1,4 @@
-# System Stats 𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧-Userbot
+# System Stats Pocong-Userbot
 
 import asyncio
 from asyncio import create_subprocess_exec as asyncrunapp
@@ -159,7 +159,7 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**☛**𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧-Userbot Versi:** \n "
+            "**☛**Pocong-Userbot Versi:** \n "
             f"{verout}"
             "\n**☛**Revisi:**\n "
             f"{revout}"
@@ -223,16 +223,15 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**♕ 𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧 Userbot** \n"
-        f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣|• `𝐏𝐨𝐜𝐨𝐧𝐠 𝐎𝐧𝐥𝐞𝐧     :`{DEFAULTUSER} \n"
-        f"┣|• `Username :`@{user.username} \n"
-        f"┣|• `Telethon :`Ver {version.__version__} \n"
-        f"┣|• `Python   :`Ver {python_version()} \n"
-        f"┣|• `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣|• `Bot Ver  :`{BOT_VER} \n"
-        f"┣|• `Modules  :`{len(modules)} Modules \n"
-        f"┗━━━━━━━━━━━━━━━━━━━ \n\n")
+        f"**BOT IS ACTIVED || DEVELOPMENT\n
+        f"BOT BY {DEFAULTUSER}** \n"
+        f"❃ ❃ Master: `{DEFAULTUSER}` \n"
+        f"❃ ❃ Telethon: `Versi {version.__version__}` \n"
+        f"❃ ❃ Python:  `Versi {python_version()}` \n"
+        f"❃ ❃ Bot Versi: `{BOT_VER}` \n"
+        f"❃ ❃ Uptime: `{uptime} \n" % (duration))` \n"
+        f"❃ ❃ Plugins:`{len(modules)} Plugins` \n\n"
+        f" 📍 Repo [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
