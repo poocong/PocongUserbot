@@ -75,7 +75,7 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER") or "True")
 ALIVE_NAME = os.environ.get("ALIVE_NAME") or None
 
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
+    "ALIVE_LOGO") or "https://telegra.ph/file/f36fe8fc696203737e820.jpg"
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME") or None
@@ -94,10 +94,10 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN") or None
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = (os.environ.get("UPSTREAM_REPO_URL")
-                     or "https://github.com/X-Newbie/XBot-Remix")
+                     or "https://github.com/poocong/Pocong-Userbot")
 
 # UPSTREAM_REPO_URL branch, the default is master
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "alpha"
+UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH") or "pocong"
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get(
@@ -130,10 +130,10 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT") or "False")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY") or "")
-TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 1)
+TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 7)
 
 # Sticker Custom Pack Name
-S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Remix-Packs"
+S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Pocong-Packs"
 
 # Zipfile module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
@@ -173,13 +173,13 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
     "TMP_DOWNLOAD_DIRECTORY") or "./downloads"
 
 # Terminal Alias
-TERM_ALIAS = os.environ.get("TERM_ALIAS") or "XBOT-REMIX"
+TERM_ALIAS = os.environ.get("TERM_ALIAS") or "Pocong Userbot"
 
 # Genius Lyrics API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN") or None
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "REMIX 01")
+BOT_VER = os.environ.get("BOT_VER", "5.0")
 
 CMD_HELP = {}
 
@@ -248,13 +248,13 @@ with bot:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID variabel lingkungan bukan sebuah"
+            "entitas yang valid. Periksa variabel lingkungan/file config.env Anda.")
         quit(1)
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "**🔥 XBOT-REMIX 🔥\n☠️ BERHASIL DIAKTIFKAN ☠️**")
+    await bot.send_message(BOTLOG_CHATID, "**POCONG USERBOT › BERHASIL DIAKTIFKAN**")
     return
 
 with bot:
@@ -262,8 +262,8 @@ with bot:
         bot.loop.run_until_complete(check_alive())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "BOTLOG_CHATID variabel lingkungan bukan sebuah"
+            "entitas yang valid. Periksa variabel lingkungan/file config.env Anda.")
         quit(1)
 
 def paginate_help(page_number, loaded_modules, prefix):
@@ -272,7 +272,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {}".format("▫️", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {}".format("â–«ï¸", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -286,10 +286,10 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⬅️", data="{}_prev({})".format(prefix, modulo_page)
+                    "â¬…ï¸", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "➡️", data="{}_next({})".format(prefix, modulo_page)
+                    "âž¡ï¸", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -312,10 +312,10 @@ with bot:
         async def handler(event):
             if event.message.from_id != uid:
                 await event.reply(
-                    "I'm [🔥 XBØT 🔥](https://github.com/X-Newbie/XBot-Remix) modules helper...\nplease make your own bot, don't use mine 😋"
+                    "Saya [Pocong Userbot](https://github.com/poocong/Pocong-Userbot)...\ntolong buat bot Anda sendiri, jangan gunakan bot saya"
                 )
             else:
-                await event.reply(f"`Hey there {ALIVE_NAME}\n\nI work for you :)`")
+                await event.reply(f"`Hai Saya {ALIVE_NAME}\n\n yang selalu siap melayanimu`")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -325,9 +325,9 @@ with bot:
             if event.query.user_id == uid and query.startswith(""):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
-                    "Please Use Only With .help Command",
-                    text="{}\nTotal loaded modules: {}".format(
-                        "[XBOT-REMIX](https://github.com/X-Newbie/XBot-Remix) modules helper.\n",
+                    "Harap Gunakan Perintah .help Untuk Melihat Daftar Plugins!",
+                    text="{}\nTotal modul yang dimuat: {}".format(
+                        "[Pocong Userbot](https://github.com/poocong/Pocong-Userbot) plugins.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -335,24 +335,24 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "xbot Helper",
-                    text="List of Modules",
+                    "Pocong Helper",
+                    text="Daftar Plugins",
                     buttons=[],
                     link_preview=True,
                 )
             else:
                 result = builder.article(
-                    "xbot",
-                    text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
+                    "Pocong Userbot",
+                    text="""Anda dapat mengubah akun Anda menjadi bot dan menggunakannya. Ingat, Anda tidak dapat mengelola bot orang lain! Semua detail instalasi dijelaskan dari alamat GitHub di bawah ini.""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/X-Newbie/XBot-Remix",
+                                "https://github.com/poocong/Pocong-Userbot",
                             ),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/UserBotIndo"),
+                                "https://t.me/LifeeOrDeath"),
                         ],
                     ],
                     link_preview=False,
@@ -373,7 +373,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -391,7 +391,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -408,7 +408,7 @@ with bot:
                     help_string = (
                         str(CMD_HELP[modul_name]).replace("`", "")[:150]
                         + "..."
-                        + "\n\nRead more .help "
+                        + "\n\nBaca lebih lanjut .help "
                         + modul_name
                         + " "
                     )
@@ -418,26 +418,26 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
                         modul_name
                     )
                 )
             else:
-                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
-            "Support for inline is disabled on your bot. "
-            "To enable it, define a bot token and enable inline mode on your bot. "
-            "If you think there is a problem other than this, contact us.")
+            "Dukungan untuk inline dinonaktifkan pada bot Anda. "
+            "Untuk mengaktifkannya, tentukan token bot dan aktifkan mode inline pada bot Anda. "
+            "Jika menurut Anda ada masalah selain ini, hubungi kami.")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file."
+            "BOTLOG_CHATID variabel lingkungan bukan sebuah"
+            "entitas yang valid. Periksa variabel lingkungan/file config.env Anda."
         )
         sys.exit(1)
 
