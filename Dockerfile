@@ -4,8 +4,8 @@ FROM xnewbie/xbotrmx:groovy
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b alpha https://github.com/X-Newbie/Xbot-Remix /home/xnewbie/
-RUN mkdir /home/xnewbie/bin/
-WORKDIR /home/xnewbie/
+RUN git clone -b pocong https://github.com/poocong/Pocong-Userbot /home/pocong/
+RUN mkdir /home/pocong/bin/
+WORKDIR /home/pocong/
 
 CMD ["python3","-m","userbot"]
