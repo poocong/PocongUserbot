@@ -1,64 +1,58 @@
 <p align="center">
-    <img alt="XBOT VERSION" src="https://img.shields.io/badge/XBOT%20VERSION-4.+-brightgreen"/>
+    <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
-           <a href="https://travis-ci.com/X-Newbie/XBot-Remix.svg?branch=alpha" /></a>
-    <a href="https://github.com/X-Newbie/XBot-Remix/network/members"> <img src="https://img.shields.io/github/forks/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
-           <a href="https://app.codacy.com/gh/X-Newbie/XBot-Remix/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/X-Newbie/XBot-Remix"> <img src="https://img.shields.io/github/repo-size/X-Newbie/XBot-Remix?logo=github&style=for-the-badge" /></a>
+           <a href="https://travis-ci.com/poocong/Pocong-Userbot.svg?branch=pocong" /></a>
+    <a href="https://github.com/poocong/Pocong-Userbot/network/members"> <img src="https://img.shields.io/github/forks/poocong/Pocong-Userbot?logo=github&style=for-the-badge" /></a>
+           <a href="https://app.codacy.com/gh/poocong/Pocong-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/poocong/Pocong-Userbot"> <img src="https://img.shields.io/github/repo-size/poocong/Pocong-Userbot?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
    </p>
 
 
-<h3 align="center">A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.</h3>
+<h3 align="center">Sebuah userbot Telegram modular yang berjalan pada Python 3.8+ dengan database sqlalchemy.</h3>
 <p align="center">&nbsp;</p>
 
-# Based on RaphielGang's [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)
+# Basis Dari RaphielGang's [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)
 
 ```
 /**
-    Your Telegram account may get banned.
-    I am not responsible for any improper use of this bot
-    This bot is intended for the purpose of having fun with memes,
-    as well as efficiently managing groups.
-    You ended up spamming groups, getting reported left and right,
-    and you ended up in a Finale Battle with Telegram and at the end
-    Telegram Team deleted your account?
-    And after that, then you pointed your fingers at us
-    for getting your acoount deleted?
-    I will be rolling on the floor laughing at you.
+    Akun Telegram Anda mungkin diblokir.
+    Saya tidak bertanggung jawab atas penggunaan bot ini yang tidak semestinya
+    Bot ini dimaksudkan untuk bersenang-senang dengan meme,
+    serta mengelola secara efisien.
 /**
 ```
 
-## Generate String Session
+## Hasilkan Sesi String
 
-### Or Run on your terminal
+### Atau Jalankan di terminal Anda
 
 ```
-wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/Getstring.sh && bash Getstring.sh
+wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.sh && bash Getstring.sh
 ```
 <br>
 
 ## How To Deploy 👷
 
 ```
-* **[HEROKU](https://www.heroku.com/) Method** 🔧
+* **[HEROKU](https://www.heroku.com/) Metode** 🔧
 
-  > First get API_KE & API_HASH in my.telegram.org (required)
+  > Pertama Dapatkan API_KE & API_HASH Di my.telegram.org (dibutuhkan)
 
-  > Get String Session on command below run in your terminal (required)
+  > Dapatkan Sesi String pada perintah di bawah ini, jalankan di terminal Anda (dibutuhkan)
 
-  > Next click Deploy the button below. 
+  > Selanjutnya klik Deploy tombol di bawah ini. 
 
-  > Fill in the required fields on heroku
+  > Isi bidang wajib di heroku
 
-  > Finally turn on the app and check the logs (settings -> view logs) enjoy :)
+  > Terakhir, aktifkan aplikasi dan periksa logs (settings -> view logs) Nikmati :)
 ```
 
-## <p align="center">Deploy to Heroku Methods</p>
+## <p align="center">Metode Deploy Ke Heroku</p>
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/X-Newbie/XBot-Remix/tree/alpha"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/poocong/Pocong-Userbot/tree/pocong"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
