@@ -1,7 +1,7 @@
 {
   "name": "XBOT REMIX",
   "description": "[XBOT] A modular Telegram userbot running on Python 3.7+ with an sqlalchemy database.",
-  "logo": "https://telegra.ph/file/0c5788a2377dfbe83ece6.jpg",
+  "logo": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/X-Newbie/XBot-Remix",
+  "repository": "https://github.com/poocong/XBot-Remix",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/XBOT_SUPPORT",
+  "success_url": "https://t.me/LifeeOrDeath",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -45,7 +45,7 @@
     },
     "TZ_NUMBER": {
       "description": "Change this value in case your country has multiple Time Zones.",
-      "value": "1",
+      "value": "7",
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
@@ -189,12 +189,12 @@
     },
     "ALIVE_LOGO": {
       "description": "Image in .alive message. the value MUST A DIRECT LINK or Will Crash!",
-      "value": "https://telegra.ph/file/099b2bf1c3256847946bf.mp4",
+      "value": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
       "required": false
     },
     "UPSTREAM_REPO_URL": {
     "description": "set this to your Xbot-Remix fork on GitHub",
-    "value": "https://github.com/X-Newbie/XBot-Remix",
+    "value": "https://github.com/poocong/XBot-Remix",
     "required": false
     },
     "USR_TOKEN_UPTOBOX": {
