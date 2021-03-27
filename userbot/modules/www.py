@@ -48,7 +48,7 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("`Love Ping..............`")
     end = datetime.now()
-    duration = (end - start).microseconds / 100000
+    duration = (end - start).microseconds / 9000
     await pong.edit(f"**✣ PONG!**\n"
                     f"❦ **Ping:** "
                     f"`%sms` \n"
@@ -71,7 +71,6 @@ async def speedtst(spd):
     await spd.edit("**Hasil Tes:\n**"
                    "❖ **Dimulai Pada:** "
                    f"`{result['timestamp']}` \n"
-                   f" **━━━━━━━━━━━━━━━━━**\n"
                    "❖ **Download:** "
                    f"`{speed_convert(result['download'])}` \n"
                    "❖ **Upload:** "
@@ -98,6 +97,6 @@ def speed_convert(size):
 CMD_HELP.update(
     {"ping": "`.ping`\
     \nPrmakaian: Untuk menunjukkan ping bot.\
-    \n\n`.speed`\
+    \n\n`.speedtest`\
     \nPemakaian: Untuk menunjukkan kecepatan koneksi."
      })
