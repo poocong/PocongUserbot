@@ -2652,7 +2652,7 @@ async def _(event):
     if x == 9:
         await event.edit("`\"I grew up with soldiers. I learned how to die a long time ago.\"`")
     if x == 10:
-        await event.edit("`\"What do we say to the Lord of Death?\nNot Today!\"`")
+        await event.edit("`\"What do we say to the Tuan of Death?\nNot Today!\"`")
     if x == 11:
         await event.edit("`\"Every flight begins with a fall.\"`")
     if x == 12:
