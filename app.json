@@ -54,11 +54,11 @@
     },
     "BOTLOG": {
       "description": "Jika Anda ingin mematikan logging, taruh ini ke false",
-      "value": "False"
+      "value": "True"
     },
     "BOTLOG_CHATID": {
       "description": "ChatID dari grup Log. Setel ke '0' jika BOTLOG = False dan/atau jika LOGSPAMMER = False.",
-      "value": "0"
+      "value": "-100xnxx"
     },
     "CONSOLE_LOGGER_VERBOSE": {
       "description": "Jika Anda membutuhkan verbositas pada konsol logging",
@@ -193,7 +193,6 @@
     },
     "UPSTREAM_REPO_URL": {
     "description": "set this to your Pocong Userbot fork on GitHub",
-    "value": "https://github.com/poocong/Pocong-Userbot",
     "required": false
     },
     "USR_TOKEN_UPTOBOX": {
