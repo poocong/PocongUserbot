@@ -14,8 +14,17 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit(f"**Hallo Semua Saya {DEFAULTUSER}**")
     sleep(2)
-    await typew.edit("`Assalamualaikum.....`")
-# Owner @Si_Dian
+    await typew.edit("`Wie De Dong Tian...`")
+    sleep(2)
+    await typew.edit("`Shalom  Aleichem b'Shem Ha Mashiach...`")
+    sleep(2)
+    await typew.edit("`Om Swastyastu...`")
+    sleep(2)
+    await typew.edit("`Namo Buddhaya...`")
+    sleep(2)
+    await typew.edit("`Shalom...`")
+    sleep(2)
+    await typew.edit("`Assalamualaikum...`")
 
 
 @register(outgoing=True, pattern='^p(?: |$)(.*)')
@@ -24,8 +33,17 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit(f"**Hallo Semua Saya {DEFAULTUSER}**")
     sleep(2)
-    await typew.edit("`Assalamualaikum.....`")
-# Owner @Si_Dian
+    await typew.edit("`Wie De Dong Tian...`")
+    sleep(2)
+    await typew.edit("`Shalom  Aleichem b'Shem Ha Mashiach...`")
+    sleep(2)
+    await typew.edit("`Om Swastyastu...`")
+    sleep(2)
+    await typew.edit("`Namo Buddhaya...`")
+    sleep(2)
+    await typew.edit("`Shalom...`")
+    sleep(2)
+    await typew.edit("`Assalamualaikum...`")
 
 
 @register(outgoing=True, pattern='^L(?: |$)(.*)')
@@ -35,7 +53,6 @@ async def typewriter(typew):
     await typew.edit("`Astaghfirulloh Jawab Salam Dong...`")
     sleep(1)
     await typew.edit("`Waallaikumsalam......`")
-# Owner @Si_Dian
 
 
 @register(outgoing=True, pattern='^l(?: |$)(.*)')
@@ -45,13 +62,12 @@ async def typewriter(typew):
     await typew.edit("`Astaghfirulloh Jawab Salam Dong...`")
     sleep(1)
     await typew.edit("`Waallaikumsalam.....`")
-# Owner @Si_Dian
 
 
 CMD_HELP.update({
     "salam":
-    "`P`\
+    "`P` atau `p`\
 \nUsage: Untuk Memberi salam.\
-\n\n`L`\
+\n\n`L` atau `l`\
 \nUsage: Untuk Menjawab Salam."
 })
