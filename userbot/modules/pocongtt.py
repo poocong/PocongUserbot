@@ -10,7 +10,7 @@ from userbot.events import register
 
 
 
-@register(outgoing=True, pattern="^.tiktok(?: |$)(.*)")
+@register(outgoing=True, pattern="^.tt(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -40,7 +40,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "tiktok": ">`.tiktok <Link>`"
+        "tiktok": ">`.tt <Link>`"
         "\nUsage: Download Video Tiktok Tanpa Watermark"
     }
 )
