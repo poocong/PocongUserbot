@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/poocong/XBot-Remix",
+  "repository": "https://github.com/poocong/Pocong-Userbot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "success_url": "https://t.me/LifeeOrDeath",
   "stack": "container",
@@ -192,7 +192,7 @@
       "required": false
     },
     "UPSTREAM_REPO_URL": {
-    "description": "set this to your Xbot-Remix fork on GitHub",
+    "description": "set this to your Pocong Userbot fork on GitHub",
     "value": "https://github.com/poocong/Pocong-Userbot",
     "required": false
     },
