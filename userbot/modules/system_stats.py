@@ -30,7 +30,7 @@ async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
     time_list = []
-    time_suffix_list = ["Dtk", "Mnt", "Jam", "Hari"]
+    time_suffix_list = ["s", "m", "h", "d"]
 
     while count < 4:
         count += 1
@@ -228,8 +228,8 @@ async def amireallyalive(alive):
         f"❃ ❃ Telethon: `Versi {version.__version__}` \n"
         f"❃ ❃ Python:  `Versi {python_version()}` \n"
         f"❃ ❃ Bot Versi: `{BOT_VER}` \n"
-        f"❃ ❃ Plugins:`{len(modules)} Plugins` \n\n"
-        f" 📍 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
+        f"❃ ❃ Plugins: `{len(modules)} Plugins` \n\n"
+        f"📍 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
