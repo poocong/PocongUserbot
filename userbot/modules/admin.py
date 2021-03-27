@@ -540,9 +540,9 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        return await show.edit("`Lord Bukan Admin Disini!`")
+        return await show.edit("`Tuan Bukan Admin Disini!`")
 
-    await show.edit("`Menghapus Akun Terhapus...\nMohon Menunggu Lord Sedang Dalam Proses`")
+    await show.edit("`Menghapus Akun Terhapus...\nMohon Menunggu Tuan Sedang Dalam Proses`")
     del_u = 0
     del_a = 0
 
@@ -553,7 +553,7 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                return await show.edit("`Lord Tidak Memiliki Izin Banned Dalam Grup Ini`")
+                return await show.edit("`Tuan Tidak Memiliki Izin Banned Dalam Grup Ini`")
             except UserAdminInvalidError:
                 del_u -= 1
                 del_a += 1
@@ -715,7 +715,7 @@ async def get_users(show):
     try:
         await show.edit(mentions)
     except MessageTooLongError:
-        await show.edit("Lord, Grup Ini Terlalu Besar Mengunggah Daftar Pengguna Sebagai File.")
+        await show.edit("Tuan, Grup Ini Terlalu Besar Mengunggah Daftar Pengguna Sebagai File.")
         file = open("daftarpengguna.txt", "w+")
         file.write(mentions)
         file.close()
@@ -806,7 +806,7 @@ async def get_usersdel(show):
         await show.edit(mentions)
     except MessageTooLongError:
         await show.edit(
-            "Lord, Grup Ini Terlalu Besar, Mengunggah Daftar Akun Terhapus Sebagai File."
+            "Tuan, Grup Ini Terlalu Besar, Mengunggah Daftar Akun Terhapus Sebagai File."
         )
         file = open("daftarpengguna.txt", "w+")
         file.write(mentions)
@@ -890,7 +890,7 @@ async def get_bots(show):
     try:
         await show.edit(mentions, parse_mode="html")
     except MessageTooLongError:
-        await show.edit("Lord, Terlalu Banyak Bot Di Grup Ini, Mengunggah Daftar Bot Sebagai File.")
+        await show.edit("Tuan, Terlalu Banyak Bot Di Grup Ini, Mengunggah Daftar Bot Sebagai File.")
         file = open("botlist.txt", "w+")
         file.write(mentions)
         file.close()
