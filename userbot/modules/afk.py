@@ -42,7 +42,7 @@ afk_start = {}
 # =================================================================
 
 
-@register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
+@register(outgoing=True, pattern="^.off(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
@@ -160,16 +160,16 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)} Jam {int(minutes)} Menit`"
+                afk_since = f"`{int(hours)}h {int(minutes)}m`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)} Menit {int(seconds)} Detik`"
+                afk_since = f"`{int(minutes)}m {int(seconds)}s`"
             else:
-                afk_since = f"`{int(seconds)} Detik`"
+                afk_since = f"`{int(seconds)}s`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(f"**┌ ❏ AFK .**\
                         \n**│ ├ USER : {ALIVE_NAME}**\
-                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**│ ├ SEJAK : {afk_since} Ago.**\
                         \n**└ └ ALASAN:** `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -180,7 +180,7 @@ async def mention_afk(mention):
                     if AFKREASON:
                         await mention.reply(f"**┌ ❏ AFK .**\
                         \n**│ ├ USER : {ALIVE_NAME}**\
-                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**│ ├ SEJAK : {afk_since} Ago.**\
                         \n**└ └ ALASAN:** `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -241,16 +241,16 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime('%A')
             elif hours > 1:
-                afk_since = f"`{int(hours)} Jam {int(minutes)} Menit`"
+                afk_since = f"`{int(hours)}h {int(minutes)}m`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)} Menit {int(seconds)} Detik`"
+                afk_since = f"`{int(minutes)}m {int(seconds)}s`"
             else:
-                afk_since = f"`{int(seconds)} Detik`"
+                afk_since = f"`{int(seconds)}s`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(f"**┌ ❏ AFK .**\
                         \n**│ ├ USER : {ALIVE_NAME}**\
-                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**│ ├ SEJAK : {afk_since} Ago.**\
                         \n**└ └ ALASAN:** `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -261,7 +261,7 @@ async def afk_on_pm(sender):
                     if AFKREASON:
                         await sender.reply(f"**┌ ❏ AFK .**\
                         \n**│ ├ USER : {ALIVE_NAME}**\
-                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**│ ├ SEJAK : {afk_since} Ago.**\
                         \n**└ └ ALASAN:** `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -274,7 +274,7 @@ async def afk_on_pm(sender):
 
 CMD_HELP.update({
     "afk":
-    "`.afk` <Alasan>\
+    "`.off` <Alasan>\
 \nUsage: Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
 Mereka Akan Tau Alasan Kamu OFF.\n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
 "
