@@ -2,7 +2,7 @@ from time import sleep
 from userbot.events import register
 
 
-@register(outgoing=True, pattern='^.sayang(?: |$)(.*)')
+@register(outgoing=True, pattern='^.lopu(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
@@ -14,22 +14,23 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.semangat(?: |$)(.*)')
+@register(outgoing=True, pattern='^.ange(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Apapun Yang Terjadi`")
+    await typew.edit("`Ayanggggg😖`")
     sleep(3)
-    await typew.edit("`Tetaplah Bernapas`")
+    await typew.edit("`Ange😫`")
     sleep(1)
-    await typew.edit("`Dan Selalu Bersyukur`")
+    await typew.edit("`Ayukkk Ewean Ayanggg🤤`")
 # Create by myself @localheart
 
 
-CMD_HELP.update({
-    "pocongoi":
-    "`.sayang`\
-    \nUsage: mengubah font teks"
-    "`.semangat`\
-    \nUsage: Lihat yang terjadi"
-})
+@register(outgoing=True, pattern='^.smangap(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(3)
+    await typew.edit("`Tetaplah Sambat`")
+    sleep(3)
+    await typew.edit("`Jangan Semangat🤠`")
+# Create by myself @localheart
