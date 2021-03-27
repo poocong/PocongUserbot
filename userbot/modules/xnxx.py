@@ -41,7 +41,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+@register(outgoing=True, pattern="^.spong$")
 async def pingme(pong):
     """ For .ping command, ping the userbot from any chat.  """
     await get_readable_time((time.time() - StartTime))
@@ -132,7 +132,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 CMD_HELP.update(
-    {"ping": "`.ping|sping|spong`\
+    {"ping": "`.ping|spong`\
     \nPemakaian: Untuk menunjukkan ping bot.\
     \n\n`.speedtest`\
     \nPemakaian: Untuk menunjukkan kecepatan koneksi."
