@@ -228,7 +228,6 @@ async def amireallyalive(alive):
         f"❃ ❃ Telethon: `Versi {version.__version__}` \n"
         f"❃ ❃ Python:  `Versi {python_version()}` \n"
         f"❃ ❃ Bot Versi: `{BOT_VER}` \n"
-        f"❃ ❃ Uptime: `{uptime} \n" % (duration))` \n"
         f"❃ ❃ Plugins:`{len(modules)} Plugins` \n\n"
         f" 📍 Repo [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
