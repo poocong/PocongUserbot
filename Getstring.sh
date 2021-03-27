@@ -57,7 +57,7 @@ sleep 2
 
 if [ ! -e string_session.py ]; then
     echo -e "\nDownloading string_session.py\n"
-    wget https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/string_session.py
+    wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/string_session.py
 
     echo -e "\nRunning script...\n"
     sleep 1
