@@ -143,7 +143,7 @@ async def _(event):
         for i in a:
             await event.reply(i.original.action.message)
     else:
-        await event.edit("Lord Anda memerlukan izin Admin untuk melakukan perintah ini")
+        await event.edit("Tuan Anda memerlukan izin Admin untuk melakukan perintah ini")
         await asyncio.sleep(3)
         await event.delete()
 
@@ -721,7 +721,7 @@ async def weebify(event):
         get = await event.get_reply_message()
         args = get.text
     if not args:
-        await event.edit("`Lord, Teks Apa Yang Harus Saya Weebify Kan?`")
+        await event.edit("`Tuan, Teks Apa Yang Harus Saya Weebify Kan?`")
         return
     string = ' '.join(args).lower()
     for normiecharacter in string:
@@ -815,7 +815,7 @@ async def mediv(medievalx):
         get = await medievalx.get_reply_message()
         args = get.text
     if not args:
-        await medievalx.edit("`Lord, Teks Apa Yang Harus Saya Medibold Kan?`")
+        await medievalx.edit("`Tuan, Teks Apa Yang Harus Saya Medibold Kan?`")
         return
     string = ''.join(args).lower()
     for normiecharacter in string:
