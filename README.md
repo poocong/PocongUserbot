@@ -58,7 +58,7 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 </p>
 
 ## How to setup Google Drive
-<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/X-Newbie/XBot-Remix/alpha/userbot/resources/gd.png" alt="haa" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://telegra.ph/How-To-Setup-Google-Drive-04-03"> <img src="https://raw.githubusercontent.com/poocong/Pocong-Userbot/alpha/userbot/resources/gd.png" alt="haa" width="210" height="34.45" /></a></p>
 
 ## Credits
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
@@ -74,7 +74,10 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 *   [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
 *   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
 *   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
+*   [TeamUltroid](https://github.com/TeamUltroid) - Ultroid
+*   [Sandeep](https://github.com/sandy1709/catuserbot) - Cat Userbot
+*   [DevsExpo](https://github.com/DevsExpo/FridayUserbot) - Friday Userbot
 *   AND OTHER
 
 ## License
-Licensed under [Raphielscape Public License](https://github.com/X-Newbie/XBot-Remix/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
+Licensed under [Raphielscape Public License](https://github.com/poocong/Pocong-Userbot/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
