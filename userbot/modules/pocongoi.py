@@ -26,7 +26,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.smangap(?: |$)(.*)')
+@register(outgoing=True, pattern='^.swemangap(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
