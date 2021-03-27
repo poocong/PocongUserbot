@@ -12,22 +12,22 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def usit(e):
     await e.edit(
         f"**Hai tuan {DEFAULTUSER} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "\n[Telegram](t.me/bismillahselaluadaa)"
-        "\n[Repo](https://github.com/ilham77mansiz/tuan-Userbotilham)"
-        "\n[Instagram](Instagram.com/imansiezz_)")
+        "\n[Telegram](pornhub.com)"
+        "\n[Repo](https://github.com/poocong/Pocong-Userbot)"
+        "\n[Instagram](Instagram.com/xnxx)")
 
 
 @register(outgoing=True, pattern="^.pocongvar$")
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/ilham77mansiz/Lord-Userbot/Lord-Userbot/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/varshelper.txt)")
 
 
 CMD_HELP.update({
     "poconghelper":
     "`.poconghelp`\
-\nUsage: Bantuan Untuk tuan-Userbot.\
+\nUsage: Bantuan Untuk Pocong-Userbot.\
 \n`.pocongvar`\
 \nUsage: Melihat Daftar Vars."
 })
