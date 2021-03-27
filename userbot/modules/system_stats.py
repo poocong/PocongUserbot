@@ -223,8 +223,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**BOT IS ACTIVED || DEVELOPMENT\n
-        f"BOT BY {DEFAULTUSER}** \n"
+        f"**BOT IS ACTIVED || DEVELOPMENT BOT BY\n"
         f"❃ ❃ Master: `{DEFAULTUSER}` \n"
         f"❃ ❃ Telethon: `Versi {version.__version__}` \n"
         f"❃ ❃ Python:  `Versi {python_version()}` \n"
@@ -281,7 +280,7 @@ CMD_HELP.update({
 \nUsage: Does a search of pip modules(s).\
 \n\n`.start`\
 \nUsage: Type .start to see dynos usage.\
-\n\n`.start`\
+\n\n`.alive|on`\
 \nUsage: Type `.alive` atau `.on` to see whether your bot is working or not.\
 \n\n`.aliveu` <text>\
 \nUsage: Changes the 'user' in alive to the text you want.\
