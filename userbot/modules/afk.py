@@ -62,11 +62,11 @@ async def set_afk(afk_e):
     afk_start = start_1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"**┌ ❏ AFK .**\n**│ ├ USER :**\
-        \n**└ └ REASON :** `{string}`")
+        await afk_e.edit(f"**┌ ❏ AFK .**\n**│ ├ USER :{ALIVE_NAME}**\
+        \n**└ └ ALASAN :** `{string}`")
     else:
-        await afk_e.edit(f"**┌ ❏ AFK .**\n**│ ├ USER :**\
-        \n**└ └ REASON :** `{string}`")
+        await afk_e.edit(f"**┌ ❏ AFK .**\n**│ ├ USER :{ALIVE_NAME}**\
+        \n**└ └ ALASAN :** `{string}`")
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "AFK"))
     else:
@@ -168,8 +168,9 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(f"**┌ ❏ AFK .**\
-                        \n**│ ├ USER : {ALIVE_NAME} Sedang AFK** {afk_since} **Yang Lalu.**\
-                        \n**└ └ REASON:** `{AFKREASON}`")
+                        \n**│ ├ USER : {ALIVE_NAME}**\
+                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**└ └ ALASAN:** `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -178,8 +179,9 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(f"**┌ ❏ AFK .**\
-                        \n**│ ├ USER : {ALIVE_NAME} Sedang AFK** {afk_since} **Yang Lalu.**\
-                        \n**└ └ REASON:** `{AFKREASON}`")
+                        \n**│ ├ USER : {ALIVE_NAME}**\
+                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**└ └ ALASAN:** `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -247,8 +249,9 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(f"**┌ ❏ AFK .**\
-                        \n**│ ├ USER : {ALIVE_NAME} Sedang AFK** {afk_since} **Yang Lalu.**\
-                        \n**└ └ REASON:** `{AFKREASON}`")
+                        \n**│ ├ USER : {ALIVE_NAME}**\
+                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**└ └ ALASAN:** `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -257,8 +260,9 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(f"**┌ ❏ AFK .**\
-                        \n**│ ├ USER : {ALIVE_NAME} Sedang AFK** {afk_since} **Yang Lalu.**\
-                        \n**└ └ REASON:** `{AFKREASON}`")
+                        \n**│ ├ USER : {ALIVE_NAME}**\
+                        \n**│ ├ SEJAK : {afk_since} Yang Lalu.**\
+                        \n**└ └ ALASAN:** `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
