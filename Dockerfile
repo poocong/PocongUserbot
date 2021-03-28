@@ -1,5 +1,5 @@
 # We're using Ubuntu 20.10
-FROM mrmiss/userbutt:latest
+FROM poocong/dongker:groovy
 
 #
 # Clone repo and prepare working directory
