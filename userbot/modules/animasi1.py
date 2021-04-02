@@ -19,7 +19,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("__GELAYY__🤮")
     
-CMD_HELP.update({
- "animasi1":"hai\
- \nUsage: Lihat Sendiri
- })
+CMD_HELP.update(
+    {"animasi1": "`hai`\
+    \nPemakaian: lihat sendiri lah anj."
+     })
