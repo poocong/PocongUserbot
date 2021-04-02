@@ -1,0 +1,17 @@
+from time import sleep
+from userbot.events import register
+
+
+@register(outgoing=True, pattern='^.hai(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(3)
+    await typew.edit("<b>Hai ,  Assalamualaikum</b>")
+    sleep(2)
+    await typew.edit("Kalian Nungguin aku gak??")
+    sleep(2)
+    await typew.edit("Ih ga mau🤢")
+    sleep(2)
+    await typew.edit("gasukaa")
+    sleep(1)
+    await typew.edit("<i>GELAYY</i>")
