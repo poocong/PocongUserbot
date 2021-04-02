@@ -70,14 +70,14 @@ async def speedtst(spd):
                    "❖ **Dimulai Pada:** "
                    f"`{result['timestamp']}` \n"
                    "❖ **Download:** "
-                   f"`{speed_convert(result['download'])}` \n"
+                   f"`{speed_convert(result['download'] * 8)}` \n"
                    "❖ **Upload:** "
-                   f"`{speed_convert(result['upload'])}` \n"
+                   f"`{speed_convert(result['upload'] * 8)}` \n"
                    "❖ **Ping:** "
                    f"`{result['ping']}` \n"
                    "❖ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "❖ **BOT:** `Pocong UserBot`")
+                   "❖ **BOT:** `{ALIVE_NAME} UserBot`")
 
 
 def speed_convert(size):
