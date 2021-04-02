@@ -9,15 +9,15 @@ import asyncio
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("**Hai ,  Assalamualaikum*")
+    await typew.edit("**Hai ,  Assalamualaikum**")
     sleep(2)
     await typew.edit("Kalian Nungguin aku gak??")
     sleep(2)
-    await typew.edit("Ih ga mauð¤¢")
+    await typew.edit("Ih ga mau🤢")
     sleep(2)
-    await typew.edit("gasukaa")
+    await typew.edit("gasukaa😫")
     sleep(2)
-    await typew.edit("__GELAYY__")
+    await typew.edit("__GELAYY__🤮")
     
 CMD_HELP.update({
  "animasi1":"hai\
