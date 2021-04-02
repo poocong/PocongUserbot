@@ -77,7 +77,7 @@ async def speedtst(spd):
                    f"`{result['ping']}` \n"
                    "❖ **ISP:** "
                    f"`{result['client']['isp']}` \n"
-                   "❖ **BOT:** `{ALIVE_NAME} UserBot`")
+                   "❖ **USER: {ALIVE_NAME}**\n")
 
 
 def speed_convert(size):
@@ -93,7 +93,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 CMD_HELP.update(
-    {"ping": "`.ping`\
+    {"ngewe": "`.ping`\
     \nPemakaian: Untuk menunjukkan ping bot.\
     \n\n`.speedtest`\
     \nPemakaian: Untuk menunjukkan kecepatan koneksi."
