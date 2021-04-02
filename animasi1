@@ -1,6 +1,8 @@
 from time import sleep
+from userbot import CMD_HELP, bot
 from userbot.events import register
-
+from telethon import events
+import asyncio
 
 @register(outgoing=True, pattern='^.hai(?: |$)(.*)')
 async def typewriter(typew):
@@ -15,3 +17,13 @@ async def typewriter(typew):
     await typew.edit("gasukaa")
     sleep(1)
     await typew.edit("<i>GELAYY</i>")
+
+CMD_HELP.update({
+
+    "animasi1":
+
+    "hai\
+
+    \nUsage: liat sendiri"
+
+})
