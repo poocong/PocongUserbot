@@ -19,11 +19,13 @@ async def typewriter(typew):
     await typew.edit("<i>GELAYY</i>")
 
 CMD_HELP.update({
+ "animasi1":"hai\
+ \nUsage: Lihat Sendiri
+ })
 
-    "animasi1":
 
-    "hai\
 
-    \nUsage: liat sendiri"
 
-})
+
+
+
