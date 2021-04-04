@@ -5,7 +5,7 @@ from telethon import events
 import asyncio
 
 
-@register(outgoing=True, pattern='^hai(?: |$)(.*)')
+@register(outgoing=True, pattern='^.hai(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
