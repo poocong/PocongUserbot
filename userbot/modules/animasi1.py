@@ -19,25 +19,30 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("__GELAYY__🤮")
     
-CMD_HELP.update(
-    {"animasi1": "`hai`\
-    \nPemakaian: lihat sendiri lah anj."
-     })
-
-
+   
 @register(outgoing=True, pattern='^.kntl(?: |$)(.*)')
 async def typewriter(typew):
-    typew.pattern_match.group(1)
+    type.pattern_match.group(1)
     sleep(3)
     await typew.edit("Tau kh kalian wahai tuan-tuan??")
     sleep(2)
-    await typew.edit("se**KONT0L** **K0NTOL** nya si**K0NTOL**")
+    await typew.edit("se**KONT0L** **K0NTOL** nya si **K0NTOL**")
     sleep(2)
-    await typew.edit("lebih **KONTOL** lagi")
+    await typew.edit("lebih **KONTOL** lagi")              
     sleep(2)
     await typew.edit("kalian **KONTOL**")
 
-CMD_HELP.update(
-    {"animasi1": "`kntl`\
-    \nPemakaian: Lu liat aja sendiri ajg kan bisa."
-    })
+
+@register(outgoing=True, pattern='^.alay(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(3)
+    await typew.edit("*eh kamu, iya kamu")
+    sleep(2)
+    await typew.edit("**ALAY** bnget sih")
+    sleep(2)
+    await typew.edit("spam bot mulu")
+    sleep(2)
+    await typew.edit("baru jadi userbot ya?? xixixi")
+    sleep(2)
+    await typew.edit("pantes **NORAK**")
