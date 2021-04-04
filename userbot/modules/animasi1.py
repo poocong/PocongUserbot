@@ -23,3 +23,21 @@ CMD_HELP.update(
     {"animasi1": "`hai`\
     \nPemakaian: lihat sendiri lah anj."
      })
+
+
+@register(outgoing=True, pattern='^.kntl(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(3)
+    await typew.edit("Tau kh kalian wahai tuan-tuan??")
+    sleep(2)
+    await typew.edit("se**KONT0L** **K0NTOL** nya si**K0NTOL**")
+    sleep(2)
+    await typew.edit("lebih **KONTOL** lagi")
+    sleep(2)
+    await typew.edit("kalian **KONTOL**")
+
+CMD_HELP.update(
+    {"animasi1": "`kntl`\
+    \nPemakaian: Lu liat aja sendiri ajg kan bisa."
+    })
