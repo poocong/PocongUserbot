@@ -46,3 +46,9 @@ async def typewriter(typew):
     await typew.edit("baru jadi userbot ya?? xixixi")
     sleep(2)
     await typew.edit("pantes **NORAK**")
+
+CMD_HELP.update({
+    "animasi1":
+    "`.hai` ; `.kntl` ; `.alay`\
+    \nUsage: lu liat sendiri lah anjg"
+})
