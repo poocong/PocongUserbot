@@ -22,7 +22,7 @@ async def typewriter(typew):
    
 @register(outgoing=True, pattern='^.kntl(?: |$)(.*)')
 async def typewriter(typew):
-    type.pattern_match.group(1)
+    typew.pattern_match.group(1)
     sleep(3)
     await typew.edit("Tau kh kalian wahai tuan-tuan??")
     sleep(2)
