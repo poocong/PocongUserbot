@@ -49,9 +49,9 @@ async def pingme(pong):
     await pong.edit("__Memeriksa Koneksi Server...__")
     end = datetime.now()
     duration = (end - start).microseconds / 100000
-    await pong.edit(f"☞ **Pong!**\n"
+    await pong.edit(f"✤ **Pong!**\n"
                     f"➦ __%sms__ \n"
-                    f"➥ __**User: {ALIVE_NAME}**__\n" % (duration))
+                    f"➥ __**User {ALIVE_NAME}**__\n" % (duration))
 
 
 @register(outgoing=True, pattern="^.speedtest$")
