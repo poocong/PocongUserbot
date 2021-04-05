@@ -50,8 +50,8 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 100000
     await pong.edit(f"☞ **Pong!**\n"
-                    f"➥ __%sms__ \n"
-                    f"☞ __**User: {ALIVE_NAME}**__\n" % (duration))
+                    f"➦ __%sms__ \n"
+                    f"➥ __**User: {ALIVE_NAME}**__\n" % (duration))
 
 
 @register(outgoing=True, pattern="^.speedtest$")
