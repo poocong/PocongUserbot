@@ -272,7 +272,7 @@ async def dyno_usage(dyno):
                 f"    •__0 Jam - "
                 f"0%__\n\n"
                 "❏ __**Sisa Dyno Bulan Ini**:__\n"
-                f"    •__1000 Jam - 100%__")
+                f"    •__1000 Jam - 100%__"
             )
             await asyncio.sleep(20)
             await dyno.delete()
