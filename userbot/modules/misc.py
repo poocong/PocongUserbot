@@ -120,7 +120,7 @@ async def repeat(rep):
 # async def repo_is_here(wannasee):
 #    """ For .repo command, just returns the repo URL. """
 #    await wannasee.edit(
-#        "   ⠀  ⠀☆。*。☆。\n    ★。＼｜／。★\n[MY USERBOT](https://pornhub.com)\n    ★。／｜＼。★\n     ⠀☆。*。☆。\n")
+#        "   ⠀  ⠀☆。*。☆。\n    ★。＼｜／。★\n[JEMBUT](https://eu3.proxysite.com/process.php?d=PzNfpM0ot%2BJ3Yx4ZWBSBzWk%3D&b=1)\n    ★。／｜＼。★\n     ⠀☆。*。☆。\n")
 
 
 @register(outgoing=True, pattern="^.raw$")
