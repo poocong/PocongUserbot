@@ -694,7 +694,7 @@ async def typewriter(typew):
     await typew.edit("`ITULAH BUAYA BUAYA HATI HATI YA 😁`")
 # Create by myself @localheart
 
-@register(outgoing=True, pattern='^yang(?: |$)(.*)')
+@register(outgoing=True, pattern='^.yang(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
