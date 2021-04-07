@@ -49,7 +49,7 @@ async def pingme(pong):
     await pong.edit("__Memeriksa Koneksi Server...__")
     end = datetime.now()
     duration = (end - start).microseconds / 100000
-    await pong.edit(f"✤ **𓆩Pong𓆪**\n"
+    await pong.edit(f"☤ **𓆩Pong𓆪**\n"
                     f"➦ __%sms__ \n"
                     f"➥ __**User {ALIVE_NAME}**__\n" % (duration))
 
