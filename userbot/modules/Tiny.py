@@ -80,5 +80,5 @@ async def ultiny(event):
     os.remove(ik)
     
    
-CMD_HRLP.update({"tiny": "`.tiny`\
+CMD_HELP.update({"tiny": "`.tiny`\
     \nPenggunaan : Untuk Memperkecil Stiker."})
