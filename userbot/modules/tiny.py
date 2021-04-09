@@ -1,5 +1,11 @@
+# Port By LiuAlvinas/Alvin For Lord Userbot From Ulttoid
+# Thanks Ultroid
+# Dont Remove
+
+# Alvin Ganteng
+
 from PIL import Image
-import cv2
+
 import os
 from userbot.events import register
 from userbot import CMD_HELP, bot
