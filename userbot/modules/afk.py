@@ -42,7 +42,7 @@ afk_start = {}
 # =================================================================
 
 
-@register(outgoing=True, pattern="^.off(?: |$)(.*)", disable_errors=True)
+@register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
@@ -273,8 +273,8 @@ async def afk_on_pm(sender):
 
 
 CMD_HELP.update({
-    "off":
-    "`.off` <Alasan>\
+    "afk":
+    "`.afk` <Alasan>\
 \nUsage: Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
 Mereka Akan Tau Alasan Kamu OFF.\n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
 "
