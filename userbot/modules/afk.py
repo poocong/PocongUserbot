@@ -62,6 +62,25 @@ async def mention_afk(mention):
             afk_str = f"`{int(minutes)}m{int(seconds)}s` ago"
         else:
             afk_str = f"`{int(seconds)}s` ago"
+            
+            mention = "[{}](tg://user?id={})".format(a_user.first_name,
+                                                     a_user.id)
+            my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
+            first = a_user.first_name
+            last = a_user.last_name
+            if last:
+                fullname = f"{first} {last}"
+            else:
+                fullname = first
+            username = f"@{a_user.username}" if a_user.username else mention
+            userid = a_user.id
+            my_first = me.first_name
+            my_last = me.last_name
+            if my_last:
+                my_fullname = f"{my_first} {my_last}"
+            else:
+                my_fullname = my_first
+            my_username = f"@{me.username}" if me.username else my_mention
 
         is_bot = False
         if (sender := await mention.get_sender()) :
@@ -75,7 +94,8 @@ async def mention_afk(mention):
         if mention.sender_id not in USERS or chat_title not in USERS:
             if AFKREASON:
                 await mention.reply(
-                    f"**Saya sedang offline.** (Sejak: {afk_str})"
+                    f"┌ ❏** AFK**."
+                    f"\n│ ├ USER : {my_mention})"
                     f"\nKarena: `{AFKREASON}`."
                 )
             else:
