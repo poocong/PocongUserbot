@@ -53,6 +53,27 @@ async def ultiny(event):
         file = "o.webp"
         os.remove(fil)
         os.remove("k.png")
+    else:
+        im = Image.open(ik)
+        z, d = im.size
+        if z == d:
+            xxx, yyy = 200, 200
+        else:
+            t = z + d
+            a = z / t
+            b = d / t
+            aa = (a * 100) - 50
+            bb = (b * 100) - 50
+            xxx = 200 + 5 * aa
+            yyy = 200 + 5 * bb
+        k = im.resize((int(xxx), int(yyy)))
+        k.save("k.png", format="PNG", optimize=True)
+        im2 = Image.open("k.png")
+        back_im = im1.copy()
+        back_im.paste(im2, (150, 0))
+        back_im.save("o.webp", "WEBP", quality=95)
+        file = "o.webp"
+        os.remove("k.png")
     await event.client.send_file(event.chat_id, file, reply_to=event.reply_to_msg_id)
     await xx.delete() 
     os.remove(file)    
