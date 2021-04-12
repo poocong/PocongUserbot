@@ -1,6 +1,6 @@
-# Ported By Koala / @ManusiaRakitann From Dark Cobra # Thanks
+# Ported By Ocong / @Pocongonlen From Dark Cobra # Thanks
 # Based On Plugins
-# Lord Userbot
+# Pocong Userbot
 
 from telethon.events import ChatAction
 from userbot import ALIVE_NAME, CMD_HELP, bot
@@ -23,7 +23,7 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`Lord, Ini Tidak Mungkin Tanpa ID Pengguna`")
+            await event.edit("`Hmm, Ini Tidak Mungkin Tanpa ID Pengguna`")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -35,7 +35,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("`Terjadi Kesalahan... Mohon Lapor Ke Grup` @LordUserbot_Group", str(err))
+            return await event.edit("`Terjadi Kesalahan... Mohon Lapor Ke Grup` @klikdisiniuntukbergabung", str(err))
     return user_obj, extra
 
 
@@ -48,7 +48,7 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
-# Ported For Lord-Userbot by liualvinas/Alvin
+# Ported For Pocong-userbot by Ocong
 
 
 @bot.on(ChatAction)
