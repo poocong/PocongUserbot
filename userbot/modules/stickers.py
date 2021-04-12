@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# LORD - USERBOT
+# Ocong - USERBOT
 
 import io
 import math
@@ -352,7 +352,7 @@ async def sticker_to_png(sticker):
 CMD_HELP.update(
     {
         "stickers": "**Modules:** __Stickers__\n\n**Perintah:** `.kang` | `.tikel (emoji) [nomer]`"
-        "\n**Penjelasan:** Balas ke sticker atau gambar `.tikel`  untuk menjadikannya sebagai sticker Anda "
+        "\n**Penjelasan:** Balas ke sticker atau gambar `.curry`  untuk menjadikannya sebagai sticker Anda "
         "\nBisa memilih emoji sesuai pilihan Anda, dan bisa memilih nomer pack."
         "\n\n**Perintah:** `.stkrinfo`"
         "\n**Penjelasan:** Balas ke sticker, untuk mendapatkan informasi pack sticker."
