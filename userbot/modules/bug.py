@@ -49,7 +49,7 @@ async def get_user_sender_id(user, event):
     return user_obj
 
 
-@register(outgoing=True, pattern=r"^\.gban(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.gbann(?: |$)(.*)")
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -122,7 +122,7 @@ async def gspider(userbot):
         )
 
 
-@register(outgoing=True, pattern=r"^\.ungban(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.ungbann(?: |$)(.*)")
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -188,7 +188,7 @@ async def gspider(userbot):
 
 CMD_HELP.update({
     "gban": "\
-`.gban reason`\
+`.gbann reason`\
 \nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
 \n\n`.ungban reason`\
 \nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
