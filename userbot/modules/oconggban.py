@@ -111,7 +111,7 @@ async def gben(userbot):
     except BaseException:
         return await dark.edit(f"`Terjadi Kesalahan`")
     if user:
-        if user.id == 1353102497:
+        if user.id == 1527507639:
             return await dark.edit(
                 f"`Anda Tidak Bisa Melakukan Global Banned Ke Ocong Dia Adalah Pembuat Saya ヅ`"
             )
@@ -143,7 +143,7 @@ async def gben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**♛ Perintah:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Global Banned`"
+        f"**Perintah:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Global Banned`"
     )
 
 
@@ -177,8 +177,8 @@ async def gunben(userbot):
     except BaseException:
         return await dark.edit("`Terjadi Kesalahan ヅ`")
     if user:
-        if user.id == 1353102497:
-            return await dark.edit("**Lord Pengguna Tidak Bisa Terkena Perintah Ini, Karna Dia Pembuatku ヅ**")
+        if user.id == 1527507639:
+            return await dark.edit("**Woy Gblk Pengguna Tidak Bisa Terkena Perintah Ini, Karna Dia Pembuatku ヅ**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
         except BaseException:
@@ -200,14 +200,14 @@ async def gunben(userbot):
             except BaseException:
                 b += 1
     else:
-        await dark.edit("`Harap Balas Ke Pesan Pengguna Lord ヅ`")
+        await dark.edit("`Harap Balas Ke Pesan Pengguna Gblk ヅ`")
     try:
         if ungmute(user.id) is False:
             return await dark.edit("**Kesalahan! Pengguna Sedang Tidak Di Global Banned.**")
     except BaseException:
         pass
     return await dark.edit(
-        f"**♛ Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Membatalkan Global Banned`"
+        f"**Perintah Lord:** `{ALIVE_NAME}`\n**✣ Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**✣ Aksi:** `Membatalkan Global Banned`"
     )
 
 
