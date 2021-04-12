@@ -351,7 +351,7 @@ async def sticker_to_png(sticker):
 
 CMD_HELP.update(
     {
-        "stickers": "**Modules:** __Stickers__\n\n**Perintah:** `.kang` | `.tikel (emoji) [nomer]`"
+        "stickers": "**Modules:** __Stickers__\n\n**Perintah:** `.kang` | `.curry (emoji) [nomer]`"
         "\n**Penjelasan:** Balas ke sticker atau gambar `.curry`  untuk menjadikannya sebagai sticker Anda "
         "\nBisa memilih emoji sesuai pilihan Anda, dan bisa memilih nomer pack."
         "\n\n**Perintah:** `.stkrinfo`"
