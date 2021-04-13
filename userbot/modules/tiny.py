@@ -2,7 +2,7 @@
 # Thanks Ultroid
 # Dont Remove
 
-# Alvin Ganteng
+# Fakeghost
 
 from PIL import Image
 
@@ -19,7 +19,7 @@ async def _(event):
         return
     await event.edit("`Memproses...`")
     ik = await bot.download_media(reply)
-    im1 = Image.open("userbot/lorduserbot.png")
+    im1 = Image.open("userbot/poconguserbot.png")
     if ik.endswith(".tgs"):
         await event.client.download_media(reply, "ult.tgs")
         os.system("lottie_convert.py ult.tgs json.json")
@@ -83,8 +83,8 @@ async def _(event):
     os.remove(file)
     os.remove(ik)
 
-# Port By Alvin Ganteng/liualvinas
-# Lord - Userbot
+# Port By Pocong Onlen
+# Pocong Userbot
 
 CMD_HELP.update({"tiny": "`.tiny`\
     \nPenjelasan: Untuk Memperkecil Sticker."})
