@@ -16,8 +16,8 @@
 #async def gbun(event):
    # if event.fwd_from:
         #return
-    gbunVar = event.text
-    gbunVar = gbunVar[6:]
+   # gbunVar = event.text
+  #  gbunVar = gbunVar[6:]
     mentions = f"`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n"
     no_reason = "No Reason Given "
     await event.edit("**Summoning out the mighty gban hammer ☠️**")
@@ -59,7 +59,7 @@
         await event.reply(mention)
     await event.delete()
 
-CMD_HELP.update({
+#CMD_HELP.update({
     "fakegban": "`.fgban`\
     \nUsage: Type .fgban or Reply .fgban reason and see it yourself. "
 })
