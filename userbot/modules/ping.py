@@ -48,7 +48,7 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("__Memeriksa Koneksi Server...__")
     end = datetime.now()
-    duration = (end - start).microseconds / 100000
+    duration = (end - start).microseconds / 1000
     await pong.edit(f"☤ **𓆩Pong𓆪**\n"
                     f"➦ __%sms__ \n"
                     f"➥ __**User {ALIVE_NAME}**__\n" % (duration))
@@ -94,7 +94,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 CMD_HELP.update(
-    {"ngewe": "`.ping`\
+    {"ping": "`.ping`\
     \nPemakaian: Untuk menunjukkan ping bot.\
     \n\n`.speedtest`\
     \nPemakaian: Untuk menunjukkan kecepatan koneksi."
