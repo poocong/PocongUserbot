@@ -1,3 +1,5 @@
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5521639.gif" width="366" height="89" alt="Pocong - Userbot" /></a>
+
 <p align="center">
     <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
     <img alt="BUILD IN" src="https://img.shields.io/badge/BUILD%20-Last Day-brightgreen"/>
