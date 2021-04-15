@@ -16,7 +16,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Assalamualaikum.....`")
 # Owner @Si_Dian
-
+# Thanks XBOT-REMIX
 
 @register(outgoing=True, pattern='^p(?: |$)(.*)')
 async def typewriter(typew):
@@ -26,7 +26,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Assalamualaikum.....`")
 # Owner @Si_Dian
-
+# Izin Maling Om
 
 @register(outgoing=True, pattern='^L(?: |$)(.*)')
 async def typewriter(typew):
@@ -36,7 +36,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Waallaikumsalam......`")
 # Owner @Si_Dian
-
+# Izin Maling Om
 
 @register(outgoing=True, pattern='^l(?: |$)(.*)')
 async def typewriter(typew):
@@ -46,7 +46,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Waallaikumsalam.....`")
 # Owner @Si_Dian
-
+# Hehehehe
 
 CMD_HELP.update({
     "salam":
