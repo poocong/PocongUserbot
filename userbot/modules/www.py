@@ -88,8 +88,9 @@ async def pingme(pong):
     await pong.edit("`Pinging....`")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**PONG!! 🍭**\n**Pinger** : %sms\n**Bot Uptime** : {uptime}🕛" % (duration))
-
+    await pong.edit(f"☤ **𓆩Pong𓆪**\n"
+                    f"➦ __%sms__ \n"
+                    f"➥ __**User {ALIVE_NAME}**__\n" % (duration))
 
 @register(outgoing=True, pattern="^.pong$")
 async def pingme(pong):
@@ -113,9 +114,11 @@ async def pingme(pong):
 
 CMD_HELP.update(
     {"ping": "`.ping`\
-    \nUsage: Shows how long it takes to ping your bot.\
+    \nUsage: Untuk Melihat Kecepatan Koneksi Bot Anda.\
     \n\n`.speed`\
-    \nUsage: Does a speedtest and shows the results.\
+    \nUsage: Untuk Memeriksa Kecepatan Jaringan.\
     \n\n`.pong`\
-    \nUsage: Shows how long it takes to ping your bot."
+    \nUsage: Untuk Melihat Kecepatan Koneksi Bot Anda.\
+    \n\n`.pink`\
+    \nUsage: Untuk Melihat Kecepatan Koneksi Bot Anda."
      })
