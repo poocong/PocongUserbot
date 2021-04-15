@@ -175,7 +175,7 @@ async def gunben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("`Terjadi Kesalahan ヅ`")
+        return await dark.edit("`Terjadi Kesalahan`")
     if user:
         if user.id == 1527507639:
             return await dark.edit("**Woy Gblk Pengguna Tidak Bisa Terkena Perintah Ini, Karna Dia Pembuatku ヅ**")
