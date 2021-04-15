@@ -53,7 +53,15 @@ async def pingme(pong):
                     f"➦ __%sms__ \n"
                     f"➥ __**User {ALIVE_NAME}**__\n" % (duration))
 
-
+ @register(outgoing=True, pattern="^.pong$")   
+ async def pingme(pong):   
+     """ For .ping command, ping the userbot from any chat.  """
+     start = datetime.now()
+     await pong.edit("`gass!`")
+     end = datetime.now()
+     duration = (end - start).microseconds / 9000
+     await pong.edit("`Ping!\n%sms`" % (duration))
+    
 @register(outgoing=True, pattern="^.speedtest$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
@@ -94,7 +102,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 CMD_HELP.update(
-    {"ngewe": "`.ping`\
+    {"ping": "`.ping`\
     \nPemakaian: Untuk menunjukkan ping bot.\
     \n\n`.speedtest`\
     \nPemakaian: Untuk menunjukkan kecepatan koneksi."
