@@ -69,7 +69,7 @@ async def _(event):
               f"`•ISP: {i_s_p}\n`"
               f"`•ISP Rating: {i_s_p_rating}\n\n`"
               "**POWERED BY Pocong Userbot**")   
-     await bot.send_file(   
+    await bot.send_file(   
          event.chat_id,        
          speedtest_image,              
          caption=output,             
