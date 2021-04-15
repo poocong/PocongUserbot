@@ -8,7 +8,7 @@ from userbot.events import register
 from userbot import ALIVE_NAME, CMD_HELP, bot
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else username().node
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
