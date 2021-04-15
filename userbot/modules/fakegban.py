@@ -1,21 +1,21 @@
 # This is a troll indeed ffs *facepalm*
 # Ported from xtra-telegram by @heyworld
-import asyncio
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import ChannelParticipantsAdmins
+#import asyncio
+#from telethon.tl.functions.users import GetFullUserRequest
+#from telethon.tl.types import ChannelParticipantsAdmins
 #from userbot.utils import admin_cmd
-from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP, bot
+#from userbot.events import register
+#from userbot import ALIVE_NAME, CMD_HELP, bot
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+#DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.fgban(?: |$)(.*)")
-async def gbun(event):
-    if event.fwd_from:
-        return
+#@register(outgoing=True, pattern="^.fgban(?: |$)(.*)")
+#async def gbun(event):
+   # if event.fwd_from:
+        #return
     gbunVar = event.text
     gbunVar = gbunVar[6:]
     mentions = f"`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By` {DEFAULTUSER}\n"
