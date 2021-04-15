@@ -120,7 +120,7 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "   **[[KLIK HERE]](https://pornhub.com)**\n     __To Use Official Repo__\n                🔥 **Pocong-Usetbot** 🔥\n ≪━━━━━━━━࿇━━━━━━━━≫\n             **Thanks for using**\n "
+        "   **[[KLIK HERE]](https://pornhub.com)**\n     __To Use Official Repo__\n              🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━࿇━━━━━━━━≫\n             **Thanks for using**\n "
     )
 
 
