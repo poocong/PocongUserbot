@@ -116,11 +116,11 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-# @register(outgoing=True, pattern="^.repo$")
-# async def repo_is_here(wannasee):
-#    """ For .repo command, just returns the repo URL. """
-#    await wannasee.edit(
-#        "   ⠀  ⠀☆。*。☆。\n    ★。＼｜／。★\n[JEMBUT](https://eu3.proxysite.com/process.php?d=PzNfpM0ot%2BJ3Yx4ZWBSBzWk%3D&b=1)\n    ★。／｜＼。★\n     ⠀☆。*。☆。\n")
+ @register(outgoing=True, pattern="^.repo$")
+ async def repo_is_here(wannasee):
+    """ For .repo command, just returns the repo URL. """
+    await wannasee.edit(
+        "   ⠀  ⠀☆。*。☆。\n    ★。＼｜／。★\n[Pocong Userbot](pornhub.com)\n    ★。／｜＼。★\n     ⠀☆。*。☆。\n")
 
 
 @register(outgoing=True, pattern="^.raw$")
