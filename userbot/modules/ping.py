@@ -76,7 +76,7 @@ async def _(event):
          force_document=False,              
          allow_cache=False             
      )               
-     await event.delete()              
+    await event.delete()              
 
 
 #Pocong - Userbot
