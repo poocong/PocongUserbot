@@ -126,7 +126,7 @@ CMD_HELP.update(
     {"ping": "`.ping`\
     \nBerfungsi: Untuk Melihat Kecepatan Jaringan Bot Anda.\
     \n\n`.pink`\
-    \nBerfungsi: Baca Aja Yang Ping.
+    \nBerfungsi: Baca Aja Yang Ping.\
     \n\n`.speed`\
     \nBerfungsi: Untuk Melihat Kecepatan Server Bot Anda.\
     \n\n`.pong`\
