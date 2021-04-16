@@ -268,13 +268,13 @@ async def dyno_usage(dyno):
 
             await dyno.edit(
                 "**Penggunaan Dyno**:\n\n"
-                f"❏ __**Penggunaan Dyno** **{app.name}**:__\n"
-                f"    •__0 Jam - "
-                f"0%__\n\n"
-                "❏ __**Sisa Dyno Bulan Ini**:__\n"
-                f"    •__1000 Jam - 100%__"
+                f"❏ **Penggunaan Dyno** **{app.name}**:\n"
+                f"    •**0 Jam - "
+                f"0%**\n\n"
+                "❏ **Sisa Dyno Bulan Ini**:\n"
+                f"    •**1000 Jam - 100%**"
             )
-            await asyncio.sleep(20)
+            await asyncio.sleep(900)
             await dyno.delete()
             return True
 
