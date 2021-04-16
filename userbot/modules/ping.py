@@ -124,11 +124,11 @@ async def pingme(pong):
 
 CMD_HELP.update(
     {"ping": "`.ping`\
-    \nUsage: Shows how long it takes to ping your bot.\
+    \nPenggunaan: Untuk Melihat Kecepatan Jaringan Bot Anda.\
     \n\n`.pink`\
-    \nUsage: Shows how long it takes to ping your bot.\
+    \nPenggunaan: Sama Seperti Ping.\
     \n\n`.speed`\
-    \nUsage: Does a speedtest and shows the results.\
+    \nPenggunaan: Untuk Melihat Kecepatan Server Bot Anda.\
     \n\n`.pong`\
-    \nUsage: Shows how long it takes to ping your bot."
+    \nPenggunaan: Baca Aja Yang Ping."
      })
