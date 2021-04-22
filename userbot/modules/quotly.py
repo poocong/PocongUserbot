@@ -40,14 +40,14 @@ async def quotess(qotli):
     if qotli.fwd_from:
         return
     if not qotli.reply_to_msg_id:
-        return await qotli.edit("```Mohon Balas Ke Pesan Tuan```")
+        return await qotli.edit("```Reply Di Pesan Goblok```")
     reply_message = await qotli.get_reply_message()
     if not reply_message.text:
-        return await qotli.edit("```Mohon Balas Ke Pesan Tuan```")
+        return await qotli.edit("```Reply Di Pesan Goblok```")
     chat = "@QuotLyBot"
     if reply_message.sender.bot:
-        return await qotli.edit("```Mohon Balas Ke Pesan Tuan```")
-    await qotli.edit("```Sedang Memproses Sticker, Mohon Menunggu ツ```")
+        return await qotli.edit("```Reply Di Pesan Goblok```")
+    await qotli.edit("```Sedang Memproses Sticker, Mohon Menunggu```")
     try:
         async with bot.conversation(chat) as conv:
             try:
@@ -74,7 +74,7 @@ async def quotess(qotli):
         await qotli.edit()
 
 
-@register(outgoing=True, pattern="^.xquote(?: |$)(.*)")
+@register(outgoing=True, pattern="^.qbot(?: |$)(.*)")
 async def quote_search(event):
     if event.fwd_from:
         return
@@ -102,6 +102,6 @@ CMD_HELP.update({
     "quotly":
     "`.q`\
 \nUsage: Membuat pesan mu menjadi sticker.\
-\n\n`.xquote`\
+\n\n`.qbot`\
 \nUsage: membuat pesan mu menjadi sticker."
 })
