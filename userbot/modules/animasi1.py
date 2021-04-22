@@ -47,6 +47,18 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("pantes **NORAK**")
 
+    
+
+@register(outgoing=True, pattern='^.alay(?: |$)(.*)')
+async def typewriter(typew)
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("\n(\_/)")
+    await typew.edit("\n( •_•)")
+    await typew.edit("\n />")"\n(\_/)")
+    await typew.edit("\n  \n""\n( •_•)")
+    await typew.edit("\n   \n""\n/>")                
+    
 
 CMD_HELP.update({
     "animasi1":
