@@ -274,7 +274,7 @@ async def dyno_usage(dyno):
                 "❏ **Sisa Dyno Bulan Ini**:\n"
                 f"    •**1000 Jam - 100%**"
             )
-            await asyncio.sleep(900)
+            await asyncio.sleep(9000)
             await dyno.delete()
             return True
 
