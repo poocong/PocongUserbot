@@ -71,3 +71,4 @@ youtube-dl
 youtube_search
 zipfile38
 opencv-python-headless
+xbot-requierements
