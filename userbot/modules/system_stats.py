@@ -229,6 +229,7 @@ async def amireallyalive(alive):
         f"┣❏🐍 Python:  `Versi {python_version()}` \n"
         f"┣❏🤖 Bot Versi: `{BOT_VER}` \n"
         f"┣❏🗃 Plugins: `{len(modules)} Plugins` \n\n"
+        f"┣❏🧸 Creator: `[Stalk](https://t.me/Pocongonlen)\n"
         f"📌 **REPO** [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
