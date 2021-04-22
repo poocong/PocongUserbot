@@ -77,7 +77,7 @@ async def _(event):
     output = (f"**SpeedTest** completed in {ms}ms\n\n"
               f"`•Download: {speed_convert(download_speed)}\n`"
               f"`•Upload: {speed_convert(upload_speed)}\n`"
-              f"`•Ping: {__%sms__}\n`"
+              f"`•Ping: {ping_time}\n`"
               f"`•ISP: {i_s_p}\n`"
               f"`•ISP Rating: {i_s_p_rating}\n\n`"
               "**POWERED BY XBOT REMIX 🔥**")
