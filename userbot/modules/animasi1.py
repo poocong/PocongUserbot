@@ -49,7 +49,7 @@ async def typewriter(typew):
 
     
 
-@register(outgoing=True, pattern='^.alay(?: |$)(.*)')
+@register(outgoing=True, pattern='^.mau(?: |$)(.*)')
 async def typewriter(typew)
     typew.pattern_match.group(1)
     sleep(1)
