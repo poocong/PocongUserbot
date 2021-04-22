@@ -223,13 +223,13 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
-        f"**𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛** \n"
+        f"**🔥𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛🔥** \n"
         f"┣❏😈 Master: `{DEFAULTUSER}` \n"
-        f"┣❏⚙️ Telethon: `Versi {version.__version__}` \n"
+        f"┣❏🔎 Username: `@{user.username}` \n"
         f"┣❏🐍 Python:  `Versi {python_version()}` \n"
         f"┣❏🤖 Bot Versi: `{BOT_VER}` \n"
         f"┣❏🗃 Plugins: `{len(modules)} Plugins` \n"
-        f"┣❏🔎 Username: `@{user.username}` \n\n"
+        f"┣❏⚙ Telethon: `Versi {version.__version__}`\n\n"
         f"📌 **REPO** [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
