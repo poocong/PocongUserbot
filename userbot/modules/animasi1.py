@@ -50,14 +50,14 @@ async def typewriter(typew):
     
 
 @register(outgoing=True, pattern='^.mau(?: |$)(.*)')
-async def typewriter(typew)
-    typew.pattern_match.group(1)
-    sleep(1)
-    await typew.edit("\n(\_/)")
-    await typew.edit("\n( •_•)")
-    await typew.edit("\n />")"\n(\_/)")
-    await typew.edit("\n  \n""\n( •_•)")
-    await typew.edit("\n   \n""\n/>")                
+async def nih(e):
+   
+ 
+    await e.edit("\n(\_/)")
+    await e.edit("\n( •_•)")
+    await e.edit("\n />")"\n(\_/)")
+    await e.edit("\n  \n""\n( •_•)")
+    await e.edit("\n   \n""\n/>")                
     
 
 CMD_HELP.update({
