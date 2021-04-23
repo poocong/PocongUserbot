@@ -186,9 +186,6 @@ async def dyno_usage(dyno):
                 "❏ __**Sisa Dyno Bulan Ini**:__\n"
                 f"    •**{hours} Jam - {percentage}%**"
             )
-            await asyncio.sleep(20)
-            await dyno.delete()
-            return True
 
 
 @register(outgoing=True, pattern=r"^\.logs")
@@ -274,9 +271,6 @@ async def dyno_usage(dyno):
                 "❏ **Sisa Dyno Bulan Ini**:\n"
                 f"    •**1000 Jam - 100%**"
             )
-            await asyncio.sleep(9000)
-            await dyno.delete()
-            return True
 
 
 CMD_HELP.update({"heroku": ">.`usage`"
