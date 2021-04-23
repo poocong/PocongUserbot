@@ -225,7 +225,7 @@ async def amireallyalive(alive):
     output = (
         f"**🔥𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛🔥** \n"
         f"┣❏😈 **Master**: `**{DEFAULTUSER}**` \n"
-        f"┣❏🔎 **Username**: `**@{user.username}**` \n"
+        f"┣❏🔎 **Username**: `@{user.username}` \n"
         f"┣❏🐍 **Python**:  `**Versi {python_version()}**` \n"
         f"┣❏🤖 **Bot Versi**: `**{BOT_VER}**` \n"
         f"┣❏🗃 **Plugins**: `**{len(modules)} Plugins**` \n"
