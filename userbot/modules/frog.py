@@ -47,5 +47,5 @@ async def honkasays(event):
         await event.edit("Maaf saya tidak bisa mengirim stiker ke sini !!")
 
 
-CMD_HELP.update({"frog": "𝘾𝙈𝘿`.frog`\
+CMD_HELP.update({"frog": ".frog`\
     \nPenjelasan: .frog <kata kata>."})
