@@ -10,15 +10,15 @@
 # King Userbot - From King To King
 # Yang Gbs Basa Enggres bisa Terjemahkan di atas
 # Ngefork Doang Gak Bintang Anjg
-# Kalo Clone Ini Jangan dihapus ya anjg nanti Apis Ngamuk, Ok Mksh Sma Sma
+# Kalo Clone Ini Jangan dihapus ya anjg nanti Ocong Ngamuk, Ok Mksh Sma Sma
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import bot, CMD_HELP
 
-# Apis Gans
-# Apin Gansssss Anjjjayy Yahahaha
+# Anjing lu pada
+# Kontol bapak kau pecah
 
 
 @register(outgoing=True, pattern="^.ig ?(.*)")
