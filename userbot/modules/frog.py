@@ -1,7 +1,7 @@
-# Yang Hapus Besok Mati Aminnn
-# Port By @Vckyouuu
-# Apis Ganteng , Yang Hapus Meninggal Besok Aminn...
-# Gabut Doang Gw Tod
+# Yang Baca Masuk Neraka
+# Port By @Pocongonlen
+# Eh Masuk Surga Maksudnya Mweheheh
+# Pocong - Userbot 
 
 
 from telethon.errors import ChatSendInlineForbiddenError, ChatSendStickersForbiddenError
@@ -42,10 +42,10 @@ async def honkasays(event):
             )
         await event.delete()
     except ChatSendInlineForbiddenError:
-        await event.edit("`King! Saya tidak bisa menggunakan hal-hal sebaris di sini...`")
+        await event.edit("`Maaf Saya tidak bisa menggunakan hal-hal sebaris di sini...`")
     except ChatSendStickersForbiddenError:
-        await event.edit("Maaf King, saya tidak bisa mengirim stiker ke sini !!")
+        await event.edit("Maaf saya tidak bisa mengirim stiker ke sini !!")
 
 
-CMD_HELP.update({"frog": "⚡𝘾𝙈𝘿⚡`.frog`\
+CMD_HELP.update({"frog": "𝘾𝙈𝘿`.frog`\
     \nPenjelasan: .frog <kata kata>."})
