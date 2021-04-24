@@ -408,9 +408,41 @@ with bot:
                 await event.edit(buttons=buttons)
             else:
                 reply_pop_up_alert = "Please make for yourself, don't use my bot!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(b"ub_modul_(.*)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                modul_name = event.data_match.group(1).decode("UTF-8")
+
+                cmdhel = str(CMD_HELP[modul_name])
+                if len(cmdhel) > 150:
+                    help_string = (
+                        str(CMD_HELP[modul_name]).replace("`", "")[:150]
+                        + "..."
+                        + "\n\nRead more .help "
+                        + modul_name
+                        + " "
+                    )
+                else:
+                    help_string = str(CMD_HELP[modul_name]).replace("`", "")
+
+                reply_pop_up_alert = (
+                    help_string
+                    if help_string is not None
+                    else "{} No document has been written for module.".format(
+                        modul_name
+                    )
+                )
+            else:
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        
+
     except BaseException:
         LOGS.info(
             "Dukungan untuk inline dinonaktifkan pada bot Anda. "
