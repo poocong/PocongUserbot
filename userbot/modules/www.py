@@ -9,7 +9,7 @@
 import speedtest
 import time
 from datetime import datetime
-from userbot import CMD_HELP, StartTime, ALIVE_NAME
+from userbot import bot, CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 
 
