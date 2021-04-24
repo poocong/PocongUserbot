@@ -272,7 +272,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
     helpable_modules = sorted(helpable_modules)
     modules = [
-        custom.Button.inline("{} {}".format("â–«ï¸", x), data="ub_modul_{}".format(x))
+        custom.Button.inline("{} {}".format("☠️", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -286,10 +286,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "â¬…ï¸", data="{}_prev({})".format(prefix, modulo_page)
+                    "⬅️", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    "âž¡ï¸", data="{}_next({})".format(prefix, modulo_page)
+                    '❎', b'close'
+                ),
+                custom.Button.inline(
+                    "➡️", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
@@ -307,15 +310,24 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+        logo = "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
+
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-            if event.message.from_id != uid:
-                await event.reply(
-                    "Saya [Pocong Userbot](https://github.com/poocong/Pocong-Userbot)...\ntolong buat bot Anda sendiri, jangan gunakan bot saya"
-                )
-            else:
-                await event.reply(f"`Hai Saya {ALIVE_NAME}\n\n yang selalu siap melayanimu`")
+            sender = await event.message.get_sender()
+            text = (
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [XBØT-REMIX](https://github.com/ximfine/XBot-Remix) modules helper...\nplease make your own bot, don't use mine")
+            await tgbot.send_file(event.chat_id, logo, caption=text,
+                                  buttons=[
+                                      [
+                                          Button.url(
+                                              text="🔱 OFFICIAL CHANNELS 🔱",
+                                              url="https://t.me/X_Projectss"
+                                          )
+                                      ]
+                                  ]
+                                  )
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -325,9 +337,9 @@ with bot:
             if event.query.user_id == uid and query.startswith(""):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
-                    "Harap Gunakan Perintah .help Untuk Melihat Daftar Plugins!",
-                    text="{}\nTotal modul yang dimuat: {}".format(
-                        "[Pocong Userbot](https://github.com/poocong/Pocong-Userbot) plugins.\n",
+                    "Please Use Only With .help Command",
+                    text="{}\nTotal loaded modules: {}".format(
+                        "[XBOT-REMIX](https://github.com/ximfine/XBot-Remix) modules helper.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -335,24 +347,24 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Pocong Helper",
-                    text="Daftar Plugins",
+                    "xbot Helper",
+                    text="List of Modules",
                     buttons=[],
                     link_preview=True,
                 )
             else:
                 result = builder.article(
-                    "Pocong Userbot",
-                    text="""Anda dapat mengubah akun Anda menjadi bot dan menggunakannya. Ingat, Anda tidak dapat mengelola bot orang lain! Semua detail instalasi dijelaskan dari alamat GitHub di bawah ini.""",
+                    "xbot",
+                    text="""You can convert your account to bot and use them. Remember, you can't manage someone else's bot! All installation details are explained from GitHub address below.""",
                     buttons=[
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/poocong/Pocong-Userbot",
+                                "https://github.com/ximfine/XBot-Remix",
                             ),
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/LifeeOrDeath"),
+                                "https://t.me/X_Projectss"),
                         ],
                     ],
                     link_preview=False,
@@ -373,8 +385,12 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b'close'))
+        async def close(event):
+            await event.edit("Button closed!", buttons=Button.clear())
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -391,42 +407,10 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(b"ub_modul_(.*)")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name = event.data_match.group(1).decode("UTF-8")
-
-                cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 150:
-                    help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "")[:150]
-                        + "..."
-                        + "\n\nBaca lebih lanjut .help "
-                        + modul_name
-                        + " "
-                    )
-                else:
-                    help_string = str(CMD_HELP[modul_name]).replace("`", "")
-
-                reply_pop_up_alert = (
-                    help_string
-                    if help_string is not None
-                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
-                        modul_name
-                    )
-                )
-            else:
-                reply_pop_up_alert = "Silakan buat sendiri, jangan gunakan bot saya!"
+                reply_pop_up_alert = "Please make for yourself, don't use my bot!"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+        
     except BaseException:
         LOGS.info(
             "Dukungan untuk inline dinonaktifkan pada bot Anda. "
