@@ -188,7 +188,7 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n`🔥Pocong Userbot🔥\n` sudah **versi terbaru**\n`)
+            f'\n`🔥Pocong Userbot🔥\n` sudah **versi terbaru**\nBRANCH:`**{UPSTREAM_REPO_BRANCH}**\n`)
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
