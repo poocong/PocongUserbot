@@ -275,7 +275,7 @@ async def amireallyalive(alive):
         f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[TUNGAU](t.me/Pocongonlen) \n"
         f"**▰▱▰▱▰▱▰▱✯▰▱▰▱▰▱▰**\n"
         f"ㅤ[👥Grup Oficial](t.me/PocongUserbot)  |--|  [📍REPO](https://github.com/poocong/Pocong-Userbot)")
-    if ALIVE_LOGO
+    if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await alive.delete()
