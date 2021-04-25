@@ -262,9 +262,9 @@ async def amireallyalive(alive):
     sleep(2)    
     output = (   
         f"**╭╼═✯══════════════✯═╾╮**\n"
-        f"ㅤㅤㅤㅤㅤ**≛ 𝙋𝙤𝙘𝙤𝙣𝙜 𝙐𝙨𝙚𝙧𝙗𝙤𝙩≛** \n"
+        f"ㅤㅤㅤ**≛ 𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩≛** \n"
         f"**╰╼═✯══════════════✯═╾╯**\n"
-        f"ㅤㅤ**𝐒𝐢𝐚𝐩𝐚𝐩𝐮𝐧 𝐁𝐢𝐬𝐚 𝐉𝐚𝐝𝐢 𝐀𝐩𝐚𝐩𝐮𝐧..!** \n"
+        f"**𝐀𝐲𝐨 𝐌𝐞𝐧𝐲𝐞𝐫𝐚𝐡 𝐍𝐠𝐚𝐩𝐚𝐢𝐧 𝐒𝐞𝐦𝐚𝐧𝐠𝐚𝐭..!** \n"
         f"**╔══════════✹══════════╗** \n"
         f"➨ **𝙼𝚢 𝙱𝚘𝚜𝚜** ㅤ ㅤ :   `{DEFAULTUSER}` \n"
         f"➨ **𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎** ㅤ  :   `@{user.username}` \n"
@@ -272,7 +272,7 @@ async def amireallyalive(alive):
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗** ㅤ  :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**    ㅤ  :   `{BOT_VER}` \n"
         f"**╚══════════✹══════════╝**\n"
-        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[TUNGAU](t.me/Pocongonlen) \n"
+        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[STALK](t.me/Pocongonlen) \n"
         f"**▰▱▰▱▰▱▰▱✯▰▱▰▱▰▱▰**\n"
         f"ㅤ[👥Grup Oficial](t.me/PocongUserbot)  |--|  [📍REPO](https://github.com/poocong/Pocong-Userbot)")
     if ALIVE_LOGO:
