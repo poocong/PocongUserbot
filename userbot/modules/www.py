@@ -139,7 +139,7 @@ CMD_HELP.update(
     \n\n`.speed`\
     \nPenjelasan: Untuk Melihat Kecepatan Server Bot Anda.\
     \n\n`.dc`\
-    n\Penjelasan:Ntah Test Aja
+    n\Penjelasan:Ntah Test Aja.\
     \n\n`.pong`\
     \nPenjelasan: Lu Baca Aja Dah Yg Ping."
      })
