@@ -133,11 +133,13 @@ async def neardc(event)
 
 CMD_HELP.update(
     {"ping": "`.ping`\
-    \nBerfungsi: Untuk Melihat Kecepatan Jaringan Bot Anda.\
+    \nPenjelasan: Untuk Melihat Kecepatan Jaringan Bot Anda.\
     \n\n`.pink`\
-    \nBerfungsi: Baca Aja Yang Ping.\
+    \nPenjelasan: Baca Aja Yang Ping.\
     \n\n`.speed`\
-    \nBerfungsi: Untuk Melihat Kecepatan Server Bot Anda.\
+    \nPenjelasan: Untuk Melihat Kecepatan Server Bot Anda.\
+    \n\n`.dc`\
+    n\Penjelasan:Ntah Test Aja
     \n\n`.pong`\
-    \nBerfungsi: Lu Baca Aja Dah Yg Ping."
+    \nPenjelasan: Lu Baca Aja Dah Yg Ping."
      })
