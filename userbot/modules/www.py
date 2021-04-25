@@ -8,6 +8,7 @@
 
 import speedtest
 import time
+from telethon import functions
 from datetime import datetime
 from userbot import bot, CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
