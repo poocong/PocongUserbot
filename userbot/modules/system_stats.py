@@ -272,11 +272,27 @@ async def amireallyalive(alive):
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗** ㅤ  :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**    ㅤ  :   `{BOT_VER}` \n"
         f"**╚══════════✹══════════╝**\n"
-        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[TUNGAU](t.me/DamnBitchh) \n"
+        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[TUNGAU](t.me/Pocongonlen) \n"
         f"**▰▱▰▱▰▱▰▱✯▰▱▰▱▰▱▰**\n"
-        f"ㅤ[👥Grup Oficial](t.me/CariTemen_Random)  |--|  [👤Instagram](https://www.instagram.com/arimulyaa_/)")
+        f"ㅤ[👥Grup Oficial](t.me/PocongUserbot)  |--|  [📍REPO](https://github.com/poocong/Pocong-Userbot)")
     if ALIVE_LOGO
         try:
+            logo = ALIVE_LOGO
+            await alive.delete()
+            msg = await bot.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(500)
+            await msg.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
+                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+            )   
+            await asyncio.sleep(100)
+            await alive.delete()
+    else:
+        await alive.edit(output)
+        await asyncio.sleep(100)
+        await alive.delete()                 
 
 @register(outgoing=True, pattern=r"^\.aliveu")
 async def amireallyaliveuser(username):
