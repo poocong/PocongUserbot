@@ -285,10 +285,11 @@ CMD_HELP.update({
     ">`.shutdown`\
     \nPenjelasan: Menurunkan Versi Bot",
     "repo":
-    ">`.repo`\
-    \nPenjelasan: Repo Palsu",
-    ">`.repobot`\
+    ">`.repo .repobot`\
     \nPenjelasan: Untuk Melihat Repo Bot Anda",
+#
+#">`.repobot`\
+#\nPenjelasan: Untuk Melihat Repo Bot Anda.",
     "readme":
     ">`.readme`\
     \nUsage: Provide links to setup the userbot and it's modules.",
