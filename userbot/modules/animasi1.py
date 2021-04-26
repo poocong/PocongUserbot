@@ -48,7 +48,7 @@ async def typewriter(typew):
     await typew.edit("pantes **NORAK**")
 
     
-@register(outgoing=True, pattern'^.repobot(?: |$)(.*)') 
+@register(outgoing=True, pattern='^.repobot(?: |$)(.*)') 
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
