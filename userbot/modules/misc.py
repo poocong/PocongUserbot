@@ -283,7 +283,7 @@ CMD_HELP.update({
     \nUsage: Let yours snooze for a few seconds.",
     "shutdown":
     ">`.shutdown`\
-    \nUsage: Shutdown bot",
+    \nPenjelasan: Menurunkan Versi Bot",
     "repo":
     ">`.repo`\
     \nPenjelasan: Repo Palsu",
