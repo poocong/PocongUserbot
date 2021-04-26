@@ -95,6 +95,14 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi1":
-    "`.hai` ; `.kntl` ; `.jawa` ; `.alay`\
-    \nUsage: lu liat sendiri lah anjg"
+    "`.hai`\
+    \nPenjelasan: Cosplay Nissa Sablon\
+    \n\n`.kntl`\
+    \nPenjelasan: Cek Aja dh\
+    \n\n`.alay`\
+    n\Penjelasan: Lumayanlah Buat Nyindir\
+    \n\n`.jawa`\
+    n\Penjelasan: Jawa Pride Ni Bos."
+    
+    
 })
