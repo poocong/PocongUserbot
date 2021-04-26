@@ -48,18 +48,44 @@ async def typewriter(typew):
     await typew.edit("pantes **NORAK**")
 
     
-#@register(outgoing=True, pattern='^.repobot(?: |$)(.*)') 
-#async def typewriter(typew):
-    #typew.pattern_match.group(1)
-    #sleep(1)
-    #await typew.edit("👻")
-    #sleep(1)
-    #await typew.edit("**𝚃𝚎𝚛𝚒𝚖𝚊𝚔𝚊𝚜𝚒𝚑 𝚃𝚎𝚕𝚊𝚑 𝙼𝚎𝚗𝚐𝚐𝚞𝚗𝚊𝚔𝚊𝚗**")
-    #sleep(1)
-    #await.typew.edit("[REPO](https://github.com/poocong/Pocong-Userbot")
+@register(outgoing=True, pattern='^.jawa(?: |$)(.*)') 
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("baik")
+    sleep(1)
+    await typew.edit("Tidak Sombong")
+    sleep(1)
+    await.typew.edit("Ganteng")
+    sleep(1)
+    await.typew.edit("Sopan")
+    sleep(1)
+    await.typew.edit("Rajin")
+    sleep(1)
+    await.typew.edit("Budiman")
+    sleep(1)
+    await.typew.edit("Alim")
+    sleep(1)
+    await.typew.edit("Berguna")
+    sleep(1)
+    await.typew.edit("Nguli Juga")
+    sleep(1)
+    await.typew.edit("Pemaaf")
+    sleep(1)
+    await.typew.edit("Jujur")
+    sleep(1)
+    await.typew.edit("Tidk Sombong")
+    sleep(1)
+    await.typew.edit("Kaya")
+    sleep(1)
+    await.typew.edit("Pokoknya Jawa Pro Dah")
+    sleep(1)
+    await.typew.edit("Tidak Seperti Yang Lain")
+    sleep(1)
+    await.typew.edit("Bersama Jawa Membangun Negri")
 
 CMD_HELP.update({
     "animasi1":
-    "`.hai` ; `.kntl` ; `.alay`\
+    "`.hai` ; `.kntl` ; `.jawa` ; `.alay`\
     \nUsage: lu liat sendiri lah anjg"
 })
