@@ -123,12 +123,12 @@ async def repo_is_here(wannasee):
         "   **[[KLIK HERE]](https://pornhub.com)**\n     **To Use Official Repo**\n        🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━☤━━━━━━━━≫\n             **Thanks for using**\n "
     )
     
-@register(outgoing=True, patterm=".repobot$")
-async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
-    await wannasee.edit(
-        "   **[[KLIK HERE]](https://github.com/poocong/Pocong-Userbot)**\n     **To Use Official Repo**\n        🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━☤━━━━━━━━≫\n             **Thanks for using**\n "
-   )
+#@register(outgoing=True, patterm=".repobot$")
+#async def repo_is_here(wannasee):
+#    """ For .repo command, just returns the repo URL. """
+#    await wannasee.edit(
+#        "   **[[KLIK HERE]](https://github.com/poocong/Pocong-Userbot)**\n     **To Use Official Repo**\n        🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━☤━━━━━━━━≫\n             **Thanks for using**\n "
+#)
     
 
 
