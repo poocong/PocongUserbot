@@ -673,7 +673,7 @@ async def typewriter(typew):
     await typew.edit("`DILAN 1990`")
 # Create by myself @localheart
 
-@register(outgoing=True, pattern='^buaya(?: |$)(.*)')
+@register(outgoing=True, pattern='^.buaya(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
