@@ -100,9 +100,9 @@ CMD_HELP.update({
     \n\n`.kntl`\
     \nPenjelasan: Cek Aja dh\
     \n\n`.alay`\
-    n\Penjelasan: Lumayanlah Buat Nyindir\
+    \nPenjelasan: Lumayanlah Buat Nyindir\
     \n\n`.jawa`\
-    n\Penjelasan: Jawa Pride Ni Bos."
+    \nPenjelasan: Jawa Pride Ni Bos."
     
     
 })
