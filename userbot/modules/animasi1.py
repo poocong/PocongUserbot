@@ -80,7 +80,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Pokoknya Jawa Pro Dah")
     sleep(1)
-    await.typew.edit("Tidak Seperti Yang Lain")
+    await typew.edit("Tidak Seperti Yang Lain")
     sleep(1)
     await typew.edit("Bersama Jawa Membangun Negri")
     
