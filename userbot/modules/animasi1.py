@@ -83,6 +83,15 @@ async def typewriter(typew):
     await.typew.edit("Tidak Seperti Yang Lain")
     sleep(1)
     await typew.edit("Bersama Jawa Membangun Negri")
+    
+    
+@register(outgoing=True, pattern='^.repobot(?: |$)(.*)')  
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("👻")
+    sleep(1)
+    await typew.edit("[REPO](https://github.com/poocong/Pocong-Userbot")
 
 CMD_HELP.update({
     "animasi1":
