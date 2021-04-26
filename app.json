@@ -37,7 +37,7 @@
     },
     "HEROKU_APP_NAME": {
       "description": "Tambahkan nama aplikasi Heroku di sini. Ini membantu dengan pembaruan userbot.",
-      "required": false
+      "required": true
     },
     "COUNTRY": {
       "description": "Tetapkan Negara Anda untuk digunakan diperintah .time dan .date",
@@ -74,6 +74,7 @@
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
+      "value": " 7adb5663b788957"
       "required": false
     },
     "REM_BG_API_KEY": {
@@ -126,7 +127,7 @@
     },
     "ALIVE_NAME": {
       "description": "Nama untuk ditampilkan dipesan .alive",
-      "required": false
+      "required": true
     },
     "G_DRIVE_DATA": {
       "description": "Your client_secret.json.",
