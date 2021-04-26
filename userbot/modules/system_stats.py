@@ -272,7 +272,7 @@ async def amireallyalive(alive):
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗** ㅤ  :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**    ㅤ  :   `{BOT_VER}` \n"
         f"**╚══════════✹══════════╝**\n"
-        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[STALK](t.me/Pocongonlen) \n"
+        f"ㅤ ㅤ🔰**•PEMILIK•**ㅤ :  ㅤ[SENTUH AKU SAYNG](t.me/Pocongonlen) \n"
         f"**▰▱▰▱▰▱▰▱✯▰▱▰▱▰▱▰**\n"
         f"ㅤ[👥Grup Oficial](t.me/PocongUserbot)  |--|  [📍REPO](https://github.com/poocong/Pocong-Userbot)")
     if ALIVE_LOGO:
