@@ -286,7 +286,9 @@ CMD_HELP.update({
     \nUsage: Shutdown bot",
     "repo":
     ">`.repo`\
-    \nUsage: Github Repo of this bot",
+    \nPenjelasan: Repo Palsu",
+    ">`.repobot`\
+    \nPenjelasan: Untuk Melihat Repo Bot Anda",
     "readme":
     ">`.readme`\
     \nUsage: Provide links to setup the userbot and it's modules.",
