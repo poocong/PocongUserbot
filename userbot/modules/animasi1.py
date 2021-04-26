@@ -91,7 +91,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("👻")
     sleep(1)
-    await typew.edit("[Sentuh Aku Sayang](https://github.com/poocong/Pocong-Userbot)\n 𝚃𝚎𝚛𝚒𝚖𝚊𝚔𝚊𝚜𝚒𝚑 𝚃𝚎𝚕𝚊𝚑 𝙼𝚎𝚗𝚐𝚐𝚞𝚗𝚊𝚔𝚊𝚗")
+    await typew.edit("**Official Repo**\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝚃𝚎𝚛𝚒𝚖𝚊𝚔𝚊𝚜𝚒𝚑 𝚃𝚎𝚕𝚊𝚑 𝙼𝚎𝚗𝚐𝚐𝚞𝚗𝚊𝚔𝚊𝚗👻")
 
 CMD_HELP.update({
     "animasi1":
