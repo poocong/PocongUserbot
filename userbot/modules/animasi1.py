@@ -124,7 +124,9 @@ CMD_HELP.update({
     \n\n`.alay`\
     \nPenjelasan: Lumayanlah Buat Nyindir\
     \n\n`.jawa`\
-    \nPenjelasan: Jawa Pride Ni Bos."
+    \nPenjelasan: Jawa Pride Ni Bos.\
+    \n\n`.erpe`\
+    \nPenjelasan: Buat Nyindir Nak Rp Yg Goblok."
     
     
 })
