@@ -74,7 +74,7 @@
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
-      "value": "7adb5663b788957"
+      #"value": "7adb5663b788957"
       "required": false
     },
     "REM_BG_API_KEY": {
