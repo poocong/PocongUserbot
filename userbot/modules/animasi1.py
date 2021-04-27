@@ -84,6 +84,28 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Bersama Jawa Membangun Negri")
     
+@register(outgoing=True, pattern='^.erpe(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("Hai, Kamu Anak Erpe Ya")
+    sleep(1)
+    await typew.edit("Kok Pake Muka Orang sih?")
+    sleep(1)
+    await typew.edit("Oh iya, Muka Anak Erpe Kan")
+    sleep(1)
+    await typew.edit("**BURIK- BURIK**")
+    sleep(1)
+    await typew.edit("Jadinya Pake Muka Orang")
+    sleep(1)
+    await typew.edit("Karena Muka Anak erpe")
+    sleep(1)
+    await typew.edit("**BURIK- BURIK**")
+    sleep(1)
+    await typew.edit("Canda **BURIK**")
+    sleep(1)
+    await typew.edit("Lari Ada Plastik KePanasan")
+                     
     
 @register(outgoing=True, pattern='^.repobot(?: |$)(.*)')  
 async def typewriter(typew):
