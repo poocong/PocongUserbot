@@ -17,7 +17,7 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-# ILham Mansiezz
+# P o c o n g - U s e r b o t
 
 
 @register(outgoing=True, pattern=r"^\.wp(?: |$)(.*)")
