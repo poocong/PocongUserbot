@@ -1,4 +1,4 @@
-# Tuan User
+# P o c o n g - U s e r b o t
 
 from time import sleep
 from userbot import CMD_HELP, bot
@@ -173,11 +173,11 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 6])
-# Tuan User
-# Tuan User
-# Tuan User
+#Dah la
+#Cape
+# Mo Maling Kah??
 CMD_HELP.update({
-    "poconganimasi":
+    "animasi3":
     "`.nah` ; `.huh` ; `.owner`\
     \nUsage: cobain.\
     \n\n`.bunga` ; `.buah`\
