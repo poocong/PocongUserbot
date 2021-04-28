@@ -40,7 +40,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "tiktok": ">`.tt <Link>`"
-        "\nUsage: Download Video Tiktok Tanpa Watermark"
+        "tiktok": "•𝐒𝐲𝐧𝐭𝐚𝐱`.tt <Link>`"
+        "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Download Video Tiktok Tanpa Watermark"
     }
 )
