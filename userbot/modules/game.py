@@ -1,5 +1,5 @@
 # Based Plugins
-# Ported For Tuan-Userbot By bismillahselaluadaa/Ilham
+# Ported For Pocong - Userbot By @Pocongonlen
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini!!!
 from userbot import CMD_HELP, bot
 from userbot.events import register
@@ -32,7 +32,7 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-# ILham Mansiezz
+# Hilih Kintil
 
 
 @register(outgoing=True, pattern=r"^\.mod(?: |$)(.*)")
@@ -47,10 +47,12 @@ async def _(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
-# Ported For Tuan-Userbot By bismillahselaluadaa/ILham
+# Ported For Pocong - Userbot by @Pocongonlen
+
+
 
 CMD_HELP.update({
-    "pocongfun": "\
+    "game": "\
 `.xogame`\
 \nUsage: Mainkan game XO bersama temanmu.\
 \n\n`.mod <nama app>`\
