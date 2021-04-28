@@ -117,8 +117,8 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi1":
-    "`.hai`\
-    \nPenjelasan: Cosplay Nissa Sablon\
+    "`""•Syntax"":.hai`\
+    \n""Function"": Cosplay Nissa Sablon\
     \n\n`.kntl`\
     \nPenjelasan: Cek Aja dh\
     \n\n`.alay`\
