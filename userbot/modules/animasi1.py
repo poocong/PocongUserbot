@@ -112,21 +112,39 @@ async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("`Cuma Mau Bilang`")
+    sleep(1)
     await typew.edit("`A`")
     await typew.edit("`Ak`")
     await typew.edit("`Aku`")
-    await typew.edit("`S`")
-    await typew.edit("`Sa`")
-    await typew.edit("`Say`")
-    await typew.edit("`Saya`")
-    await typew.edit("`Sayan`")
-    await typew.edit("`Sayang`")
-    await typew.edit("`K`")
-    await typew.edit("`Ka`")
-    await typew.edit("`Kam`")
-    await typew.edit("`Kamu`")
+    await typew.edit("`Aku S`")
+    await typew.edit("`Aku Sa`")
+    await typew.edit("`Aku Say`")
+    await typew.edit("`Aku Saya`")
+    await typew.edit("`Aku Sayan`")
+    await typew.edit("`Aku Sayang`")
+    await typew.edit("`Aku Sayang K`")
+    await typew.edit("`Aku Sayang Ka`")
+    await typew.edit("`Aku Sayang Kam`")
+    await typew.edit("`Aku Sayang Kamu`")
     sleep(1)
     await typew.edit("`I LOVE YOU 💞`")
+    
+@register(outgoing=True, pattern='^.ange(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`Ayanggggg😖`")
+    sleep(1)
+    await typew.edit("`Ange😫`")
+    sleep(1)
+    await typew.edit("`Ayukkk Ewean Ayanggg🤤`")
+    
+    
+@register(outgoing=True, pattern='^.dahlah(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`Ayo Menyerah`")
+    sleep(2)
+    await typew.edit("`Ngapai Semangat`")
                      
     
 @register(outgoing=True, pattern='^.repobot(?: |$)(.*)')  
@@ -145,6 +163,12 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .alay`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lumayanlah Buat Nyindir\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .ange`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ketik Ini Kalo Lu Lagi Sange\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .lopu`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Nyatakan Cinta Ke Cewe Orng\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .dahla`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh sndri\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .jawa`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Jawa Pride Ni Bos.\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .erpe`\
