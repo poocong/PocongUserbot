@@ -1,5 +1,5 @@
 # Based Plugins
-# Ported for Tuan-Userbot By bismillahselaluadaa/ILham
+# Ported for P o c o n g - U s e r b o t
 
 from telethon import events
 from userbot.events import register
