@@ -142,9 +142,9 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.dahlah(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Ayo Menyerah`")
+    await typew.edit("**`Ayo Menyerah`**")
     sleep(2)
-    await typew.edit("`Ngapai Semangat`")
+    await typew.edit("**`Ngapain Semangat`**")
                      
     
 @register(outgoing=True, pattern='^.repobot(?: |$)(.*)')  
@@ -167,7 +167,7 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ketik Ini Kalo Lu Lagi Sange\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .lopu`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Nyatakan Cinta Ke Cewe Orng\
-    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .dahla`\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .dahlah`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh sndri\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .jawa`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Jawa Pride Ni Bos.\
