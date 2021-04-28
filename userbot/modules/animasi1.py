@@ -105,6 +105,28 @@ async def typewriter(typew):
     await typew.edit("Canda **BURIK**")
     sleep(1)
     await typew.edit("Lari Ada Plastik KePanasan")
+    
+    
+@register(outgoing=True, pattern='^.lopu(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("`Cuma Mau Bilang`")
+    await typew.edit("`A`")
+    await typew.edit("`Ak`")
+    await typew.edit("`Aku`")
+    await typew.edit("`S`")
+    await typew.edit("`Sa`")
+    await typew.edit("`Say`")
+    await typew.edit("`Saya`")
+    await typew.edit("`Sayan`")
+    await typew.edit("`Sayang`")
+    await typew.edit("`K`")
+    await typew.edit("`Ka`")
+    await typew.edit("`Kam`")
+    await typew.edit("`Kamu`")
+    sleep(1)
+    await typew.edit("`I LOVE YOU 💞`")
                      
     
 @register(outgoing=True, pattern='^.repobot(?: |$)(.*)')  
