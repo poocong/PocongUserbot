@@ -28,7 +28,7 @@ async def fastpurger(purg):
                 await purg.client.delete_messages(chat, msgs)
                 msgs = []
     else:
-        return await purg.edit("`Mohon Balas Ke Pesan Tuan ツ `")
+        return await purg.edit("`Mohon Balas Ke Pesan `")
 
     if msgs:
         await purg.client.delete_messages(chat, msgs)
@@ -39,7 +39,7 @@ async def fastpurger(purg):
     if BOTLOG:
         await purg.client.send_message(
             BOTLOG_CHATID,
-            "Berhasil Menghapus Pesan Tuan " + str(count) + " Pesan Berhasil  Dibersihkan.")
+            "Berhasil Menghapus Kenangan " + str(count) + " Pesan Berhasil  Dibersihkan.")
     """
     await sleep(2)
     await done.delete()
@@ -59,13 +59,13 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Berhasil Menghapus Pesan Tuan,` " + str(count) + " `Pesan Telah Dihapus ツ`",
+        "`Berhasil Menghapus Kenangan,` " + str(count) + " `Pesan Telah Dihapus`",
     )
     """
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "`Tuan Telah Menghapus Pesan,` " + str(count) + " Pesan Telah Dihapus ツ`")
+            "`Berhasil Menghapus Kenangan,` " + str(count) + " `Pesan Telah Dihapus`")
     """
     await sleep(2)
     i = 1
@@ -82,7 +82,7 @@ async def delete_it(delme):
             """
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "`Tuan Berhasil Menghapus Pesan ツ`")
+                    BOTLOG_CHATID, "`Pesan Telah Di Hapus`")
             """
         except rpcbaseerrors.BadRequestError:
             await delme.edit("`Tidak Bisa Menghapus Pesan`")
@@ -109,7 +109,7 @@ async def editer(edit):
     """
     if BOTLOG:
         await edit.client.send_message(BOTLOG_CHATID,
-                                       "`Berhasil Mengedit Pesan ツ`")
+                                       "`Pesan Telah Di Edit`")
    """
 
 
@@ -125,7 +125,7 @@ async def selfdestruct(destroy):
     """
     if BOTLOG:
         await destroy.client.send_message(BOTLOG_CHATID,
-                                          "`SD Berhasil Dilakukan ツ`")
+                                          "`SD Berhasil Dilakukan`")
     """
 
 
