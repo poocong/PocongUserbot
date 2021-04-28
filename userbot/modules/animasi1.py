@@ -113,20 +113,20 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("👻")
     sleep(2)
-    await typew.edit("**𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩🔥**\n\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠👻")
+    await typew.edit("**🔥𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩🔥**\n\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠👻")
 
 CMD_HELP.update({
     "animasi1":
-    "`**•Syntax** : .hai`\
-    \n**•Function** : Cosplay Nissa Sablon\
-    \n\n`.kntl`\
-    \nPenjelasan: Cek Aja dh\
-    \n\n`.alay`\
-    \nPenjelasan: Lumayanlah Buat Nyindir\
-    \n\n`.jawa`\
-    \nPenjelasan: Jawa Pride Ni Bos.\
-    \n\n`.erpe`\
-    \nPenjelasan: Buat Nyindir Nak Rp Yg Goblok."
+    "`•𝐒𝐲𝐧𝐭𝐚𝐱: .hai`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cosplay Nissa Sablon\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .kntl`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .alay`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lumayanlah Buat Nyindir\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .jawa`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Jawa Pride Ni Bos.\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .erpe`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Buat Nyindir Nak Rp Yg Goblok."
     
     
 })
