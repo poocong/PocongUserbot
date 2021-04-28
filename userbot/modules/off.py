@@ -3,6 +3,9 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
+#Don't Remove
+#Hai Kanger!!
+#Pasti Mo Maling Xixixi
 """ Userbot module which contains afk-related commands """
 import asyncio
 from datetime import datetime
@@ -75,12 +78,12 @@ async def mention_afk(mention):
         if mention.sender_id not in USERS or chat_title not in USERS:
             if AFKREASON:
                 await mention.reply(
-                    f"**Saya sedang offline!** \n(Sejak: {afk_str})"
-                    f"\nKarena: `{AFKREASON}`."
+                    f"**Saya sedang offline!** \n**Sejak: {afk_str}**"
+                    f"\n**Alasan: `{AFKREASON}`.**"
                 )
             else:
                 await mention.reply(
-                    f"**Saya sedang offline!** \n(Sejak: {afk_str})"
+                    f"**Saya sedang offline!** \n**Sejak: {afk_str}**"
                     "\n**Silakan kembali lagi nanti.**"
                 )
             if mention.sender_id is not None:
@@ -91,12 +94,12 @@ async def mention_afk(mention):
             if USERS[mention.sender_id] % randint(2, 4) == 0:
                 if AFKREASON:
                     await mention.reply(
-                        f"**Saya sedang offline!** \n(Sejak: {afk_str})"
-                        f"\nKarena: `{AFKREASON}`."
+                        f"**Saya sedang offline!** \n\n**Sejak: {afk_str}**"
+                        f"\n**Alasan: `{AFKREASON}`.**"
                     )
                 else:
                     await mention.reply(
-                        f"**Saya sedang offline sekarang!** \n(Sejak: {afk_str})"
+                        f"**Saya sedang offline sekarang!** \n\n**Sejak: {afk_str}**"
                         "\n**Silakan kembali lagi nanti.**"
                     )
             if mention.sender_id is not None:
@@ -105,6 +108,9 @@ async def mention_afk(mention):
                 USERS[chat_title] += 1
         COUNT_MSG += 1
 
+#Hi , Mau Maling Ya??        
+#Xixixixi
+#P o c o n g - U s e r b o t
 
 @register(incoming=True, disable_errors=True)
 async def afk_on_pm(sender):
@@ -162,8 +168,8 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"**Saya sedang offline!** \n(Sejak: {afk_str})"
-                        f"\nKarena: `{AFKREASON}`."
+                        f"**Saya sedang offline!** \n\nSejak: {afk_str}"
+                        f"\nAlasan: `{AFKREASON}`."
                     )
                 else:
                     await sender.reply(
@@ -176,12 +182,12 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"**Saya sedang offline!** \n(Sejak: {afk_str})"
-                            "\nKarena: `{AFKREASON}`."
+                            f"**Saya sedang offline!** \n\n**Sejak: {afk_str}**"
+                            "\n**Alasan: `{AFKREASON}`.**"
                         )
                     else:
                         await sender.reply(
-                            f"**Saya sedang offline sekarang!** \n(Sejak: {afk_str})"
+                            f"**Saya sedang offline sekarang!** \n\n**Sejak: {afk_str}**"
                             "\n**Silakan kembali lagi nanti.**"
                         )
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -207,7 +213,7 @@ async def set_afk(afk_e):
     afk_start = start1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit("**Saya akan kembali!**" f"\nKarena: `{string}`")
+        await afk_e.edit("**Saya akan kembali!**" f"\n**Karena: `{string}`**")
     else:
         await afk_e.edit("**Saya akan kembali!**")
     if BOTLOG:
@@ -215,7 +221,11 @@ async def set_afk(afk_e):
     ISAFK = True
     afk_time = datetime.now()
     raise StopPropagation
-
+    
+#Pocong - Userbot
+#Ciee Hapus Credit
+#Maling Aja Gapapa
+#Port by @Pocongonlen
 
 @register(outgoing=True, pattern=r"^\.unoff(?: |$)(.*)", disable_errors=True)
 async def type_afk_is_not_true(notafk):
@@ -272,14 +282,14 @@ async def type_afk_is_not_true(notafk):
         COUNT_MSG = 0
         USERS = {}
         AFKREASON = None
-
+#Pocong - Userbot
 
 CMD_HELP.update(
     {
-        "afk": ">`.off [Alasan Opsional]`"
-        "\nUsage: Menetapkan Anda sebagai afk. Balas kepada siapa saja yang memberi tag/PM's "
+        "off":"𝐒𝐲𝐧𝐭𝐚𝐱:`.off [Alasan Opsional]`"
+        "\n𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Menetapkan Anda sebagai afk. Balas kepada siapa saja yang memberi tag/PM's "
         "Anda, memberi tahu mereka bahwa Anda AFK(karena)."
-        "\n\n>`.unoff`"
-        "\nUsage: Mematikan mode AFK anda"
+        "\n\𝐒𝐲𝐧𝐭𝐚𝐱:`.unoff`"
+        "\n𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Mematikan mode AFK anda"
     }
 )
