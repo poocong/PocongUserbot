@@ -10,16 +10,16 @@ from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
 @register(outgoing=True, pattern=r"^.hz(:? |$)(.*)?")
 async def _(hazmat):
-    await hazmat.edit("`tuan Ingin Mengaktifkan Perintah Hazmat ヅ`")
+    await hazmat.edit("`Kmu Ingin Mengaktifkan Perintah Hazmat`")
     level = hazmat.pattern_match.group(2)
     if hazmat.fwd_from:
         return
     if not hazmat.reply_to_msg_id:
-        await hazmat.edit("`tuan, Mohon Balas Ke Sticker/Gambar ヅ`")
+        await hazmat.edit("`Mohon Balas Ke Sticker/Gambar`")
         return
     reply_message = await hazmat.get_reply_message()
     if not reply_message.media:
-        await hazmat.edit("`Kata Bisa Menghancurkan Apapun tuan ヅ`")
+        await hazmat.edit("`Kata Bisa Menghancurkan Apapun tuan`")
         return
     chat = "@hazmat_suit_bot"
     await hazmat.edit("```Perintah Hazmat Diaktifkan, Sedang Memproses.... ヅ```")
@@ -43,7 +43,7 @@ async def _(hazmat):
             await hazmat.reply("`tuan, Mohon Buka Blokir` @hazmat_suit_bot `Lalu Coba Lagi`")
             return
         if response.text.startswith("I can't"):
-            await hazmat.edit("`Mohon Maaf tuan, GIF Tidak Bisa...`")
+            await hazmat.edit("`Mohon Maaf, GIF Tidak Bisa...`")
             await hazmat.client.delete_messages(
                 conv.chat_id, [msg.id, response.id, r.id, msg_reply.id]
             )
