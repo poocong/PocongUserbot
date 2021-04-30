@@ -218,7 +218,7 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:on)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:on|nyala)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -253,7 +253,7 @@ async def amireallyalive(alive):
         
  
 
-@register(outgoing=True, pattern=r"^\.(?:alive)\s?(.)?")       
+@register(outgoing=True, pattern=r"^\.(?:alive|pocong)\s?(.)?")       
 async def amireallyalive(alive):       
     user = await bot.get_me()    
     await get_readable_time((time.time() - StartTime))    
@@ -272,7 +272,7 @@ async def amireallyalive(alive):
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**    :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**     :   `{BOT_VER}` \n"
         f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : `{len(modules)} Plugins` \n"
-        f"**╚══════════✹══════════╝** \n"ㅤ ㅤ
+        f"**╚══════════✹══════════╝**\n"ㅤ ㅤ
         f"❏• 🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n"
         f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen) \n"
     if ALIVE_LOGO:
