@@ -30,7 +30,13 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("lebih **KONTOL** lagi")              
     sleep(1)
-    await typew.edit("kalian **KONTOL**")
+    await typew.edit("kalian")
+    await typew.edit("kalian **K**")
+    await typew.edit("kalian **Ko**")
+    await typew.edit("kalian **Kon**")
+    await typew.edit("kalian **Kont**")
+    await typew.edit("kalian **Konto**")
+    await typew.edit("kalian **Kontol**")
 
 
 @register(outgoing=True, pattern='^.alay(?: |$)(.*)')
