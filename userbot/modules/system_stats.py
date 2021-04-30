@@ -274,7 +274,7 @@ async def amireallyalive(alive):
         f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : `{len(modules)} Plugins` \n"
         f"**╚══════════✹══════════╝** \n"
         f"❏• 🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n"
-        f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen) \n"
+        f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
