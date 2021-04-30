@@ -129,6 +129,52 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`I LOVE YOU 💞`")
     
+@register(outgoing=True, pattern='^hujan(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`H`")
+    await typew.edit("`Hm`")
+    await typew.edit("`Hmm`")
+    await typew.edit("`Hmmm`")
+    await typew.edit("`Hmmmm`")
+    await typew.edit("`Hmmmmm`")
+    sleep(1)
+    await typew.edit("`Hujan Hujan Gini Ange😔`")
+    sleep(1)
+    await typew.edit("`Enaknya Coli🤤`")
+    sleep(1)
+    await typew.edit("`8✊===D`")
+    await typew.edit("`8=✊==D`")
+    await typew.edit("`8==✊=D`")
+    await typew.edit("`8===✊D`")
+    await typew.edit("`8==✊=D`")
+    await typew.edit("`8=✊==D`")
+    await typew.edit("`8✊===D`")
+    sleep(1)
+    await typew.edit("`Ahhh🤤`")
+    sleep(1)
+    await typew.edit("`8✊===D`")
+    await typew.edit("`8=✊==D`")
+    await typew.edit("`8==✊=D`")
+    await typew.edit("`8===✊D`")
+    await typew.edit("`8==✊=D`")
+    await typew.edit("`8=✊==D`")
+    await typew.edit("`8✊===D`")
+    await typew.edit("`crotss💦`")
+    await typew.edit("`crotss💦💦`")
+    await typew.edit("`crotss💦💦💦🤤`")
+    sleep(1)
+    await typew.edit("`H`")
+    await typew.edit("`Hm`")
+    await typew.edit("`Hmm`")
+    await typew.edit("`Hmmm😔`")
+    sleep(1)
+    await typew.edit("`Ini Untuk Yang Terkahir`")
+    sleep(1)
+    await typew.edit("`Kenapa Ya Gw Coli Tadi😔`")
+    sleep(1)
+    await typew.edit("`Dah la besok besok ga mau lagi`")
+    
 @register(outgoing=True, pattern='^.ange(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -167,6 +213,8 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ketik Ini Kalo Lu Lagi Sange\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .lopu`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Nyatakan Cinta Ke Cewe Orng\
+    \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .hujan`\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus`\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .dahlah`\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh sndri\
     \n\n`•𝐒𝐲𝐧𝐭𝐚𝐱: .jawa`\
