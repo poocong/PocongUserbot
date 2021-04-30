@@ -129,7 +129,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`I LOVE YOU 💞`")
     
-@register(outgoing=True, pattern='^hujan(?: |$)(.*)')
+@register(outgoing=True, pattern='^.hujan(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`H`")
