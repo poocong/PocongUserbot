@@ -258,7 +258,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()    
     await get_readable_time((time.time() - StartTime))    
     await alive.edit("`I'M ALIVE!`")    
-    await alive.edit("⚡")    
+    await alive.edit("👻")    
     sleep(2)    
     output = (   
         f"**╭╼═✯══════════════✯═╾╮**\n"
@@ -272,8 +272,8 @@ async def amireallyalive(alive):
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**    :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**     :   `{BOT_VER}` \n"
         f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : `{len(modules)} Plugins` \n"
-        f"**╚══════════✹══════════╝**\n"ㅤ ㅤ
-        f"**▰▱▰▱▰▱▰▱✯▰▱▰▱▰▱▰**\n"
+        f"**╚══════════✹══════════╝** \n"ㅤ ㅤ
+        f"❏• 🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n"
         f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen) \n"
     if ALIVE_LOGO:
         try:
