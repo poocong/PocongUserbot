@@ -443,11 +443,15 @@ async def upload_track(track_location, message):
         ),
     )
     os.remove(track_location)
-
+# Biar Beda Dari Yang Lain
+# ("8✊===D")
+# ("8=✊==D")
+# ("8==✊=D")
+# ("8===✊D")              
 
 CMD_HELP.update(
     {
-        "getmusic": ">`.netease <Artist - Song Title>`"
+        "music": ">`.netease <Artist - Song Title>`"
         "\nUsage: Download music with @WooMaiBot"
         "\n\n>`.netease now`"
         "\nUsage: Download current LastFM scrobble use `@WooMaiBot`."
