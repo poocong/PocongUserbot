@@ -257,7 +257,8 @@ async def amireallyalive(alive):
 async def amireallyalive(alive):       
     user = await bot.get_me()    
     await get_readable_time((time.time() - StartTime))    
-    await alive.edit("`I'M ALIVE!`")    
+    await alive.edit("`I'M ALIVE!`")
+    sleep(1)
     await alive.edit("👻")    
     sleep(2)    
     output = (   
@@ -266,14 +267,14 @@ async def amireallyalive(alive):
         f"**╰╼═✯══════════════✯═╾╯**\n"
         f"**𝐀𝐲𝐨 𝐌𝐞𝐧𝐲𝐞𝐫𝐚𝐡 𝐍𝐠𝐚𝐩𝐚𝐢𝐧 𝐒𝐞𝐦𝐚𝐧𝐠𝐚𝐭..!** \n"
         f"**╔══════════✹══════════╗** \n"
-        f"➨ **𝙼𝚊𝚜𝚝𝚎𝚛**      :   `{DEFAULTUSER}` \n"
-        f"➨ **𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎**    :   `@{user.username}` \n"
-        f"➨ **𝙿𝚢𝚝𝚑𝚘𝚗**      :   `Versi {python_version()}` \n"
-        f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**    :   `Versi {version.__version__}` \n"
+        f"➨ **𝙼𝚊𝚜𝚝𝚎𝚛**    :   `{DEFAULTUSER}` \n"
+        f"➨ **𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎**   :   `@{user.username}` \n"
+        f"➨ **𝙿𝚢𝚝𝚑𝚘𝚗**    :   `Versi {python_version()}` \n"
+        f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**   :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**     :   `{BOT_VER}` \n"
         f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : `{len(modules)} Plugins` \n"
         f"**╚══════════✹══════════╝** \n"
-        f"❏• 🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n"
+        f"    🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n\n"
         f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen)\n")
     if ALIVE_LOGO:
         try:
