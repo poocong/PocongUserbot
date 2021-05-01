@@ -282,7 +282,10 @@ async def type_afk_is_not_true(notafk):
         COUNT_MSG = 0
         USERS = {}
         AFKREASON = None
-#Pocong - Userbot
+# Pocong - Userbot
+# Thanks for "Project Dark
+# Aji Kintil
+# Xixixi Canda ji
 
 CMD_HELP.update(
     {
