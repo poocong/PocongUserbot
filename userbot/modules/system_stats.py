@@ -259,7 +259,7 @@ async def amireallyalive(alive):
     await alive.edit("8=✊==D")
     await alive.edit("8✊===D")
     sleep(1)
-    output = 
+    output = (
         f"**🔥𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛🔥** \n\n"
         f"┣❏😈 **Master**: `{DEFAULTUSER}` \n"
         f"┣❏🔎 **Username**: `**@{user.username}**` \n"
