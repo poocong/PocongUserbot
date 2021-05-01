@@ -222,10 +222,47 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    output = (
+    await alive.edit("Proses Menghidupkan")
+    sleep(1)
+    await alive.edit("Proses Menghidupkan **P**")
+    await alive.edit("Proses Menghidupkan **Po**")
+    await alive.edit("Proses Menghidupkan **Poc**")
+    await alive.edit("Proses Menghidupkan **Poco**")
+    await alive.edit("Proses Menghidupkan **Pocon**")
+    await alive.edit("Proses Menghidupkan **Pocong**")
+    sleep(1)
+    await alive.edit("Proses Menghidupkan **Pocong U**")
+    await alive.edit("Proses Menghidupkan **Pocong Us**")
+    await alive.edit("Proses Menghidupkan **Pocong Use**")
+    await alive.edit("Proses Menghidupkan **Pocong User**")
+    await alive.edit("Proses Menghidupkan **Pocong Userb**")
+    await alive.edit("Proses Menghidupkan **Pocong Userbo**")
+    await alive.edit("Proses Menghidupkan **Pocong Userbot**")
+    sleep(1)
+    await alive.edit("8✊===D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8===✊D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8✊===D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8===✊D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8✊===D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8===✊D")
+    await alive.edit("8==✊=D")
+    await alive.edit("8=✊==D")
+    await alive.edit("8✊===D")
+    sleep(1)
+    output = 
         f"**🔥𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛🔥** \n\n"
         f"┣❏😈 **Master**: `{DEFAULTUSER}` \n"
-        f"┣❏🔎 **Username**: `@{user.username}` \n"
+        f"┣❏🔎 **Username**: `**@{user.username}**` \n"
         f"┣❏🐍 **Python**:  `Versi {python_version()}` \n"
         f"┣❏🤖 **Bot Versi**: `{BOT_VER}` \n"
         f"┣❏🗃 **Plugins**: `{len(modules)} Plugins` \n"
@@ -267,14 +304,14 @@ async def amireallyalive(alive):
         f"**╰╼═✯══════════════✯═╾╯**\n"
         f"**𝐀𝐲𝐨 𝐌𝐞𝐧𝐲𝐞𝐫𝐚𝐡 𝐍𝐠𝐚𝐩𝐚𝐢𝐧 𝐒𝐞𝐦𝐚𝐧𝐠𝐚𝐭..!** \n"
         f"**╔══════════✹══════════╗** \n"
-        f"➨ **𝙼𝚊𝚜𝚝𝚎𝚛**    :   `{DEFAULTUSER}` \n"
+        f"➨ **𝙼𝚊𝚜𝚝𝚎𝚛**       :   `{DEFAULTUSER}` \n"
         f"➨ **𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎**   :   `@{user.username}` \n"
-        f"➨ **𝙿𝚢𝚝𝚑𝚘𝚗**    :   `Versi {python_version()}` \n"
+        f"➨ **𝙿𝚢𝚝𝚑𝚘𝚗**       :   `Versi {python_version()}` \n"
         f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**   :   `Versi {version.__version__}` \n"
         f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**     :   `{BOT_VER}` \n"
         f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : `{len(modules)} Plugins` \n"
         f"**╚══════════✹══════════╝** \n"
-        f"    🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n\n"
+        f"      🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n\n"
         f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen)\n")
     if ALIVE_LOGO:
         try:
