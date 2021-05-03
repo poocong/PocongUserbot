@@ -19,7 +19,7 @@ from pySmartDL import SmartDL
 from requests import get
 from telethon.sessions import StringSession
 from telethon.sync import TelegramClient, custom, events
-
+from telethon import events, Button
 load_dotenv("config.env")
 
 StartTime = time.time()
