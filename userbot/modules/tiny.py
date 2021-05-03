@@ -83,8 +83,11 @@ async def _(event):
     os.remove(file)
     os.remove(ik)
 
-# Port By Pocong Onlen
-# Pocong Userbot
+#Yang Baca Hode
+# P o c o n g - U s e r b o t
 
-CMD_HELP.update({"tiny": "`.tiny`\
-    \nPenjelasan: Untuk Memperkecil Sticker."})
+CMD_HELP.update({
+    "tiny":
+     "•𝐒𝐲𝐧𝐭𝐚𝐱:".tiny\ 
+   "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Untuk Memperkecil Sticker.**"
+   })
