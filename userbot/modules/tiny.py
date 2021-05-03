@@ -87,7 +87,8 @@ async def _(event):
 # P o c o n g - U s e r b o t
 
 CMD_HELP.update({
-    "tiny":
+     "tiny":
      "•𝐒𝐲𝐧𝐭𝐚𝐱:".tiny\ 
-   "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Untuk Memperkecil Sticker.**"
-   })
+     "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Untuk Memperkecil Sticker.**"
+  
+})
