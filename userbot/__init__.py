@@ -317,13 +317,13 @@ with bot:
         async def handler(event):
             sender = await event.message.get_sender()
             text = (
-                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [XBØT-REMIX](https://github.com/ximfine/XBot-Remix) modules helper...\nplease make your own bot, don't use mine")
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [PocongUserbot](https://github.com/poocong/Pocong-Userbot) modules helper...\nplease make your own bot, don't use mine")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           Button.url(
                                               text="🔱 OFFICIAL CHANNELS 🔱",
-                                              url="https://t.me/X_Projectss"
+                                              url="https://t.me/PoocongOnlen"
                                           )
                                       ]
                                   ]
@@ -339,7 +339,7 @@ with bot:
                 result = builder.article(
                     "Please Use Only With .help Command",
                     text="{}\nTotal loaded modules: {}".format(
-                        "[XBOT-REMIX](https://github.com/ximfine/XBot-Remix) modules helper.\n",
+                        "[PocongUserbot](https://github.com/poocong/Pocong-Userbot) modules helper.\n",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -360,11 +360,11 @@ with bot:
                         [
                             custom.Button.url(
                                 "GitHub Repo",
-                                "https://github.com/ximfine/XBot-Remix",
+                                "https://github.com/poocong/Pocong-Userbot",
                             ),
                             custom.Button.url(
-                                "Support",
-                                "https://t.me/X_Projectss"),
+                                "Channel",
+                                "https://t.me/PoocongOnlen"),
                         ],
                     ],
                     link_preview=False,
