@@ -28,9 +28,9 @@
 
 ## Hasilkan Sesi String
 
-```
+
 [SentuhAkuSayang](https://t.me/stringxbot)
-```
+
 
 ### Atau Jalankan di terminal Anda
 
