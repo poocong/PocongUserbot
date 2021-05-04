@@ -222,7 +222,24 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("Proses Menghidupkan")
+    await alive.edit("**P**")
+    await alive.edit("**Pr**")
+    await alive.edit("**Pro**")
+    await alive.edit("**Pros**")
+    await alive.edit("**Prose**")
+    await alive.edit("**Proses**")
+    await alive.edit("**Proses** **M**")
+    await alive.edit("**Proses** **Me**")
+    await alive.edit("**Proses** **Men**")
+    await alive.edit("**Porses** **Meng**")
+    await alive.edit("**Proses** **Mengh**")
+    await alive.edit("**Proses** **Menghi**")
+    await alive.edit("**Proses** **Menghid**")
+    await alive.edit("**Proses** **Menghidu**")
+    await alive.edit("**Proses** **Menghidup**")
+    await alive.edit("**Proses** **Menghidupk**")
+    await alive.edit("**Proses** **Mengihdupka**")
+    await alive.edit("**Proses** **Menghidupkan**")
     sleep(1)
     await alive.edit("Proses Menghidupkan **P**")
     await alive.edit("Proses Menghidupkan **Po**")
@@ -267,7 +284,7 @@ async def amireallyalive(alive):
         f"┣❏🤖 **Bot Versi**: {BOT_VER} \n"
         f"┣❏🗃 **Plugins**: {len(modules)} Plugins \n"
         f"┣❏👾 **Telethon**: Versi {version.__version__} \n\n"
-        f"📌 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
+        f"🧪 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
