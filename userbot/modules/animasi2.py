@@ -114,7 +114,7 @@ async def typewriter(typew):
                      "　　　　　 Ｕ Ｕ\n")
 
 
-@register(outgoing=True, pattern='^.awkwok(?: |$)(.*)')
+@register(outgoing=True, pattern='^.hahaha(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("────██──────▀▀▀██\n"
@@ -305,14 +305,22 @@ CMD_HELP.update({
     "**animasi2**":
     "•𝐒𝐲𝐧𝐭𝐚𝐱: .bulan"
     "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .kntl\
-    \nUsage: liat aja.\
-    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
-    \nUsage: liat sendiri\
-    \n\n`.y`\
-    \nUsage: jempol\
-    \n\n`.awkwok`\
-    \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.ajg`\
-    \nUsage: liat sendiri."
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hati\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat aja\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bernyanyi\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter ; .tank ; .tembak\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat sendiri\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bundir\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lelah Adek Bang\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .y\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: jempol\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hahaha\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: ketawa lari.\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ngook\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ajg\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lu Ajg\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat sendiri."
 })
