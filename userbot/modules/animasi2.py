@@ -1,4 +1,4 @@
-# Tuan User
+# P o c o n g - u s e r b o t
 from time import sleep
 from userbot import CMD_HELP, bot
 from userbot.events import register
