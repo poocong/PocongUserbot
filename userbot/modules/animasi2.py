@@ -304,25 +304,25 @@ async def typewriter(typew):
 CMD_HELP.update({
     "animasi2":
     "•𝐒𝐲𝐧𝐭𝐚𝐱: .bulan\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Cek Aja dh**\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hati\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **liat aja**\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat aja\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bernyanyi\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Cek Aja dh**\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter ; .tank ; .tembak\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **liat sendiri**\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter •𝐒𝐲𝐧𝐭𝐚𝐱:.tank •𝐒𝐲𝐧𝐭𝐚𝐱:.tembak\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Liat Aja dah Sendri \
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bundir\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Lelah Adek Bang**\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lelah Adek Bang\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .y\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **jempol**\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: jempol\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hahaha\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **ketawa lari**\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Ngook**\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ajg\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Lu Ajg**\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **liat sendiri.**"
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: ketawa lari\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi •𝐒𝐲𝐧𝐭𝐚𝐱:.Lu Anjing •𝐒𝐲𝐧𝐭𝐚𝐱:.ular\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Babi Ngook •𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:Anjg Kayak Kelakuan Lu •𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:Ular Kadut\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: Tunggu Update Selanjutnya\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tunggu Update Selanjutnya\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: Tunggu Update Selanjutnya\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tunggu Update Selanjutnya."
 
 
 })
