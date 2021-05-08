@@ -5,7 +5,7 @@
 #Silahkan Maling Aja Xixixi
 #Gak Usah Sungkan
 
-form time import sleep
+from time import sleep
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
