@@ -52,6 +52,7 @@ async def gucast(event):
                 er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
+#XBot-Remix    
 
 CMD_HELP.update({
     "gcast": "\
