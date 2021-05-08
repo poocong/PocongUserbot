@@ -178,14 +178,14 @@ async def _(event):
 # Mo Maling Kah??
 CMD_HELP.update({
     "animasi3":
-    "`.nah` ; `.huh` ; `.owner`\
-    \nUsage: cobain.\
-    \n\n`.bunga` ; `.buah`\
-    \nUsage: animasi.\
-    \n\n`.waktu`\
-    \nUsage: animasi.\
-    \n\n`.hua`\
-    \nUsage: nangis.\
-    \n\n`.ceritacinta` ; `.canda`\
-    \nUsage: liat sendiri"
+    "•𝐒𝐲𝐧𝐭𝐚𝐱: .nah ; .huh ; .owner\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: cek aja dah\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bunga ; .buah\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: animasi\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .waktu\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: animasi\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hua\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: nangis\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ceritacinta ; .canda\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat sendiri"
 })
