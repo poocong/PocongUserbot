@@ -1,9 +1,20 @@
-from time import sleep
+#Module Punya Si @Pocongonlen
+#https://github.com/poocong/Pocong-Userbot
+#
+#Mau Maling Kah? 
+#Silahkan Maling Aja Xixixi
+#Gak Usah Sungkan
+
+form time import sleep
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
 
+#Sengaja Bikin Banyak Banyak Credit Nya
+#P o c o n g - U s e r b o t
+#Tapi Kalo Mau Maling Mah Silakan
+#Enjoy
 
 @register(outgoing=True, pattern='^.hai(?: |$)(.*)')
 async def typewriter(typew):
@@ -219,6 +230,10 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("**🔥𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩🔥**\n\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠👻")
 
+#P o c o n g - U s e r b o t
+#Ini Tercipta Hasil Gabut Doang
+#Jadi Ga Usah Bacot Ngentod
+    
 CMD_HELP.update({
     "animasi1":
     "•𝐒𝐲𝐧𝐭𝐚𝐱: .hai\
