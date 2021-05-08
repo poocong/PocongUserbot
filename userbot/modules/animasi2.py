@@ -317,12 +317,13 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: jempol\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hahaha\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: ketawa lari\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi •𝐒𝐲𝐧𝐭𝐚𝐱:.Lu Anjing •𝐒𝐲𝐧𝐭𝐚𝐱:.ular\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Babi Ngook •𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:Anjg Kayak Kelakuan Lu •𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:Ular Kadut\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: Tunggu Update Selanjutnya\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tunggu Update Selanjutnya\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: Tunggu Update Selanjutnya\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tunggu Update Selanjutnya."
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Babi Ngook\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ajg\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Anjing mirip kelakuan lu\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ular kadut\
+    \n\n•𝐀𝐤𝐚𝐧𝐃𝐚𝐭𝐚𝐧𝐠: Tunggu Update Selanjutnya"
 
 
 })
