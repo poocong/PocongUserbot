@@ -309,7 +309,7 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat aja\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bernyanyi\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter •𝐒𝐲𝐧𝐭𝐚𝐱:.tank •𝐒𝐲𝐧𝐭𝐚𝐱:.tembak\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Liat Aja dah Sendri \
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bundir\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lelah Adek Bang\
@@ -323,8 +323,9 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Anjing mirip kelakuan lu\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ular kadut\
-    \n\n•𝐀𝐤𝐚𝐧𝐃𝐚𝐭𝐚𝐧𝐠: Tunggu Update Selanjutnya"
-
-
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .tembak\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: Nembak Cewe\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .tank\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tanktop"
 })
 
