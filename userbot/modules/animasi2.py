@@ -302,7 +302,7 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-    "animasi2"
+    "animasi2":
     "•𝐒𝐲𝐧𝐭𝐚𝐱: .bulan\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Cek Aja dh**\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hati\
@@ -323,4 +323,7 @@ CMD_HELP.update({
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **Lu Ajg**\
     \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
     \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: **liat sendiri.**"
+
+
 })
+
