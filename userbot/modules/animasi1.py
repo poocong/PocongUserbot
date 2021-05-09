@@ -16,6 +16,41 @@ import asyncio
 #Tapi Kalo Mau Maling Mah Silakan
 #Enjoy
 
+@register(outgoing=True, pattern='^hmm(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("⠀⠀╱▔▔▔▔▔╲⠀⠀⠀HM⠀HM\n"
+
+                     "⠀╱⠀⠀╱▔╲╲╲▏⠀⠀⠀HMMM\n"
+
+                    "╱⠀⠀╱━╱▔▔▔▔▔╲━╮\n"⠀⠀
+
+                    "▏⠀ ▕┃▕╱▔╲╱▔╲▕╮┃\n"⠀⠀
+
+                     "▏⠀▕╰━▏▊▕▕▋▕▕━╯\n"⠀⠀
+
+                     "╲⠀⠀╲╱▔╭╮▔▔┳╲╲\n"⠀⠀⠀
+
+                    ⠀"╲⠀⠀  ▏╭━━━━╯▕▕\n"⠀⠀⠀
+
+⠀⠀                   "╲⠀╲▂▂▂▂▂▂╱╱\n"⠀⠀⠀
+
+⠀⠀⠀                     "▏⠀⠀⠀⠀⠀⠀⠀⠀⠀╲\n⠀
+
+⠀⠀⠀⠀                    "▏⠀⠀⠀⠀⠀⠀▕╲⠀⠀╲\n"
+
+                     "╱▔╲▏⠀⠀⠀⠀⠀⠀▕╱▔╲▕\n"
+
+⠀                    "▏ ⠀⠀⠀╰⠀⠀⠀⠀╯⠀⠀⠀▕▕\n"
+
+⠀                    "╲⠀⠀⠀╲⠀⠀⠀⠀╱⠀⠀⠀╱⠀╲▏\n"
+
+⠀⠀                   "╲⠀⠀▕▔▔▔▔▏⠀⠀╱╲╲╲\n"
+
+⠀                   "╱▔⠀⠀▕⠀⠀⠀⠀▏⠀⠀▔╲▔▔\n"
+
+                   ⠀"╲▂▂▂╱⠀⠀⠀⠀╲▂▂▂╱\n")⠀
+
 @register(outgoing=True, pattern='^.hai(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
