@@ -241,20 +241,20 @@ async def amireallyalive(alive):
     await alive.edit("**Proses** **Mengihdupka**")
     await alive.edit("**Proses** **Menghidupkan**")
     sleep(1)
-    await alive.edit("Proses Menghidupkan **P**")
-    await alive.edit("Proses Menghidupkan **Po**")
-    await alive.edit("Proses Menghidupkan **Poc**")
-    await alive.edit("Proses Menghidupkan **Poco**")
-    await alive.edit("Proses Menghidupkan **Pocon**")
-    await alive.edit("Proses Menghidupkan **Pocong**")
+    await alive.edit("**Proses Menghidupkan** **P**")
+    await alive.edit("**Proses Menghidupkan** **Po**")
+    await alive.edit("**Proses Menghidupkan** **Poc**")
+    await alive.edit("**Proses Menghidupkan** **Poco**")
+    await alive.edit("**Proses Menghidupkan** **Pocon**")
+    await alive.edit("**Proses Menghidupkan** **Pocong**")
     sleep(1)
-    await alive.edit("Proses Menghidupkan **Pocong U**")
-    await alive.edit("Proses Menghidupkan **Pocong Us**")
-    await alive.edit("Proses Menghidupkan **Pocong Use**")
-    await alive.edit("Proses Menghidupkan **Pocong User**")
-    await alive.edit("Proses Menghidupkan **Pocong Userb**")
-    await alive.edit("Proses Menghidupkan **Pocong Userbo**")
-    await alive.edit("Proses Menghidupkan **Pocong Userbot**")
+    await alive.edit("**Proses Menghidupkan** **Pocong U**")
+    await alive.edit("**Proses Menghidupkan** **Pocong Us**")
+    await alive.edit("**Proses Menghidupkan** **Pocong Use**")
+    await alive.edit("**Proses Menghidupkan** **Pocong User**")
+    await alive.edit("**Proses Menghidupkan** **Pocong Userb**")
+    await alive.edit("**Proses Menghidupkan** **Pocong Userbo**")
+    await alive.edit("**Proses Menghidupkan** **Pocong Userbot**")
     sleep(1)
     await alive.edit("8✊===D")
     await alive.edit("8=✊==D")
@@ -277,7 +277,7 @@ async def amireallyalive(alive):
     await alive.edit("8✊===D")
     sleep(1)
     output = (
-        f"**🔥𝙋𝙤𝙘𝙤𝙣𝙜𝙐𝙨𝙚𝙧𝙗𝙤𝙩  𝙏𝙚𝙡𝙖𝙝𝘼𝙠𝙩𝙞𝙛🔥** \n\n"
+        f"**🔥𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞𝐝!🔥** \n\n"
         f"┣❏😈 **Master**: {DEFAULTUSER} \n"
         f"┣❏🔎 **Username**: **@{user.username}** \n"
         f"┣❏🐍 **Python**:  Versi {python_version()} \n"
