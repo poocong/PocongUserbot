@@ -717,14 +717,14 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi4":
-    "`.gabut` ; `.dino`\
-    \nUsage: ntahlah gabut doang.\
-    \n\n`.gombal`\
-    \nUsage: buat bercanda\
-    \n\n`.cinta`\
-    \nUsage: mengirim cintamu ke seseorang.\
-    \n\n`.sayang`\
-    \nUsage: untuk jadi buaya.\
-    \n\n`.terkadang`\
-    \nUsage: Auk dah iseng doang."
+    "•𝐒𝐲𝐧𝐭𝐚𝐱: .gabut ; .dino\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: ntahlah gabut doang\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .gombal\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: buat bercanda\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .cinta\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: mengirim cintamu ke seseorang\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .sayang\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: untuk jadi buaya\
+    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .terkadang\
+    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Auk dah iseng doang."
 })
