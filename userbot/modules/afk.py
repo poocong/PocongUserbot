@@ -111,10 +111,10 @@ async def on_afk(event):
         if reason:
             message_to_reply = (
                   f"┌ ❏AFK!\n"
-                + f"│├ Saya Sedang **AFK** Sekarang!\n"
+                + f"│┌ **User** {ALIVE_NAME} Sedang AFK!\n"
                 + f"│├ **Sejak** `{total_afk_time}` Yg Lalu\n"
-                + f"│└ **Karena: `**{reason}`\n"
-                + f"└ **Pengguna** `{ALIVE_NAME}"
+                + f"└└ **Karena: `**{reason}`"
+                
             )
         else:
             message_to_reply = f"**❏Maaf Saya Sedang AFK!**\n" + \
