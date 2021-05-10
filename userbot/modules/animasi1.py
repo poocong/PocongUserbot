@@ -236,24 +236,24 @@ async def typewriter(typew):
     
 CMD_HELP.update({
     "animasi1":
-    "•**Syntax**: .hai\
+    "   •**Syntax**: .hai\
     \n•**Function**: Cosplay Nissa Sablon\
     \n\n   •**Syntax**: .kntl\
-    \n   •**Function**: Cek Aja dh\
+    \n•**Function**: Cek Aja dh\
     \n\n   •**Syntax**: .alay\
-    \n   •**Function**: Lumayanlah Buat Nyindir\
+    \n•**Function**: Lumayanlah Buat Nyindir\
     \n\n   •**Syntax**: .ange\
-    \n   •**Function**: Ketik Ini Kalo Lu Lagi Sange\
+    \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
     \n\n   •**Syntax**: .lopu\
-    \n   •**Function**: Nyatakan Cinta Ke Cewe Orng\
+    \n•**Function**: Nyatakan Cinta Ke Cewe Orng\
     \n\n   •**Syntax**: .hujan\
-    \n   •**Function**: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
+    \n•**Function**: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
     \n\n   •**Syntax**: .dahlah\
-    \n   •**Function**: Cek Aja dh sndri\
+    \n•**Function**: Cek Aja dh sndri\
     \n\n   •**Syntax**: .jawa\
-    \n   •**Function**: Jawa Pride Ni Bos.\
+    \n•**Function**: Jawa Pride Ni Bos.\
     \n\n   •**Syntax**: .erpe\
-    \n   •**Function**: Buat Nyindir Nak Rp Yg Goblok."
+    \n•**Function**: Buat Nyindir Nak Rp Yg Goblok."
     
     
 })
