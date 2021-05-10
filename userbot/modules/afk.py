@@ -117,8 +117,8 @@ async def on_afk(event):
                 
             )
         else:
-            message_to_reply = f"**❏Maaf Saya Sedang AFK!**\n" + \
-                f"**└Sejak : {total_afk_time}**"
+            message_to_reply = f"❏ **Maaf Saya Sedang AFK!**\n" + \
+                f"└ **Sejak : {total_afk_time}**"
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)
@@ -127,7 +127,7 @@ async def on_afk(event):
                 msg = await event.reply(message_to_reply, file=pic)
         except BaseException:
             msg = await event.reply(message_to_reply)
-        await asyncio.sleep(2.5)
+        await asyncio.sleep(1)
         if event.chat_id in last_afk_message:
             await last_afk_message[event.chat_id].delete()
         try:
