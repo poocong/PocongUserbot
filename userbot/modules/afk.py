@@ -20,6 +20,7 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     COUNT_MSG,
     ISAFK,
     PM_AUTO_BAN,
+    ALIVE_NAME,
     USERS,
     bot,
 )
@@ -109,10 +110,11 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                  f"❏AFK!\n"
-                + f"├ Saya Sedang **AFK** Sekarang!\n"
-                + f"├ **Sejak** `{total_afk_time}` Yg Lalu\n"
-                + f"└ **Karena:- `**{reason}`"
+                  f"┌ ❏AFK!\n"
+                + f"│├ Saya Sedang **AFK** Sekarang!\n"
+                + f"│├ **Sejak** `{total_afk_time}` Yg Lalu\n"
+                + f"│└ **Karena: `**{reason}`\n"
+                + f"└ **Pengguna** `{ALIVE_NAME}"
             )
         else:
             message_to_reply = f"**❏Maaf Saya Sedang AFK!**\n" + \
