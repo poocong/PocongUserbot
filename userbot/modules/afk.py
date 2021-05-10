@@ -1,6 +1,10 @@
 # Copyright (C) 2020 TeamUltroid
 #
 # Ported by X_ImFine
+# 
+# Copyright (C) XBot - Remix
+#
+# Izin Copy Bang Dian Xixixi
 
 import os
 import asyncio
@@ -105,13 +109,14 @@ async def on_afk(event):
         msg = None
         if reason:
             message_to_reply = (
-                f"◈Saya Sedang **OFFLINE** Sekarang\n"
-                + f"**◈Sejak** `{total_afk_time}` Yg Lalu\n"
-                + f"**◈Karena:- `**{reason}`"
+                  f"❏AFK!
+                + f"├ Saya Sedang **AFK** Sekarang!\n"
+                + f"├ **Sejak** `{total_afk_time}` Yg Lalu\n"
+                + f"└ **Karena:- `**{reason}`"
             )
         else:
-            message_to_reply = f"**◈Maaf Saya Sedang Offline**\n" + \
-                f"**◈Sejak : {total_afk_time}**"
+            message_to_reply = f"**❏Maaf Saya Sedang AFK!**\n" + \
+                f"**└Sejak : {total_afk_time}**"
         try:
             if pic.endswith((".tgs", ".webp")):
                 msg = await event.reply(file=pic)
@@ -224,6 +229,8 @@ async def _(event):
         except Exception as e:
             BOTLOG_CHATIDger.warn(str(e))
 
-
-CMD_HELP.update({"afk": ".afk (reason) or reply media to it "
-                 "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."})
+            
+# P o c o n g - U s e r b o t
+            
+CMD_HELP.update({"afk": "**Syntax**: .afk (alasan) atau reply pada stiker/foto "
+                 "\n**Function**: Kamu akan AFK! ini bisa dilakukan kapan pun dan bisa di batalkan kapanpun juga."})
