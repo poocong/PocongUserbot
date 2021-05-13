@@ -29,7 +29,7 @@
 ## Hasilkan Sesi String
 
 
-[SentuhAkuSayang](https://t.me/stringxbot)
+Ambil Dari Bot Telegram [KlikDisini](https://t.me/stringxbot) 
 
 
 ### Atau Jalankan di terminal Anda
