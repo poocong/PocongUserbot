@@ -311,19 +311,19 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
+        logo = "https://telegra.ph/file/50857372d2f7fcfe13b21.jpg"
 
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             sender = await event.message.get_sender()
             text = (
-                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [PocongUserbot](https://github.com/poocong/Pocong-Userbot) modules helper...\nplease make your own bot, don't use mine")
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\n [REPO](https://github.com/poocong/Pocong-Userbot) ...")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           Button.url(
-                                              text="🔱 OFFICIAL CHANNELS 🔱",
+                                              text=" OFFICIAL CHANNELS ",
                                               url="https://t.me/PoocongOnlen"
                                           )
                                       ]
