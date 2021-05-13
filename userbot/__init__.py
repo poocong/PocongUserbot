@@ -392,7 +392,7 @@ with bot:
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == bot.uid:  # pylint:disable=E0602
-                await event.edit("Button closed!", buttons=Button.clear())
+                await event.edit("Button closed!")
             else:
                 reply_pop_up_alert = f"Lu deploy sendiri lah ajg, Jangan pakai punya gw {ALIVE_NAME} "
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
