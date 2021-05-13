@@ -392,7 +392,7 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b'close'))
         async def close(event):
                 await event.edit("Button closed!", buttons=Button.clear())
-           else:
+            else:
                 reply_pop_up_alert = f"Lu deploy sendiri lah ajg, Jangan pakai punya gw {ALIVE_NAME} "
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             
