@@ -231,12 +231,12 @@ async def typewriter(typew):
     await typew.edit("**🔥𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩🔥**\n\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠👻")
 
    
-@register(outgoing=True, pattern='^.ehm(?: |$)')
+@register(outgoing=True, pattern='^.ehm(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("Eh.. ")
+    await typew.edit("Eh..")
     sleep(1)
-    await typew.edit(" Suara kamu ga jelas")
+    await typew.edit("Suara kamu ga jelas")
     sleep(1)
     await typew.edit("Kayanya kalau call pribadi lebih jelas")
     sleep(1)
