@@ -230,8 +230,21 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("**🔥𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩🔥**\n\n [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](https://github.com/poocong/Pocong-Userbot)\n 𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠👻")
 
+   
+@register(outgoing=True, pattern='^.ehm(?: |$)')
+async def typewriter(typew)
+    typew.pattern_match.group(1)
+    await typew.edit("Eh.. ")
+    sleep(1)
+    await typew.edit(" Suara kamu ga jelas")
+    sleep(1)
+    await typew.edit("Kayanya kalau call pribadi lebih jelas")
+    sleep(1)
+    await typew.edit("Gamau nyoba?")
+
+    
 #P o c o n g - U s e r b o t
-#Ini Tercipta Hasil Gabut Doang
+#Ini Tercipta Hasil kegabutan ku Doang
 #Jadi Ga Usah Bacot Ngentod
     
 CMD_HELP.update({
@@ -244,6 +257,8 @@ CMD_HELP.update({
     \n•**Function**: Lumayanlah Buat Nyindir\
     \n\n   •**Syntax**: .ange\
     \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
+    \n\n   •**Syntax**: .ehm\
+    \n•**Function**: Eum Biasalah cewe mau nya call mulu\
     \n\n   •**Syntax**: .lopu\
     \n•**Function**: Nyatakan Cinta Ke Cewe Orng\
     \n\n   •**Syntax**: .hujan\
