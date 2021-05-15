@@ -303,29 +303,29 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi2":
-    "•𝐒𝐲𝐧𝐭𝐚𝐱: .bulan\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hati\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: liat aja\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bernyanyi\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Cek Aja dh\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .helikopter\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Liat Aja dah Sendri \
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .bundir\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Lelah Adek Bang\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .y\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: jempol\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .hahaha\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: ketawa lari\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .babi\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Babi Ngook\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ajg\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Anjing mirip kelakuan lu\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .ular\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Ular kadut\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .tembak\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧:: Nembak Cewe\
-    \n\n•𝐒𝐲𝐧𝐭𝐚𝐱: .tank\
-    \n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Tanktop"
+    "•**Syntax**: .bulan\
+    \n   •**Function**: Cek Aja dh\
+    \n\n•**Syntax**: .hati\
+    \n   •**Function**: liat aja\
+    \n\n•**Syntax**: .bernyanyi\
+    \n   •**Function**: Cek Aja dh\
+    \n\n•**Syntax**: .helikopter\
+    \n   •**Function**: Liat Aja dah Sendri \
+    \n\n•**Syntax**: .bundir\
+    \n   •**Function**: Lelah Adek Bang\
+    \n\n•**Syntax**: .y\
+    \n   •**Function**: jempol\
+    \n\n•**Syntax**: .hahaha\
+    \n   •**Function**: ketawa lari\
+    \n\n•**Syntax**: .babi\
+    \n   •**Function**: Babi Ngook\
+    \n\n•**Syntax**: .ajg\
+    \n   •**Function**: Anjing mirip kelakuan lu\
+    \n\n•**Syntax**: .ular\
+    \n   •**Function**: Ular kadut\
+    \n\n•**Syntax**: .tembak\
+    \n   •**Function**: Nembak Cewe\
+    \n\n•**Syntax**: .tank\
+    \n   •**Function**: Tanktop"
 })
 
