@@ -99,7 +99,7 @@
     },
     "CLEAN_WELCOME": {
       "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "False"
+      "value": "True"
     },
     "LASTFM_API": {
       "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
