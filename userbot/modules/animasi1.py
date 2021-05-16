@@ -228,7 +228,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Pliss cobain")
     sleep(1)
-    await typew.edit("Jangan di nanti - nanti ")
+    await typew.edit("Jangan di nanti - nanti")
     sleep(1)
     await typew.edit("Ayo kita happy")
     sleep (1)
