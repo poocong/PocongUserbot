@@ -85,7 +85,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Berguna")
     sleep(1)
-    await typew.edit("Nguli Juga")
+    await typew.edit("**Nguli Juga**")
     sleep(1)
     await typew.edit("Pemaaf")
     sleep(1)
@@ -99,7 +99,9 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Tidak Seperti Yang Lain")
     sleep(1)
-    await typew.edit("Bersama Jawa Membangun Negri")
+    await typew.edit("Bersama Kuli Membangun Negri")
+    sleep(1)
+    await typew.edit("eh salah salah, \nBersama **Jawa** Membangun Negri")
     
 @register(outgoing=True, pattern='^.erpe(?: |$)(.*)')
 async def typewriter(typew):
@@ -111,13 +113,13 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("Oh iya, Muka Anak Erpe Kan")
     sleep(1)
-    await typew.edit("**BURIK- BURIK**")
+    await typew.edit("**BURIK - BURIK**")
     sleep(1)
     await typew.edit("Jadinya Pake Muka Orang")
     sleep(1)
     await typew.edit("Karena Muka Anak erpe")
     sleep(1)
-    await typew.edit("**BURIK- BURIK**")
+    await typew.edit("**BURIK - BURIK**")
     sleep(1)
     await typew.edit("Canda **BURIK**")
     sleep(1)
@@ -212,6 +214,25 @@ async def typewriter(typew):
     await typew.edit("`Ange😫`")
     sleep(1)
     await typew.edit("`Ayukkk Ewean Ayanggg🤤`")
+
+@register(outgoing=True, pattern='^.engas(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("Udah nggak kuat nahan")
+    sleep(1)
+    await typew.edit("Pengen gitu-gituan")
+    sleep(1)
+    await typew.edit("Ayo cepat masukkan")
+    sleep(1)
+    await typew.edit("Jangan lama - lama")
+    sleep(1)
+    await typew.edit("Pliss cobain")
+    sleep(1)
+    await typew.edit(" Jangan di nanti - nanti ")
+    sleep(1)
+    await typew.edit("Ayo kita happy")
+    sleep (1)
+    await typew.edit("Tapi pake pengaman")
     
     
 @register(outgoing=True, pattern='^.dahlah(?: |$)(.*)')
@@ -257,6 +278,8 @@ CMD_HELP.update({
     \n•**Function**: Lumayanlah Buat Nyindir\
     \n\n   •**Syntax**: .ange\
     \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
+    \n\n   •**Syntax**: .engas\
+    \n•**Function**: Sange berat\
     \n\n   •**Syntax**: .ehm\
     \n•**Function**: Eum Biasalah cewe mau nya call mulu\
     \n\n   •**Syntax**: .lopu\
