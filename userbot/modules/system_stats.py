@@ -277,14 +277,14 @@ async def amireallyalive(alive):
     await alive.edit("8✊===D")
     sleep(1)
     output = (
-        f"**🔥𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞𝐝!🔥** \n\n"
+        f"**👻𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞𝐝!👻** \n\n"
         f"┣❏😈 **Master**: {DEFAULTUSER} \n"
         f"┣❏🔎 **Username**: **@{user.username}** \n"
         f"┣❏🐍 **Python**:  Versi {python_version()} \n"
         f"┣❏🤖 **Bot Versi**: {BOT_VER} \n"
         f"┣❏🗃 **Plugins**: {len(modules)} Plugins \n"
         f"┣❏👾 **Telethon**: Versi {version.__version__} \n\n"
-        f"🧪 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
+        f"📍 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -316,20 +316,20 @@ async def amireallyalive(alive):
     await alive.edit("👻")    
     sleep(2)    
     output = (   
-        f"**╭╼═✯══════════════✯═╾╮**\n"
-        f"ㅤㅤㅤ**≛𝙋𝙤𝙘𝙤𝙣𝙜 - 𝙐𝙨𝙚𝙧𝙗𝙤𝙩≛** \n"
-        f"**╰╼═✯══════════════✯═╾╯**\n"
-        f"**𝐀𝐲𝐨 𝐌𝐞𝐧𝐲𝐞𝐫𝐚𝐡 𝐍𝐠𝐚𝐩𝐚𝐢𝐧 𝐒𝐞𝐦𝐚𝐧𝐠𝐚𝐭..!** \n"
-        f"**╔══════════✹══════════╗** \n"
-        f"➨ **𝙼𝚊𝚜𝚝𝚎𝚛**       :   {DEFAULTUSER} \n"
-        f"➨ **𝚄𝚜𝚎𝚛𝚗𝚊𝚖𝚎**   :   @{user.username} \n"
-        f"➨ **𝙿𝚢𝚝𝚑𝚘𝚗**       :   Versi {python_version()} \n"
-        f"➨ **𝚃𝚎𝚕𝚎𝚝𝚑𝚘𝚗**   :   Versi {version.__version__} \n"
-        f"➨ **𝚅𝚎𝚛𝚜𝚒𝚘𝚗**     :   {BOT_VER} \n"
-        f"➨ **𝙿𝚕𝚞𝚐𝚒𝚗𝚜**     : {len(modules)} Plugins \n"
-        f"**╚══════════✹══════════╝** \n"
-        f"      🔥 𝙿𝚘𝚌𝚘𝚗𝚐 - 𝚄𝚜𝚎𝚛𝚋𝚘𝚝 🔥 \n\n"
-        f"👻**•𝙲𝚛𝚎𝚊𝚝𝚘𝚛•**ㅤ  : [𝚂𝚎𝚗𝚝𝚞𝚑 𝙰𝚔𝚞 𝙱𝚎𝚋](t.me/Pocongonlen)\n")
+        f"**╭╼═✯════════════✯═╾╮**\n"
+        f"ㅤㅤ**👻Pocong - Userbot👻** \n"
+        f"**╰╼═✯════════════✯═╾╯**\n"
+        f"**Ayo Menyerah Ngapain Semangat..!** \n"
+        f"**╔═════════✹═════════╗** \n"
+        f"➨ **Pemilik**       :   {DEFAULTUSER} \n"
+        f"➨ **Username**   :   @{user.username} \n"
+        f"➨ **Python**       :   Versi {python_version()} \n"
+        f"➨ **Telethon**   :   Versi {version.__version__} \n"
+        f"➨ **Version**     :   {BOT_VER} \n"
+        f"➨ **Plugins**     : {len(modules)} Plugins \n"
+        f"**╚═════════✹═════════╝** \n"
+        f"💬 **Grup**  : [Sentuh Aku](https://t.me/TEAMSquadUserbotSupport) \n\n"
+        f"👻 **Owner** : [Sentuh Aku](t.me/Pocongonlen)\n")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
