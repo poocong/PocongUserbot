@@ -288,8 +288,8 @@ CMD_HELP.update({
     ">`.repo .repobot`\
     \nPenjelasan: Untuk Melihat Repo Bot Anda",
 #
-#">`.repobot`\
-#\nPenjelasan: Untuk Melihat Repo Bot Anda.",
+#
+#
     "readme":
     ">`.readme`\
     \nUsage: Provide links to setup the userbot and it's modules.",
