@@ -58,7 +58,7 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 ## <p align="center">Metode Deploy Ke Heroku</p>
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/poocong/Pocong-Userbot/tree/pocong"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-brown?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/poocong/Pocong-Userbot/tree/pocong"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
