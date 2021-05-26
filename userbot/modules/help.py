@@ -20,15 +20,15 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("**Module Yg Lu Cari Gada Gblk**")
+            await event.edit("Module yang lu cari gada **GOBLOK**")
             await asyncio.sleep(200)
             await event.delete()
     else:
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t❐  "
-        await event.edit("**𓇕 Daftar Perintah Untuk\nPocong-Userbot:\n\n**"
+            string += "`\t❐"
+        await event.edit("**𓇕 Berikut Daftar Perintah Untuk\nPocong-Userbot:\n\n**"
                          f"❐{string}❐\n")
         await event.reply(f"\n**Ketik Contoh** `.help afk` **Untuk Informasi Perintah**")
         await asyncio.sleep(1000)
