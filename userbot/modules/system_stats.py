@@ -317,16 +317,16 @@ async def amireallyalive(alive):
     sleep(2)    
     output = (   
         f"**╭╼═✯════════════✯═╾╮**\n"
-        f"ㅤㅤ**👻𝐏𝐨𝐜𝐨𝐧𝐠 - 𝐔𝐬𝐞𝐫𝐛𝐨𝐭👻** \n"
+        f"ㅤㅤ **👻𝐏𝐨𝐜𝐨𝐧𝐠 - 𝐔𝐬𝐞𝐫𝐛𝐨𝐭👻** \n"
         f"**╰╼═✯════════════✯═╾╯**\n"
         f"**Ayo Menyerah Ngapain Semangat..!** \n"
         f"**╔═════════✹═════════╗** \n"
-        f"➨ **𝐌𝐚𝐬𝐭𝐞𝐫**       :   {DEFAULTUSER} \n"
+        f"➨ **𝐌𝐚𝐬𝐭𝐞𝐫**        :   {DEFAULTUSER} \n"
         f"➨ **𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞**   :   @{user.username} \n"
-        f"➨ **𝐏𝐲𝐭𝐡𝐨𝐧**       :   Versi {python_version()} \n"
-        f"➨ **𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧**   :   Versi {version.__version__} \n"
-        f"➨ **𝐕𝐞𝐫𝐬𝐢𝐨𝐧**     :   {BOT_VER} \n"
-        f"➨ **𝐏𝐥𝐮𝐠𝐢𝐧𝐬**     : {len(modules)} Plugins \n"
+        f"➨ **𝐏𝐲𝐭𝐡𝐨𝐧**        :   Versi {python_version()} \n"
+        f"➨ **𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧**     :   Versi {version.__version__} \n"
+        f"➨ **𝐕𝐞𝐫𝐬𝐢𝐨𝐧**       :   {BOT_VER} \n"
+        f"➨ **𝐏𝐥𝐮𝐠𝐢𝐧𝐬**       : {len(modules)} Plugins \n"
         f"**╚═════════✹═════════╝** \n"
         f"👻 **𝐎𝐰𝐧𝐞𝐫** : [Sentuh Aku](t.me/Pocongonlen) \n"
         f"💬 **𝐆𝐫𝐮𝐩𝐒𝐮𝐩𝐩𝐨𝐫𝐭** : [Sentuh Aku](https://t.me/TEAMSquadUserbotSupport)\n")
