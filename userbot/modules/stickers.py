@@ -26,8 +26,14 @@ from userbot.events import register
 
 
 KANGING_STR = [
-    "Mencuri Sticker Ini Ke Pack Haram",
-    "Maling Mengambil Sticker Ini Ke Pack",
+    "Om izin colong Stiker nya hehe",
+    "leh ugha ni Sticker\nColong ahh~",
+    "ehh, mantep nih.....aku colong ya...",
+    "Pim Pim Pom!!!\nni Sticker punya aing sekarang hehe",
+    "ehh, mantep nih.....aku colong ya...",
+    "Bolehkah saya colong ni sticker\nau ah colong aja hehe",
+    "Pim Pim Pom!!!\nni Sticker punya aing sekarang hehe",
+    "Eh ada Stiker bagus ni colong ah",
 ]
 
 
