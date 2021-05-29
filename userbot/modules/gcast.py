@@ -55,9 +55,10 @@ async def gucast(event):
 #XBot-Remix    
 
 CMD_HELP.update({
-    "gcast": "\
-`**Syntax**: .gcast text`\
-\n   •**Function**: Mengirim pesan Broadcast ke seluruh grup. Jangan terlalu sering menggunakan cmd ini, hal ini akan membuat Akun Telegram mu menjadi lelet atau pending!\
-\n\n      •**Syntax**: .gucast text\
-\n   •**Function: Mengirim pesan Broadcast ke seluruh pengguna"
+    "gcast": 
+\n\n"**Syntax**: .gcast text"\
+\n   "•**Function**: Mengirim pesan Broadcast ke seluruh grup. Jangan terlalu sering menggunakan cmd ini."\
+                    "hal ini akan membuat Akun Telegram mu menjadi lelet atau pending!"\
+\n\n      "•**Syntax**: .gucast text\
+\n   •**Function: Mengirim pesan Broadcast ke seluruh pengguna."
 })
