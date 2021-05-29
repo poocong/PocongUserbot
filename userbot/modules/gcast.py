@@ -56,9 +56,9 @@ async def gucast(event):
 
 CMD_HELP.update({
     "gcast": 
-\n\n"•**Syntax**: .gcast teks\
+"ㅤㅤㅤㅤ•**Syntax**: .gcast teks\
 \n   •**Function**: Mengirim Pesan Broadcast Ke Seluruh Grup.\
-\n\n   •**Syntax**: .gucast teks\
+\n\nㅤㅤㅤㅤ•**Syntax**: .gucast teks\
 \n      •**Function**: Mengirim Pesan Broadcast Ke Pengguna Telegram." 
 )}
 
