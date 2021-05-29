@@ -60,5 +60,5 @@ CMD_HELP.update({
 \n   •**Function**: Mengirim Pesan Broadcast Ke Seluruh Grup.\
 \n\nㅤㅤㅤㅤ•**Syntax**: .gucast teks\
 \n      •**Function**: Mengirim Pesan Broadcast Ke Pengguna Telegram." 
-)}
+})
 
