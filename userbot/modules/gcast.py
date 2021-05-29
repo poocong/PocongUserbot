@@ -15,10 +15,10 @@ from userbot.events import register
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Give some text to Globally Broadcast`")
+        return await event.edit("`Berikan aku teks`")
     tt = event.text
     msg = tt[6:]
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Proses Mengirim Pesan Broadcast...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -36,10 +36,10 @@ async def gcast(event):
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Give some text to Globally Broadcast`")
+        return await event.edit("`Berikan aku teks`")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Proses Mengirim Pesan Broadcast...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -56,8 +56,8 @@ async def gucast(event):
 
 CMD_HELP.update({
     "gcast": "\
-`.gcast query`\
-\nUsage: Globally Broadcast from all the Group .\
-\n\n`.gucast query`\
-\nUsage: Globally Broadcast from all the User in PM Chat"
+`**Syntax**: .gcast text`\
+\n   **Function**: Mengirim pesan Broadcast ke seluruh grup. Jangan terlalu sering menggunakan cmd ini, hal ini akan membuat Akun Telegram mu menjadi lelet atau pending!\
+\n\n      **Syntax**: .gucast text\
+\n   **Function: Mengirim pesan Broadcast ke seluruh pengguna"
 })
