@@ -183,7 +183,7 @@ async def afk_on_pm(sender):
                     if AFKREASON:
                         await sender.reply(
                             f"**Saya sedang offline!** \n\n**Sejak: {afk_str}**"
-                            "\n**Alasan: `{AFKREASON}`.**"
+                            f"\n**Alasan: `{AFKREASON}`.**"
                         )
                     else:
                         await sender.reply(
@@ -283,16 +283,17 @@ async def type_afk_is_not_true(notafk):
         USERS = {}
         AFKREASON = None
 # Pocong - Userbot
-# Thanks for "Project Dark
+# Thanks for "Project Dark"
 # Aji Kintil
 # Xixixi Canda ji
 
 CMD_HELP.update(
     {
-        "off":"•𝐒𝐲𝐧𝐭𝐚𝐱:` .off`"
-        "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Menetapkan Anda sebagai afk. Balas kepada siapa saja yang memberi tag/PM's "
+        "off": \"
+        "\n\n•**Syntax**:` .off`"
+        "\n•**Function**: Menetapkan Anda sebagai afk. Balas kepada siapa saja yang memberi tag/PM's "
         "Anda, memberi tahu mereka bahwa Anda AFK(karena)."
-        "\n\n•𝐒𝐲𝐧𝐭𝐚𝐱:` .unoff`"
-        "\n•𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧: Mematikan mode AFK anda"
+        "\n\n•**Syntax**:` .unoff`"
+        "\n•**Function**: Mematikan mode AFK anda"
     }
 )
