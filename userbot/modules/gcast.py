@@ -57,7 +57,7 @@ async def gucast(event):
 CMD_HELP.update({
     "gcast": "\
 `**Syntax**: .gcast text`\
-\n   **Function**: Mengirim pesan Broadcast ke seluruh grup. Jangan terlalu sering menggunakan cmd ini, hal ini akan membuat Akun Telegram mu menjadi lelet atau pending!\
-\n\n      **Syntax**: .gucast text\
-\n   **Function: Mengirim pesan Broadcast ke seluruh pengguna"
+\n   •**Function**: Mengirim pesan Broadcast ke seluruh grup. Jangan terlalu sering menggunakan cmd ini, hal ini akan membuat Akun Telegram mu menjadi lelet atau pending!\
+\n\n      •**Syntax**: .gucast text\
+\n   •**Function: Mengirim pesan Broadcast ke seluruh pengguna"
 })
