@@ -38,11 +38,11 @@ async def _(event):
         await event.delete()
 
 
-CMD_HELP.update(
-    {
+CMD_HELP.update({
+    
         "tiktok"
         "TIKTOK DOWNLOAD\
-        \n\nㅤㅤㅤㅤ•**Syntax**: .tt [LINK]\
-        \n    •**Function**: Download Video Tiktok Tanpa Watermark"
-    }
-)
+         \n\nㅤㅤㅤㅤ•**Syntax**: .tt [LINK]\
+         \n    •**Function**: Download Video Tiktok Tanpa Watermark"
+        })
+
