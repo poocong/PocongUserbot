@@ -237,6 +237,6 @@ async def _(event):
 CMD_HELP.update({
 "afk":
 "AFK!\
-\n\n**Syntax**: .afk (alasan) atau reply pada stiker atau foto\
-\n**Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan."
+\n\nㅤㅤㅤㅤ**Syntax**: .afk (alasan) atau reply pada stiker atau foto\
+\n   **Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan."
 })
