@@ -234,5 +234,9 @@ async def _(event):
             
 # P o c o n g - U s e r b o t
             
-CMD_HELP.update({"afk": "**Syntax**: .afk (alasan) atau reply pada stiker/foto "
-                 "\n**Function**: Kamu akan AFK! ini bisa dilakukan kapan pun dan bisa di batalkan kapanpun juga."})
+CMD_HELP.update({
+"afk":
+"AFK!\
+\n\nㅤㅤㅤㅤ**Syntax**: .afk (alasan) atau reply pada stiker/foto. \           
+\n   **Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan.
+})
