@@ -238,5 +238,5 @@ CMD_HELP.update({
 "afk":
 "AFK!\
 \n\nㅤㅤㅤㅤ**Syntax**: .afk (alasan) atau reply pada stiker/foto. \           
-\n   **Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan.
+\n   **Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan."
 })
