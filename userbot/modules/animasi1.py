@@ -270,8 +270,8 @@ async def typewriter(typew):
     
 CMD_HELP.update({
     "animasi1":
-    "Perintah: **animasi1**\
-     Total Command: 11\
+    "**Perintah**: **animasi1**\
+    \n**Total Command: 11**\
     \n\nㅤㅤ•**Cmd**: .hai\
     \n•**Function**: Cosplay Nissa Sablon\
     \n\nㅤㅤ•**Cmd**: .kntl\
