@@ -270,27 +270,27 @@ async def typewriter(typew):
     
 CMD_HELP.update({
     "animasi1":
-    "•   **Syntax**: .hai\
+    "•ㅤㅤㅤ•**Syntax**: .hai\
     \n•**Function**: Cosplay Nissa Sablon\
-    \n\n   •**Syntax**: .kntl\
+    \n\nㅤㅤㅤ•**Syntax**: .kntl\
     \n•**Function**: Cek Aja dh\
-    \n\n   •**Syntax**: .alay\
+    \n\nㅤㅤㅤ•**Syntax**: .alay\
     \n•**Function**: Lumayanlah Buat Nyindir\
-    \n\n   •**Syntax**: .ange\
+    \n\nㅤㅤㅤ•**Syntax**: .ange\
     \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
-    \n\n   •**Syntax**: .engas\
+    \n\nㅤㅤㅤ•**Syntax**: .engas\
     \n•**Function**: Sange berat\
-    \n\n   •**Syntax**: .ehm\
+    \n\nㅤㅤㅤ•**Syntax**: .ehm\
     \n•**Function**: Eum Biasalah cewe mau nya call mulu\
-    \n\n   •**Syntax**: .lopu\
+    \n\nㅤㅤㅤ•**Syntax**: .lopu\
     \n•**Function**: Nyatakan Cinta Ke Cewe Orng\
-    \n\n   •**Syntax**: .hujan\
+    \n\nㅤㅤㅤ•**Syntax**: .hujan\
     \n•**Function**: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
-    \n\n   •**Syntax**: .dahlah\
+    \n\nㅤㅤㅤ•**Syntax**: .dahlah\
     \n•**Function**: Cek Aja dh sndri\
-    \n\n   •**Syntax**: .jawa\
+    \n\nㅤㅤㅤ•**Syntax**: .jawa\
     \n•**Function**: Jawa Pride Ni Bos.\
-    \n\n   •**Syntax**: .erpe\
+    \n\nㅤㅤㅤ•**Syntax**: .erpe\
     \n•**Function**: Buat Nyindir Nak Rp Yg Goblok."
     
     
