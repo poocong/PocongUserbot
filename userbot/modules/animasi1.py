@@ -271,28 +271,28 @@ async def typewriter(typew):
 CMD_HELP.update({
     "animasi1":
     "Perintah: **animasi1**\
-    \n\nTotal Command: 11\
-    \nㅤㅤㅤ•**Syntax**: .hai\
+     Total Command: 11\
+    \n\nㅤㅤ•**Cmd**: .hai\
     \n•**Function**: Cosplay Nissa Sablon\
-    \n\nㅤㅤㅤ•**Syntax**: .kntl\
+    \n\nㅤㅤ•**Cmd**: .kntl\
     \n•**Function**: Cek Aja dh\
-    \n\nㅤㅤㅤ•**Syntax**: .alay\
+    \n\nㅤㅤ•**Cmd**: .alay\
     \n•**Function**: Lumayanlah Buat Nyindir\
-    \n\nㅤㅤㅤ•**Syntax**: .ange\
+    \n\nㅤㅤ•**Cmd**: .ange\
     \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
-    \n\nㅤㅤㅤ•**Syntax**: .engas\
+    \n\nㅤㅤ•**Cmd**: .engas\
     \n•**Function**: Sange berat\
-    \n\nㅤㅤㅤ•**Syntax**: .ehm\
+    \n\nㅤㅤ•**Cmd**: .ehm\
     \n•**Function**: Eum Biasalah cewe mau nya call mulu\
-    \n\nㅤㅤㅤ•**Syntax**: .lopu\
+    \n\nㅤㅤ•**Cmd**: .lopu\
     \n•**Function**: Nyatakan Cinta Ke Cewe Orng\
-    \n\nㅤㅤㅤ•**Syntax**: .hujan\
+    \n\nㅤㅤ•**Cmd**: .hujan\
     \n•**Function**: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
-    \n\nㅤㅤㅤ•**Syntax**: .dahlah\
+    \n\nㅤㅤ•**Cmd**: .dahlah\
     \n•**Function**: Cek Aja dh sndri\
-    \n\nㅤㅤㅤ•**Syntax**: .jawa\
+    \n\nㅤㅤ•**Cmd**: .jawa\
     \n•**Function**: Jawa Pride Ni Bos.\
-    \n\nㅤㅤㅤ•**Syntax**: .erpe\
+    \n\nㅤㅤ•**Cmd**: .erpe\
     \n•**Function**: Buat Nyindir Nak Rp Yg Goblok."
     
     
