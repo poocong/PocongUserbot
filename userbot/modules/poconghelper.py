@@ -17,7 +17,7 @@ async def usit(e):
         "\n[Instagram](Instagram.com/xnxx)")
 
 
-@register(outgoing=True, pattern="^.pocongvar$")
+@register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
