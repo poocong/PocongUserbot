@@ -28,6 +28,6 @@ CMD_HELP.update({
     "poconghelper":
     "`.poconghelp`\
 \nUsage: Bantuan Untuk Pocong-Userbot.\
-\n`.pocongvar`\
+\n`.vars`\
 \nUsage: Melihat Daftar Vars."
 })
