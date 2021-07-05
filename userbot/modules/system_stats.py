@@ -313,13 +313,13 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))    
     await alive.edit("`I'M ALIVE!`")
     sleep(1)
-    await alive.edit("👻")    
+    await alive.edit("💩")    
     sleep(2)    
     output = (   
         f"**╭╼═✯════════════✯═╾╮**\n"
-        f"ㅤㅤ 👻 𝐏𝐨𝐜𝐨𝐧𝐠 - 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 👻 \n"
+        f"ㅤㅤ 🥵  ᴅɪᴢᴢ - ᴜꜱᴇʀʙᴏᴛ 🥵 \n"
         f"**╰╼═✯════════════✯═╾╯**\n"
-        f"**Ayo Menyerah Ngapain Semangat..!** \n"
+        f"**Gatau Males Pen Beli Truk🤧** \n"
         f"**╔═════════✹═════════╗** \n"
         f"➨ 𝐌𝐚𝐬𝐭𝐞𝐫        :   {DEFAULTUSER} \n"
         f"➨ 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞   :   @{user.username} \n"
@@ -328,8 +328,9 @@ async def amireallyalive(alive):
         f"➨ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧       :   {BOT_VER} \n"
         f"➨ 𝐏𝐥𝐮𝐠𝐢𝐧𝐬       : {len(modules)} Plugins \n"
         f"**╚═════════✹═════════╝** \n"
-        f"👻 𝐎𝐰𝐧𝐞𝐫 : [Sentuh Aku](t.me/Pocongonlen) \n"
-        f"💬 𝐆𝐫𝐮𝐩𝐒𝐮𝐩𝐩𝐨𝐫𝐭 : [Sentuh Aku](https://t.me/TEAMSquadUserbotSupport)\n")
+        f"**┏━━━━━━━━━━━━━━━━━━━━━** \n"
+        f"**╟➦ Private Chat : @DizzPM_bot** \n"
+        f"**┗━━━━━━━━━━━━━━━━━━━━━** \n
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
