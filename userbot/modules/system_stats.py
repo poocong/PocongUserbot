@@ -277,14 +277,14 @@ async def amireallyalive(alive):
     await alive.edit("8✊===D")
     sleep(1)
     output = (
-        f"**👻𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞𝐝!👻** \n\n"
+        f"**🥵Dizz x Userbot is Activated!🥵** \n\n"
         f"┣❏😈 **Master**: {DEFAULTUSER} \n"
         f"┣❏🔎 **Username**: **@{user.username}** \n"
         f"┣❏🐍 **Python**:  Versi {python_version()} \n"
         f"┣❏🤖 **Bot Versi**: {BOT_VER} \n"
         f"┣❏🗃 **Plugins**: {len(modules)} Plugins \n"
         f"┣❏👾 **Telethon**: Versi {version.__version__} \n\n"
-        f"📍 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
+        f"📍 OWNER : @itsdzl
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -313,11 +313,11 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))    
     await alive.edit("`I'M ALIVE!`")
     sleep(1)
-    await alive.edit("👻")    
+    await alive.edit("💩")    
     sleep(2)    
     output = (   
         f"**╭╼═✯════════════✯═╾╮**\n"
-        f"ㅤㅤ 👻 𝐏𝐨𝐜𝐨𝐧𝐠 - 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 👻 \n"
+        f"ㅤㅤ       ⚡ᴅɪᴢᴢ⚡        \n"
         f"**╰╼═✯════════════✯═╾╯**\n"
         f"**Ayo Menyerah Ngapain Semangat..!** \n"
         f"**╔═════════✹═════════╗** \n"
@@ -328,8 +328,9 @@ async def amireallyalive(alive):
         f"➨ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧       :   {BOT_VER} \n"
         f"➨ 𝐏𝐥𝐮𝐠𝐢𝐧𝐬       : {len(modules)} Plugins \n"
         f"**╚═════════✹═════════╝** \n"
-        f"👻 𝐎𝐰𝐧𝐞𝐫 : [Sentuh Aku](t.me/Pocongonlen) \n"
-        f"💬 𝐆𝐫𝐮𝐩𝐒𝐮𝐩𝐩𝐨𝐫𝐭 : [Sentuh Aku](https://t.me/TEAMSquadUserbotSupport)\n")
+        f"**┏━━━━━━━━━━━━━━━━━━━━━** \n"
+        f"**╟ ➦ Private Chat : @DizzPM_bot** \n"
+        f"**┗━━━━━━━━━━━━━━━━━━━━━** \n"
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
