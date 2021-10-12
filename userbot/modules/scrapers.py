@@ -1110,7 +1110,7 @@ def useragent():
     return user_agent.text
 
 
-@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.paaste(?: |$)([\s\S]*)")
 async def paste(pstl):
     dogbin_final_url = ""
     match = pstl.pattern_match.group(1).strip()
@@ -1224,7 +1224,7 @@ async def get_dogbin_content(dog_url):
         )
 
 
-@register(outgoing=True, pattern=r"^\.neko(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.neeko(?: |$)([\s\S]*)")
 async def neko(nekobin):
     """For .paste command, pastes the text directly to dogbin."""
     nekobin_final_url = ""
@@ -1356,11 +1356,11 @@ CMD_HELP.update(
 \nUsage: Make a QR Code from the given content.\nExample: .makeqr www.google.com\nNote: use .decode <reply to barcode/qrcode> to get decoded content.",
         "barcode": "`.barcode` <content>\
 \nUsage: Make a BarCode from the given content\nExample: `.barcode www.google.com`.",
-        "paste": "`.paste` <text/reply>\
+        "paste": "`.paaste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
         "getpaste": "`.getpaste` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
-        "nekobin": "`.neko` <text/reply>\
+        "nekobin": "`.neeko` <text/reply>\
 \nUsage: Create a paste or a shortened url using dogbin",
         "direct": "`.direct` <url>\
 \nUsage: Reply to a link or paste a URL to generate a direct download link\
