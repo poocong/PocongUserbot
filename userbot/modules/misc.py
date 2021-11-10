@@ -64,15 +64,15 @@ async def sleepybot(time):
 
 @register(outgoing=True, pattern="^.shutdown$")
 async def killdabot(event):
-    """ For .shutdown command, shut the bot down."""
-    await event.edit("`Shutdown *Pocong-Userbot*....`")
-    await asyncio.sleep(7)
-    await event.delete()
+    if event.fwd_from:
+        return
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
-                                        "Bot dimatikan!!")
-    await bot.disconnect()
-
+        await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Pocong Userbot telah dimatikan!\nJika ingin menghidupkan kembali silahkan buka heroku")
+    await event.edit("`PocongUserbot` di matikan!.`") 
+    if HEROKU_APP is not None:
+        HEROKU_APP.process_formation()["worker"].scale(0)
+    else:
+        sys.exit(0)
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(event):
