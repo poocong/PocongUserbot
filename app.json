@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/poocong/Pocong-Userbot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/LifeeOrDeath",
+  "success_url": "https://t.me/Poocongonlen",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -205,7 +205,7 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
+        "version": "13"
       }
     }
   ]
