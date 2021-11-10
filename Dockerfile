@@ -6,10 +6,17 @@ FROM ximfine/xproject:buster
 #
 RUN git clone -b pocong https://github.com/poocong/Pocong-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin
-RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
 
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/requirements.txt
+#
+# Make open port TCP
+#
+EXPOSE 80 443
 
-CMD ["python3","-m","userbot"] 
+#Upgrade pip
+RUN pip install --upgrade pip
+
+#Install python requiremets
+#RUN pip3 install -r https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/requirements.txt
+
+CMD ["python3","-m","userbot"]
