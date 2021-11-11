@@ -1110,7 +1110,7 @@ def useragent():
     return user_agent.text
 
 
-@register(outgoing=True, pattern=r"^\.paaste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
     dogbin_final_url = ""
     match = pstl.pattern_match.group(1).strip()
@@ -1224,7 +1224,7 @@ async def get_dogbin_content(dog_url):
         )
 
 
-@register(outgoing=True, pattern=r"^\.neeko(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.neko(?: |$)([\s\S]*)")
 async def neko(nekobin):
     """For .paste command, pastes the text directly to dogbin."""
     nekobin_final_url = ""
