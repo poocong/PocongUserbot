@@ -4,7 +4,7 @@ FROM ximfine/xproject:buster
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b pocong https://github.com/poocong/Pocong-Userbot /root/userbot
+RUN git clone -b pocong https://github.com/poocong/Pocong-Userbot /root/userbot/
 RUN mkdir /root/userbot/.bin
 WORKDIR /root/userbot
 
