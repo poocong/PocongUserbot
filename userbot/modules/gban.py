@@ -79,9 +79,9 @@ async def gspider(userbot):
     except BaseException:
         return await friday.edit(f"**Terjadi Kesalahan!!**")
     if user:
-        if user.id == 1411273575:
+        if user.id == 1675900974:
             return await friday.edit(
-                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator🖕**"
+                f"**Gila kah? mau gban pemilik pocong userbot🖕**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -188,8 +188,8 @@ async def gspider(userbot):
 
 CMD_HELP.update({
     "gban": "\
-`.gban reason`\
+`.gban `\
 \nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
-\n\n`.ungban reason`\
+\n\n`.ungban `\
 \nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
 })
