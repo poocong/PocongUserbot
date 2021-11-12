@@ -1110,7 +1110,7 @@ def useragent():
     return user_agent.text
 
 
-@register(outgoing=True, pattern=r"^\.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.pastee(?: |$)([\s\S]*)")
 async def paste(pstl):
     dogbin_final_url = ""
     match = pstl.pattern_match.group(1).strip()
