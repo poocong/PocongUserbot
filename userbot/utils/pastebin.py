@@ -1,6 +1,6 @@
+#saia port dari WeebProject
 #https://github.com/BianSepang/WeebProject
-#https://github.com/BianSepang/WeebProject
-#izin copas om bian :)
+#
 
 import re
 
