@@ -3,9 +3,9 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
+#saia port dari WeebProject
 #https://github.com/BianSepang/WeebProject
-#https://github.com/BianSepang/WeebProject
-#izin copas om bian :)
+#
 
 """Userbot module containing commands for interacting with dogbin(https://del.dog)"""
 
