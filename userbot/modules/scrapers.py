@@ -48,6 +48,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
 from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN, LOGS, OCR_SPACE_API_KEY, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.utils.pastebin import PasteBin
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import chrome, googleimagesdownload, options, progress
@@ -1110,17 +1111,18 @@ def useragent():
     return user_agent.text
 
 
-@register(outgoing=True, pattern=r"^\.pastee(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.paste(?: (-d|-n|-h|-k)|$)?(?: ([\s\S]+)|$")
 async def paste(pstl):
-    dogbin_final_url = ""
-    match = pstl.pattern_match.group(1).strip()
+    """For .paste command, pastes text directly to a pastebin."""
+    service = pstl.pattern_matcu.group(1)
+    match = pstl.pattern_match.group(2)
     reply_id = pstl.reply_to_msg_id
 
-    if not match and not reply_id:
+    if not (match or reply_id):
         return await pstl.edit("`Elon Musk said I cannot paste void.`")
 
     if match:
-        message = match
+        message = match.strip()
     elif reply_id:
         message = await pstl.get_reply_message()
         if message.media:
@@ -1138,38 +1140,38 @@ async def paste(pstl):
         else:
             message = message.message
 
-    # Dogbin
+    
     await pstl.edit("`Pasting text . . .`")
-    resp = post(DOGBIN_URL + "documents", data=message.encode("utf-8"))
+    async with PasteBin(message) as client:
+        if service:
+            service = service.strip()
+            if service not in ["-d", "-n", "-h", "-k"]:
+                return await pstl.edit("Invalid flag")
+            await client(client.service_match[service])
+        else:
+            await client.post()
 
-    if resp.status_code == 200:
-        response = resp.json()
-        key = response["key"]
-        dogbin_final_url = DOGBIN_URL + key
-
-        if response["isUrl"]:
+        if client:
             reply_text = (
-                "`Pasted successfully!`\n\n"
-                f"[Shortened URL]({dogbin_final_url})\n\n"
-                "`Original(non-shortened) URLs`\n"
-                f"[Dogbin URL]({DOGBIN_URL}v/{key})\n"
-                f"[View RAW]({DOGBIN_URL}raw/{key})"
+                "`Paste telah berhasil!`\n\n"
+                f"[URL]({client.link})\n"
+                f"[View RAW]({client.raw_link})"
             )
         else:
-            reply_text = (
-                "`Pasted successfully!`\n\n"
-                f"[Dogbin URL]({dogbin_final_url})\n"
-                f"[View RAW]({DOGBIN_URL}raw/{key})"
-            )
-    else:
-        reply_text = "`Failed to reach Dogbin`"
+            reply_text = "`Gagal membuka pastebin`"
 
-    await pstl.edit(reply_text)
-    if BOTLOG:
-        await pstl.client.send_message(
-            BOTLOG_CHATID,
-            "Paste query was executed successfully",
-        )
+    await pstl.edit(reply_text, link_preview=False)
+
+            )
+
+
+
+
+
+
+
+
+
 
 
 @register(outgoing=True, pattern=r"^\.getpaste(?: |$)(.*)")
