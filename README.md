@@ -83,7 +83,7 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 *   [TeamUltroid](https://github.com/TeamUltroid) - Ultroid
 *   [Sandeep](https://github.com/sandy1709/catuserbot) - Cat Userbot
 *   [DevsExpo](https://github.com/DevsExpo/FridayUserbot) - Friday Userbot
-*   AND OTHER
+*   [BianSepang](https://github.com/BianSepang/WeebProject) - WeebProject
 
 ## License
 Licensed under [Raphielscape Public License](https://github.com/poocong/Pocong-Userbot/blob/x-sql-extended/LICENSE) - Version 1.d, February 2020
