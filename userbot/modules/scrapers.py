@@ -1162,7 +1162,7 @@ async def paste(pstl):
 
     await pstl.edit(reply_text, link_preview=False)
 
-            )
+
 
 
 
