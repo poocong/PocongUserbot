@@ -303,29 +303,29 @@ async def typewriter(typew):
 
 CMD_HELP.update({
     "animasi2":
-    "•   **Syntax**: .bulan\
-    \n•**Function**: Cek Aja dh\
-    \n\n   •**Syntax**: .hati\
-    \n•**Function**: liat aja\
-    \n\n   •**Syntax**: .bernyanyi\
-    \n•**Function**: Cek Aja dh\
-    \n\n   •**Syntax**: .helikopter\
-    \n•**Function**: Liat Aja dah Sendri \
-    \n\n   •**Syntax**: .bundir\
-    \n•**Function**: Lelah Adek Bang\
-    \n\n   •**Syntax**: .y\
-    \n•**Function**: jempol\
-    \n\n   •**Syntax**: .hahaha\
-    \n•**Function**: ketawa lari\
-    \n\n   •**Syntax**: .babi\
-    \n•**Function**: Babi Ngook\
-    \n\n   •**Syntax**: .ajg\
-    \n•**Function**: Anjing mirip kelakuan lu\
-    \n\n   •**Syntax**: .ular\
-    \n•**Function**: Ular kadut\
-    \n\n   •**Syntax**: .tembak\
-    \n•**Function**: Nembak Cewe\
-    \n\n   •**Syntax**: .tank\
-    \n•**Function**: Tanktop"
+    "ㅤㅤㅤㅤ•**Cmd**: .bulan\
+    \n•**Function**: __Cek Aja dh__\
+    \n\nㅤㅤ•**Cmd**: .hati\
+    \n•**Function**: __liat aja__\
+    \n\nㅤㅤ•**Cmd**: .bernyanyi\
+    \n•**Function**: __Cek Aja dh__\
+    \n\nㅤㅤ•**Cmd**: .helikopter\
+    \n•**Function**: __Liat Aja dah Sendri__\
+    \n\nㅤㅤ•**Cmd**: .bundir\
+    \n•**Function**: __Lelah Adek Bang__\
+    \n\nㅤㅤ•**Cmd**: .y\
+    \n•**Function**: __jempol__\
+    \n\nㅤㅤ•**Cmd**: .hahaha\
+    \n•**Function**: __ketawa lari__\
+    \n\nㅤㅤ•**Cmd**: .babi\
+    \n•**Function**: __Babi Ngook__\
+    \n\nㅤㅤ•**Cmd**: .ajg\
+    \n•**Function**: __Anjing mirip kelakuan lu\
+    \n\nㅤㅤ•**Cmd**: .ular\
+    \n•**Function**: __Ular kadut__\
+    \n\nㅤㅤ•**Cmd**: .tembak\
+    \n•**Function**: __Nembak Cewe__\
+    \n\nㅤㅤ•**Cmd**: .tank\
+    \n•**Function**: __Tanktop__"
 })
 
