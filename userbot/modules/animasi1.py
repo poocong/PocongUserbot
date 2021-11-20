@@ -53,11 +53,26 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit("ga usah sok keras deh bg")
+    await typew.edit("**ga usah sok keras deh bg**")
     sleep(2)
-    await typew.edit("title lu di tele")
+    await typew.edit("**karena lu petinggi di tele**")
     sleep(1)
-    await typew.edit("ga ngaruh di rl bg.")
+    await typew.edit("**atau karena title lu itu**")
+    sleep(1)
+    await typew.edit("**ga ngaruh di rl bg.**")
+    
+
+@register(outgoing=True, pattern='^phe(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("**ga usah sok keras deh bg**")
+    sleep(2)
+    await typew.edit("**karena lu petinggi di tele**")
+    sleep(1)
+    await typew.edit("**atau karena title lu itu**")
+    sleep(1)
+    await typew.edit("**ga ngaruh di rl bg**")
     
     
 @register(outgoing=True, pattern='^.alay(?: |$)(.*)')
