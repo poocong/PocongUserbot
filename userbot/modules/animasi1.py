@@ -49,7 +49,17 @@ async def typewriter(typew):
     await typew.edit("kalian **Konto**")
     await typew.edit("kalian **Kontol**")
 
-
+@register(outgoing=True, pattern='^Phe(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(1)
+    await typew.edit("ga usah sok keras deh bg")
+    sleep(2)
+    await typew.edit("title lu di tele")
+    sleep(1)
+    await typew.edit("ga ngaruh di rl bg.")
+    
+    
 @register(outgoing=True, pattern='^.alay(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
