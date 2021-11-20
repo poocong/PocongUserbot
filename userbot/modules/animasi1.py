@@ -298,29 +298,29 @@ CMD_HELP.update({
     "**Perintah**: **animasi1**\
     \n**Total Command: 11**\
     \n\nㅤㅤ•**Cmd**: .hai\
-    \n•**Function**: Cosplay Nissa Sablon\
+    \n•**Function**: __Cosplay Nissa Sablon__\
     \n\nㅤㅤ•**Cmd**: .kntl\
-    \n•**Function**: Cek Aja dh\
+    \n•**Function**: __Kalian kntl__\
     \n\nㅤㅤ•**Cmd**: .alay\
-    \n•**Function**: Lumayanlah Buat Nyindir\
+    \n•**Function**: __Lumayanlah Buat Nyindir__\
     \n\nㅤㅤ•**Cmd**: .ange\
-    \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
+    \n•**Function**: __Ketik Ini Kalo Lu Lagi Sange__\
     \n\nㅤㅤ•**Cmd**: .engas\
-    \n•**Function**: Sange berat\
+    \n•**Function**: __Sange berat__\
     \n\nㅤㅤ•**Cmd**: phe / Phe\
-    \n•**Function**: Jagoan tele\
+    \n•**Function**: __Jagoan tele__\
     \n\nㅤㅤ•**Cmd**: .ehm\
-    \n•**Function**: Eum Biasalah cewe mau nya call mulu\
+    \n•**Function**: __Eum Biasalah cewe mau nya call mulu__\
     \n\nㅤㅤ•**Cmd**: .lopu\
-    \n•**Function**: Nyatakan Cinta Ke Cewe Orng\
+    \n•**Function**: __Nyatakan Cinta Ke Cewe Orng__\
     \n\nㅤㅤ•**Cmd**: .hujan\
-    \n•**Function**: Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus\
+    \n•**Function**: __Penyesalan Seorang Laki-laki Yang Diulangin Terus Menerus__\
     \n\nㅤㅤ•**Cmd**: .dahlah\
-    \n•**Function**: Cek Aja dh sndri\
+    \n•**Function**: __Cek Aja dh sndri__\
     \n\nㅤㅤ•**Cmd**: .jawa\
-    \n•**Function**: Jawa Pride Ni Bos.\
+    \n•**Function**: __Jawa Pride Ni Bos.__\
     \n\nㅤㅤ•**Cmd**: .erpe\
-    \n•**Function**: Buat Nyindir Nak Rp Yg Goblok."
+    \n•**Function**: __Buat Nyindir Nak Rp Yg Goblok.__"
     
     
 })
