@@ -320,7 +320,7 @@ CMD_HELP.update({
     \n\nㅤㅤ•**Cmd**: .babi\
     \n•**Function**: __Babi Ngook__\
     \n\nㅤㅤ•**Cmd**: .ajg\
-    \n•**Function**: __Anjing mirip kelakuan lu\
+    \n•**Function**: __Anjing mirip kelakuan lu__\
     \n\nㅤㅤ•**Cmd**: .ular\
     \n•**Function**: __Ular kadut__\
     \n\nㅤㅤ•**Cmd**: .tembak\
