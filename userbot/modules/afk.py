@@ -4,7 +4,7 @@
 # 
 # Copyright (C) XBot - Remix
 #
-# Izin Copy Bang Dian Xixixi
+# afk.py
 
 import os
 import asyncio
@@ -237,6 +237,6 @@ async def _(event):
 CMD_HELP.update({
 "afk":
 "AFK!\
-\n\nㅤㅤㅤㅤ**Syntax**: .afk (alasan) atau reply pada stiker atau foto\
-\n   **Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan."
+\n\nㅤㅤ•**Cmd**: .afk (alasan) atau reply pada stiker atau foto\
+\n•**Function**: Kamu akan AFK! , Mode AFK! akan mati jika kamu mengirim pesan."
 })
