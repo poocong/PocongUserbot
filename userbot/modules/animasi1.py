@@ -307,6 +307,8 @@ CMD_HELP.update({
     \n•**Function**: Ketik Ini Kalo Lu Lagi Sange\
     \n\nㅤㅤ•**Cmd**: .engas\
     \n•**Function**: Sange berat\
+    \n\nㅤㅤ•**Cmd**: phe / Phe\
+    \n•**Function**: Jagoan tele\
     \n\nㅤㅤ•**Cmd**: .ehm\
     \n•**Function**: Eum Biasalah cewe mau nya call mulu\
     \n\nㅤㅤ•**Cmd**: .lopu\
