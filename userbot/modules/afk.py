@@ -112,8 +112,8 @@ async def on_afk(event):
             message_to_reply = (
                   f"┌ ❏AFK!\n"
                 + f"│┌ **User** {ALIVE_NAME}\n"
-                + f"│├ **Karena** {reason}"
-                + f"└└ **AFK!** Sejak {total_afk_time} Yng lalu\n"
+                + f"│├ **Karena** {reason}\n"
+                + f"└└ **AFK!** Sejak {total_afk_time} Yng lalu"
                 
             )
         else:
