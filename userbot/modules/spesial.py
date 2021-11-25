@@ -180,9 +180,9 @@ CMD_HELP.update({
     "**list command spesial**\
     \n__Total Command: 4__\
     \n\nㅤㅤ•**Cmd**: .inviteall username grup\
-    \n•**Function** : __Menambahkan pengguna telegram dari grup yng di tentukan__.\
+    \n•**Function**: __Menambahkan pengguna telegram dari grup yng di tentukan__.\
     \n\nㅤㅤ•**Cmd**: .allban\
-    \n•**Function** : __banned semua member grup.__\
+    \n•**Function**: __banned semua member grup.__\
     \n\nㅤㅤ•**Cmd**: .getmemb\
     \n•**Function**: __Mengumpulkan anggota dari obrolan__\
     \n\nㅤㅤ•**Cmd**: .addmemb\
