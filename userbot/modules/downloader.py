@@ -91,7 +91,7 @@ CMD_HELP.update({
 
 # Instagram Downloader
 CMD_HELP.update({
-           "instragram":
+           "instagram":
            "**Perintah**: .help instagram\
            \n\nㅤㅤ•**Cmd**: .ig (reply di link)\
            \n•Function**: __Download video / foto dari Instagram__."
