@@ -222,9 +222,9 @@ async def honkasays(event):
 
 
 CMD_HELP.update({
-        "stickers2":
+        "stiker2":
         "**Perintah**: .help stickers2\
-        \n**Total Command: 4**\
+        \n**Total Command: 5**\
         \n\nㅤㅤ•**Cmd**: .itos\
         \n•**Function**: __Reply di stiker , untuk mengambil gambar__.\
         \n\nㅤㅤ•**Cmd**: .get\
