@@ -85,7 +85,7 @@ CMD_HELP.update({
            "tiktok":
            "**Perintah**: .help tiktok\
            \n\nㅤㅤ•**Cmd**: .tt (link tiktok)\
-           \n•Function: __Download video tiktok tanpa watermark__."
+           \n•**Function**: __Download video tiktok tanpa watermark__."
 })
         
 
@@ -94,5 +94,5 @@ CMD_HELP.update({
            "instagram":
            "**Perintah**: .help instagram\
            \n\nㅤㅤ•**Cmd**: .ig (reply di link)\
-           \n•Function**: __Download video / foto dari Instagram__."
+           \n•**Function**: __Download video / foto dari Instagram__."
 })
