@@ -27,11 +27,11 @@ async def gcast(event):
         if x.is_group:
             chat = x.id
             if chat not in GCAST_BLACKLIST:
-            try:
-                done += 1
-                await bot.send_message(chat, msg)
-            except BaseException:
-                er += 1
+                 try:
+                     done += 1
+                     await bot.send_message(chat, msg)
+                 except BaseException:
+                     er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
 
