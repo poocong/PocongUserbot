@@ -102,7 +102,7 @@ def register(**args):
 
                     text = "#CRASH\n"
                     text += "Jika mau, Anda bisa melaporkannya.\n"
-                    text += "teruskan saja pesan ini ke @xbotgrup.\n"
+                    text += "teruskan saja pesan ini ke @PocongUserbot.\n"
                     text += "Nothing is logged except the fact of error and date.\n"
 
                     ftext = "========== DISCLAIMER =========="
