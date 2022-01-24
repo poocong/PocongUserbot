@@ -120,17 +120,9 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "   **[[KLIK HERE]](https://pornhub.com)**\n     **To Use Official Repo**\n        🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━☤━━━━━━━━≫\n             **Thanks for using**\n "
+        "   **[[KLIK HERE]](www.pornhub.com)**\n     **To Use Official Repo**\n        🔥 **Pocong-Userbot** 🔥\n ≪━━━━━━━━☤━━━━━━━━≫\n             **Thanks for using**\n "
     )
     
-#
-#
-#
-#
-#
-#
-    
-
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
@@ -287,9 +279,8 @@ CMD_HELP.update({
     "repo":
     ">`.repo .repobot`\
     \nPenjelasan: Untuk Melihat Repo Bot Anda",
-#
-#
-#
+    
+    
     "readme":
     ">`.readme`\
     \nUsage: Provide links to setup the userbot and it's modules.",
