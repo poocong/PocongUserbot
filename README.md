@@ -1,4 +1,6 @@
-<a href="https://cooltext.com"><img src="https://images.cooltext.com/5521639.gif" width="366" height="89" alt="Pocong - Userbot" /></a>
+<p align="center">
+  <img src="https://telegra.ph/file/a749c224bd091a87e4d71.jpg">
+</p>
 
 <p align="center">
     <img alt="POCONG VERSION" src="https://img.shields.io/badge/POCONG%20VERSION-4.+-brightgreen"/>
@@ -15,7 +17,6 @@
 <h3 align="center">Sebuah userbot Telegram modular yang berjalan pada Python 3.8+ dengan database sqlalchemy.</h3>
 <p align="center">&nbsp;</p>
 
-# Basis Dari RaphielGang's [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)
 
 ```
 /**
@@ -26,18 +27,6 @@
 /**
 ```
 
-## Hasilkan Sesi String
-
-
-Ambil Dari Bot Telegram [KlikDisini](https://t.me/stringxbot) 
-
-
-### Atau Jalankan di terminal Anda
-
-```
-wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.sh && bash Getstring.sh
-```
-<br>
 
 ## How To Deploy 👷
 
@@ -64,8 +53,6 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 </p>
 
 
-
-
 ## Credits
 *   [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 *   [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
@@ -75,14 +62,6 @@ wget https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/Getstring.s
 *   [MoveAngel](https://github.com/MoveAngel) - One4uBot
 *   [AidilAryanto](https://github.com/aidilaryanto) - ProjectDils 
 *   [Alfianandaa](https://github.com/alfianandaa/ProjectAlf) - ProjectAlf
-*   [AnggaR69s](https://github.com/GengKapak/DCLXVI) - DCLXVI
-*   [kandnub](https://github.com/kandnub) - TG-UserBot
-*   [༺αиυвιѕ༻](https://github.com/Dark-Princ3) - X-tra-Telegram
-*   [Sahyam2019](https://github.com/sahyam2019/oub-remix) - oub-remix
-*   [TeamUserge](https://github.com/UsergeTeam/Userge) - Userge
-*   [TeamUltroid](https://github.com/TeamUltroid) - Ultroid
-*   [Sandeep](https://github.com/sandy1709/catuserbot) - Cat Userbot
-*   [DevsExpo](https://github.com/DevsExpo/FridayUserbot) - Friday Userbot
 *   [BianSepang](https://github.com/BianSepang/WeebProject) - WeebProject
 
 ## License
