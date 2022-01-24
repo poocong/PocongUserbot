@@ -26,7 +26,6 @@ async def gcast(event):
     async for x in bot.iter_dialogs():
         if x.is_group:
             chat = x.id
-            if chat not in GCAST_BLACKLIST
                  try:
                      done += 1
                      await bot.send_message(chat, msg)
