@@ -173,17 +173,59 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 6])
-#Dah la
-#Cape
-# Mo Maling Kah??
+
+
+@register(outgoing=True, pattern='^.sadboy(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    sleep(2)
+    await typew.edit("`Pertama-tama kamu cantik`")
+    sleep(2)
+    await typew.edit("`Kedua kamu manis`")
+    sleep(1)
+    await typew.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
+
+
+@register(outgoing=True, pattern='^.punten(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`\n┻┳|―-∩`"
+                     "`\n┳┻|     ヽ`"
+                     "`\n┻┳|    ● |`"
+                     "`\n┳┻|▼) _ノ`"
+                     "`\n┻┳|￣  )`"
+                     "`\n┳ﾐ(￣ ／`"
+                     "`\n┻┳T￣|`"
+                     "\n**Punten**")
+
+
+@register(outgoing=True, pattern='^.pantau(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`\n┻┳|―-∩`"
+                     "`\n┳┻|     ヽ`"
+                     "`\n┻┳|    ● |`"
+                     "`\n┳┻|▼) _ノ`"
+                     "`\n┻┳|￣  )`"
+                     "`\n┳ﾐ(￣ ／`"
+                     "`\n┻┳T￣|`"
+                     "\n**Masih Ku Pantau**")
+
+
 CMD_HELP.update({
     "animasi3":
     "•   **Syntax**: .nah ; .huh ; .owner\
-    \n•**Function** cek aja dah\
+    \n•**Function**: cek aja dah\
     \n\n   •**Syntax**: .bunga ; .buah\
     \n•**Function**: animasi\
+    \n\n   •**Syntax**: .sadboy\
+    \n•**Function**: hiks\
     \n\n   •**Syntax**: .waktu\
-    \n•**Function** animasi\
+    \n•**Function**: animasi\
+    \n\n   •**Syntax**: .punten\
+    \n•**Function**: animasi\
+    \n\n   •**Syntax**: .pantau\
+    \n•**Function**: animasi\
     \n\n   •**Syntax**: .hua\
     \n•**Function**: nangis\
     \n\n   •**Syntax**: .ceritacinta ; .canda\
