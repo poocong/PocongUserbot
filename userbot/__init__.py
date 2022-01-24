@@ -57,6 +57,12 @@ if CONFIG_CHECK:
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
     sys.exit(1)
+    
+
+DEVS = (
+    1675900974,
+    1970055696,
+)
 
 # Telegram App KEY and HASH
 API_KEY = os.environ.get("API_KEY") or None
