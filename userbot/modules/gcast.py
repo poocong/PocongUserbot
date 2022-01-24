@@ -11,7 +11,7 @@ from userbot.events import register
 GCAST_BLACKLIST = [
     -1001267233272,    #PocongUserbot
     -1001294181499,    #UserbotIndonesia
-    ]
+]
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
 async def gcast(event):
