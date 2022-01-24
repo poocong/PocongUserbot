@@ -27,17 +27,17 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"Hai Selamat datang di chat {DEFAULTUSER}\n"
-    "╾─────────────────────╼\n"
-    " Mohon untuk tidak\n"
-    " melakukan spam chat\n"
-    " Atau Saya Akan Otomatis\n"
-    " Mereport & Block Kamu\n"
-    " Silahkan Tunggu Sampai\n"
-    f" {DEFAULTUSER} Menerima Pesanmu\n"
-    "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n\n"
-    f"- ©Bot Assisten {DEFAULTUSER}\n"
-    "- Protected By 🔥POCONG USERBOT🔥")
+    f"❏ PERINGATAN!\n"
+     "┌ Saya belum menyetujui kmu\n"
+     "├ Tunggu sampai saya menyetujui\n" 
+     "├ Cht kmu, jangan spam cht\n"
+     "├ atau kmu akan otomatis\n"
+     "├ terblokir.\n"
+     "└ Bot by **PocongUserbot**\n"
+     "┌━━━━━━━━━━━━\n"
+     "├❏ **Support: @PocongUserbot**\n"
+     "├❏ **Channel: @PocongProject**\n"
+     "└━━━━━━━━━━━━\n")
 # =================================================================
 
 
@@ -200,7 +200,7 @@ async def notifon(non_event):
     await non_event.edit("`Notifications from unapproved PM's unmuted!`")
 
 
-@register(outgoing=True, pattern=r"^\.(?:approve|ok)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:y|ok)\s?(.)?")
 async def approvepm(apprvpm):
     """For .approve command, give someone the permissions to PM you."""
     try:
@@ -249,7 +249,7 @@ async def approvepm(apprvpm):
         )
 
 
-@register(outgoing=True, pattern=r"^\.(?:disapprove|nopm)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:byee|nopm)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -390,26 +390,26 @@ async def add_pmsg(cust_msg):
 
 CMD_HELP.update(
     {
-        "pm": ">`.approve | .ok`"
-        "\nUsage: Approves the mentioned/replied person to PM."
-        "\n\n>`.disapprove | .nopm`"
-        "\nUsage: Disapproves the mentioned/replied person to PM."
-        "\n\n>`.block`"
-        "\nUsage: Blocks the person."
-        "\n\n>`.unblock`"
-        "\nUsage: Unblocks the person so they can PM you."
-        "\n\n>`.notifoff`"
-        "\nUsage: Clears/Disables any notifications of unapproved PMs."
-        "\n\n>`.notifon`"
-        "\nUsage: Allows notifications for unapproved PMs."
-        "\n\n>`.set pm_msg` <reply to msg>"
-        "\nUsage: Set your own Unapproved message"
-        "\n\n>`.get pm_msg`"
-        "\nUsage: Get your current Unapproved message"
-        "\n\n>`.reset pm_msg`"
-        "\nUsage: Get your remove your Unapproved message"
-        "\n\n*Custom unapproved message currently not able to set"
-        "\nformated text like bold, underline, link, etc."
-        "\nMessage will send in monoscape only"
+        "pmpermit": f"**Plugin : **`pmpermit`\
+        \n\n  •  **Syntax :** `.y` atau `.ok`\
+        \n  •  **Function : **Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
+        \n\n  •  **Syntax :** `.byee` atau `.nopm`\
+        \n  •  **Function : **Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.\
+        \n\n  •  **Syntax :** `.block`\
+        \n  •  **Function : **Memblokir Orang Di PM.\
+        \n\n  •  **Syntax :** `.unblock`\
+        \n  •  **Function : **Membuka Blokir.\
+        \n\n  •  **Syntax :** `.notifoff`\
+        \n  •  **Function : **Menghidupkan notifikasi pesan yang belum diterima.\
+        \n\n  •  **Syntax :** `.notifon`\
+        \n  •  **Function : **Menghidupkan notifikasi pesan yang belum diterima.\
+        \n\n  •  **Syntax :** `.set pm_msg` <balas ke pesan>\
+        \n  •  **Function : **Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima.\
+        \n\n  •  **Syntax :** `.get pm_msg`\
+        \n  •  **Function : **Mendapatkan Custom pesan PM mu.\
+        \n\n  •  **Syntax :** `.reset pm_msg`\
+        \n  •  **Function : **Menghapus pesan PM ke default.\
+        \n\n  •  **Pesan Pribadi yang belum diterima saat ini tidak dapat disetel ke teks format kaya bold, underline, link, dll. Pesan akan terkirim normal saja**\
+        \n\n**NOTE: Bila ingin Mengaktifkan PMPERMIT Silahkan Ketik:** `.set var PM_AUTO_BAN True`"
     }
 )
