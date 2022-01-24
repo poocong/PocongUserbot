@@ -26,11 +26,11 @@ async def gcast(event):
     async for x in bot.iter_dialogs():
         if x.is_group:
             chat = x.id
-                 try:
-                     done += 1
-                     await bot.send_message(chat, msg)
-                 except BaseException:
-                     er += 1
+            try:
+                done += 1
+                await bot.send_message(chat, msg)
+            except BaseException:
+                er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
 
@@ -63,4 +63,3 @@ CMD_HELP.update({
 \n\nㅤㅤㅤㅤ•**Syntax**: .gucast teks\
 \n    •**Function**: Mengirim Pesan Broadcast Ke Pengguna Telegram Yang Telah Kmu Chat." 
 })
-
