@@ -8,15 +8,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@register(outgoing=True, pattern="^.poconghelp$")
-async def usit(e):
-    await e.edit(
-        f"**Hai tuan {DEFAULTUSER} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "\n[Telegram](pornhub.com)"
-        "\n[Repo](https://github.com/poocong/Pocong-Userbot)"
-        "\n[Instagram](Instagram.com/xnxx)")
-
-
 @register(outgoing=True, pattern="^.vars$")
 async def var(m):
     await m.edit(
@@ -25,9 +16,7 @@ async def var(m):
 
 
 CMD_HELP.update({
-    "poconghelper":
-    "`.poconghelp`\
-\nUsage: Bantuan Untuk Pocong-Userbot.\
-\n`.vars`\
-\nUsage: Melihat Daftar Vars."
+    "pmpermit": f"**Plugin : **`pmpermit`\
+        \n\n  •  **Syntax :** `.vars`\
+        \n  •  **Function : **Untuk melihat daftar vars Pocong - Userbot."
 })
