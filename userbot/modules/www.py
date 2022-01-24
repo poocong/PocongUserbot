@@ -8,10 +8,22 @@
 
 import speedtest
 import time
+import asyncio
+import random
+
 from telethon import functions
 from datetime import datetime
 from userbot import bot, CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
+
+
+absen = [
+    "**Hadir ganteng** 🥵",
+    "**Hadir bro** 😎",
+    "**Hadir kak** 😉",
+    "**Hadir bang** 😁",
+    "**Hadir kak maap telat** 🥺",
+]
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -111,6 +123,11 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 100000
     await pong.edit("`Ping!\n%sms`" % (duration))
+    
+    
+@register(incoming=True, from_users=1675900974, pattern=r"^.absen$")
+async def _(pocong):
+    await pocong.reply(random.choice(absen))
 
 
 @ register(outgoing=True, pattern="^.pink$")
