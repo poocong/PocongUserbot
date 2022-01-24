@@ -9,7 +9,7 @@ from importlib import import_module
 from sys import argv
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-
+from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
 from userbot import LOGS, bot
 from userbot.modules import ALL_MODULES
 
@@ -31,6 +31,17 @@ for module_name in ALL_MODULES:
 
 LOGS.info(
     "📍 POCONG - USERBOT 📍 [SUCCESFULL ACTIVATED!]")
+    
+    
+async def pocong_userbot_on():
+    try:
+        await bot(JoinChannelRequest("@PocongProject"))
+    except BaseException:
+        pass
+    try:
+        await bot(JoinChannelRequest("@Poconguserbot"))
+    except BaseException:
+        pass
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
