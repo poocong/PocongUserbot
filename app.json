@@ -1,7 +1,7 @@
 {
-  "name": "POCONG USERBOT",
+  "name": "POCONG-USERBOT",
   "description": "[POCONG USERBOT] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
-  "logo": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
+  "logo": "https://telegra.ph/file/0297888edbdc754503e0b.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/poocong/Pocong-Userbot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/LifeeOrDeath",
+  "success_url": "https://t.me/PocongProject",
   "stack": "container",
   "env": {
     "API_KEY": {
