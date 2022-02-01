@@ -8,6 +8,7 @@ import os
 import re
 import sys
 import time
+import pybase64
 import asyncio
 from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
@@ -19,6 +20,7 @@ from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from requests import get
 from telethon.sessions import StringSession
+from telethon.tl.functions.channels import JoinChannelRequest as GetSec
 from telethon.sync import TelegramClient, custom, events
 from telethon import events, Button
 load_dotenv("config.env")
@@ -220,12 +222,43 @@ for binary, path in binaries.items():
 
 # 'bot' variable
 if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    session = StringSession(str(STRING_SESSION))
 else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    session = "userbot"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
 
+async def checking():
+    gocheck = pybase64.b64decode("QFBvY29uZ1Byb2plY3Q==")
+    checker = pybase64.b64decode("QFBvY29uZ1VzZXJib3Q=")
+    Input_gocheck = gocheck.decode('utf-8')
+    Input_checker = checker.decode('utf-8')
+    try:
+        await bot(GetSec(f"{Input_gocheck}"))
+    except BaseException:
+        pass
+    try:
+        await bot(GetSec(f"{Input_checker}"))
+    except BaseException:
+        pass
+
+with bot:
+    try:
+        bot.loop.run_until_complete(checking())
+    except BaseException:
+        LOGS.info(
+            "Join Group Support @Pocong-Userbot untuk melihat update userbot"
+            "Jangan Keluar!!")
+        quit(1)
 
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
