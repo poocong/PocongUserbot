@@ -213,11 +213,11 @@
         "version": "13"
       }
     }
+  ],
   "formation": {
     "worker": {
       "quantity": 1,
       "size": "free"
-      }
     }
-  ]
+  }
 }
