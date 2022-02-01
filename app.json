@@ -208,5 +208,11 @@
         "version": "12"
       }
     }
-  ]
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
