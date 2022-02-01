@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/poocong/Pocong-Userbot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/Poocongonlen",
+  "success_url": "https://t.me/LifeeOrDeath",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -41,7 +41,6 @@
     },
     "COUNTRY": {
       "description": "Tetapkan Negara Anda untuk digunakan diperintah .time dan .date",
-      "value": "Indonesia",
       "required": false
     },
     "TZ_NUMBER": {
@@ -51,7 +50,6 @@
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Dapatkan APPID (API key) dari https://api.openweathermap.org/data/2.5/weather",
-      "value": "5ed2fcba931692ec6bd0a8a3f8d84936"
       "required": false
     },
     "BOTLOG": {
@@ -68,16 +66,14 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Fitur Switch. Juga dikenal sebagai 'bleep blop, ini adalah bot...' module.",
-      "value": "True"
+      "value": "False"
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key untuk perintah .yt dapatkan dari https://console.cloud.google.com",
-      "value": "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
       "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
-      "value": "12dc42a0ff88957",
       "required": false
       
     },
@@ -189,7 +185,7 @@
     },
     "S_PACK_NAME": {
       "description": "ubah nama paket stiker Anda",
-      "value": "Stiker By @PocongProject",
+      "value": " ",
       "required": false
     },
     "ALIVE_LOGO": {
@@ -209,7 +205,7 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "13"
+        "version": "12"
       }
     }
   ]
