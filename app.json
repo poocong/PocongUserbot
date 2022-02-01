@@ -147,6 +147,7 @@
     },
     "WEATHER_DEFCITY": {
       "description": "Set the default city for the userbot's weather module.",
+      "value": "Jakarta",
       "required": false
     },
     "GIT_REPO_NAME": {
@@ -212,5 +213,10 @@
         "version": "13"
       }
     }
-  ]
-}
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}]
