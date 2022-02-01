@@ -1,7 +1,8 @@
+
 {
-  "name": "POCONG USERBOT",
+  "name": "POCONG-USERBOT",
   "description": "[POCONG USERBOT] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
-  "logo": "https://telegra.ph/file/f36fe8fc696203737e820.jpg",
+  "logo": "https://telegra.ph/file/4dad946885113195be82a.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -23,7 +24,7 @@
       "required": true
     },
     "STRING_SESSION": {
-      "description": "Dapatkan nilai ini dengan [python3 string_session.py] di Termux atau sistem lokal.",
+      "description": "Dapatkan String Session di Grup » https://t.me/PocongUserbot » Lalu ketik #string",
       "required": true
     },
     "HEROKU_MEMEZ": {
@@ -36,7 +37,7 @@
       "value": ""
     },
     "HEROKU_APP_NAME": {
-      "description": "Tambahkan nama aplikasi Heroku di sini. Ini membantu dengan pembaruan userbot.",
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
       "required": true
     },
     "COUNTRY": {
@@ -59,7 +60,7 @@
       "value": "True"
     },
     "BOTLOG_CHATID": {
-      "description": "ChatID dari grup Log. Setel ke '0' jika BOTLOG = False dan/atau jika LOGSPAMMER = False.",
+      "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx.",
       "value": "-100xnxx"
     },
     "CONSOLE_LOGGER_VERBOSE": {
@@ -67,16 +68,16 @@
       "value": "False"
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Fitur Switch. Juga dikenal sebagai 'bleep blop, ini adalah bot...' module.",
+      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False'.",
       "value": "True"
     },
     "YOUTUBE_API_KEY": {
-      "description": "YouTube Data API Key untuk perintah .yt dapatkan dari https://console.cloud.google.com",
+      "description": "Dapatkan YouTube Api Key di Grup » https://t.me/PocongUserbot » Lalu ketik #apikey",
       "value": "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
+      "description": "Dapatkan Ocr Api Key di Grup » https://t.me/PocongUserbot » Lalu ketik #apikey",
       "value": "12dc42a0ff88957",
       "required": false
       
@@ -102,23 +103,23 @@
       "required": false
     },
     "CLEAN_WELCOME": {
-      "description": "When a new person joins, the old welcome message is deleted.",
+      "description": "Menghapus Pesan Welcome Secara Otomatis, ubah ini ke False jika ingin mematikan nya.",
       "value": "True"
     },
     "LASTFM_API": {
-      "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "API Key untuk Last FM module. [Dapatkan Api ini dari - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_SECRET": {
-      "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
+      "description": "SECRET Key Untuk Last.FM module. [Dapatkan Key ini dari - https://www.last.fm/api/account/create]",
       "required": false
     },
     "LASTFM_USERNAME": {
-      "description": "Last.FM Username",
+      "description": "Username Last.FM kamu",
       "required": false
     },
     "LASTFM_PASSWORD": {
-      "description": "Last.FM Password",
+      "description": "Password Last.FM kamu",
       "required": false
     },
     "BIO_PREFIX": {
@@ -126,7 +127,7 @@
       "required": false
     },
     "DEFAULT_BIO": {
-      "description": "Default profile bio.",
+      "description": "Bio Bawaan Userbot.",
       "required": false
     },
     "ALIVE_NAME": {
@@ -142,11 +143,11 @@
       "required": false
     },
     "GENIUS_ACCESS_TOKEN": {
-      "description": "Client Access Token from https://genius.com/api-clients.",
+      "description": "Client Access Token Ambil Dari https://genius.com/api-clients.",
       "required": false
     },
     "WEATHER_DEFCITY": {
-      "description": "Set the default city for the userbot's weather module.",
+      "description": "Ubah Nama Kota Dimana Kamu Tinggal.",
       "value": "Jakarta",
       "required": false
     },
@@ -213,11 +214,5 @@
         "version": "13"
       }
     }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
-     }
-   }
+  ]
 }
