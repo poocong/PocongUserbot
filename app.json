@@ -185,7 +185,7 @@
     },
     "S_PACK_NAME": {
       "description": "ubah nama paket stiker Anda",
-      "value": " ",
+      "value": "Stiker By @PocongProject",
       "required": false
     },
     "ALIVE_LOGO": {
