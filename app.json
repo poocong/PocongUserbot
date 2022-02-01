@@ -1,4 +1,3 @@
-
 {
   "name": "POCONG-USERBOT",
   "description": "[POCONG USERBOT] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
