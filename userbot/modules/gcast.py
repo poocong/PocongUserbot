@@ -1,7 +1,7 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
-# ReCode by @PocongOnlen
+# ReCode by @pocongproject
 
 
 from userbot import bot, CMD_HELP
@@ -9,8 +9,9 @@ from userbot.events import register
 
 
 GCAST_BLACKLIST = [
-    -1001267233272,    #PocongUserbot
-    -1001294181499,    #UserbotIndonesia
+    -1001267233272,    # PocongUserbot
+    -1001294181499,    # UserbotIndonesia
+    -1001181964030,    # MakComeBack
 ]
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
@@ -55,7 +56,8 @@ async def gucast(event):
                 er += 1
     await kk.edit(f"Done in {done} chats, error in {er} chat(s)")
 
-#XBot-Remix    
+# copyright (C) Pocong Userbot
+# PocongUserbot < https://github.com/poocong/PocongUserbot >
 
 CMD_HELP.update({
     "gcast": 
