@@ -27,17 +27,13 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"❏ PERINGATAN!\n"
-     "┌ Saya belum menyetujui kmu\n"
-     "├ Tunggu sampai saya menyetujui\n" 
-     "├ Cht kmu, jangan spam cht\n"
-     "├ atau kmu akan otomatis\n"
-     "├ terblokir.\n"
-     "└ Bot by **PocongUserbot**\n"
-     "┌━━━━━━━━━━━━\n"
-     "├❏ **Support: @PocongUserbot**\n"
-     "├❏ **Channel: @PocongProject**\n"
-     "└━━━━━━━━━━━━\n")
+    f"❏ 𝐏𝐞𝐫𝐢𝐧𝐠𝐚𝐭𝐚𝐧!\n"
+    "• Saya belum menyetujui anda untuk Cht.\n"
+    "• Tunggu sampai sy menyetujui chat anda.\n"
+    "• Jangan Spam Chat atau anda akan otomatis di blokir.\n"
+    "┌━━━━━━━━━━━━\n"
+    "├❏ 𝐏𝐞𝐬𝐚𝐧 𝐨𝐭𝐨𝐦𝐚𝐭𝐢𝐬 𝐁𝐲 𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭\n"
+    "└━━━━━━━━━━━━\n")
 # =================================================================
 
 
