@@ -1,8 +1,11 @@
-# BASED FROM ULTROID
-# THANKS ULTROID
-# DONT REMOVE THIS
-# Pocong - Userbot
-# Bacot Ngentod
+# Copyright (C) 2020-2021 by poocong@Github, < https://github.com/poocong >.
+#
+# This file is part of < https://github.com/poocong/PyroUserbot > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/poocong/PyroUserbot/blob/master/LICENSE >
+#
+# All rights reserved.
+
 
 from telethon import events
 from userbot import CMD_HELP, bot
@@ -24,7 +27,7 @@ async def _(event):
             )
             await conv.send_message("/start")
             await asyncio.sleep(1)
-            await conv.send_message("Generate New")
+            await conv.send_message("/create")
             response = await response
             ((response).reply_markup.rows[2].buttons[0].url)
             await event.client.send_read_acknowledge(conv.chat_id)
@@ -34,8 +37,6 @@ async def _(event):
         await event.edit(f"**TEMPMAIL** ~ `{response.message.message}`\n\n[KLIK DISINI UNTUK VERIFIKASI]({PocongUserbot})")
 
 
-# Napa Ga Seneng?
-# Ported For Pocong - Userbot From Ultroid
 
 CMD_HELP.update({"tempmail": "**Modules:** __Temp Mail__\n\n: `.tm`"
                  "\n**Penjelasan:** Mendapatkan Email Gratis Dari Temp Mail"})
