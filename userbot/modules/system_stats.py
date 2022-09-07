@@ -1,59 +1,57 @@
-# System Stats Pocong-Userbot
+# Copyright (C) 2019 The Raphielscape Company LLC.
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+
+""" Userbot module for System Stats commands """
 
 import asyncio
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
-from platform import python_version, uname
-from shutil import which
-from os import remove
-from telethon import version
-from telethon import __version__, version
 import platform
 import sys
 import time
+from asyncio import create_subprocess_exec as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
 from datetime import datetime
+from os import remove
+from platform import python_version
+from shutil import which
+
 import psutil
-from time import sleep
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
-from userbot.events import register
+from pytgcalls import __version__ as pytgcalls
+from telethon import __version__, version
 
+from userbot import ALIVE_EMOJI, ALIVE_LOGO, ALIVE_TEKS_CUSTOM, BOT_VER, CHANNEL
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, GROUP, StartTime
+from userbot.utils import bash, edit_or_reply, poci_cmd
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
+from .ping import get_readable_time
 
+try:
+    from carbonnow import Carbon
+except ImportError:
+    Carbon = None
 
 modules = CMD_HELP
+emoji = ALIVE_EMOJI
+alive_text = ALIVE_TEKS_CUSTOM
 
 
-async def get_readable_time(seconds: int) -> str:
-    count = 0
-    up_time = ""
-    time_list = []
-    time_suffix_list = ["s", "m", "h", "d"]
-
-    while count < 4:
-        count += 1
-        remainder, result = divmod(
-            seconds, 60) if count < 3 else divmod(
-            seconds, 24)
-        if seconds == 0 and remainder == 0:
-            break
-        time_list.append(int(result))
-        seconds = int(remainder)
-
-    for x in range(len(time_list)):
-        time_list[x] = str(time_list[x]) + time_suffix_list[x]
-    if len(time_list) == 4:
-        up_time += time_list.pop() + ", "
-
-    time_list.reverse()
-    up_time += ":".join(time_list)
-
-    return up_time
+@poci_cmd(
+    pattern="sysinfo$",
+)
+async def _(e):
+    xxnx = await edit_or_reply(e, "`Processing...`")
+    x, y = await bash("neofetch|sed 's/\x1B\\[[0-9;\\?]*[a-zA-Z]//g' >> neo.txt")
+    with open("neo.txt", "r") as neo:
+        p = (neo.read()).replace("\n\n", "")
+    ok = Carbon(base_url="https://carbonara.vercel.app/api/cook", code=p)
+    haa = await ok.memorize("neofetch")
+    await e.reply(file=haa)
+    await xxnx.delete()
+    remove("neo.txt")
 
 
-@register(outgoing=True, pattern=r"^\.spc")
+@poci_cmd(pattern=r"spc")
 async def psu(event):
     uname = platform.uname()
     softw = "**Informasi Sistem**\n"
@@ -67,10 +65,8 @@ async def psu(event):
     softw += f"`Waktu Hidup: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
     # CPU Cores
     cpuu = "**Informasi CPU**\n"
-    cpuu += "`Physical cores   : " + \
-        str(psutil.cpu_count(logical=False)) + "`\n"
-    cpuu += "`Total cores      : " + \
-        str(psutil.cpu_count(logical=True)) + "`\n"
+    cpuu += "`Physical cores   : " + str(psutil.cpu_count(logical=False)) + "`\n"
+    cpuu += "`Total cores      : " + str(psutil.cpu_count(logical=True)) + "`\n"
     # CPU frequencies
     cpufreq = psutil.cpu_freq()
     cpuu += f"`Max Frequency    : {cpufreq.max:.2f}Mhz`\n"
@@ -93,14 +89,14 @@ async def psu(event):
     bw = "**Bandwith Digunakan**\n"
     bw += f"`Unggah  : {get_size(psutil.net_io_counters().bytes_sent)}`\n"
     bw += f"`Download: {get_size(psutil.net_io_counters().bytes_recv)}`\n"
-    help_string = f"{str(softw)}\n"
-    help_string += f"{str(cpuu)}\n"
-    help_string += f"{str(memm)}\n"
-    help_string += f"{str(bw)}\n"
+    help_string = f"{softw}\n"
+    help_string += f"{cpuu}\n"
+    help_string += f"{memm}\n"
+    help_string += f"{bw}\n"
     help_string += "**Informasi Mesin**\n"
     help_string += f"`Python {sys.version}`\n"
     help_string += f"`Telethon {__version__}`"
-    await event.edit(help_string)
+    await edit_or_reply(event, help_string)
 
 
 def get_size(bytes, suffix="B"):
@@ -111,7 +107,7 @@ def get_size(bytes, suffix="B"):
         bytes /= factor
 
 
-@register(outgoing=True, pattern=r"^\.sysd$")
+@poci_cmd(pattern="sysd$")
 async def sysdetails(sysd):
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
@@ -123,15 +119,14 @@ async def sysdetails(sysd):
             )
 
             stdout, stderr = await fetch.communicate()
-            result = str(stdout.decode().strip()) + \
-                str(stderr.decode().strip())
+            result = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
-            await sysd.edit("`" + result + "`")
+            await edit_or_reply(sysd, "`" + result + "`")
         except FileNotFoundError:
-            await sysd.edit("`Install neofetch first !!`")
+            await edit_or_reply(sysd, "**Install neofetch Terlebih dahulu!!**")
 
 
-@register(outgoing=True, pattern=r"^\.botver$")
+@poci_cmd(pattern="botver$")
 async def bot_ver(event):
     if event.text[0].isalpha() or event.text[0] in ("/", "#", "@", "!"):
         return
@@ -158,234 +153,71 @@ async def bot_ver(event):
         stdout, stderr = await rev.communicate()
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
-        await event.edit(
-            "**☛**Pocong-Userbot Versi:** \n "
-            f"{verout}"
-            "\n**☛**Revisi:**\n "
-            f"{revout}"
+        await edit_or_reply(
+            event,
+            "❏ **Userbot Versi :** " f"`{verout}`" "\n❏ **Revisi :** " f"`{revout}`",
         )
     else:
-        await event.edit(
-            "Sayang sekali anda tidak memiliki git, Anda Menjalankan Bot - 'v1.beta.4'!"
+        await edit_or_reply(
+            event, "anda tidak memiliki git, Anda Menjalankan Bot - 'v1.beta.4'!"
         )
 
 
-@register(outgoing=True, pattern=r"^\.pip(?: |$)(.*)")
-async def pipcheck(pip):
-    if pip.text[0].isalpha() or pip.text[0] in ("/", "#", "@", "!"):
-        return
-    pipmodule = pip.pattern_match.group(1)
-    if pipmodule:
-        await pip.edit("`Mencari...`")
-        pipc = await asyncrunapp(
-            "pip3",
-            "search",
-            pipmodule,
-            stdout=asyncPIPE,
-            stderr=asyncPIPE,
-        )
-
-        stdout, stderr = await pipc.communicate()
-        pipout = str(stdout.decode().strip()) + str(stderr.decode().strip())
-
-        if pipout:
-            if len(pipout) > 4096:
-                await pip.edit("`Output Terlalu Besar, Dikirim Sebagai File`")
-                file = open("output.txt", "w+")
-                file.write(pipout)
-                file.close()
-                await pip.client.send_file(
-                    pip.chat_id,
-                    "output.txt",
-                    reply_to=pip.id,
-                )
-                remove("output.txt")
-                return
-            await pip.edit(
-                "**Query: **\n`"
-                f"pip3 search {pipmodule}"
-                "`\n**Result: **\n`"
-                f"{pipout}"
-                "`"
-            )
-        else:
-            await pip.edit(
-                "**Query: **\n`"
-                f"pip3 search {pipmodule}"
-                "`\n**Result: **\n`No Result Returned/False`"
-            )
-    else:
-        await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
-
-
-@register(outgoing=True, pattern=r"^\.(?:on|nyala)\s?(.)?")
+@poci_cmd(pattern="(?:alive|on)\s?(.)?")
 async def amireallyalive(alive):
-    user = await bot.get_me()
-    await get_readable_time((time.time() - StartTime))
-    await alive.edit("**P**")
-    await alive.edit("**Pr**")
-    await alive.edit("**Pro**")
-    await alive.edit("**Pros**")
-    await alive.edit("**Prose**")
-    await alive.edit("**Proses**")
-    await alive.edit("**Proses** **M**")
-    await alive.edit("**Proses** **Me**")
-    await alive.edit("**Proses** **Men**")
-    await alive.edit("**Porses** **Meng**")
-    await alive.edit("**Proses** **Mengh**")
-    await alive.edit("**Proses** **Menghi**")
-    await alive.edit("**Proses** **Menghid**")
-    await alive.edit("**Proses** **Menghidu**")
-    await alive.edit("**Proses** **Menghidup**")
-    await alive.edit("**Proses** **Menghidupk**")
-    await alive.edit("**Proses** **Mengihdupka**")
-    await alive.edit("**Proses** **Menghidupkan**")
-    sleep(1)
-    await alive.edit("**Proses Menghidupkan** **P**")
-    await alive.edit("**Proses Menghidupkan** **Po**")
-    await alive.edit("**Proses Menghidupkan** **Poc**")
-    await alive.edit("**Proses Menghidupkan** **Poco**")
-    await alive.edit("**Proses Menghidupkan** **Pocon**")
-    await alive.edit("**Proses Menghidupkan** **Pocong**")
-    sleep(1)
-    await alive.edit("**Proses Menghidupkan** **Pocong U**")
-    await alive.edit("**Proses Menghidupkan** **Pocong Us**")
-    await alive.edit("**Proses Menghidupkan** **Pocong Use**")
-    await alive.edit("**Proses Menghidupkan** **Pocong User**")
-    await alive.edit("**Proses Menghidupkan** **Pocong Userb**")
-    await alive.edit("**Proses Menghidupkan** **Pocong Userbo**")
-    await alive.edit("**Proses Menghidupkan** **Pocong Userbot**")
-    sleep(1)
-    await alive.edit("8✊===D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8===✊D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8✊===D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8===✊D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8✊===D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8===✊D")
-    await alive.edit("8==✊=D")
-    await alive.edit("8=✊==D")
-    await alive.edit("8✊===D")
-    sleep(1)
+    user = await alive.client.get_me()
+    uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**👻𝐏𝐨𝐜𝐨𝐧𝐠𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐢𝐬 𝐚𝐜𝐭𝐢𝐯𝐞𝐝!👻** \n\n"
-        f"┣❏😈 **Master**: {DEFAULTUSER} \n"
-        f"┣❏🔎 **Username**: **@{user.username}** \n"
-        f"┣❏🐍 **Python**:  Versi {python_version()} \n"
-        f"┣❏🤖 **Bot Versi**: {BOT_VER} \n"
-        f"┣❏🗃 **Plugins**: {len(modules)} Plugins \n"
-        f"┣❏👾 **Telethon**: Versi {version.__version__} \n\n"
-        f"📍 REPO [POCONG USERBOT](https://github.com/poocong/Pocong-Userbot)\n")
-    if ALIVE_LOGO:
-        try:
-            logo = ALIVE_LOGO
-            await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
-            await msg.delete()
-        except BaseException:
-            await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
-            )
-            await asyncio.sleep(100)
-            await alive.delete()
-    else:
-        await alive.edit(output)
-        await asyncio.sleep(100)
-        await alive.delete()
-
+        f"**[Pocong Userbot](https://github.com/poocong/PocongUserbot) Telah Di Aktifkan.**\n\n"
         
- 
-
-@register(outgoing=True, pattern=r"^\.(?:alive|pocong)\s?(.)?")       
-async def amireallyalive(alive):       
-    user = await bot.get_me()    
-    await get_readable_time((time.time() - StartTime))    
-    await alive.edit("`I'M ALIVE!`")
-    sleep(1)
-    await alive.edit("👻")    
-    sleep(2)    
-    output = (   
-        f"**╭╼═✯════════════✯═╾╮**\n"
-        f"ㅤㅤ 👻 𝐏𝐨𝐜𝐨𝐧𝐠 - 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 👻 \n"
-        f"**╰╼═✯════════════✯═╾╯**\n"
-        f"**Ayo Menyerah Ngapain Semangat..!** \n"
-        f"**╔═════════✹═════════╗** \n"
-        f"➨ 𝐌𝐚𝐬𝐭𝐞𝐫        :   {DEFAULTUSER} \n"
-        f"➨ 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞   :   @{user.username} \n"
-        f"➨ 𝐏𝐲𝐭𝐡𝐨𝐧        :   Versi {python_version()} \n"
-        f"➨ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧     :   Versi {version.__version__} \n"
-        f"➨ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧       :   {BOT_VER} \n"
-        f"➨ 𝐏𝐥𝐮𝐠𝐢𝐧𝐬       : {len(modules)} Plugins \n"
-        f"**╚═════════✹═════════╝** \n"
-        f"👻 𝐎𝐰𝐧𝐞𝐫 : [Sentuh Aku](t.me/Pocongonlen) \n"
-        f"💬 𝐆𝐫𝐮𝐩𝐒𝐮𝐩𝐩𝐨𝐫𝐭 : [Sentuh Aku](https://t.me/TEAMSquadUserbotSupport)\n")
+        f"┌ **😈Master :** [{user.first_name}](tg://user?id={user.id}) \n"
+        f"├ **📂Modules :** `{len(modules)} Modules` \n"
+        f"├ **🤖BotVersion :** `{BOT_VER}` \n"
+        f"├ **🐍PythonVersion :** `{python_version()}` \n"
+        f"├ **👾TelethonVersion :** `{version.__version__}` \n"
+        f"├ **{emoji}Pytgcalls Version :** `{pytgcalls.__version__}` \n"
+        f"└ **⏳BotUptime :** `{uptime}` \n\n"
+        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](https://t.me/pocongonlen)**"
+    )
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await alive.delete()
-            msg = await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
+            msg = await alive.client.send_file(alive.chat_id, logo, caption=output)
+            await asyncio.sleep(800)
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
-            )   
-            await asyncio.sleep(100)
+                output + "\n\n ***Logo yang diberikan tidak valid."
+                "\nPastikan link diarahkan ke gambar logo**"
+            )
+            await asyncio.sleep(250)
             await alive.delete()
     else:
-        await alive.edit(output)
-        await asyncio.sleep(100)
-        await alive.delete()                 
-
-@register(outgoing=True, pattern=r"^\.aliveu")
-async def amireallyaliveuser(username):
-    message = username.text
-    output = ".aliveu [new user without brackets] nor can it be empty"
-    if message != ".aliveu" and message[7:8] == " ":
-        newuser = message[8:]
-        global DEFAULTUSER
-        DEFAULTUSER = newuser
-        output = "Successfully changed user to " + newuser + "!"
-    await username.edit("`" f"{output}" "`")
+        await edit_or_reply(alive, output)
 
 
-@register(outgoing=True, pattern=r"^\.resetalive$")
-async def amireallyalivereset(ureset):
-    global DEFAULTUSER
-    DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Successfully reset user for alive!" "`")
+CMD_HELP.update(
+    {
+        "system": f"**Plugin : **`system`.\
+        \n\n  •  **Syntax :** `{cmd}sysinfo`\
+        \n  •  **Function : **Informasi sistem menggunakan neofetch mengirim sebagai gambar.\
+        \n\n  •  **Syntax :** `{cmd}sysd`\
+        \n  •  **Function : **Informasi sistem menggunakan neofetch.\
+        \n\n\n  •  **Syntax :** `{cmd}botver`\
+        \n  •  **Function : **Menampilkan versi userbot.\
+        \n\n  •  **Syntax :** `{cmd}spc`\
+        \n  •  **Function : **Menampilkan spesifikasi sistem secara lengkap.\
+    "
+    }
+)
 
 
-CMD_HELP.update({
-    "system":
-    "`.sysd`\
-\nUsage: Shows system information using neofetch.\
-\n\n`.botver`\
-\nUsage: Shows the userbot version.\
-\n\n`.pip` <module(s)>\
-\nUsage: Does a search of pip modules(s).\
-\n\n`.start`\
-\nUsage: Type .start to see dynos usage.\
-\n\n`.alive|on`\
-\nUsage: Type `.alive` atau `.on` to see whether your bot is working or not.\
-\n\n`.aliveu` <text>\
-\nUsage: Changes the 'user' in alive to the text you want.\
-\n\n`.resetalive`\
-\nUsage: Resets the user to default.\
-\n\n`.db`\
-\nUsage:Shows database related info.\
-\n\n.`.spc`\
-\nUsage:Show system specification."
-})
+CMD_HELP.update(
+    {
+        "alive": f"**Plugin : **`alive`\
+        \n\n  •  **Syntax :** `{cmd}alive` atau `{cmd}on`\
+        \n  •  **Function : **Untuk melihat apakah bot Anda berfungsi atau tidak.\
+    "
+    }
+)

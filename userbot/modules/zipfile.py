@@ -6,12 +6,14 @@
 # Port from UniBorg to Userbot by yincen17
 
 import asyncio
-import zipfile
-from userbot.events import register
-from datetime import date
-import time
 import os
-from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
+import time
+import zipfile
+from datetime import date
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot
+from userbot.events import poci_cmd
 from userbot.utils import progress
 
 # ====================
@@ -19,18 +21,18 @@ today = date.today()
 # ====================
 
 
-@register(outgoing=True, pattern=r"^\.compress(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"compress(?: |$)(.*)"))
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
-        await event.edit("`Perintah Kompres tidak diizinkan di saluran`")
+        await event.edit("`Compress Command isn't permitted on channels`")
         return
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit("`Balas file untuk mengompresnya.`")
+        await event.edit("`Reply to a file to compress it.`")
         return
-    mone = await event.edit("`Mengompresi...`")
+    mone = await event.edit("`Processing...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -46,7 +48,7 @@ async def _(event):
             )
             directory_name = downloaded_file_name
             await event.edit(
-                f"Diunduh ke `{directory_name}`" "`\nmengompresi file...`"
+                f"Downloaded to `{directory_name}`" "`\ncompressing file...`"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
@@ -69,19 +71,19 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.addzip(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"addzip(?: |$)(.*)"))
 async def addzip(add):
-    """ Copyright (c) 2020 azrim @github"""
+    """Copyright (c) 2020 azrim @github"""
     # Prevent Channel Bug to use update
     if add.is_channel and not add.is_group:
-        await add.edit("`Perintah tidak diizinkan di saluran`")
+        await add.edit("`Command isn't permitted on channels`")
         return
     if add.fwd_from:
         return
     if not add.is_reply:
-        await add.edit("`Balas file untuk mengompresnya.`")
+        await add.edit("`Reply to a file to compress it.`")
         return
-    mone = await add.edit("`Mengompresi...`")
+    mone = await add.edit("`Processing...`")
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         os.makedirs(ZIP_DOWNLOAD_DIRECTORY)
     if add.reply_to_msg_id:
@@ -96,22 +98,22 @@ async def addzip(add):
                 ),
             )
             success = str(downloaded_file_name).replace("./zips/", "")
-            await add.edit(f"`{success} Berhasil ditambahkan ke daftar`")
+            await add.edit(f"`{success} Successfully added to list`")
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
             return
 
 
-@register(outgoing=True, pattern=r"^\.upzip(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"upzip(?: |$)(.*)"))
 async def upload_zip(up):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await up.edit("`File tidak ditemukan`")
+        await up.edit("`Files not found`")
         return
-    mone = await up.edit("`Membuat Zip...`")
+    mone = await up.edit("`Zipping File...`")
     input_str = up.pattern_match.group(1)
     curdate = today.strftime("%m%d%y")
     title = str(input_str) if input_str else "zipfile" + f"{curdate}"
-    zipf = zipfile.ZipFile(title + '.zip', 'w', zipfile.ZIP_DEFLATED)
+    zipf = zipfile.ZipFile(title + ".zip", "w", zipfile.ZIP_DEFLATED)
     zipdir(ZIP_DOWNLOAD_DIRECTORY, zipf)
     zipf.close()
     c_time = time.time()
@@ -129,13 +131,13 @@ async def upload_zip(up):
     await up.delete()
 
 
-@register(outgoing=True, pattern=r"^\.rmzip(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"rmzip(?: |$)(.*)"))
 async def remove_dir(rm):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await rm.edit("`Direktori tidak ditemukan`")
+        await rm.edit("`Directory not found`")
         return
     os.rmdir(ZIP_DOWNLOAD_DIRECTORY)
-    await rm.edit("`Daftar zip dihapus`")
+    await rm.edit("`Zip list removed`")
 
 
 def zipdir(path, ziph):
@@ -146,14 +148,17 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CMD_HELP.update({
-    "zipfile":
-        "`.compress` **[optional: <balas ke file>]**\
-            \nPemakaian: buat file menjadi zip.\
-            \n`.addzip` **<balas ke file>**\
-            \nPemakaian: tambahkan file ke daftar zip.\
-            \n`.upzip` **[optional: <zip title>]**\
-            \nPemakaian: unggah daftar zip.\
-            \n`.rmzip` **[optional: <zip title>]**\
-            \nPemakaian: hapus daftar zip."
-})
+CMD_HELP.update(
+    {
+        "zipfile": f"**Plugin : **`zipfile`\
+        \n\n  •  **Syntax :** `{cmd}compress` **[optional: <reply to file>]**\
+        \n  •  **Function : **make files to zip.\
+        \n\n  •  **Syntax :** `{cmd}addzip` **<reply to file>**\
+        \n  •  **Function : **add files to zip list.\
+        \n\n  •  **Syntax :** `{cmd}upzip` **[optional: <zip title>]**\
+        \n  •  **Function : **upload zip list.\
+        \n\n  •  **Syntax :** `{cmd}rmzip` **[optional: <zip title>]**\
+        \n  •  **Function : **clear zip list.\
+    "
+    }
+)

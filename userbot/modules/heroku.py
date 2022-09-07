@@ -1,23 +1,25 @@
+# Copyright (C) 2020 Adek Maulana.
+# All rights reserved.
+# FROM Man-Userbot
+# Recode by @Pocongonlen
 """
    Heroku manager for your userbot
 """
 
-import codecs
-import heroku3
-import aiohttp
 import math
 import os
-import requests
-import asyncio
 
-from userbot import (
-    HEROKU_APP_NAME,
-    HEROKU_API_KEY,
-    BOTLOG,
-    BOTLOG_CHATID,
-    CMD_HELP)
-from userbot.events import register
+import aiohttp
+import heroku3
+import urllib3
 
+from userbot import BOTLOG_CHATID
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
+from userbot.modules.sql_helper.globals import addgvar, delgvar, gvarstatus
+from userbot.utils import edit_or_reply, poci_cmd
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
     Heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -32,90 +34,96 @@ else:
 """
 
 
-@register(outgoing=True,
-          pattern=r"^.(get|del) var(?: |$)(\w*)")
+@poci_cmd(pattern="(get|del) var(?: |$)(\w*)")
 async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
-        await var.edit("`[HEROKU]"
-                       "\nTolong setting dulu`  **HEROKU_APP_NAME**.")
+        await edit_or_reply(
+            var, "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **di Heroku**"
+        )
         return False
+    if var.sender_id in SUDO_USERS:
+        return
     if exe == "get":
-        await var.edit("`Mengdapatkeun Ingfo...`")
+        xx = await edit_or_reply(var, "`Mendapatkan Informasi...`")
         variable = var.pattern_match.group(2)
-        if variable != '':
-            if variable in heroku_var:
-                if BOTLOG:
-                    await var.client.send_message(
-                        BOTLOG_CHATID, "#CONFIGVAR\n\n"
-                        "**ConfigVar**:\n"
-                        f"`{variable}` = `{heroku_var[variable]}`\n"
-                    )
-                    await var.edit("`Dikirimkeun ke BOTLOG_CHATID...`")
-                    return True
-                else:
-                    await var.edit("`Tolol set BOTLOG ke True...`")
-                    return False
-            else:
-                await var.edit("`No Ingfo? Oklah...`")
-                return True
-        else:
+        if variable == "":
             configvars = heroku_var.to_dict()
-            msg = ''
-            if BOTLOG:
-                for item in configvars:
-                    msg += f"`{item}` = `{configvars[item]}`\n"
-                await var.client.send_message(
-                    BOTLOG_CHATID, "#CONFIGVARS\n\n"
-                    "**ConfigVars**:\n"
-                    f"{msg}"
+            if BOTLOG_CHATID:
+                msg = "".join(
+                    f"`{item}` = `{configvars[item]}`\n" for item in configvars
                 )
-                await var.edit("`Dikirimkeun ke BOTLOG_CHATID...`")
+                await var.client.send_message(
+                    BOTLOG_CHATID, "#CONFIGVARS\n\n" "**Config Vars**:\n" f"{msg}"
+                )
+                await xx.edit("**Berhasil Mengirim Ke BOTLOG_CHATID**")
                 return True
-            else:
-                await var.edit("`Tolol set BOTLOG ke True...`")
-                return False
-    elif exe == "del":
-        await var.edit("`Menghapus Ingfo...`")
-        variable = var.pattern_match.group(2)
-        if variable == '':
-            await var.edit("`Tentukan ConfigVars yang ingin Anda hapus...`")
+            await xx.edit("**Mohon Ubah Var** `BOTLOG` **Ke** `True`")
             return False
         if variable in heroku_var:
-            if BOTLOG:
+            if BOTLOG_CHATID:
                 await var.client.send_message(
-                    BOTLOG_CHATID, "#DELCONFIGVAR\n\n"
-                    "**Delete ConfigVar**:\n"
-                    f"`{variable}`"
+                    BOTLOG_CHATID,
+                    "**Logger : #SYSTEM**\n\n"
+                    "**#SET #VAR_HEROKU #ADDED**\n\n"
+                    f"`{variable}` **=** `{heroku_var[variable]}`\n",
                 )
-            await var.edit("`Informasi dihapus...`")
+                await xx.edit("**Berhasil Mengirim Ke BOTLOG_CHATID**")
+                return True
+            await xx.edit("**Mohon Ubah Var** `BOTLOG` **Ke** `True`")
+            return False
+        await var.edit("`Informasi Tidak Ditemukan...`")
+        return True
+    if exe == "del":
+        xx = await edit_or_reply(var, "`Menghapus Config Vars...`")
+        variable = var.pattern_match.group(2)
+        if variable == "":
+            await xx.edit("**Mohon Tentukan Config Vars Yang Mau Anda Hapus**")
+            return False
+        if variable in heroku_var:
+            if BOTLOG_CHATID:
+                await var.client.send_message(
+                    BOTLOG_CHATID,
+                    "**Logger : #SYSTEM**\n\n"
+                    "**#SET #VAR_HEROKU #DELETED**\n\n"
+                    f"`{variable}`",
+                )
+            await xx.edit("**Config Vars Telah Dihapus**")
             del heroku_var[variable]
         else:
-            await var.edit("`Informasi tidak ada...`")
+            await xx.edit("**Tidak Dapat Menemukan Config Vars**")
             return True
 
 
-@register(outgoing=True, pattern=r'^.set var (\w*) ([\s\S]*)')
+@poci_cmd(pattern="set var (\w*) ([\s\S]*)")
 async def set_var(var):
-    await var.edit("`Informasi pengaturan...`")
+    if app is None:
+        return await edit_or_reply(
+            var, "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
+        )
+    if var.sender_id in SUDO_USERS:
+        return
+    xx = await edit_or_reply(var, "`Processing...`")
     variable = var.pattern_match.group(1)
     value = var.pattern_match.group(2)
     if variable in heroku_var:
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await var.client.send_message(
-                BOTLOG_CHATID, "#SETCONFIGVAR\n\n"
-                "**Change ConfigVar**:\n"
-                f"`{variable}` = `{value}`"
+                BOTLOG_CHATID,
+                "**Logger : #SYSTEM**\n\n"
+                "**#SET #VAR_HEROKU #ADDED**\n\n"
+                f"`{variable}` = `{value}`",
             )
-        await var.edit("`Set informasi...`")
+        await xx.edit("`Sedang Proses, Mohon Tunggu sebentar..`")
     else:
-        if BOTLOG:
+        if BOTLOG_CHATID:
             await var.client.send_message(
-                BOTLOG_CHATID, "#ADDCONFIGVAR\n\n"
-                "**Add ConfigVar**:\n"
-                f"`{variable}` = `{value}`"
+                BOTLOG_CHATID,
+                "**Logger : #SYSTEM**\n\n"
+                "**#SET #VAR_HEROKU #ADDED**\n\n"
+                f"`{variable}` **=** `{value}`",
             )
-        await var.edit("`Informasi ditambahkan...`")
+        await xx.edit("**Berhasil Menambahkan Config Var**")
     heroku_var[variable] = value
 
 
@@ -124,169 +132,182 @@ async def set_var(var):
 """
 
 
-@register(outgoing=True, pattern=r"^.dynousage(?: |$)")
+@poci_cmd(pattern="(usage|dyno)(?: |$)")
 async def dyno_usage(dyno):
-    """
-        Get your account Dyno Usage
-    """
-    await dyno.edit("`Mendapatkan Ingfo Dyno`")
-    useragent = (
-        'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
-        'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/81.0.4044.117 Mobile Safari/537.36'
-    )
-    user_id = Heroku.account().id
-    headers = {
-        'User-Agent': useragent,
-        'Authorization': f'Bearer {HEROKU_API_KEY}',
-        'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
-    }
-    path = "/accounts/" + user_id + "/actions/get-quota"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(heroku_api + path, headers=headers) as r:
-            if r.status != 200:
-                await dyno.client.send_message(
-                    dyno.chat_id,
-                    f"`{r.reason}`",
-                    reply_to=dyno.id
-                )
-                await dyno.edit("`Share Lok Tak Parani...`")
-                return False
-            result = await r.json()
-            quota = result['account_quota']
-            quota_used = result['quota_used']
-
-            """ - User Quota Limit and Used - """
-            remaining_quota = quota - quota_used
-            percentage = math.floor(remaining_quota / quota * 100)
-            minutes_remaining = remaining_quota / 60
-            hours = math.floor(minutes_remaining / 60)
-            minutes = math.floor(minutes_remaining % 60)
-
-            """ - User App Used Quota - """
-            Apps = result['apps']
-            for apps in Apps:
-                if apps.get('app_uuid') == app.id:
-                    AppQuotaUsed = apps.get('quota_used') / 60
-                    AppPercentage = math.floor(
-                        apps.get('quota_used') * 100 / quota)
-                    break
-            else:
-                AppQuotaUsed = 0
-                AppPercentage = 0
-
-            AppHours = math.floor(AppQuotaUsed / 60)
-            AppMinutes = math.floor(AppQuotaUsed % 60)
-
-            await dyno.edit(
-                "**Penggunaan Dyno**:\n\n"
-                f"❏ __**Penggunaan Dyno** **{app.name}**:__\n"
-                f"    •**{AppHours} Jam - "
-                f"{AppPercentage}%**\n\n"
-                "❏ __**Sisa Dyno Bulan Ini**:__\n"
-                f"    •**{hours} Jam - {percentage}%**"
-            )
-            await asyncio.sleep(20)
-            await dyno.delete()
-            return True
-
-
-@register(outgoing=True, pattern=r"^\.logs")
-async def _(dyno):
-    try:
-        Heroku = heroku3.from_key(HEROKU_API_KEY)
-        app = Heroku.app(HEROKU_APP_NAME)
-    except BaseException:
-        return await dyno.reply(
-            "`Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var.`"
+    if app is None:
+        return await dyno.edit(
+            "**Silahkan Tambahkan Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
         )
-    await dyno.edit("`Getting Logs....`")
-    with open("logs.txt", "w") as log:
-        log.write(app.get_log())
-    fd = codecs.open("logs.txt", "r", encoding="utf-8")
-    data = fd.read()
-    key = (requests.post("https://nekobin.com/api/documents",
-                         json={"content": data}) .json() .get("result") .get("key"))
-    url = f"https://nekobin.com/raw/{key}"
-    await dyno.edit(f"`Here the heroku logs:`\n\nPasted to: [Nekobin]({url})")
-    return os.remove("logs.txt")
-
-
-@register(outgoing=True, pattern=r"^.usage(?: |$)")
-async def dyno_usage(dyno):
-    """
-        Get your account Dyno Usage
-    """
-    await dyno.edit("`Mendapatkan Ingfo Dyno`")
+    xx = await edit_or_reply(dyno, "`Processing...`")
     useragent = (
-        'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
-        'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/81.0.4044.117 Mobile Safari/537.36'
+        "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/81.0.4044.117 Mobile Safari/537.36"
     )
     user_id = Heroku.account().id
     headers = {
-        'User-Agent': useragent,
-        'Authorization': f'Bearer {HEROKU_API_KEY}',
-        'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
+        "User-Agent": useragent,
+        "Authorization": f"Bearer {HEROKU_API_KEY}",
+        "Accept": "application/vnd.heroku+json; version=3.account-quotas",
     }
     path = "/accounts/" + user_id + "/actions/get-quota"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(heroku_api + path, headers=headers) as r:
-            if r.status != 200:
-                await dyno.client.send_message(
-                    dyno.chat_id,
-                    f"`{r.reason}`",
-                    reply_to=dyno.id
-                )
-                await dyno.edit("`Share Lok Tak Parani...`")
-                return False
-            result = await r.json()
-            quota = result['account_quota']
-            quota_used = result['quota_used']
-
-            """ - User Quota Limit and Used - """
-            remaining_quota = quota - quota_used
-            percentage = math.floor(remaining_quota / quota * 100)
-            minutes_remaining = remaining_quota / 60
-            hours = math.floor(minutes_remaining / 60)
-            minutes = math.floor(minutes_remaining % 60)
-
-            """ - User App Used Quota - """
-            Apps = result['apps']
-            for apps in Apps:
-                if apps.get('app_uuid') == app.id:
-                    AppQuotaUsed = apps.get('quota_used') / 60
-                    AppPercentage = math.floor(
-                        apps.get('quota_used') * 100 / quota)
-                    break
-            else:
-                AppQuotaUsed = 0
-                AppPercentage = 0
-
-            AppHours = math.floor(AppQuotaUsed / 60)
-            AppMinutes = math.floor(AppQuotaUsed % 60)
-
-            await dyno.edit(
-                "**Penggunaan Dyno**:\n\n"
-                f"❏ **Penggunaan Dyno** **{app.name}**:\n"
-                f"    •**0 Jam - "
-                f"0%**\n\n"
-                "❏ **Sisa Dyno Bulan Ini**:\n"
-                f"    •**1000 Jam - 100%**"
+    async with aiohttp.ClientSession() as session, session.get(
+        heroku_api + path, headers=headers
+    ) as r:
+        if r.status != 200:
+            await dyno.client.send_message(
+                dyno.chat_id, f"`{r.reason}`", reply_to=dyno.id
             )
-            await asyncio.sleep(9000)
-            await dyno.delete()
-            return True
+            await xx.edit("**Gagal Mendapatkan Informasi Dyno**")
+            return False
+        result = await r.json()
+        quota = result["account_quota"]
+        quota_used = result["quota_used"]
+
+        """ - User Quota Limit and Used - """
+        remaining_quota = quota - quota_used
+        percentage = math.floor(remaining_quota / quota * 100)
+        minutes_remaining = remaining_quota / 60
+        hours = math.floor(minutes_remaining / 60)
+        minutes = math.floor(minutes_remaining % 60)
+        day = math.floor(hours / 24)
+
+        """ - User App Used Quota - """
+        Apps = result["apps"]
+        for apps in Apps:
+            if apps.get("app_uuid") == app.id:
+                AppQuotaUsed = apps.get("quota_used") / 60
+                AppPercentage = math.floor(apps.get("quota_used") * 100 / quota)
+                break
+        else:
+            AppQuotaUsed = 0
+            AppPercentage = 0
+
+        AppHours = math.floor(AppQuotaUsed / 60)
+        AppMinutes = math.floor(AppQuotaUsed % 60)
+
+        await xx.edit(
+            "**Informasi Dyno Heroku**:\n\n"
+            f"❏ `Penggunaan Dyno`  **{app.name}**:\n"
+            f"     •  **{AppHours} hour(s), "
+            f"{AppMinutes} minute(s) - {AppPercentage}%**"
+            "\n\n"
+            "❏ `Dyno yang tersisa bulan ini` :\n"
+            f"     • **{hours} hour(s), {minutes} minute(s) "
+            f"-  {percentage}%**\n\n"
+            f" **Sisa Dyno Heroku** `{day}` **Hari Lagi**"
+        )
+        return True
 
 
-CMD_HELP.update({"heroku": ">.`usage`"
-                 "\nUsage: Check your heroku dyno hours remaining"
-                 "\n\n>`.set var <NEW VAR> <VALUE>`"
-                 "\nUsage: add new variable or update existing value variable"
-                 "\n!!! WARNING !!!, after setting a variable the bot will restarted"
-                 "\n\n>`.get var or .get var <VAR>`"
-                 "\nUsage: get your existing varibles, use it only on your private group!"
-                 "\nThis returns all of your private information, please be caution..."
-                 "\n\n>`.del var <VAR>`"
-                 "\nUsage: delete existing variable"
-                 "\n!!! WARNING !!!, after deleting variable the bot will restarted"})
+@poci_cmd(pattern="dynousage(?: |$)")
+async def fake_dyno(event):
+    xx = await edit_or_reply(event, "`Processing...`")
+    await xx.edit(
+        "**Informasi Dyno Heroku**:\n\n"
+        f"❏ **Penggunaan Dyno** **{app.name}**:\n"
+        f"    •**0 hour(s) - "
+        f"0%**\n\n"
+        "❏ **Sisa Dyno bulan ini**:\n"
+        f"    •**1000 hour(s) - 100%**"
+    )
+
+
+@poci_cmd(pattern="logs")
+async def _(dyno):
+    if app is None:
+        return await edit_or_reply(
+            dyno, "**Wajib Mengisi Var** `HEROKU_APP_NAME` **dan** `HEROKU_API_KEY`"
+        )
+    xx = await edit_or_reply(dyno, "**Sedang Mengambil Logs Heroku**")
+    data = app.get_log()
+    await edit_or_reply(xx, data, deflink=True, linktext="**✣ Ini Logs Heroku Anda :**")
+
+
+@poci_cmd(pattern="getdb ?(.*)")
+async def getsql(event):
+    if event.sender_id in SUDO_USERS:
+        return
+    var_ = event.pattern_match.group(1)
+    xxnx = await edit_or_reply(event, f"**Getting variable** `{var_}`")
+    if var_ == "":
+        return await xxnx.edit(
+            f"**Invalid Syntax !!** \n\nKetik `{cmd}getdb NAMA_VARIABLE`"
+        )
+    try:
+        sql_v = gvarstatus(var_)
+        os_v = os.environ.get(var_) or "None"
+    except Exception as e:
+        return await xxnx.edit(f"**ERROR !!**\n\n`{e}`")
+    await xxnx.edit(
+        f"**OS VARIABLE:** `{var_}`\n**OS VALUE :** `{os_v}`\n------------------\n**SQL VARIABLE:** `{var_}`\n**SQL VALUE :** `{sql_v}`\n"
+    )
+
+
+@poci_cmd(pattern="setdb ?(.*)")
+async def setsql(event):
+    if event.sender_id in SUDO_USERS:
+        return
+    hel_ = event.pattern_match.group(1)
+    var_ = hel_.split(" ")[0]
+    val_ = hel_.split(" ")[1:]
+    valu = " ".join(val_)
+    xxnx = await edit_or_reply(event, f"**Setting variable** `{var_}` **as** `{valu}`")
+    if "" in (var_, valu):
+        return await xxnx.edit(
+            f"**Invalid Syntax !!**\n\n**Ketik** `{cmd}setsql VARIABLE_NAME value`"
+        )
+    try:
+        addgvar(var_, valu)
+    except Exception as e:
+        return await xxnx.edit(f"**ERROR !!** \n\n`{e}`")
+    await xxnx.edit(f"**Variable** `{var_}` **successfully added with value** `{valu}`")
+
+
+@poci_cmd(pattern="deldb ?(.*)")
+async def delsql(event):
+    if event.sender_id in SUDO_USERS:
+        return
+    var_ = event.pattern_match.group(1)
+    xxnx = await edit_or_reply(event, f"**Deleting Variable** `{var_}`")
+    if var_ == "":
+        return await xxnx.edit(
+            f"**Invalid Syntax !!**\n\n**Ketik** `{cmd}delsql VARIABLE_NAME`"
+        )
+    try:
+        delgvar(var_)
+    except Exception as e:
+        return await xxnx.edit(f"**ERROR !!**\n\n`{e}`")
+    await xxnx.edit(f"**Deleted Variable** `{var_}`")
+
+
+CMD_HELP.update(
+    {
+        "heroku": f"**Plugin : **`heroku`\
+        \n\n  •  **Syntax :** `{cmd}set var <nama var> <value>`\
+        \n  •  **Function : **Tambahkan Variabel Baru Atau Memperbarui Variabel Setelah Menyetel Variabel PocongUserbot Akan Di Restart.\
+        \n\n  •  **Syntax :** `{cmd}get var or .get var <nama var>`\
+        \n  •  **Function : **Dapatkan Variabel Yang Ada,Harap Gunakan Di Grup Private Anda!\
+        \n\n  •  **Syntax :** `{cmd}del var <nama var>`\
+        \n  •  **Function : **Untuk Menghapus var heroku\
+        \n\n  •  **Syntax :** `{cmd}usage` atau `{cmd}dyno`\
+        \n  •  **Function : **Check Kouta Dyno Heroku\
+        \n\n  •  **Syntax :** `{cmd}dynousage`\
+        \n  •  **Function : **Fake Check Kouta Dyno Heroku jadi 9989jam Untuk menipu temanmu wkwk\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "database": f"**Plugin : **`database`\
+        \n\n  •  **Syntax :** `{cmd}setdb <nama var> <value>`\
+        \n  •  **Function : **Tambahkan Variabel SQL Tanpa Merestart userbot.\
+        \n\n  •  **Syntax :** `{cmd}getdb <nama var>`\
+        \n  •  **Function : **Dapatkan Variabel SQL Yang Ada Harap Gunakan Di Grup Private Anda!\
+        \n\n  •  **Syntax :** `{cmd}deldb <nama var>`\
+        \n  •  **Function : **Untuk Menghapus Variabel SQL\
+    "
+    }
+)

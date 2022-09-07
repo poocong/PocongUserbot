@@ -1,22 +1,13 @@
-# We're using Ubuntu 20.10
-FROM ximfine/xproject:buster
+FROM poocongonlen/poconguserbot:buster
 
-#
-# Clone repo and prepare working directory
-#
-RUN git clone -b pocong https://github.com/poocong/Pocong-Userbot /root/userbot/
-RUN mkdir /root/userbot/.bin
-WORKDIR /root/userbot
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs && \
+    npm i -g npm
 
-#
-# Make open port TCP
-#
-EXPOSE 80 443
+RUN git clone -b main https://github.com/poocong/PocongUserbot /home/poconguserbot/ \
+    && chmod 777 /home/poconguserbot \
+    && mkdir /home/poconguserbot/bin/
 
-#Upgrade pip
-RUN pip install --upgrade pip
+WORKDIR /home/poconguserbot/
 
-#Install python requiremets
-#RUN pip3 install -r https://raw.githubusercontent.com/poocong/Pocong-Userbot/pocong/requirements.txt
-
-CMD ["python3","-m","userbot"]
+CMD [ "bash", "start" ]

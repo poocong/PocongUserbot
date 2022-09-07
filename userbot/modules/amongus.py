@@ -1,9 +1,7 @@
-# Pocong - Userbot.
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
 
 from io import BytesIO
 from random import choice, randint
@@ -12,11 +10,12 @@ from textwrap import wrap
 from PIL import Image, ImageDraw, ImageFont
 from requests import get
 
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.events import register
+from userbot.utils import poci_cmd
 
 
-@register(outgoing=True, pattern="^.imp (.*)")
+@poci_cmd(pattern="imp (.*)")
 async def f_load(message):
     clrs = {
         "red": 1,
@@ -46,22 +45,18 @@ async def f_load(message):
             await bruh(message, reply.sender)
             return
         text = reply.pattern_match.group(1)
-
     if text.split(" ")[0] in clrs:
         clr = clrs[text.split(" ")[0]]
         text = " ".join(text.split(" ")[1:])
-
     if text == "colors":
         await message.edit(
-            "Cores disponíveis:\n"
-            + ("\n".join([f"• `{i}`" for i in list(clrs.keys())]))
+            ("Cores disponíveis:\n" + "\n".join(f"• `{i}`" for i in list(clrs.keys())))
         )
         return
-
     url = "https://raw.githubusercontent.com/KeyZenD/AmongUs/master/"
     font = ImageFont.truetype(BytesIO(get(url + "bold.ttf").content), 60)
     imposter = Image.open(BytesIO(get(f"{url}{clr}.png").content))
-    text_ = "\n".join(["\n".join(wrap(part, 30)) for part in text.split("\n")])
+    text_ = "\n".join("\n".join(wrap(part, 30)) for part in text.split("\n"))
     w, h = ImageDraw.Draw(Image.new("RGB", (1, 1))).multiline_textsize(
         text_, font, stroke_width=2
     )
@@ -93,7 +88,9 @@ async def bruh(message, user):
 
 CMD_HELP.update(
     {
-        "amongus": "`.imp`\
-    \nUsage: Kirimkan gambar seorang impostor Among US dengan kalimat dari Anda."
+        "amongus": f"**Plugin : **`amongus`\
+        \n\n  •  **Syntax :** `{cmd}imp`\
+        \n  •  **Function : **Kirimkan gambar seorang impostor Among US dengan kalimat dari Anda.\
+    "
     }
 )

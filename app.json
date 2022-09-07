@@ -1,212 +1,59 @@
 {
-  "name": "POCONG-USERBOT",
-  "description": "[POCONG USERBOT] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
-  "logo": "https://telegra.ph/file/0297888edbdc754503e0b.jpg",
-  "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
-  ],
-  "repository": "https://github.com/poocong/Pocong-Userbot",
-  "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/PocongProject",
+  "name": "PocongUserbot",
+  "description": "[PocongUserbot] userbot Telegram modular yang berjalan pada Python 3.9+",
+  "logo": "https://telegra.ph/file/4dad946885113195be82a.jpg",
+  "keywords": ["telegram", "userbot", "poconguserbot", "modular", "python"],
+  "repository": "https://github.com/poocong/PocongUserbot",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan nilai ini dari my.telegram.org.",
+      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan nilai ini dari my.telegram.org.",
+      "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true
-    },
-    "STRING_SESSION": {
-      "description": "Dapatkan nilai ini dengan [python3 string_session.py] di Termux atau sistem lokal.",
-      "required": true
-    },
-    "HEROKU_MEMEZ": {
-      "description": "Ini harus True jika userbot berjalan pada Heroku Dyno.",
-      "value": "True",
-      "required": true
-    },
-    "HEROKU_API_KEY": {
-      "description": "Dapatkan Heroku API_KEY Anda dari 'https://dashboard.heroku.com/account'",
-      "value": ""
-    },
-    "HEROKU_APP_NAME": {
-      "description": "Tambahkan nama aplikasi Heroku di sini. Ini membantu dengan pembaruan userbot.",
-      "required": true
-    },
-    "COUNTRY": {
-      "description": "Tetapkan Negara Anda untuk digunakan diperintah .time dan .date",
-      "required": false
-    },
-    "TZ_NUMBER": {
-      "description": "Ubah nilai ini jika negara Anda memiliki beberapa Zona Waktu.",
-      "value": "7",
-      "required": false
-    },
-    "OPEN_WEATHER_MAP_APPID": {
-      "description": "Dapatkan APPID (API key) dari https://api.openweathermap.org/data/2.5/weather",
-      "required": false
-    },
-    "BOTLOG": {
-      "description": "Jika Anda ingin mematikan logging, taruh ini ke false",
-      "value": "True"
-    },
-    "BOTLOG_CHATID": {
-      "description": "ChatID dari grup Log. Setel ke '0' jika BOTLOG = False dan/atau jika LOGSPAMMER = False.",
-      "value": "-100xnxx"
-    },
-    "CONSOLE_LOGGER_VERBOSE": {
-      "description": "Jika Anda membutuhkan verbositas pada konsol logging",
-      "value": "False"
-    },
-    "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Fitur Switch. Juga dikenal sebagai 'bleep blop, ini adalah bot...' module.",
-      "value": "False"
-    },
-    "YOUTUBE_API_KEY": {
-      "description": "YouTube Data API Key untuk perintah .yt dapatkan dari https://console.cloud.google.com",
-      "required": false
-    },
-    "OCR_SPACE_API_KEY": {
-      "description": "OCR API Key untuk perintah .ocr dapatkan dari https://ocr.space/ocrapi",
-      "required": false
-      
-    },
-    "REM_BG_API_KEY": {
-      "description": "API Key untuk perintah .rbg dapatkan dari https://www.remove.bg/api",
-      "required": false
-    },
-    "ANTI_SPAMBOT": {
-      "description": "Menendang robot spam dari grup setelah mereka bergabung. [Membutuhkan kekuatan admin dalam grup untuk menendang.]",
-      "value": "False"
-    },
-    "ANTI_SPAMBOT_SHOUT": {
-      "description": "Laporkan robot spam ke @admins dalam grup setelah mereka bergabung, untuk berjaga-jaga jika Anda tidak memiliki kekuatan admin untuk menendang mereka.",
-      "value": "False"
-    },
-    "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Download location for many modules (GDrive, .download etc..)",
-      "value": "./downloads/"
-    },
-    "QUOTES_API_TOKEN": {
-      "description": "Enhance ur text to sticker. Get your own API token from http://antiddos.systems.",
-      "required": false
-    },
-    "CLEAN_WELCOME": {
-      "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "True"
-    },
-    "LASTFM_API": {
-      "description": "API Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "required": false
-    },
-    "LASTFM_SECRET": {
-      "description": "SECRET Key for Last.FM module. [Get one from - https://www.last.fm/api/account/create]",
-      "required": false
-    },
-    "LASTFM_USERNAME": {
-      "description": "Last.FM Username",
-      "required": false
-    },
-    "LASTFM_PASSWORD": {
-      "description": "Last.FM Password",
-      "required": false
-    },
-    "BIO_PREFIX": {
-      "description": "Prefix for Last.FM Module Bio.",
-      "required": false
-    },
-    "DEFAULT_BIO": {
-      "description": "Default profile bio.",
-      "required": false
-    },
-    "ALIVE_NAME": {
-      "description": "Nama untuk ditampilkan dipesan .alive",
-      "required": true
-    },
-    "G_DRIVE_DATA": {
-      "description": "Your client_secret.json.",
-      "required": false
-    },
-    "UB_BLACK_LIST_CHAT": {
-      "description": "isi id blacklist user",
-      "required": false
-    },
-    "GENIUS_ACCESS_TOKEN": {
-      "description": "Client Access Token from https://genius.com/api-clients.",
-      "required": false
-    },
-    "WEATHER_DEFCITY": {
-      "description": "Set the default city for the userbot's weather module.",
-      "required": false
-    },
-    "GIT_REPO_NAME": {
-      "description": "Set the repo for the gitupload module.",
-      "required": false
-    },
-    "GITHUB_ACCESS_TOKEN": {
-      "description": "Set this in order to make the gitupload work. you can look https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line to assist you.",
-      "required": false
-    },
-    "GENIUS_API_TOKEN": {
-      "description": "Get this value from https://genius.com/developers.",
-      "required": false 
-    },
-    "G_DRIVE_FOLDER_ID": {
-      "description": "Create a folder and put that folder's id here.check folder link for id.",
-      "required": false
-    },
-    "WATCH_COUNTRY": {
-      "description": "Country code for justwatch.com",
-      "value": "ID",
-      "required": false
-    },
-    "DEEZER_ARL_TOKEN": {
-      "description": "Input your DEEZER ARL TOKEN",
-      "value": "",
-      "required": false
     },
     "BOT_TOKEN": {
-      "description": "Set this to enable inline bot helper. get the token from @BotFather",
+      "description": "Buat Bot di t.me/botfather Masukan BOT tokennya disini",
       "required": false
     },
     "BOT_USERNAME": {
-      "description": "Username of the bot you created with @BotFather",
+      "description": "Buat Bot di t.me/botfather Masukan BOT Usernamenya pake @",
       "required": false
     },
-    "WOLFRAM_ID": {
-      "description": "Get an API KEY from products.wolframalpha.com/api/",
-      "required": false
+     "STRING_SESSION": {
+      "description": "Dapatkan String Session di Grup » https://t.me/PocongUserbot » Lalu ketik #string",
+      "required": true
     },
-    "S_PACK_NAME": {
-      "description": "ubah nama paket stiker Anda",
-      "value": "Stiker By @PocongProject",
-      "required": false
+    "HEROKU_APP_NAME": {
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+      "required": true
     },
-    "ALIVE_LOGO": {
-      "description": "Media dalam pesan .alive ",
-      "required": false
+    "HEROKU_API_KEY": {
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
+      "required": true
     },
-    "UPSTREAM_REPO_URL": {
-    "description": "set this to your Pocong Userbot fork on GitHub",
-    "required": false
-    },
-    "USR_TOKEN_UPTOBOX": {
-      "description": "API for direct link uptobox, https://docs.uptobox.com/#how-to-find-my-api-token",
+    "PM_AUTO_BAN": {
+      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
+      "value": "True",
       "required": false
     }
   },
   "addons": [
     {
-      "plan": "heroku-postgresql",
+    "plan": "heroku-postgresql",
       "options": {
         "version": "12"
       }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
     }
   ],
   "formation": {

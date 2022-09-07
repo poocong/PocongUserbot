@@ -10,11 +10,12 @@ import io
 import re
 
 import userbot.modules.sql_helper.blacklist_sql as sql
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.events import register
+from userbot.utils import edit_or_reply, poci_cmd, pocong_handler
 
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
+@pocong_handler(incoming=True)
 async def on_new_message(event):
     # TODO: exempt admins from locks
     name = event.raw_text
@@ -25,14 +26,16 @@ async def on_new_message(event):
             try:
                 await event.delete()
             except Exception:
-                await event.reply("I do not have DELETE permission in this chat")
+                await event.reply(
+                    "`Anda Tidak Punya Izin Untuk Menghapus Pesan Disini`"
+                )
                 await sleep(1)
                 await reply.delete()
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
             break
 
 
-@register(outgoing=True, pattern=r"^\.addbl(?: |$)(.*)")
+@poci_cmd(pattern="addbl(?: |$)(.*)")
 async def on_add_black_list(addbl):
     text = addbl.pattern_match.group(1)
     to_blacklist = list(
@@ -41,12 +44,12 @@ async def on_add_black_list(addbl):
 
     for trigger in to_blacklist:
         sql.add_to_blacklist(addbl.chat_id, trigger.lower())
-    await addbl.edit(
-        "`Added` **{}** `to the blacklist in the current chat`".format(text)
+    await edit_or_reply(
+        addbl, "`Menambahkan Kata` **{}** `Ke Blacklist Untuk Obrolan Ini`".format(text)
     )
 
 
-@register(outgoing=True, pattern=r"^\.listbl(?: |$)(.*)")
+@poci_cmd(pattern="listbl(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = sql.get_chat_blacklist(listbl.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -54,7 +57,7 @@ async def on_view_blacklist(listbl):
         for trigger in all_blacklisted:
             OUT_STR += f"`{trigger}`\n"
     else:
-        OUT_STR = "`There are no blacklist in current chat.`"
+        OUT_STR = "**Tidak Ada Blacklist Dalam Obrolan Ini.**"
     if len(OUT_STR) > 4096:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "blacklist.text"
@@ -63,39 +66,41 @@ async def on_view_blacklist(listbl):
                 out_file,
                 force_document=True,
                 allow_cache=False,
-                caption="BlackLists in the Current Chat",
+                caption="Blacklist Dalam Obrolan Ini",
                 reply_to=listbl,
             )
             await listbl.delete()
     else:
-        await listbl.edit(OUT_STR)
+        await edit_or_reply(listbl, OUT_STR)
 
 
-@register(outgoing=True, pattern=r"^\.rmbl(?: |$)(.*)")
+@poci_cmd(pattern="rmbl(?: |$)(.*)")
 async def on_delete_blacklist(rmbl):
     text = rmbl.pattern_match.group(1)
     to_unblacklist = list(
         {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
     )
 
-    successful = 0
-    for trigger in to_unblacklist:
-        if sql.rm_from_blacklist(rmbl.chat_id, trigger.lower()):
-            successful += 1
+    successful = sum(
+        bool(sql.rm_from_blacklist(rmbl.chat_id, trigger.lower()))
+        for trigger in to_unblacklist
+    )
+
     if not successful:
-        await rmbl.edit("`Blacklist` **{}** `doesn't exist.`".format(text))
+        await rmbl.edit("**{}** `Tidak Ada Di Blacklist`".format(text))
     else:
-        await rmbl.edit("`Blacklist` **{}** `was deleted successfully`".format(text))
+        await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
 
 CMD_HELP.update(
     {
-        "blacklist": ">`.listbl`"
-        "\nUsage: Lists all active userbot blacklist in a chat."
-        "\n\n>`.addbl <keyword>`"
-        "\nUsage: Saves the message to the 'blacklist keyword'."
-        "\nThe bot will delete to the message whenever 'blacklist keyword' is mentioned."
-        "\n\n>`.rmbl <keyword>`"
-        "\nUsage: Stops the specified blacklist."
+        "blacklist": f"**Plugin : **`blacklist`\
+        \n\n  •  **Syntax :** `{cmd}listbl`\
+        \n  •  **Function : **Melihat daftar blacklist yang aktif di obrolan.\
+        \n\n  •  **Syntax :** `{cmd}addbl` <kata>\
+        \n  •  **Function : **Memasukan pesan ke blacklist 'kata blacklist'.\
+        \n\n  •  **Syntax :** `{cmd}rmbl` <kata>\
+        \n  •  **Function : **Menghapus kata blacklist.\
+    "
     }
 )

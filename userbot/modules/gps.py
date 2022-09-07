@@ -1,11 +1,13 @@
-#credits: mrconfused
+# credits: mrconfused
 from geopy.geocoders import Nominatim
 from telethon.tl import types
-from userbot.events import register
-from userbot import CMD_HELP
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, bot
+from userbot.events import poci_cmd
 
 
-@register(outgoing=True, pattern="^.gps(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"gps(?: |$)(.*)"))
 async def gps(event):
     if event.fwd_from:
         return
@@ -15,30 +17,29 @@ async def gps(event):
     input_str = event.pattern_match.group(1)
 
     if not input_str:
-        return await event.edit("Boss ! Give A Place To Search 😔 !.")
+        return await event.edit("`Berikan Tempat Yang Dicari...`")
 
-    await event.edit("Finding This Location In Maps Server.....")
+    await event.edit("`Menemukan Lokasi Ini Di Server Map....`")
 
-    geolocator = Nominatim(user_agent="Remix")
+    geolocator = Nominatim(user_agent="Man")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
         lon = geoloc.longitude
         lat = geoloc.latitude
         await reply_to_id.reply(
-            input_str,
-            file=types.InputMediaGeoPoint(
-                types.InputGeoPoint(
-                    lat, lon
-                )
-            )
+            input_str, file=types.InputMediaGeoPoint(types.InputGeoPoint(lat, lon))
         )
         await event.delete()
     else:
-        await event.edit("i coudn't find it")
+        await event.edit("`Maaf Saya Tidak Dapat Menemukannya`")
 
-CMD_HELP.update({
-    "gps":
-    ">.`gps`"
-    "\nUsage: to find location map"
-})
+
+CMD_HELP.update(
+    {
+        "gps": f"**Plugin : **`gps`\
+        \n\n  •  **Syntax :** `{cmd}gps` <nama lokasi>\
+        \n  •  **Function : **Untuk Mendapatkan Lokasi Map.\
+    "
+    }
+)

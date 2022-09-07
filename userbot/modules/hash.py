@@ -9,25 +9,25 @@ from subprocess import run as runapp
 
 import pybase64
 
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, bot
+from userbot.events import poci_cmd
 
 
-@register(outgoing=True, pattern=r"^\.hash (.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"hash (.*)"))
 async def gethash(hash_q):
-    """ For .hash command, find the md5, sha1, sha256, sha512 of the string. """
+    """For .hash command, find the md5, sha1, sha256, sha512 of the string."""
     hashtxt_ = hash_q.pattern_match.group(1)
-    hashtxt = open("hashdis.txt", "w+")
-    hashtxt.write(hashtxt_)
-    hashtxt.close()
-    md5 = runapp(["md5sum", "hashdis.txt"], stdout=PIPE)
+    with open("hashdis.txt", "w+") as hashtxt:
+        hashtxt.write(hashtxt_)
+    md5 = runapp(["md5sum", "hashdis.txt"], stdout=PIPE, check=True)
     md5 = md5.stdout.decode()
-    sha1 = runapp(["sha1sum", "hashdis.txt"], stdout=PIPE)
+    sha1 = runapp(["sha1sum", "hashdis.txt"], stdout=PIPE, check=True)
     sha1 = sha1.stdout.decode()
-    sha256 = runapp(["sha256sum", "hashdis.txt"], stdout=PIPE)
+    sha256 = runapp(["sha256sum", "hashdis.txt"], stdout=PIPE, check=True)
     sha256 = sha256.stdout.decode()
-    sha512 = runapp(["sha512sum", "hashdis.txt"], stdout=PIPE)
-    runapp(["rm", "hashdis.txt"], stdout=PIPE)
+    sha512 = runapp(["sha512sum", "hashdis.txt"], stdout=PIPE, check=True)
+    runapp(["rm", "hashdis.txt"], stdout=PIPE, check=True)
     sha512 = sha512.stdout.decode()
     ans = (
         "Text: `"
@@ -43,40 +43,52 @@ async def gethash(hash_q):
         + "`"
     )
     if len(ans) > 4096:
-        hashfile = open("hashes.txt", "w+")
-        hashfile.write(ans)
-        hashfile.close()
+        with open("hashes.txt", "w+") as hashfile:
+            hashfile.write(ans)
         await hash_q.client.send_file(
             hash_q.chat_id,
             "hashes.txt",
             reply_to=hash_q.id,
-            caption="`It's too big, sending a text file instead. `",
+            caption="**It's too big, sending a text file instead.**",
         )
-        runapp(["rm", "hashes.txt"], stdout=PIPE)
+        runapp(["rm", "hashes.txt"], stdout=PIPE, check=True)
     else:
         await hash_q.reply(ans)
 
 
-@register(outgoing=True, pattern=r"^\.base64 (en|de) (.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"base64 (en|de) (.*)"))
 async def endecrypt(query):
-    """ For .base64 command, find the base64 encoding of the given string. """
+    """For .base64 command, find the base64 encoding of the given string."""
     if query.pattern_match.group(1) == "en":
-        lething = str(pybase64.b64encode(
-            bytes(query.pattern_match.group(2), "utf-8")))[2:]
-        await query.reply("Encoded: `" + lething[:-1] + "`")
+        lething = str(pybase64.b64encode(bytes(query.pattern_match.group(2), "utf-8")))[
+            2:
+        ]
+        await query.reply("**Encoded:** `" + lething[:-1] + "`")
     else:
         lething = str(
             pybase64.b64decode(
                 bytes(query.pattern_match.group(2), "utf-8"), validate=True
             )
         )[2:]
-        await query.reply("Decoded: `" + lething[:-1] + "`")
+        await query.reply("**Decoded:** `" + lething[:-1] + "`")
 
 
 CMD_HELP.update(
     {
-        "hash": ">`.hash`"
-        "\nUsage: Find the md5, sha1, sha256, sha512 of the string when written into a txt file.",
-        "base64": ">`.base64 [en or de]`"
-        "\nUsage: Find the base64 encoding of the given string or decode it.",
-    })
+        "hash": f"**Plugin : **`hash`\
+        \n\n  •  **Syntax :** `{cmd}hash`\
+        \n  •  **Function : **Untuk menemukan md5, sha1, sha256, sha512 dari string tersebut saat ditulis ke dalam file txt.\
+    "
+    }
+)
+
+
+CMD_HELP.update(
+    {
+        "base64": f"**Plugin : **`base64`\
+        \n\n  •  **Syntax :** `{cmd}base64` [en atau de]\
+        \n  •  **Function : **Temukan pengkodean base64 dari string yang diberikan atau pecahkan kodenya.\
+        \n\n  •  **NOTE : en = encode , de = decode\
+    "
+    }
+)

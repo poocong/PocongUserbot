@@ -1,321 +1,135 @@
-import asyncio
+# Copyright (C) UsergeTeam 2020
+# Licensed under GPLv3
+# Ported from Userge and refactored by @KenHV
+# FROM Man-Userbot
+# Recode by @Pocongonlen
+
 import os
 import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
-
-THUMB_IMAGE_PATH = "./thumb_image.jpg"
-
-
-@register(outgoing=True, pattern=r"^\.mmf(?: |$)(.*)")
-async def mim(event):
-    if event.fwd_from:
-        return
-    if not event.reply_to_msg_id:
-        await event.edit(
-            "`Syntax: reply to an image with .mmf` 'text on top' ; 'text on bottom' "
-        )
-        return
-    reply_message = await event.get_reply_message()
-    if not reply_message.media:
-        await event.edit("```reply to a image/sticker/gif```")
-        return
-    reply_message.sender
-    await bot.download_file(reply_message.media)
-    if reply_message.sender.bot:
-        await event.edit("```Reply to actual users message.```")
-        return
-    else:
-        await event.edit(
-            "```Transfiguration Time! Mwahaha Memifying this image! (」ﾟﾛﾟ)｣ ```"
-        )
-        await asyncio.sleep(5)
-        text = event.pattern_match.group(1)
-        if event.reply_to_msg_id:
-            file_name = "meme.jpg"
-            reply_message = await event.get_reply_message()
-            to_download_directory = TEMP_DOWNLOAD_DIRECTORY
-            downloaded_file_name = os.path.join(
-                to_download_directory, file_name)
-            downloaded_file_name = await bot.download_media(
-                reply_message,
-                downloaded_file_name,
-            )
-            dls_loc = downloaded_file_name
-        webp_file = await draw_meme_text(dls_loc, text)
-        await event.client.send_file(
-            event.chat_id, webp_file, reply_to=event.reply_to_msg_id
-        )
-        await event.delete()
-        os.remove(webp_file)
+from userbot.events import poci_cmd
+from userbot.utils import runcmd, take_screen_shot
 
 
-async def draw_meme_text(image_path, text):
-    img = Image.open(image_path)
-    os.remove(image_path)
-    i_width, i_height = img.size
-    m_font = ImageFont.truetype(
-        "userbot/resources/FontRemix.ttf", int((95 / 730) * i_width)
+@bot.on(poci_cmd(outgoing=True, pattern=r"mmf (.*)"))
+async def memify(event):
+    reply_msg = await event.get_reply_message()
+    input_str = event.pattern_match.group(1)
+    await event.edit("**Sedang Memperoses...**")
+
+    if not reply_msg:
+        return await event.edit("**Balas ke pesan yang berisi media!**")
+
+    if not reply_msg.media:
+        return await event.edit("**Balas ke image/sticker/gif/video!**")
+
+    if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
+
+    input_file = await event.client.download_media(reply_msg, TEMP_DOWNLOAD_DIRECTORY)
+    input_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, os.path.basename(input_file))
+
+    if input_file.endswith(".tgs"):
+        await event.edit("**Mengekstrak Frame pertama...**")
+        converted_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.webp")
+        cmd = f"lottie_convert.py --frame 0 {input_file} {converted_file}"
+        await runcmd(cmd)
+        os.remove(input_file)
+        if not os.path.lexists(converted_file):
+            return await event.edit("**Tidak dapat menguraikan stiker animasi ini.**")
+        input_file = converted_file
+
+    elif input_file.endswith(".mp4"):
+        await event.edit("**Mengekstrak Frame pertama...**")
+        converted_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "meme.png")
+        await take_screen_shot(input_file, 0, converted_file)
+        os.remove(input_file)
+        if not os.path.lexists(converted_file):
+            return await event.edit("**Tidak Dapat Mengurai Video ini.**")
+        input_file = converted_file
+
+    await event.edit("**Menambahkan Teks...**")
+    try:
+        final_image = await add_text_img(input_file, input_str)
+    except Exception as e:
+        return await event.edit(f"**Terjadi kesalahan:**\n`{e}`")
+    await event.client.send_file(
+        entity=event.chat_id, file=final_image, reply_to=reply_msg
     )
+    await event.delete()
+    os.remove(final_image)
+    os.remove(input_file)
+
+
+async def add_text_img(image_path, text):
+    font_size = 12
+    stroke_width = 1
+
     if ";" in text:
         upper_text, lower_text = text.split(";")
     else:
         upper_text = text
         lower_text = ""
-    draw = ImageDraw.Draw(img)
-    current_h, pad = 10, 5
-    if upper_text:
-        for u_text in textwrap.wrap(upper_text, width=18):
-            u_width, u_height = draw.textsize(u_text, font=m_font)
 
-            draw.text(
-                xy=(((i_width - u_width) / 2) - 1, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(((i_width - u_width) / 2) + 1, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=((i_width - u_width) / 2, int(((current_h / 730) * i_width)) - 1),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(((i_width - u_width) / 2), int(((current_h / 730) * i_width)) + 1),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=((i_width - u_width) / 2, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-            current_h += u_height + pad
-    if lower_text:
-        for l_text in textwrap.wrap(lower_text, width=18):
-            u_width, u_height = draw.textsize(l_text, font=m_font)
-
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) - 1,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) + 1,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((30 / 730) * i_width)) - 1,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((30 / 730) * i_width)) + 1,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-            current_h += u_height + pad
-
-    image_name = "memify.webp"
-    webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
-    img.save(webp_file, "WebP")
-    return webp_file
-
-
-@register(outgoing=True, pattern=r"^\.mmf2(?: |$)(.*)")
-async def mim(event):
-    if event.fwd_from:
-        return
-    if not event.reply_to_msg_id:
-        await event.edit(
-            "`Syntax: reply to an image with .mmf` 'text on top' ; 'text on bottom' "
-        )
-        return
-    reply_message = await event.get_reply_message()
-    if not reply_message.media:
-        await event.edit("```reply to a image/sticker/gif```")
-        return
-    reply_message.sender
-    await bot.download_file(reply_message.media)
-    if reply_message.sender.bot:
-        await event.edit("```Reply to actual users message.```")
-        return
-    else:
-        await event.edit(
-            "```Transfiguration Time! Mwahaha Memifying this image! (」ﾟﾛﾟ)｣ ```"
-        )
-        await asyncio.sleep(5)
-        text = event.pattern_match.group(1)
-        if event.reply_to_msg_id:
-            file_name = "meme.jpg"
-            reply_message = await event.get_reply_message()
-            to_download_directory = TEMP_DOWNLOAD_DIRECTORY
-            downloaded_file_name = os.path.join(
-                to_download_directory, file_name)
-            downloaded_file_name = await bot.download_media(
-                reply_message,
-                downloaded_file_name,
-            )
-            dls_loc = downloaded_file_name
-        webp_file = await draw_meme_text(dls_loc, text)
-        await event.client.send_file(
-            event.chat_id, webp_file, reply_to=event.reply_to_msg_id
-        )
-        await event.delete()
-        os.remove(webp_file)
-
-
-async def draw_meme_text(image_path, text):
-    img = Image.open(image_path)
-    os.remove(image_path)
-    i_width, i_height = img.size
-    m_font = ImageFont.truetype(
-        "userbot/resources/FontRemix2.ttf", int((95 / 730) * i_width)
+    img = Image.open(image_path).convert("RGBA")
+    img_info = img.info
+    image_width, image_height = img.size
+    font = ImageFont.truetype(
+        font="userbot/utils/styles/FontLord.ttf",
+        size=int(image_height * font_size) // 100,
     )
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
-    else:
-        upper_text = text
-        lower_text = ""
     draw = ImageDraw.Draw(img)
-    current_h, pad = 10, 5
-    if upper_text:
-        for u_text in textwrap.wrap(upper_text, width=18):
-            u_width, u_height = draw.textsize(u_text, font=m_font)
 
-            draw.text(
-                xy=(((i_width - u_width) / 2) - 1, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(((i_width - u_width) / 2) + 1, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=((i_width - u_width) / 2, int(((current_h / 730) * i_width)) - 1),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(((i_width - u_width) / 2), int(((current_h / 730) * i_width)) + 1),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
+    char_width, char_height = font.getsize("A")
+    chars_per_line = image_width // char_width
+    top_lines = textwrap.wrap(upper_text, width=chars_per_line)
+    bottom_lines = textwrap.wrap(lower_text, width=chars_per_line)
 
+    if top_lines:
+        y = 10
+        for line in top_lines:
+            line_width, line_height = font.getsize(line)
+            x = (image_width - line_width) / 2
             draw.text(
-                xy=((i_width - u_width) / 2, int((current_h / 730) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(255, 255, 255),
+                (x, y),
+                line,
+                fill="white",
+                font=font,
+                stroke_width=stroke_width,
+                stroke_fill="black",
             )
-            current_h += u_height + pad
-    if lower_text:
-        for l_text in textwrap.wrap(lower_text, width=18):
-            u_width, u_height = draw.textsize(l_text, font=m_font)
+            y += line_height
 
+    if bottom_lines:
+        y = image_height - char_height * len(bottom_lines) - 15
+        for line in bottom_lines:
+            line_width, line_height = font.getsize(line)
+            x = (image_width - line_width) / 2
             draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) - 1,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
+                (x, y),
+                line,
+                fill="white",
+                font=font,
+                stroke_width=stroke_width,
+                stroke_fill="black",
             )
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) + 1,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((30 / 730) * i_width)) - 1,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((30 / 730) * i_width)) + 1,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
+            y += line_height
 
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    i_height - u_height - int((30 / 730) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-            current_h += u_height + pad
-
-    image_name = "memify.webp"
-    webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
-    img.save(webp_file, "WebP")
-    return webp_file
+    final_image = os.path.join(TEMP_DOWNLOAD_DIRECTORY, "memify.webp")
+    img.save(final_image, **img_info)
+    return final_image
 
 
-CMD_HELP.update({
-    "memify":
-        "`.mmf` texttop ; textbottom\
-        \nUsage: Reply a sticker/image/gif and send with cmd.\n"
-        "`.mmf2` texttop ; textbottom\
-        \nUsage: Reply a sticker/image/gif and send with cmd."
-})
+CMD_HELP.update(
+    {
+        "memify": f"**Plugin : **`memify`\
+        \n\n  •  **Syntax :** `{cmd}mmf` Teks Atas ; Teks Bawah\
+        \n  •  **Function :** Balas Ke Sticker/Gambar/Gif, Gambar akan Di ubah jadi teks meme yang di tentukan\
+        \n\n  •  **NOTE :** Jika itu video, teks akan diedit di frame pertama.\
+    "
+    }
+)

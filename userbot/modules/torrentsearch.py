@@ -1,3 +1,11 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+""" Userbot module for filter commands """
+
+
 import codecs
 import json
 import os
@@ -5,17 +13,16 @@ import os
 import requests
 from bs4 import BeautifulSoup as bs
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.events import poci_cmd
 
 
-@register(outgoing=True, pattern=r"^\.ts (.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"ts (.*)"))
 async def gengkapak(e):
     await e.edit("`Please wait, fetching results...`")
     query = e.pattern_match.group(1)
-    response = requests.get(
-        f"https://sjprojectsapi.herokuapp.com/torrent/?query={query}"
-    )
+    response = requests.get(f"https://api.sumanjay.cf/torrent/?query={query}")
     ts = json.loads(response.text)
     if ts != response.json():
         await e.edit("**Some error occured**\n`Try Again Later`")
@@ -27,24 +34,29 @@ async def gengkapak(e):
             run += 1
             r1 = ts[run]
             list1 = "<-----{}----->\nName: {}\nSeeders: {}\nSize: {}\nAge: {}\n<--Magnet Below-->\n{}\n\n\n".format(
-                run, r1["name"], r1["seeder"], r1["size"], r1["age"], r1["magnet"])
+                run, r1["name"], r1["seeder"], r1["size"], r1["age"], r1["magnet"]
+            )
             listdata += list1
         except BaseException:
             break
 
     if not listdata:
-        return await e.edit("`Error: No results found`")
+        return await e.edit("**Error:** `No results found`")
 
     tsfileloc = f"{TEMP_DOWNLOAD_DIRECTORY}/{query}.txt"
     with open(tsfileloc, "w+", encoding="utf8") as out_file:
         out_file.write(str(listdata))
     fd = codecs.open(tsfileloc, "r", encoding="utf-8")
     data = fd.read()
-    key = (requests.post("https://nekobin.com/api/documents",
-                         json={"content": data}) .json() .get("result") .get("key"))
+    key = (
+        requests.post("https://nekobin.com/api/documents", json={"content": data})
+        .json()
+        .get("result")
+        .get("key")
+    )
     url = f"https://nekobin.com/raw/{key}"
     caption = (
-        f"`Here the results for the query: {query}`\n\nPasted to: [Nekobin]({url})"
+        f"**Here the results for the query:** `{query}`\n\nPasted to: [Nekobin]({url})"
     )
     os.remove(tsfileloc)
     await e.edit(caption, link_preview=False)
@@ -63,7 +75,7 @@ def dogbin(magnets):
     return urls
 
 
-@register(outgoing=True, pattern=r"^\.tos(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return
@@ -86,9 +98,8 @@ async def tor_search(event):
 
     else:
         res = requests.get(
-            "https://www.torrentdownloads.me/search/?search=" +
-            search_str,
-            headers)
+            "https://www.torrentdownloads.me/search/?search=" + search_str, headers
+        )
 
     source = bs(res.text, "lxml")
     urls = []
@@ -102,11 +113,7 @@ async def tor_search(event):
             title = title[20:]
             titles.append(title)
             urls.append("https://www.torrentdownloads.me" + div.p.a["href"])
-        except KeyError:
-            pass
-        except TypeError:
-            pass
-        except AttributeError:
+        except (KeyError, TypeError, AttributeError):
             pass
         if counter == 11:
             break
@@ -134,8 +141,7 @@ async def tor_search(event):
         search_str = search_str.replace("+", " ")
     except BaseException:
         pass
-    msg = "**Torrent Search Query**\n`{}`".format(
-        search_str) + "\n**Results**\n"
+    msg = "**Torrent Search Query**\n`{}`".format(search_str) + "\n**Results**\n"
     counter = 0
     while counter != len(titles):
         msg = (
@@ -150,9 +156,11 @@ async def tor_search(event):
 
 CMD_HELP.update(
     {
-        "torrent": ">`.ts` Search query."
-        "\nUsage: Search for torrent query and post to dogbin.\n\n"
-        ">`.tos` Search query."
-        "\nUsage: Search for torrent magnet from query."
+        "torrent": f"**Plugin : **`torrent`\
+        \n\n  •  **Syntax :** `{cmd}ts` <search query>\
+        \n  •  **Function : **Cari query torrent dan posting ke dogbin.\
+        \n\n  •  **Syntax :** `{cmd}tos` <search query>\
+        \n  •  **Function : **Cari magnet torrent dari query.\
+    "
     }
 )

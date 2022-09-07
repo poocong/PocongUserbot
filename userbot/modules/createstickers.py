@@ -10,10 +10,12 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
-from userbot.events import register
+
+from userbot import bot
+from userbot.events import poci_cmd
 
 
-@register(outgoing=True, pattern="^.cs(?: |$)(.*)")
+@bot.on(poci_cmd(outgoing=True, pattern=r"cs(?: |$)(.*)"))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
@@ -30,7 +32,7 @@ async def sticklet(event):
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
     sticktext = textwrap.wrap(sticktext, width=10)
     # converts back the list to a string
-    sticktext = '\n'.join(sticktext)
+    sticktext = "\n".join(sticktext)
 
     image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(image)
@@ -46,17 +48,11 @@ async def sticklet(event):
 
     width, height = draw.multiline_textsize(sticktext, font=font)
     draw.multiline_text(
-        ((512 - width) / 2,
-         (512 - height) / 2),
-        sticktext,
-        font=font,
-        fill=(
-            R,
-            G,
-            B))
+        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)
+    )
 
     image_stream = io.BytesIO()
-    image_stream.name = "@remix.webp"
+    image_stream.name = "@sticker.webp"
     image.save(image_stream, "WebP")
     image_stream.seek(0)
 
@@ -64,7 +60,9 @@ async def sticklet(event):
     # await event.reply( file=image_stream, reply_to=event.message.reply_to_msg_id)
     # replacing upper line with this to get reply tags
 
-    await event.client.send_file(event.chat_id, image_stream, reply_to=event.message.reply_to_msg_id)
+    await event.client.send_file(
+        event.chat_id, image_stream, reply_to=event.message.reply_to_msg_id
+    )
     # cleanup
     try:
         os.remove(FONT_FILE)
@@ -79,7 +77,7 @@ async def get_font_file(client, channel_id):
         filter=InputMessagesFilterDocument,
         # this might cause FLOOD WAIT,
         # if used too many times
-        limit=None
+        limit=None,
     )
     # get a random font from the list of fonts
     # https://docs.python.org/3/library/random.html#random.choice

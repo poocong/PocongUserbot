@@ -5,31 +5,36 @@
 #
 """ Userbot help command """
 
-import asyncio
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CHANNEL, GROUP
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, ICON_HELP
+from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 modules = CMD_HELP
 
 
-@register(outgoing=True, pattern="^.help(?: |$)(.*)")
+@poci_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
-    """ For .help command,"""
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await event.edit(str(CMD_HELP[args]))
+            await edit_or_reply(event, f"{CMD_HELP[args]}\n\nSupport @{GROUP}")
         else:
-            await event.edit("Module yang lu cari tidak tersedia. **GOBLOK?**")
-            await asyncio.sleep(80)
-            await event.delete()
+            await edit_delete(event, f"`{args}` **Maaf Module yang anda cari tidak tersedia.**")
     else:
+        user = await event.client.get_me()
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t❐"
-        await event.edit("**𓇕 Berikut Daftar Perintah Untuk\nPocong-Userbot:\n\n**"
-                         f"❐{string}\n")
-        await event.reply(f"\n**Ketik Contoh** `.help afk` **Untuk Informasi Perintah**")
-        await asyncio.sleep(1000)
-        await event.delete()
+            string += f"`\t\t\t{ICON_HELP}\t\t\t"
+        await edit_or_reply(
+            event,
+            f"**✦ Daftar Perintah [PocongUserbot](https://github.com/poocong/PocongUserbot):**\n"
+            f"**✦ Jumlah** `{len(modules)}` **Modules**\n"
+            f"**✦ Owner:** [{user.first_name}](tg://user?id={user.id})\n\n"
+            f"{ICON_HELP}   {string}"
+            f"\n\nSupport @{CHANNEL}",
+        )
+        await event.reply(
+            f"\n**Contoh Ketik** `{cmd}help afk` **Untuk Melihat Informasi Module**"
+        )

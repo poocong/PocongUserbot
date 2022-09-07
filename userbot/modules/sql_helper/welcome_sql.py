@@ -1,5 +1,5 @@
 try:
-    from userbot.modules.sql_helper import SESSION, BASE
+    from userbot.modules.sql_helper import BASE, SESSION
 except ImportError:
     raise AttributeError
 
@@ -32,8 +32,7 @@ def get_welcome(chat_id):
 
 def get_current_welcome_settings(chat_id):
     try:
-        return SESSION.query(Welcome).filter(
-            Welcome.chat_id == str(chat_id)).one()
+        return SESSION.query(Welcome).filter(Welcome.chat_id == str(chat_id)).one()
     except BaseException:
         return None
     finally:
@@ -47,13 +46,12 @@ def add_welcome_setting(chat_id, previous_welcome, reply, f_mesg_id):
         SESSION.add(adder)
         SESSION.commit()
         return True
-    else:
-        rem = SESSION.query(Welcome).get(str(chat_id))
-        SESSION.delete(rem)
-        SESSION.commit()
-        adder = Welcome(chat_id, previous_welcome, reply, f_mesg_id)
-        SESSION.commit()
-        return False
+    rem = SESSION.query(Welcome).get(str(chat_id))
+    SESSION.delete(rem)
+    SESSION.commit()
+    adder = Welcome(chat_id, previous_welcome, reply, f_mesg_id)
+    SESSION.commit()
+    return False
 
 
 def rm_welcome_setting(chat_id):

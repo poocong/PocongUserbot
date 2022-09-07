@@ -12,12 +12,13 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from userbot import CMD_HELP, COUNTRY, TZ_NUMBER
-from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, COUNTRY, TZ_NUMBER, bot
+from userbot.events import poci_cmd
 
 
 async def get_tz(con):
-    """ Get time zone of the given country. """
+    """Get time zone of the given country."""
     if "(Uk)" in con:
         con = con.replace("Uk", "UK")
     if "(Us)" in con:
@@ -41,12 +42,12 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@bot.on(poci_cmd(outgoing=True, pattern=r"time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def time_func(tdata):
-    """ For .time command, return the time of
-        1. The country passed as an argument,
-        2. The default userbot country(set it by using .settime),
-        3. The server where the userbot runs.
+    """For .time command, return the time of
+    1. The country passed as an argument,
+    2. The default userbot country(set it by using .settime),
+    3. The server where the userbot runs.
     """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
@@ -65,7 +66,7 @@ async def time_func(tdata):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await tdata.edit(f"`It's`  **{dt.now().strftime(t_form)}**  `here.`")
+        await tdata.edit(f"**Sekarang Jam**  `{dt.now().strftime(t_form)}`  **disini**")
         return
 
     if not timezones:
@@ -95,27 +96,29 @@ async def time_func(tdata):
 
     if c_name != COUNTRY:
         await tdata.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"**Sekarang Jam**  `{dtnow}`  **di {c_name}({time_zone} timezone).**"
+        )
         return
 
-    elif COUNTRY:
-        await tdata.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
-                         f"({time_zone} timezone).`")
+    if COUNTRY:
+        await tdata.edit(
+            f"**Sekarang Jam**  `{dtnow}`  **di {COUNTRY}" f"({time_zone} timezone).**"
+        )
         return
 
 
-@register(outgoing=True, pattern="^.date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@bot.on(poci_cmd(outgoing=True, pattern=r"date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
 async def date_func(dat):
-    """ For .date command, return the date of
-        1. The country passed as an argument,
-        2. The default userbot country(set it by using .settime),
-        3. The server where the userbot runs.
+    """For .date command, return the date of
+    1. The country passed as an argument,
+    2. The default userbot country(set it by using .settime),
+    3. The server where the userbot runs.
     """
     con = dat.pattern_match.group(1).title()
     tz_num = dat.pattern_match.group(2)
 
     d_form = "%d/%m/%y - %A"
-    c_name = ''
+    c_name = ""
 
     if len(con) > 4:
         try:
@@ -128,7 +131,9 @@ async def date_func(dat):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await dat.edit(f"`It's`  **{dt.now().strftime(d_form)}**  `here.`")
+        await dat.edit(
+            f"**Sekarang Tanggal**  `{dt.now().strftime(d_form)}`  **disini.**"
+        )
         return
 
     if not timezones:
@@ -158,19 +163,25 @@ async def date_func(dat):
 
     if c_name != COUNTRY:
         await dat.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"**Sekarang Tanggal**  `{dtnow}`  **di {c_name}({time_zone} timezone).**"
+        )
         return
 
-    elif COUNTRY:
-        await dat.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
-                       f"({time_zone} timezone).`")
+    if COUNTRY:
+        await dat.edit(
+            f"**Sekarang Tanggal**  `{dtnow}`  **di {COUNTRY}"
+            f"({time_zone} timezone).**"
+        )
         return
 
 
-CMD_HELP.update({
-    "timedate":
-    "`.time` <country name/code> <timezone number>\
-\nUsage: Usage: Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one.\
-\n\n`.date` <country name/code> <timezone number>\
-\nUsage: Get the date of a country. If a country has multiple timezones, it will list all of them and let you select one."
-})
+CMD_HELP.update(
+    {
+        "timedate": f"**Plugin : **`timedate`\
+        \n\n  •  **Syntax :** `{cmd}time` <country name/code> <timezone number>\
+        \n  •  **Function : **Dapatkan waktu suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan memungkinkan Anda memilihnya.\
+        \n\n  •  **Syntax :** `{cmd}date` <country name/code> <timezone number>\
+        \n  •  **Function : **Dapatkan tanggal suatu negara. Jika suatu negara memiliki beberapa zona waktu, itu akan mencantumkan semuanya dan memungkinkan Anda memilihnya.\
+    "
+    }
+)

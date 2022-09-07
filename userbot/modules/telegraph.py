@@ -1,22 +1,30 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.d (the "License");
+# you may not use this file except in compliance with the License.
+#
+""" Userbot module for Telegraph commands """
+
 import os
 from datetime import datetime
 
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
+from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
-from userbot.events import register
+from userbot.utils import edit_delete, edit_or_reply, poci_cmd
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")
 auth_url = r["auth_url"]
 
 
-@register(outgoing=True, pattern=r"^\.tg (m|t)$")
+@poci_cmd(pattern="tg (m|t)$")
 async def telegraphs(graph):
-    await graph.edit("`Processing...`")
-    if not graph.text[0].isalpha() and graph.text[0] not in (
-            "/", "#", "@", "!"):
+    """For telegraph command, upload media & text to telegraph site."""
+    xxnx = await edit_or_reply(graph, "`Processing...`")
+    if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
         if graph.fwd_from:
             return
         if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -31,32 +39,24 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit(
-                    "Downloaded to {} in {} seconds.".format(downloaded_file_name, ms)
+                await xxnx.edit(
+                    f"**Di Download Ke** `{downloaded_file_name}` **di** `{ms}` **detik.**"
                 )
+                if downloaded_file_name.endswith(".webp"):
+                    resize_image(downloaded_file_name)
                 try:
-                    if downloaded_file_name.endswith((".webp")):
-                        resize_image(downloaded_file_name)
-                except AttributeError:
-                    return await graph.edit("`No media provided`")
-                try:
-                    start = datetime.now()
                     media_urls = upload_file(downloaded_file_name)
                 except exceptions.TelegraphException as exc:
-                    await graph.edit("ERROR: " + str(exc))
+                    await xxnx.edit("**ERROR:** " + str(exc))
                     os.remove(downloaded_file_name)
                 else:
-                    end = datetime.now()
-                    ms_two = (end - start).seconds
                     os.remove(downloaded_file_name)
-                    await graph.edit(
-                        "Successfully Uploaded to [telegra.ph](https://telegra.ph{}).".format(
-                            media_urls[0], (ms + ms_two)
-                        ),
+                    await xxnx.edit(
+                        f"**Berhasil diupload ke** [telegra.ph](https://telegra.ph{media_urls[0]})",
                         link_preview=True,
                     )
             elif input_str == "t":
-                user_object = await bot.get_entity(r_message.from_id)
+                user_object = await bot.get_entity(r_message.sender_id)
                 title_of_page = user_object.first_name  # + " " + user_object.last_name
                 # apparently, all Users do not have last_name field
                 page_content = r_message.message
@@ -76,16 +76,15 @@ async def telegraphs(graph):
                 response = telegraph.create_page(
                     title_of_page, html_content=page_content
                 )
-                end = datetime.now()
-                ms = (end - start).seconds
-                await graph.edit(
-                    "Successfully uploaded to [telegra.ph](https://telegra.ph/{}).".format(
-                        response["path"], ms
-                    ),
+                await xxnx.edit(
+                    f'**Berhasil diupload ke** [telegra.ph](https://telegra.ph/{response["path"]})',
                     link_preview=True,
                 )
         else:
-            await graph.edit("`Reply to a message to get a permanent telegra.ph link.`")
+            await edit_delete(
+                xxnx,
+                "**Mohon Balas Ke Pesan, Untuk Mendapatkan Link Telegraph Permanen.**",
+            )
 
 
 def resize_image(image):
@@ -93,5 +92,13 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CMD_HELP.update({"telegraph": ">`.tg` <m|t>"
-                 "\nUsage: Upload t(text) or m(media) on Telegraph."})
+CMD_HELP.update(
+    {
+        "telegraph": f"**Plugin : **`telegraph`\
+        \n\n  •  **Syntax :** `{cmd}tg` m\
+        \n  •  **Function : **Mengunggah m(Media) Ke Telegraph.\
+        \n\n  •  **Syntax :** `{cmd}tg` t\
+        \n  •  **Function : **Mengunggah t(Teks) Ke Telegraph.\
+    "
+    }
+)

@@ -4,16 +4,22 @@
 
 import asyncio
 import time
-from userbot.events import register
-from userbot import CMD_HELP, bot
-from userbot import TEMP_DOWNLOAD_DIRECTORY
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot.events import poci_cmd
 
 
-@register(outgoing=True, pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)")
+@bot.on(
+    poci_cmd(
+        outgoing=True,
+        pattern=r"webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)",
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Processing ...")
+    await event.edit("`Processing ...`")
     PROCESS_RUN_TIME = 100
     input_str = event.pattern_match.group(1)
     selected_transfer = event.pattern_match.group(2)
@@ -22,14 +28,14 @@ async def _(event):
     else:
         reply = await event.get_reply_message()
         file_name = await bot.download_media(reply.media, TEMP_DOWNLOAD_DIRECTORY)
-    event.message.id
     CMD_WEB = {
-        "anonfiles": "curl -F \"file=@{}\" https://anonfiles.com/api/upload",
-        "transfer": "curl --upload-file \"{}\" https://transfer.sh/{os.path.basename(file_name)}",
-        "filebin": "curl -X POST --data-binary \"@test.png\" -H \"filename: {}\" \"https://filebin.net\"",
-        "anonymousfiles": "curl -F file=\"@{}\" https://api.anonymousfiles.io/",
-        "megaupload": "curl -F \"file=@{}\" https://megaupload.is/api/upload",
-        "bayfiles": ".exec curl -F \"file=@{}\" https://bayfiles.com/api/upload"}
+        "anonfiles": 'curl -F "file=@{}" https://anonfiles.com/api/upload',
+        "transfer": 'curl --upload-file "{}" https://transfer.sh/{os.path.basename(file_name)}',
+        "filebin": 'curl -X POST --data-binary "@test.png" -H "filename: {}" "https://filebin.net"',
+        "anonymousfiles": 'curl -F file="@{}" https://api.anonymousfiles.io/',
+        "megaupload": 'curl -F "file=@{}" https://megaupload.is/api/upload',
+        "bayfiles": '.exec curl -F "file=@{}" https://bayfiles.com/api/upload',
+    }
     try:
         selected_one = CMD_WEB[selected_transfer].format(file_name)
     except KeyError:
@@ -42,8 +48,12 @@ async def _(event):
     stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")
 
-CMD_HELP.update({
-    "webupload":
-        "\n`.webupload --`(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`)\
-         \nUsage: reply `.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website. "
-})
+
+CMD_HELP.update(
+    {
+        "webupload": f"**Plugin : **`webupload`\
+        \n\n  •  **Syntax :** `{cmd}webupload --`(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`)\
+        \n  •  **Function : **Reply `{cmd}webupload --anonfiles` or `.webupload --filebin` dan file akan diunggah ke situs web itu. \
+    "
+    }
+)
