@@ -127,41 +127,7 @@ async def _(event):
             conv.chat_id, [msg_start.id, r.id, msg.id, details.id, video.id, text.id]
         )
         await xx.delete()
-
-
-@poci_cmd(pattern="dez(?: |$)(.*)")
-async def DeezLoader(event):
-    if event.fwd_from:
-        return
-    dlink = event.pattern_match.group(1)
-    if ".com" not in dlink:
-        await edit_delete(
-            event, "`Mohon Berikan Link Deezloader yang ingin di download`"
-        )
-    else:
-        await edit_or_reply(event, "`Sedang Mendownload Lagu...`")
-    chat = "@DeezLoadBot"
-    async with event.client.conversation(chat) as conv:
-        try:
-            await conv.send_message("/start")
-            await conv.get_response()
-            await conv.get_response()
-            await conv.send_message(dlink)
-            details = await conv.get_response()
-            song = await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-        except YouBlockedUserError:
-            await event.client(UnblockRequest(chat))
-            await conv.send_message("/start")
-            await conv.get_response()
-            await conv.get_response()
-            await conv.send_message(dlink)
-            details = await conv.get_response()
-            song = await conv.get_response()
-            await event.client.send_read_acknowledge(conv.chat_id)
-        await event.client.send_file(event.chat_id, song, caption=details.text)
-        await event.delete()
-
+        
 CMD_HELP.update(
     {
         "tiktok": f"**Plugin : **`tiktok`\
@@ -178,8 +144,6 @@ CMD_HELP.update(
         \n  •  **Function : **Download Video / Foto Dari Instagram\
         \n\n  •  **Syntax :** `{cmd}fb` <link>\
         \n  •  **Function : **Download Video dari Facebook\
-        \n\n  •  **Syntax :** `{cmd}dez` <link>\
-        \n  •  **Function : **Download Lagu Via Deezloader\
     "
     }
 )
