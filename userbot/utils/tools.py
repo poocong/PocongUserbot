@@ -39,7 +39,6 @@ from telethon.tl.types import (
     ChannelParticipantCreator,
     DocumentAttributeFilename,
 )
-from yt_dlp import YoutubeDL
 
 from userbot import LOGS, SUDO_USERS, bot
 from userbot.utils.format import md_to_text, paste_message
@@ -47,15 +46,6 @@ from userbot.utils.format import md_to_text, paste_message
 
 def deEmojify(inputString):
     return get_emoji_regexp().sub("", inputString)
-
-
-async def md5(fname: str) -> str:
-    hash_md5 = hashlib.md5()
-    with open(fname, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
-    return hash_md5.hexdigest()
-
 
 def media_type(message):
     if message:
