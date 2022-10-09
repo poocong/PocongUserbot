@@ -19,7 +19,6 @@ from sys import version_info
 
 from dotenv import load_dotenv
 from git import Repo
-from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pytgcalls import PyTgCalls
 from requests import get
@@ -209,16 +208,8 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
-# Zipfile module
-ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
-
-# bit.ly module
-BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
-
-
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "3.1.0")
-
 
 # Default .alive logo
 ALIVE_LOGO = (
@@ -244,32 +235,11 @@ DEFAULT = list(map(int, b64decode("MTY3NTkwMDk3NA==").split()))
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
-LASTFM_API = os.environ.get("LASTFM_API", None)
-LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
-LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
-LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
-LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
-
-lastfm = None
-if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
-    try:
-        lastfm = LastFMNetwork(
-            api_key=LASTFM_API,
-            api_secret=LASTFM_SECRET,
-            username=LASTFM_USERNAME,
-            password_hash=LASTFM_PASS,
-        )
-    except Exception:
-        pass
-
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/")
 
 
 # Quotes API Token
 QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
-
-# Deezloader
-DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
 # NSFW Detect DEEP AI
 DEEP_AI = os.environ.get("DEEP_AI", None)
