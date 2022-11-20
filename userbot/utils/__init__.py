@@ -30,7 +30,6 @@ from .tools import (
     extract_time,
     human_to_bytes,
     humanbytes,
-    md5,
     media_to_pic,
     media_type,
     post_to_telegraph,
